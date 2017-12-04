@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<launch>
+
+	<!-- Some general parameters -->
+	<param name="use_sim_time" value="true" />
+	<rosparam file="$(find nav2d_tutorials)/param/ros.yaml"/>
+
+	<!-- RVIZ to view the visualization -->
+	<node name="RVIZ" pkg="rviz" type="rviz" args=" -d $(find nav2d_tutorials)/param/graph_localizer.rviz" />
+	
+	<!-- Visualization markers / Unable to launch it this way, just do it manually for now 
+	 <node name="mark" pkg="using_markers" type="markers_arrow" /> -->
+
+</launch>

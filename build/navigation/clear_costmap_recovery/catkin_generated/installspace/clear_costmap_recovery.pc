@@ -1,0 +1,8 @@
+prefix=/home/simoneforno/simon_ws/install
+
+Name: clear_costmap_recovery
+Description: Description of clear_costmap_recovery
+Version: 1.14.2
+Cflags: -I/home/simoneforno/simon_ws/install/include
+Libs: -L/home/simoneforno/simon_ws/install/lib -lclear_costmap_recovery
+Requires: costmap_2d nav_core pluginlib roscpp tf

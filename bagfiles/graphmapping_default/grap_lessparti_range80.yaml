@@ -1,0 +1,7 @@
+image: grap_lessparti_range80.pgm
+resolution: 0.050000
+origin: [-3.147155, -9.544406, -nan]
+negate: 0
+occupied_thresh: 0.65
+free_thresh: 0.196
+

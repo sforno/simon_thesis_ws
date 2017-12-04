@@ -1,0 +1,7 @@
+image: graph_fabric_default.png
+resolution: 0.100000
+origin: [-3.092647, -9.523627, 0]
+negate: 0
+occupied_thresh: 0.65
+free_thresh: 0.196
+

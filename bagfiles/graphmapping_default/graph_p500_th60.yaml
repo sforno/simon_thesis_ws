@@ -1,0 +1,7 @@
+image: graph_p500_th60.pgm
+resolution: 0.050000
+origin: [-3.297051, -9.849727, -nan]
+negate: 0
+occupied_thresh: 0.65
+free_thresh: 0.196
+

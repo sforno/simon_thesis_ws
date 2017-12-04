@@ -1,0 +1,281 @@
+\documentclass[11pt,a4paper]{article}
+%\usepackage[toc,page]{appendix}
+\usepackage{graphicx}
+\usepackage[a4paper]{geometry}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{float}
+\usepackage{setspace}
+\usepackage[absolute]{textpos}
+\usepackage{epstopdf}
+%\usepackage[]{mcode} 	% To include matlab code
+\usepackage{capt-of}
+\usepackage{enumerate}
+\usepackage{lastpage}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\renewcommand{\arraystretch}{1.5}
+
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+\usepackage{amsmath}
+\usepackage{algorithm}
+%\usepackage[noend]{algpseudocode}
+\makeatletter
+\def\BState{\State\hskip-\ALG@thistlm}
+\makeatother
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{eurosym}
+
+% Header
+\setlength{\headheight}{30pt}
+\newgeometry{top=2.5cm, bottom = 1.5cm, left=2cm, right=2cm}
+\pagestyle{fancy} 
+\lhead{\includegraphics[height=0.8cm]{figures/{tue_logo}.png}}
+%\lfoot{Group 4 - ``CASE"-HENK}
+\cfoot{~}
+\rfoot{Page \thepage ~of \pageref{LastPage}}
+
+\usepackage{cleveref}
+% Change cleveref reference eq. to equation same for figure
+\crefname{equation}{equation}{equations}
+\crefname{figure}{figure}{figures}
+\crefname{table}{table}{tables}
+
+% Change Section numbering to Problem 1
+%\renewcommand{\thesection}{Problem \arabic{section}.}
+
+\begin{document}
+%\begin{titlepage}
+%\vspace*{100pt}
+%\begin{figure}
+%\centering
+%\includegraphics[width=0.5\textwidth]{figures/TUelogozondertekst}
+%\end{figure}
+%\begin{center}
+%{ \huge \bfseries 4AT100 Automotive Systems Engineering Project\\[0.4cm] }
+%\textsc{\Large Concept Project Plan}\\[0.5cm]
+%
+%\end{center}
+%
+%\vfill
+%
+%\renewcommand{\arraystretch}{1}
+%
+%\begin{flushleft} \large
+%\begin{tabular}{l}
+%Project Coordinators:\\
+%Dr.Ir. A. van de Mortel-Fronczak (Asia) \\
+%Dr.Ir. I. Barosan (Ion) \\
+%\end{tabular}
+%\end{flushleft}
+%
+%\begin{flushleft} \large
+%\begin{tabular}{l l l l}
+%Tutor: & & & \\
+%L. Kefalidis (Lazaros) & & & \\
+%& & & \\
+%Authors:\hspace{30mm} 	& \hspace{35mm}	& \hspace{55mm} 	    		& 			\\
+%S. Forno (Simone) 		& ​0978942		& T. de Mor\'ee (Tim)			& 0944052 	\\
+%R.M.A. Goris (Rob) 		& 0808822		& T.M.A. van de Wiel (Thijs)	​& 0824530 	\\
+%B.S. Haarsma (Bouke) 	& 0751757​		& H. Wils (Hielke) 				& 0807014 	\\
+%\end{tabular}
+%\end{flushleft}
+%
+%\begin{flushleft} \large
+%\begin{tabular}{l}
+%MSc. Programme Automotive Technology \\
+%Eindhoven University of Technology \\
+%\end{tabular}
+%\end{flushleft}
+%
+%\begin{flushleft} \large
+%\begin{tabular}{l}
+%\today \hspace{8.4cm} Group 4 ``CASE"-HENK \\
+%\end{tabular}
+%\end{flushleft}
+%
+%\renewcommand{\arraystretch}{1.5}
+%
+%\end{titlepage}
+
+\newgeometry{top=2.5cm, bottom = 3cm, left=2cm, right=2cm}
+
+%\newpage
+%
+%\setcounter{tocdepth}{2}
+%
+%\tableofcontents
+%\newpage
+
+
+%------------------------------------------------
+
+\section{Results} \label{sec:res}
+
+
+
+
+\section{To do`s} \label{sec:todos}
+\begin{itemize}
+\item Set up an IDE to run ROS nodes \textbf{Now the Qtcreator is set and variables can be displayed}
+\end{itemize}
+
+
+\section{Achieved}
+
+\vline
+
+
+
+\section{Understanding the Global planner as plugin in ROS} \label{sec:glob_plann}
+
+Encountering the following issues, in following the ROS tutorial: 
+
+\begin{itemize}
+\item \textbf{globalplanner.h file} not found - the issue must be found under some CMake stuff, see Section \ref{sec:cmake_list} about the CmakeLists.txt $find{\_}package$ \textbf{found solution by specifying the full path to the globalplanner.h file}
+
+\end{itemize} 
+
+
+\begin{figure}[!htb]
+	\center
+	\includegraphics[width=1\textwidth]{figures/Cmake_err.png}
+	\caption{Cmake error}
+	\label{fig:cmake}
+\end{figure}
+
+\section{Notes on CMakeLists.txt, package.xml \& CMake} \label{sec:cmake}
+
+\subsection{CMakeLists.txt} \label{sec:cmake_list}
+Main important components of CMakeLists.txt files are
+\begin{itemize}
+\item 3. Find other CMake/Catkin packages needed for build (find{\_}package())
+\item 7. Specify package build info export (catkin{\_}package())
+\item 8. Libraries/Executables to build (add{\_}library()/add{\_}executable()/target{\_}link{\_}libraries()) 
+\end{itemize}
+
+
+Explanation
+\begin{itemize}
+\item 3. The main reason is that we need to specify which other CMake packages that need to be found to build our project using the CMake. What does the find{\_}package do is to set CMake environmental variables to give informations about the package. The environment variables describe where the packages exported \textbf{header files} are, where \textbf{source files} are, what \textbf{libraries} the package depends on, and the paths of those libraries
+\item 7. This is required to specify catkin-specific information to the build system which in turn is used to generate pkg-config and CMake files. It consists of different specific components:
+\begin{itemize}
+\item INCLUDE{\_}DIRS - The exported included paths of the package. In the package itself this is a folder, where \textbf{headers} are placed. 
+\item LIBRARIES The exported libraries from the package/project
+\item CATKIN{\_}DEPENDS Other packages dependencies 
+\end{itemize}
+\item 8. Specifies the libraries of the current package to be built. Libraries specific builts are under the \textbf{devel/lib} folder
+\end{itemize}
+
+\subsection{Package.xml}
+
+This file is also related to \ref{sec:cmake_list} since includes dependencies on other packages. Please in the official documentation refer to Format 3 Legacy. Section of interest is the \textbf{Build, Run and Test Dependencies}. 
+
+\vline
+
+Dependencies are mainly of two types:
+\begin{itemize}
+\item 1. $build{\_}depend$ specify which packages are needed to build this package. This is the case when any file from these packages is required at build time. This can be including headers from these packages at compilation time, linking against libraries from these packages or requiring any other resource at build time (especially when these packages are find{\_}package()-ed in CMake)
+\item 2. $run{\_}depend$ specify which packages are needed to run code in this package, or build libraries against this package. This is the case when you depend on shared libraries or transitively include their headers in public headers in this package (especially when these packages are declared as (CATKIN{\_})DEPENDS in catkin{\_}package() in CMake.
+\end{itemize}
+
+\vline
+
+   \textbf{VERY USEFUL LINK: https://answers.ros.org/question/217475/cmakeliststxt-vs-packagexml/} contains an explanation of CMake and package.xml in a nutshell.
+
+
+% \section{Qt creator} \label{qt}
+
+
+
+
+
+\end{document}
+
+
+
+% == TABLE ==
+%begin{table}[h!]
+ % \centering
+  %\caption{Caption for the table.}
+ % \label{tab:table1}
+ % \begin{tabular}{ccc}
+ %   \toprule
+  %  Some & actual & content\\
+   % \midrule
+   % prettifies & the & content\\
+   % as & well & as\\
+  %  using & the & booktabs package\\
+  %   \bottomrule
+  %\end{tabular}
+%\end{table}
+
+
+% === ALGORITHM == 
+
+\iffalse % multi-comment tool
+\begin{algorithm}[!h]
+   \caption{Kirsch, Rohig algorithm}
+    \begin{algorithmic}[1]
+    	\State $St-1 = St$
+        \For{$i = 1$ to $N$} \Comment{With N the number of particles in the filter set by maxparticle parameter}
+            \State $Spread $ $particles$ $in$ $the$ $anchorbox$ $with$ $equations$ $1)$ $and$ $2)$ $of$ $[3]$ \Comment{This step is called $Global$ $Localization$}
+            
+            \State $xt[n] = p(xt|xt-1,ut)$ \Comment{Motion update - sample the particles from the motion update of the robot and move forward to estimate the error model functions}
+            
+        	\State $wt[n] = p(dnanoLOC|si)*p(dlaser|si)$ \Comment{Measurement update - si are the particles set with i the i-th index}
+        	\State $St = St + <xt,wt>$ \Comment{add the state and weight to the total state space}
+        	
+        	\State $Perform$ $resampling$
+        \EndFor
+    \State $Return$ $St$
+
+\end{algorithmic}
+\end{algorithm}
+\fi
+
+
+\iffalse
+
+\begin{figure}[!htb]
+    \centering
+    \begin{minipage}{.5\textwidth}
+        \centering
+        \includegraphics[width=0.7\linewidth, height=0.2\textheight]{figures/amcl_param}
+        \caption{The $amcl$ tunable parameters}
+        \label{fig:amcl_param}
+    \end{minipage}%
+    \begin{minipage}{0.5\textwidth}
+        \centering
+        \includegraphics[width=0.7\linewidth, height=0.2\textheight]{figures/my_amcl_gmapping}
+        \caption{Result of the Gmapping for the simple indoor environment}
+        \label{fig:myamcl_map}
+    \end{minipage}
+ \end{figure}
+ 
+ 
+ 
+ \begin{figure}[!htb]
+	\center
+	\includegraphics[width=1\textwidth]{figures/active_localization_node.png}
+	\caption{An example of an active localization node}
+	\label{fig:active_locnode}
+\end{figure}
+
+
+% underscore symbol {\_}
+
+
+\fi

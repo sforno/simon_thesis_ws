@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<launch>
+
+<node name="Saver_amcl" pkg="nav2d_tutorials" type="amcl_pose.sh" />
+
+<node name="Saver_odom" pkg="nav2d_tutorials" type="odom_pose.sh" />
+
+</launch>

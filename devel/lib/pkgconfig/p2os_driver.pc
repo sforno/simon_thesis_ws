@@ -1,0 +1,8 @@
+prefix=/home/simoneforno/simon_ws/devel
+
+Name: p2os_driver
+Description: Description of p2os_driver
+Version: 2.1.0
+Cflags: -I/home/simoneforno/simon_ws/src/p2os/p2os_driver/include
+Libs: -L/home/simoneforno/simon_ws/devel/lib -lp2os_driver
+Requires: p2os_msgs nav_msgs roscpp geometry_msgs diagnostic_updater tf std_msgs kdl_parser

@@ -1,0 +1,8 @@
+prefix=/home/simoneforno/simon_ws/install
+
+Name: tf2_eigen
+Description: Description of tf2_eigen
+Version: 0.5.16
+Cflags: -I/home/simoneforno/simon_ws/install/include -I/usr/include/eigen3
+Libs: -L/home/simoneforno/simon_ws/install/lib 
+Requires: 

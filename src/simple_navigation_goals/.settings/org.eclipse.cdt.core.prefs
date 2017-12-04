@@ -1,0 +1,15 @@
+eclipse.preferences.version=1
+environment/project/0.1120505519/PATH/delimiter=\:
+environment/project/0.1120505519/PATH/operation=append
+environment/project/0.1120505519/PATH/value=/opt/ros/kinetic/bin\:/home/simoneforno/bin\:/home/simoneforno/.local/bin\:/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/usr/games\:/usr/local/games\:/snap/bin
+environment/project/0.1120505519/PYTHONPATH/delimiter=\:
+environment/project/0.1120505519/PYTHONPATH/operation=append
+environment/project/0.1120505519/PYTHONPATH/value=/home/simoneforno/simon_ws/devel/lib/python2.7/dist-packages\:/opt/ros/kinetic/lib/python2.7/dist-packages
+environment/project/0.1120505519/ROS_PACKAGE_PATH/delimiter=\:
+environment/project/0.1120505519/ROS_PACKAGE_PATH/operation=append
+environment/project/0.1120505519/ROS_PACKAGE_PATH/value=/home/simoneforno/simon_ws/src\:/opt/ros/kinetic/share
+environment/project/0.1120505519/ROS_ROOT/delimiter=\:
+environment/project/0.1120505519/ROS_ROOT/operation=append
+environment/project/0.1120505519/ROS_ROOT/value=/opt/ros/kinetic/share/ros
+environment/project/0.1120505519/append=true
+environment/project/0.1120505519/appendContributed=true

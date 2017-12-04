@@ -1,0 +1,5 @@
+include/globalplanner/globalplanner.h
+src/globalplanner.cpp
+CMakeLists.txt
+globalplanner_plugin.xml
+package.xml

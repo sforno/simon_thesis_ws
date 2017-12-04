@@ -1,0 +1,8 @@
+prefix=/home/simoneforno/simon_ws/install
+
+Name: globalplanner
+Description: Description of globalplanner
+Version: 0.0.0
+Cflags: -I/home/simoneforno/simon_ws/install/include
+Libs: -L/home/simoneforno/simon_ws/install/lib -lglobalplanner
+Requires: roscpp pluginlib costmap_2d base_local_planner nav_core

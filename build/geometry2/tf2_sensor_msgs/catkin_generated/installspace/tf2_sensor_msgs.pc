@@ -1,0 +1,8 @@
+prefix=/home/simoneforno/simon_ws/install
+
+Name: tf2_sensor_msgs
+Description: Description of tf2_sensor_msgs
+Version: 0.5.16
+Cflags: -I/home/simoneforno/simon_ws/install/include -I/usr/include/eigen3
+Libs: -L/home/simoneforno/simon_ws/install/lib 
+Requires: sensor_msgs tf2_ros tf2

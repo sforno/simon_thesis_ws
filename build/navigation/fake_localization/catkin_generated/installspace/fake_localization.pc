@@ -1,0 +1,8 @@
+prefix=/home/simoneforno/simon_ws/install
+
+Name: fake_localization
+Description: Description of fake_localization
+Version: 1.14.2
+Cflags: 
+Libs: -L/home/simoneforno/simon_ws/install/lib 
+Requires: geometry_msgs nav_msgs roscpp rospy

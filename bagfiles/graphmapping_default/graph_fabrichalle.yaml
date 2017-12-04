@@ -1,0 +1,7 @@
+image: graph_fabrichalle.pgm
+resolution: 0.100000
+origin: [-7.182731, -10.579155, -nan]
+negate: 0
+occupied_thresh: 0.65
+free_thresh: 0.196
+

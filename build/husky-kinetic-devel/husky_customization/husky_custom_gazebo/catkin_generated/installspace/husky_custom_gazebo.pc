@@ -1,0 +1,8 @@
+prefix=/home/simoneforno/simon_ws/install
+
+Name: husky_custom_gazebo
+Description: Description of husky_custom_gazebo
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/simoneforno/simon_ws/install/lib 
+Requires: 

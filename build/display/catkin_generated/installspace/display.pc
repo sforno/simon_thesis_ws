@@ -1,0 +1,8 @@
+prefix=/home/simoneforno/simon_ws/install
+
+Name: display
+Description: Description of display
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/simoneforno/simon_ws/install/lib 
+Requires: 

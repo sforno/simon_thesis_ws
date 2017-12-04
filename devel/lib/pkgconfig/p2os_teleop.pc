@@ -1,0 +1,8 @@
+prefix=/home/simoneforno/simon_ws/devel
+
+Name: p2os_teleop
+Description: Description of p2os_teleop
+Version: 2.1.0
+Cflags: 
+Libs: -L/home/simoneforno/simon_ws/devel/lib -llib
+Requires: geometry_msgs sensor_msgs tf std_msgs
