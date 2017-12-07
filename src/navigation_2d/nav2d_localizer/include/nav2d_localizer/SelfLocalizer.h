@@ -105,6 +105,7 @@ private:
 	// ROS stuff
 	tf::TransformListener mTransformListener;
 	ros::Publisher mParticlePublisher;
+	ros::Publisher final_pose_; // publisher for the pose with highest weight
 	
 	// The pose of the last scan used for localization
 	static tf::StampedTransform mLastPose;

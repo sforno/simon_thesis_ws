@@ -1,0 +1,10 @@
+(cl:defpackage rss-srv
+  (:use )
+  (:export
+   "LOCALIZATION"
+   "<LOCALIZATION-REQUEST>"
+   "LOCALIZATION-REQUEST"
+   "<LOCALIZATION-RESPONSE>"
+   "LOCALIZATION-RESPONSE"
+  ))
+

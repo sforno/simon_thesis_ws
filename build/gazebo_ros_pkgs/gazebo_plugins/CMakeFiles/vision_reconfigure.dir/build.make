@@ -110,6 +110,9 @@ vision_reconfigure_EXTERNAL_OBJECTS =
 /home/simoneforno/simon_ws/devel/lib/libvision_reconfigure.so: /usr/lib/x86_64-linux-gnu/libprotobuf.so
 /home/simoneforno/simon_ws/devel/lib/libvision_reconfigure.so: /usr/lib/x86_64-linux-gnu/libsdformat.so
 /home/simoneforno/simon_ws/devel/lib/libvision_reconfigure.so: /usr/lib/x86_64-linux-gnu/libignition-math2.so
+/home/simoneforno/simon_ws/devel/lib/libvision_reconfigure.so: /usr/lib/x86_64-linux-gnu/libOgreMain.so
+/home/simoneforno/simon_ws/devel/lib/libvision_reconfigure.so: /usr/lib/x86_64-linux-gnu/libOgreTerrain.so
+/home/simoneforno/simon_ws/devel/lib/libvision_reconfigure.so: /usr/lib/x86_64-linux-gnu/libOgrePaging.so
 /home/simoneforno/simon_ws/devel/lib/libvision_reconfigure.so: /usr/lib/x86_64-linux-gnu/libignition-math2.so
 /home/simoneforno/simon_ws/devel/lib/libvision_reconfigure.so: /opt/ros/kinetic/lib/libnodeletlib.so
 /home/simoneforno/simon_ws/devel/lib/libvision_reconfigure.so: /opt/ros/kinetic/lib/libbondcpp.so
@@ -199,6 +202,9 @@ vision_reconfigure_EXTERNAL_OBJECTS =
 /home/simoneforno/simon_ws/devel/lib/libvision_reconfigure.so: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
 /home/simoneforno/simon_ws/devel/lib/libvision_reconfigure.so: /usr/lib/x86_64-linux-gnu/libpthread.so
 /home/simoneforno/simon_ws/devel/lib/libvision_reconfigure.so: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
+/home/simoneforno/simon_ws/devel/lib/libvision_reconfigure.so: /usr/lib/x86_64-linux-gnu/libOgreMain.so
+/home/simoneforno/simon_ws/devel/lib/libvision_reconfigure.so: /usr/lib/x86_64-linux-gnu/libOgreTerrain.so
+/home/simoneforno/simon_ws/devel/lib/libvision_reconfigure.so: /usr/lib/x86_64-linux-gnu/libOgrePaging.so
 /home/simoneforno/simon_ws/devel/lib/libvision_reconfigure.so: /opt/ros/kinetic/lib/libnodeletlib.so
 /home/simoneforno/simon_ws/devel/lib/libvision_reconfigure.so: /opt/ros/kinetic/lib/libbondcpp.so
 /home/simoneforno/simon_ws/devel/lib/libvision_reconfigure.so: /usr/lib/x86_64-linux-gnu/libuuid.so

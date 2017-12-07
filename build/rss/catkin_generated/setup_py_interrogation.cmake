@@ -1,0 +1,6 @@
+set(rss_SETUP_PY_VERSION "0.0.0")
+set(rss_SETUP_PY_SCRIPTS "")
+set(rss_SETUP_PY_PACKAGES "rss")
+set(rss_SETUP_PY_PACKAGE_DIRS "src/rss")
+set(rss_SETUP_PY_MODULES "")
+set(rss_SETUP_PY_MODULE_DIRS "")

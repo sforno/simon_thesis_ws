@@ -1,0 +1,8 @@
+prefix=/home/simoneforno/simon_ws/devel
+
+Name: tests
+Description: Description of tests
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/simoneforno/simon_ws/devel/lib 
+Requires: 

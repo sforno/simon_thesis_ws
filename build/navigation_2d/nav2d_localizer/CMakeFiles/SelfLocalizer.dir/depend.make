@@ -67,6 +67,8 @@ navigation_2d/nav2d_localizer/CMakeFiles/SelfLocalizer.dir/src/SelfLocalizer.cpp
 navigation_2d/nav2d_localizer/CMakeFiles/SelfLocalizer.dir/src/SelfLocalizer.cpp.o: /opt/ros/kinetic/include/geometry_msgs/Pose.h
 navigation_2d/nav2d_localizer/CMakeFiles/SelfLocalizer.dir/src/SelfLocalizer.cpp.o: /opt/ros/kinetic/include/geometry_msgs/PoseArray.h
 navigation_2d/nav2d_localizer/CMakeFiles/SelfLocalizer.dir/src/SelfLocalizer.cpp.o: /opt/ros/kinetic/include/geometry_msgs/PoseStamped.h
+navigation_2d/nav2d_localizer/CMakeFiles/SelfLocalizer.dir/src/SelfLocalizer.cpp.o: /opt/ros/kinetic/include/geometry_msgs/PoseWithCovariance.h
+navigation_2d/nav2d_localizer/CMakeFiles/SelfLocalizer.dir/src/SelfLocalizer.cpp.o: /opt/ros/kinetic/include/geometry_msgs/PoseWithCovarianceStamped.h
 navigation_2d/nav2d_localizer/CMakeFiles/SelfLocalizer.dir/src/SelfLocalizer.cpp.o: /opt/ros/kinetic/include/geometry_msgs/Quaternion.h
 navigation_2d/nav2d_localizer/CMakeFiles/SelfLocalizer.dir/src/SelfLocalizer.cpp.o: /opt/ros/kinetic/include/geometry_msgs/QuaternionStamped.h
 navigation_2d/nav2d_localizer/CMakeFiles/SelfLocalizer.dir/src/SelfLocalizer.cpp.o: /opt/ros/kinetic/include/geometry_msgs/Transform.h

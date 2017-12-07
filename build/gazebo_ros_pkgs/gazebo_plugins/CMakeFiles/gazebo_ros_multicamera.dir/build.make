@@ -112,6 +112,9 @@ gazebo_ros_multicamera_EXTERNAL_OBJECTS =
 /home/simoneforno/simon_ws/devel/lib/libgazebo_ros_multicamera.so: /usr/lib/x86_64-linux-gnu/libprotobuf.so
 /home/simoneforno/simon_ws/devel/lib/libgazebo_ros_multicamera.so: /usr/lib/x86_64-linux-gnu/libsdformat.so
 /home/simoneforno/simon_ws/devel/lib/libgazebo_ros_multicamera.so: /usr/lib/x86_64-linux-gnu/libignition-math2.so
+/home/simoneforno/simon_ws/devel/lib/libgazebo_ros_multicamera.so: /usr/lib/x86_64-linux-gnu/libOgreMain.so
+/home/simoneforno/simon_ws/devel/lib/libgazebo_ros_multicamera.so: /usr/lib/x86_64-linux-gnu/libOgreTerrain.so
+/home/simoneforno/simon_ws/devel/lib/libgazebo_ros_multicamera.so: /usr/lib/x86_64-linux-gnu/libOgrePaging.so
 /home/simoneforno/simon_ws/devel/lib/libgazebo_ros_multicamera.so: /usr/lib/x86_64-linux-gnu/libignition-math2.so
 /home/simoneforno/simon_ws/devel/lib/libgazebo_ros_multicamera.so: /opt/ros/kinetic/lib/libnodeletlib.so
 /home/simoneforno/simon_ws/devel/lib/libgazebo_ros_multicamera.so: /opt/ros/kinetic/lib/libbondcpp.so
@@ -201,6 +204,9 @@ gazebo_ros_multicamera_EXTERNAL_OBJECTS =
 /home/simoneforno/simon_ws/devel/lib/libgazebo_ros_multicamera.so: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
 /home/simoneforno/simon_ws/devel/lib/libgazebo_ros_multicamera.so: /usr/lib/x86_64-linux-gnu/libpthread.so
 /home/simoneforno/simon_ws/devel/lib/libgazebo_ros_multicamera.so: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
+/home/simoneforno/simon_ws/devel/lib/libgazebo_ros_multicamera.so: /usr/lib/x86_64-linux-gnu/libOgreMain.so
+/home/simoneforno/simon_ws/devel/lib/libgazebo_ros_multicamera.so: /usr/lib/x86_64-linux-gnu/libOgreTerrain.so
+/home/simoneforno/simon_ws/devel/lib/libgazebo_ros_multicamera.so: /usr/lib/x86_64-linux-gnu/libOgrePaging.so
 /home/simoneforno/simon_ws/devel/lib/libgazebo_ros_multicamera.so: /opt/ros/kinetic/lib/libnodeletlib.so
 /home/simoneforno/simon_ws/devel/lib/libgazebo_ros_multicamera.so: /opt/ros/kinetic/lib/libbondcpp.so
 /home/simoneforno/simon_ws/devel/lib/libgazebo_ros_multicamera.so: /usr/lib/x86_64-linux-gnu/libuuid.so

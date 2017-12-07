@@ -11,6 +11,12 @@ ros/ros.h
 -
 visualization_msgs/Marker.h
 -
+ros/ros.h
+-
+visualization_msgs/Marker.h
+-
+cmath
+-
 
 /opt/ros/kinetic/include/geometry_msgs/Point.h
 string

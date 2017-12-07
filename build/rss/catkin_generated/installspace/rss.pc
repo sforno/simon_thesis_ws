@@ -1,0 +1,8 @@
+prefix=/home/simoneforno/simon_ws/install
+
+Name: rss
+Description: Description of rss
+Version: 0.0.0
+Cflags: -I/home/simoneforno/simon_ws/install/include
+Libs: -L/home/simoneforno/simon_ws/install/lib 
+Requires: rospy std_msgs geometry_msgs message_runtime

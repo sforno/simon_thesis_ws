@@ -19,3 +19,10 @@ Max particles 20000
 == map ==
 
 gmapping_tuned.yaml
+
+
+
+== Not sure if to use it ===
+
+
+It is basically the same of Amcl, an average Pose point should be added in the code

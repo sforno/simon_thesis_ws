@@ -1,8 +1,27 @@
 #include "nav2d_localizer/SelfLocalizer.h"
-
+#include "geometry_msgs/Pose.h"
 #include <tf/transform_listener.h>
 #include <math.h>
+#include "ros/ros.h"
+#include "geometry_msgs/PoseWithCovarianceStamped.h"
 
+//using namespace amcl;
+
+typedef struct
+{
+  // Total weight (weights sum to 1)
+  double weight;
+
+  // Mean of pose esimate
+  pf_vector_t pf_pose_mean;
+
+  // Covariance of pose estimate
+  pf_matrix_t pf_pose_cov;
+
+} amcl_hyp_t;
+
+// ros::Publisher final_pose_;
+// final_pose_=nh_.advertise<geometry_msgs::PoseWithCovarianceStamped>("amcl_pose", 2, true); 
 bool isNaN(double a)
 {
 	//return (a != a);
@@ -127,6 +146,7 @@ SelfLocalizer::SelfLocalizer(bool publish)
 	if(mPublishParticles)
 	{
 		mParticlePublisher = localNode.advertise<geometry_msgs::PoseArray>("particles", 1, true);
+		final_pose_=localNode.advertise<geometry_msgs::PoseWithCovarianceStamped>("weighted_pose", 1, true);
 	}
 
 	mFirstScanReceived = false;
@@ -238,7 +258,7 @@ double SelfLocalizer::calculateBeamModel(LaserData *data, pf_sample_set_t* set)
 		sample = set->samples + j;
 		pose = sample->pose;
 
-		pose = pf_vector_coord_add(pose, sLaserPose);
+		pose = pf_vector_coord_add(pose, sLaserPose); // pf_vector_coord_add transforms from local to global coords
 //		pose = pf_vector_coord_sub(pose, sLaserPose);
 
 		double p = 1.0;
@@ -517,28 +537,68 @@ tf::Transform SelfLocalizer::getBestPose()
 	
 	// Wow, is this really the only way to do this !?!
 	double max_weight = 0.0;
+	int max_weight_hyp = -1;
+	std::vector<amcl_hyp_t> hyps;
+	hyps.resize(set->cluster_count);
 	
-	for(int i = 0; i < set->cluster_count; i++)
+	for(int hyp_count = 0; hyp_count < set->cluster_count; hyp_count++)
 	{
 		double weight;
 		pf_vector_t pose_mean;
 		pf_matrix_t pose_cov;
-		if (!pf_get_cluster_stats(mParticleFilter, i, &weight, &pose_mean, &pose_cov))
+		if (!pf_get_cluster_stats(mParticleFilter, hyp_count, &weight, &pose_mean, &pose_cov))
 		{
-			ROS_ERROR("Couldn't get stats on cluster %d", i);
+			ROS_ERROR("Couldn't get stats on cluster %d", hyp_count);
 			break;
 		}
 
-		if(weight > max_weight)
+		hyps[hyp_count].weight = weight;
+		hyps[hyp_count].pf_pose_mean = pose_mean;
+		hyps[hyp_count].pf_pose_cov = pose_cov;
+
+		if(hyps[hyp_count].weight > max_weight)
 		{
-			max_weight = weight;
-			pose = pose_mean;
+		  max_weight = hyps[hyp_count].weight;
+		  max_weight_hyp = hyp_count;
 		}
 	}
 
 	if(max_weight > 0.0)
 	{
-		ROS_DEBUG("Determined pose at: %.3f %.3f %.3f", pose.v[0], pose.v[1], pose.v[2]);
+		ROS_DEBUG("Max weight pose: %.3f %.3f %.3f",
+		hyps[max_weight_hyp].pf_pose_mean.v[0],
+		hyps[max_weight_hyp].pf_pose_mean.v[1],
+		hyps[max_weight_hyp].pf_pose_mean.v[2]);
+
+		geometry_msgs::PoseWithCovarianceStamped q;
+		// Fill in the header
+		q.header.frame_id = mMapFrame.c_str();
+		q.header.stamp = ros::Time::now();;
+		// Copy in the pose
+		q.pose.pose.position.x = hyps[max_weight_hyp].pf_pose_mean.v[0];
+		q.pose.pose.position.y = hyps[max_weight_hyp].pf_pose_mean.v[1];
+		tf::quaternionTFToMsg(tf::createQuaternionFromYaw(hyps[max_weight_hyp].pf_pose_mean.v[2]),
+							  q.pose.pose.orientation);
+
+		// Copy in the covariance into 2D plane
+		
+		pf_sample_set_t* set = mParticleFilter->sets + mParticleFilter->current_set;
+
+		for(int i=0; i<2; i++)
+		{
+		  for(int j=0; j<2; j++)
+		  {
+			// Report the overall filter covariance, rather than the
+			// covariance for the highest-weight cluster
+			//q.covariance[6*i+j] = hyps[max_weight_hyp].pf_pose_cov.m[i][j];
+			q.pose.covariance[i+j] = set->cov.m[i][j];
+		  }
+		}
+
+		q.pose.covariance[9-1] = set->cov.m[2][2];
+
+		final_pose_.publish(q);
+
 	}else
 	{
 		ROS_ERROR("Could not get pose from particle filter!");
