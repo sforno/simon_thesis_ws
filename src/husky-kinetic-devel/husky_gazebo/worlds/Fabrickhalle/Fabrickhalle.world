@@ -1569,5 +1569,42 @@
     <static>1</static>
   </model>
 
+  <!-- Insert one marker in front of the robot-->
+  <model name='Marker1'>
+      <static>1</static>
+      <link name='marker_link'>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://marker1/meshes/Marker1.dae</uri>
+              <scale>.5 .5 .5</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose frame=''>22 8 0 0 -0 0</pose>
+    </model>
+
+    <model name='Marker1'>
+        <pose frame=''>22 8 0 0 -0 0</pose>
+        <scale>.5 .5 .5</scale>
+        <link name='marker_link'>
+          <pose frame=''>22 8 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+
+<gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose frame=''>30.5572 15.0924 11.5571 -0 0.875643 -2.43899</pose>
+        <view_controller>orbit</view_controller>
+        <projection_type>perspective</projection_type>
+      </camera>
+    </gui>
   </world>
 </sdf>

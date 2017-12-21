@@ -1,0 +1,8 @@
+prefix=/home/simoneforno/simon_ws/install
+
+Name: ros_dwm1000
+Description: Description of ros_dwm1000
+Version: 0.0.1
+Cflags: 
+Libs: -L/home/simoneforno/simon_ws/install/lib 
+Requires: 

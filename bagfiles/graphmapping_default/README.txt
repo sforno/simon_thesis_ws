@@ -3,3 +3,7 @@
 [1] An Evaluation of 2D SLAM Techniques Available in ROS, J. Santos, D. Portugal, R. Rocha
 
 == grap_based_localizer is the base file in which Amcl and Graph Localizer should be tested == 
+
+
+
+=== Teleop linear speed for the bag localizer file: left to 0.5 m/s, angular speed 0,25 rd/s, friction coefficient are found under wheel.urdf.xacro
