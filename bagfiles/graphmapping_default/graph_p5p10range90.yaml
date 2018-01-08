@@ -1,0 +1,7 @@
+image: graph_p5p10range90.pgm
+resolution: 0.050000
+origin: [-3.709026, -11.107745, -nan]
+negate: 0
+occupied_thresh: 0.65
+free_thresh: 0.196
+

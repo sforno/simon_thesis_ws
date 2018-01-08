@@ -1,0 +1,7 @@
+image: graph_p500p700range90.pgm
+resolution: 0.050000
+origin: [-3.690613, -9.789269, -nan]
+negate: 0
+occupied_thresh: 0.65
+free_thresh: 0.196
+

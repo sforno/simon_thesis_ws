@@ -19,7 +19,7 @@
 	</node> -->
 
 	<!-- Load the environment map in the map_server -->
-	<node name="MapServer" pkg="map_server" type="map_server" args="$(find nav2d_tutorials)/world/graph_p500_th60.yaml" />
+	<node name="MapServer" pkg="map_server" type="map_server" args="$(find nav2d_tutorials)/world/graph_p10p50range90.yaml" />
 
 	<!-- Start particle filter to track the robot's position -->
 	<node name="SelfLocalizer" pkg="nav2d_localizer" type="localizer">

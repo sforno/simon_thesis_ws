@@ -25,10 +25,10 @@ MultiMapper::MultiMapper()
 	ros::NodeHandle mapperNode("~/");
 	mapperNode.param("grid_resolution", mMapResolution, 0.05);
 	mapperNode.param("range_threshold", mRangeThreshold, 30.0);
-	mapperNode.param("map_update_rate", mMapUpdateRate, 1);
+	mapperNode.param("map_update_rate", mMapUpdateRate, 5);
 	mapperNode.param("publish_pose_graph", mPublishPoseGraph, true);
-	mapperNode.param("max_covariance", mMaxCovariance, 0.05);
-	mapperNode.param("min_map_size", mMinMapSize, 50);
+	mapperNode.param("max_covariance", mMaxCovariance, 0.01);
+	mapperNode.param("min_map_size", mMinMapSize, 100);
 
 	// Apply tf_prefix to all used frame-id's
 	mLaserFrame = mTransformListener.resolve(mLaserFrame);

@@ -1,0 +1,8 @@
+==== How to use bag files to generate pgm files maps and check the results === 
+
+Gmapping wants the laser to point downwards ! Remember
+
+1. roslaunch husky_navigation gmapping.launch
+2. set sim_time true
+3. rosbag play --clock <bagfile.bag> name
+4. rosrun map_server map_saver -f <filename>

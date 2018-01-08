@@ -36,7 +36,7 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
     <param name="gui_publish_rate" value="10.0"/>
     <param name="laser_max_beams" value="60"/>
     <param name="laser_max_range" value="30.0"/>
-    <param name="min_particles" value="6000"/> <!-- 10000 and 15000 for graph mapping, 100 and 5000 is amcl default-->
+    <param name="min_particles" value="6000"/> <!-- 10000 and 15000 for graph map, 100 and 5000 is amcl default-->
     <param name="max_particles" value="9000"/>
     <param name="kld_err" value="0.05"/>
     <param name="kld_z" value="0.99"/>
@@ -44,7 +44,7 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
     <param name="odom_alpha2" value="0.2"/>
     <!-- translation std dev, m -->
     <param name="odom_alpha3" value="0.2"/>
-    <param name="odom_alpha4" value="0.2"/>
+    <param name="odom_alpha4" value="0.05"/>
     <param name="laser_z_hit" value="0.5"/>
     <param name="laser_z_short" value="0.05"/>
     <param name="laser_z_max" value="0.05"/>

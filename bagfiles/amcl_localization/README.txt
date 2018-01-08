@@ -1,27 +1,19 @@
-==== AMCL Graph based localization Parameters used =====
 
-Default all
+== Karto map ===
+
+See Karto-tuned for the new tuned map
 
 Min particles 10.000
 Max particles 15.000
 
+final map name: graph_p10p50range90
 
-== Map ===
-
-Graph_p500_th60 
-
-500 and 60 come from the mapper.yaml file, see the nav2d package
-
-
-
-==== AMCL GMapping based localization ====
+==== GMapping map ====
 
 Min Particles 6000
-
-max Particles 9000
+Max Particles 9000
 
 laser max range : 30 meters
 
-=== Map ===
+final map name: gmapping_tuned (particles 10, see bagfiles/gmapping_tuned the file gmapping_particles10)
 
-Gmapping_tuned.yaml

@@ -1,7 +1,7 @@
 ### Mapper ################################################
 
 grid_resolution: 0.05 # 0.1
-range_threshold: 60.0
+range_threshold: 90.0
 map_update_rate: 5
 publish_pose_graph: true
 max_covariance: 0.01
@@ -10,16 +10,16 @@ min_map_size: 100 # 20
 
 ### Localizer #############################################
 
-min_particles: 100 #2500
-max_particles: 500 #10000
+min_particles: 10 #2500
+max_particles: 50 #10000
 
 ### Karto #################################################
 
 # For a full list of available parameters and their
 # corresponding default values, see OpenKarto/OpenMapper.h
 
-MinimumTravelDistance: 1.0
-MinimumTravelHeading: 0.52
-LoopSearchMaximumDistance: 10.0
+MinimumTravelDistance: 1.0 # to me this is linearUpdate, process new scans after 1 meter
+MinimumTravelHeading: 0.50 # angularUpdate, process new scans after this amount in radiants
+LoopSearchMaximumDistance: 10.0 # Scans less than this distance from the current position will be considered for a match in loop closure
 
 ###########################################################

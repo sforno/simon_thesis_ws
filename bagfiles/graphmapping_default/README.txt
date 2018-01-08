@@ -7,3 +7,9 @@
 
 
 === Teleop linear speed for the bag localizer file: left to 0.5 m/s, angular speed 0,25 rd/s, friction coefficient are found under wheel.urdf.xacro
+
+Create maps from the bag files with:
+- Set sim_time to true
+- Launch the file graph_mapper.launch under the nav2d_tutorials
+- Launch the bag file graph_base_mapping
+

@@ -1,0 +1,5 @@
+=== Using 5 particles, with all default gmapping parameters: relative bad results
+
+=== Using 10 particles gives satisfactory results, we use this map for the Localizers as the tuned map! 
+
+we change only the particles, according to the document of the updates 11 November
