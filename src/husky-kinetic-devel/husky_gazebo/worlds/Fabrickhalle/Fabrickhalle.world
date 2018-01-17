@@ -1568,22 +1568,22 @@
     </link>
     <static>1</static>
     </model>
-     <!-- <model name='Marker0_0'>
-        <pose frame=''>22.7782 7.86939 0 0 -0 0</pose>
-        <link name='link'>
-          <pose frame=''>22.7782 7.86939 0 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+
+    <!-- Try adding two markers into specific world points -->
+
+      <model name='Marker1'>
+        <pose frame=''>20 8.75 0 0 0 3.1415</pose> <!-- flip it to be detected by the Kinect ${M_PI}=3.1415, yaw component -->
+        <link name='marker1_link'>
+          <pose frame=''>20 8.75 0 0 0 3.1415</pose>
         </link>
       </model>
-      <model name='Marker0_0'>
+      <model name='Marker1'>
       <static>1</static>
-      <link name='link'>
+      <link name='marker1_link'>
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>model://marker0/meshes/Marker0.dae</uri>
+              <uri>model://marker1/meshes/Marker1.dae</uri>
             </mesh>
           </geometry>
         </visual>
@@ -1591,7 +1591,77 @@
         <kinematic>0</kinematic>
         <gravity>1</gravity>
       </link>
-      <pose frame=''>22.7782 7.86939 0 0 -0 0</pose>
-    </model> -->
+      <pose frame=''>20 8.75 0 0 -0 3.1415</pose>
+    </model>
+
+    <model name='Marker2'>
+        <pose frame=''>20 7.25 0 0 0 3.1415</pose> <!-- flip it to be detected by the Kinect ${M_PI}=3.1415, yaw component -->
+        <link name='marker2_link'>
+          <pose frame=''>20 7.25 0 0 0 3.1415</pose>
+        </link>
+      </model>
+      <model name='Marker2'>
+      <static>1</static>
+      <link name='marker2_link'>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://marker2/meshes/Marker2.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose frame=''>20 7.25 0 0 0 3.1415</pose>
+    </model>
+
+    <model name='Marker3'>
+        <pose frame=''>18 7.25 0 0 0 3.1415</pose> <!-- flip it to be detected by the Kinect ${M_PI}=3.1415, yaw component -->
+        <link name='marker3_link'>
+          <pose frame=''>18 7.25 0 0 0 3.1415</pose>
+        </link>
+      </model>
+      <model name='Marker3'>
+      <static>1</static>
+      <link name='marker3_link'>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://marker3/meshes/Marker3.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose frame=''>18 7.25 0 0 0 3.1415</pose>
+    </model>
+
+    <model name='Marker4'>
+        <pose frame=''>18 8.75 0 0 0 3.1415</pose> <!-- flip it to be detected by the Kinect ${M_PI}=3.1415, yaw component -->
+        <link name='marker4_link'>
+          <pose frame=''>18 8.75 0 0 0 3.1415</pose>
+        </link>
+      </model>
+      <model name='Marker4'>
+      <static>1</static>
+      <link name='marker4_link'>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://marker4/meshes/Marker4.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose frame=''>18 8.75 0 0 0 3.1415</pose>
+    </model>
+
   </world>
 </sdf>

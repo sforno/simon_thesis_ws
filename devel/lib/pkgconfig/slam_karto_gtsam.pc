@@ -1,8 +1,0 @@
-prefix=/home/simoneforno/simon_ws/devel
-
-Name: slam_karto_gtsam
-Description: Description of slam_karto_gtsam
-Version: 0.7.3
-Cflags: -I/home/simoneforno/simon_ws/src/slam_karto_gtsam/include
-Libs: -L/home/simoneforno/simon_ws/devel/lib 
-Requires: roscpp message_filters nav_msgs open_karto rosconsole roscpp sensor_msgs geometry_msgs tf visualization_msgs

@@ -152,25 +152,59 @@ alpha4 & same as alpha3, but for the translational component\\
 
 \subsection{AMCL with GMapping map}
 
-This case presents a deviation (a translation) due to angular drift; therefore the first parameter that should be tuned is \textbf{alfa4}. The strategy is here to leave the alfa1,2,3 as default to \textbf{2} by only changing the alfa4. \\
+This case presents a deviation (a translation) due to angular drift; therefore the first parameter that should be tuned is \textbf{alfa4}. The strategy is to put all alfas to a small value, then increase it progressionally till the optimal. \\
 The particles of the filter are fixed to \textbf{6000,9000}.
+
+See this link for an answer: https://answers.ros.org/question/227811/tuning-amcls-diff-corrected-and-omni-corrected-odom-models/
 
 \newpage
 \begin{center}
 \captionof{table}{alfa parameters and results}
 \begin{tabular}{| m{12em} | m{13em}|} 
 \hline
-\textbf{alfa4} & \textbf{Results} \\
+\textbf{Parameters} & \textbf{Results} \\
 \hline
- 0.05 &  \\
+ alfa4=0.05 &  Just changing this alone did not produce considerable results at all\\
 \hline
- &  \\
+ alfa4=0.05, alfa3=0.05 &  Also this combinations does not have an effect on the bearing error. The alfas here have been changed to a factor of 20.\\
 \hline
- &  \\
+ alfa3,4=default=2, alfa1,2=0.05 & Also no result in here \\
+\hline
+all alfas to 0.1 & Also did not see nothing relevant\\
+\hline
+alfa1=0.005, alfa2=0.005, alfa3=0.010, alfa4=0.005& No satisfactory results\\
+\hline
+alfas=0.0001 & works now, I loose global localization property with such a small values, if calling the global localization service. \\
 \hline
 \end{tabular}
 \end{center}
 
+\begin{center}
+\captionof{table}{Starting from the corrected alfas = 0,0001, higher progressively alfa3, alfa4 till the optimal}
+\begin{tabular}{| m{12em} | m{13em}|} 
+\hline
+\textbf{Parameters} & \textbf{Results} \\
+\hline
+alfa3,4=0,001 (try a factor of 10 higher) & Still get considerably good results \\
+\hline
+\hline
+alfa3,4=0,01 (try a factor of 10 higher) & With those value the error is not anymore bounded to the 5 centimeters, hence we keep as a good result the value of before. \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\captionof{table}{Update min a/d}
+\begin{tabular}{| m{12em} | m{13em}|} 
+\hline
+\textbf{Parameters} & \textbf{Results} \\
+\hline
+& \\
+\hline
+\hline
+\hline
+\end{tabular}
+\end{center}
 
 
 \end{document}

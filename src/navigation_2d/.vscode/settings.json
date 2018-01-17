@@ -24,6 +24,7 @@
         "typeinfo": "cpp",
         "utility": "cpp",
         "*.tcc": "cpp",
-        "*.ipp": "cpp"
+        "*.ipp": "cpp",
+        "system_error": "cpp"
     }
 }

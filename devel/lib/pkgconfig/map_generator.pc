@@ -1,8 +1,0 @@
-prefix=/home/simoneforno/simon_ws/devel
-
-Name: map_generator
-Description: Description of map_generator
-Version: 0.0.0
-Cflags: 
-Libs: -L/home/simoneforno/simon_ws/devel/lib 
-Requires: costmap_2d nav_msgs navfn roscpp rosgraph_msgs rospy std_msgs

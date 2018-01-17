@@ -1,8 +1,0 @@
-prefix=/home/simoneforno/simon_ws/devel
-
-Name: slam_karto_g2o
-Description: Description of slam_karto_g2o
-Version: 0.7.3
-Cflags: 
-Libs: -L/home/simoneforno/simon_ws/devel/lib 
-Requires: 

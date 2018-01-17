@@ -40,11 +40,11 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
     <param name="max_particles" value="9000"/>
     <param name="kld_err" value="0.05"/>
     <param name="kld_z" value="0.99"/>
-    <param name="odom_alpha1" value="0.2"/>
-    <param name="odom_alpha2" value="0.2"/>
+    <param name="odom_alpha1" value="0.0001"/>
+    <param name="odom_alpha2" value="0.0001"/>
     <!-- translation std dev, m -->
-    <param name="odom_alpha3" value="0.2"/>
-    <param name="odom_alpha4" value="0.05"/>
+    <param name="odom_alpha3" value="0.01"/>
+    <param name="odom_alpha4" value="0.01"/>
     <param name="laser_z_hit" value="0.5"/>
     <param name="laser_z_short" value="0.05"/>
     <param name="laser_z_max" value="0.05"/>
@@ -54,8 +54,8 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
     <param name="laser_model_type" value="likelihood_field"/>
     <!-- <param name="laser_model_type" value="beam"/> -->
     <param name="laser_likelihood_max_dist" value="2.0"/>
-    <param name="update_min_d" value="0.25"/>
-    <param name="update_min_a" value="0.2"/>
+    <param name="update_min_d" value="0.05"/>
+    <param name="update_min_a" value="0.04"/>
     <param name="odom_frame_id" value="odom"/>
     <param name="resample_interval" value="1"/>
     <!-- Increase tolerance because the computer can get quite busy -->
@@ -70,3 +70,7 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
   </node>
 
 </launch>
+
+<!-- default alfas were originally alfa1=alfa2=alfa3=alfa4=0.2-->
+
+<!-- default update_min_a = 0.2, update_min_d = 0.25-->

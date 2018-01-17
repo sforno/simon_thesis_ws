@@ -17,3 +17,5 @@ laser max range : 30 meters
 
 final map name: gmapping_tuned (particles 10, see bagfiles/gmapping_tuned the file gmapping_particles10)
 
+graph_base_localizer is the base file in which the AMCL and Graph-based localization should be tested
+
