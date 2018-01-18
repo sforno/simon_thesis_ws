@@ -7,5 +7,6 @@
 # new environment variables
 
 # modified environment variables
+export PKG_CONFIG_PATH="/home/simoneforno/simon_ws/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
 export PWD="/home/simoneforno/simon_ws/build"
-export ROS_PACKAGE_PATH="/home/simoneforno/simon_ws/src:/opt/ros/kinetic/share"
+export PYTHONPATH="/home/simoneforno/simon_ws/devel/lib/python2.7/dist-packages:$PYTHONPATH"

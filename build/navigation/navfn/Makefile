@@ -56,50 +56,6 @@ CMAKE_BINARY_DIR = /home/simoneforno/simon_ws/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-
-.PHONY : test/fast
-
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: install/local
-
-.PHONY : install/local/fast
-
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # Special rule for the target list_install_components
 list_install_components:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
@@ -109,17 +65,6 @@ list_install_components:
 list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
-
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-
-.PHONY : install/strip/fast
 
 # Special rule for the target install
 install: preinstall
@@ -132,6 +77,61 @@ install/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: install/strip
+
+.PHONY : install/strip/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: install/local
+
+.PHONY : install/local/fast
+
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -166,199 +166,19 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-navigation/navfn/CMakeFiles/navfn_node.dir/rule:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/navfn/CMakeFiles/navfn_node.dir/rule
-.PHONY : navigation/navfn/CMakeFiles/navfn_node.dir/rule
+navigation/navfn/CMakeFiles/navfn_generate_messages_nodejs.dir/rule:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/navfn/CMakeFiles/navfn_generate_messages_nodejs.dir/rule
+.PHONY : navigation/navfn/CMakeFiles/navfn_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
-navfn_node: navigation/navfn/CMakeFiles/navfn_node.dir/rule
+navfn_generate_messages_nodejs: navigation/navfn/CMakeFiles/navfn_generate_messages_nodejs.dir/rule
 
-.PHONY : navfn_node
+.PHONY : navfn_generate_messages_nodejs
 
 # fast build rule for target.
-navfn_node/fast:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f navigation/navfn/CMakeFiles/navfn_node.dir/build.make navigation/navfn/CMakeFiles/navfn_node.dir/build
-.PHONY : navfn_node/fast
-
-# Convenience name for target.
-navigation/navfn/CMakeFiles/navfn.dir/rule:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/navfn/CMakeFiles/navfn.dir/rule
-.PHONY : navigation/navfn/CMakeFiles/navfn.dir/rule
-
-# Convenience name for target.
-navfn: navigation/navfn/CMakeFiles/navfn.dir/rule
-
-.PHONY : navfn
-
-# fast build rule for target.
-navfn/fast:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f navigation/navfn/CMakeFiles/navfn.dir/build.make navigation/navfn/CMakeFiles/navfn.dir/build
-.PHONY : navfn/fast
-
-# Convenience name for target.
-navigation/navfn/CMakeFiles/navfn_genpy.dir/rule:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/navfn/CMakeFiles/navfn_genpy.dir/rule
-.PHONY : navigation/navfn/CMakeFiles/navfn_genpy.dir/rule
-
-# Convenience name for target.
-navfn_genpy: navigation/navfn/CMakeFiles/navfn_genpy.dir/rule
-
-.PHONY : navfn_genpy
-
-# fast build rule for target.
-navfn_genpy/fast:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f navigation/navfn/CMakeFiles/navfn_genpy.dir/build.make navigation/navfn/CMakeFiles/navfn_genpy.dir/build
-.PHONY : navfn_genpy/fast
-
-# Convenience name for target.
-navigation/navfn/CMakeFiles/navfn_generate_messages_py.dir/rule:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/navfn/CMakeFiles/navfn_generate_messages_py.dir/rule
-.PHONY : navigation/navfn/CMakeFiles/navfn_generate_messages_py.dir/rule
-
-# Convenience name for target.
-navfn_generate_messages_py: navigation/navfn/CMakeFiles/navfn_generate_messages_py.dir/rule
-
-.PHONY : navfn_generate_messages_py
-
-# fast build rule for target.
-navfn_generate_messages_py/fast:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f navigation/navfn/CMakeFiles/navfn_generate_messages_py.dir/build.make navigation/navfn/CMakeFiles/navfn_generate_messages_py.dir/build
-.PHONY : navfn_generate_messages_py/fast
-
-# Convenience name for target.
-navigation/navfn/CMakeFiles/navfn_gennodejs.dir/rule:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/navfn/CMakeFiles/navfn_gennodejs.dir/rule
-.PHONY : navigation/navfn/CMakeFiles/navfn_gennodejs.dir/rule
-
-# Convenience name for target.
-navfn_gennodejs: navigation/navfn/CMakeFiles/navfn_gennodejs.dir/rule
-
-.PHONY : navfn_gennodejs
-
-# fast build rule for target.
-navfn_gennodejs/fast:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f navigation/navfn/CMakeFiles/navfn_gennodejs.dir/build.make navigation/navfn/CMakeFiles/navfn_gennodejs.dir/build
-.PHONY : navfn_gennodejs/fast
-
-# Convenience name for target.
-navigation/navfn/CMakeFiles/navfn_generate_messages_cpp.dir/rule:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/navfn/CMakeFiles/navfn_generate_messages_cpp.dir/rule
-.PHONY : navigation/navfn/CMakeFiles/navfn_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-navfn_generate_messages_cpp: navigation/navfn/CMakeFiles/navfn_generate_messages_cpp.dir/rule
-
-.PHONY : navfn_generate_messages_cpp
-
-# fast build rule for target.
-navfn_generate_messages_cpp/fast:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f navigation/navfn/CMakeFiles/navfn_generate_messages_cpp.dir/build.make navigation/navfn/CMakeFiles/navfn_generate_messages_cpp.dir/build
-.PHONY : navfn_generate_messages_cpp/fast
-
-# Convenience name for target.
-navigation/navfn/CMakeFiles/_navfn_generate_messages_check_deps_SetCostmap.dir/rule:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/navfn/CMakeFiles/_navfn_generate_messages_check_deps_SetCostmap.dir/rule
-.PHONY : navigation/navfn/CMakeFiles/_navfn_generate_messages_check_deps_SetCostmap.dir/rule
-
-# Convenience name for target.
-_navfn_generate_messages_check_deps_SetCostmap: navigation/navfn/CMakeFiles/_navfn_generate_messages_check_deps_SetCostmap.dir/rule
-
-.PHONY : _navfn_generate_messages_check_deps_SetCostmap
-
-# fast build rule for target.
-_navfn_generate_messages_check_deps_SetCostmap/fast:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f navigation/navfn/CMakeFiles/_navfn_generate_messages_check_deps_SetCostmap.dir/build.make navigation/navfn/CMakeFiles/_navfn_generate_messages_check_deps_SetCostmap.dir/build
-.PHONY : _navfn_generate_messages_check_deps_SetCostmap/fast
-
-# Convenience name for target.
-navigation/navfn/CMakeFiles/_navfn_generate_messages_check_deps_MakeNavPlan.dir/rule:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/navfn/CMakeFiles/_navfn_generate_messages_check_deps_MakeNavPlan.dir/rule
-.PHONY : navigation/navfn/CMakeFiles/_navfn_generate_messages_check_deps_MakeNavPlan.dir/rule
-
-# Convenience name for target.
-_navfn_generate_messages_check_deps_MakeNavPlan: navigation/navfn/CMakeFiles/_navfn_generate_messages_check_deps_MakeNavPlan.dir/rule
-
-.PHONY : _navfn_generate_messages_check_deps_MakeNavPlan
-
-# fast build rule for target.
-_navfn_generate_messages_check_deps_MakeNavPlan/fast:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f navigation/navfn/CMakeFiles/_navfn_generate_messages_check_deps_MakeNavPlan.dir/build.make navigation/navfn/CMakeFiles/_navfn_generate_messages_check_deps_MakeNavPlan.dir/build
-.PHONY : _navfn_generate_messages_check_deps_MakeNavPlan/fast
-
-# Convenience name for target.
-navigation/navfn/CMakeFiles/navfn_generate_messages.dir/rule:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/navfn/CMakeFiles/navfn_generate_messages.dir/rule
-.PHONY : navigation/navfn/CMakeFiles/navfn_generate_messages.dir/rule
-
-# Convenience name for target.
-navfn_generate_messages: navigation/navfn/CMakeFiles/navfn_generate_messages.dir/rule
-
-.PHONY : navfn_generate_messages
-
-# fast build rule for target.
-navfn_generate_messages/fast:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f navigation/navfn/CMakeFiles/navfn_generate_messages.dir/build.make navigation/navfn/CMakeFiles/navfn_generate_messages.dir/build
-.PHONY : navfn_generate_messages/fast
-
-# Convenience name for target.
-navigation/navfn/CMakeFiles/navfn_generate_messages_eus.dir/rule:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/navfn/CMakeFiles/navfn_generate_messages_eus.dir/rule
-.PHONY : navigation/navfn/CMakeFiles/navfn_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-navfn_generate_messages_eus: navigation/navfn/CMakeFiles/navfn_generate_messages_eus.dir/rule
-
-.PHONY : navfn_generate_messages_eus
-
-# fast build rule for target.
-navfn_generate_messages_eus/fast:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f navigation/navfn/CMakeFiles/navfn_generate_messages_eus.dir/build.make navigation/navfn/CMakeFiles/navfn_generate_messages_eus.dir/build
-.PHONY : navfn_generate_messages_eus/fast
-
-# Convenience name for target.
-navigation/navfn/CMakeFiles/navfn_gencpp.dir/rule:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/navfn/CMakeFiles/navfn_gencpp.dir/rule
-.PHONY : navigation/navfn/CMakeFiles/navfn_gencpp.dir/rule
-
-# Convenience name for target.
-navfn_gencpp: navigation/navfn/CMakeFiles/navfn_gencpp.dir/rule
-
-.PHONY : navfn_gencpp
-
-# fast build rule for target.
-navfn_gencpp/fast:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f navigation/navfn/CMakeFiles/navfn_gencpp.dir/build.make navigation/navfn/CMakeFiles/navfn_gencpp.dir/build
-.PHONY : navfn_gencpp/fast
-
-# Convenience name for target.
-navigation/navfn/CMakeFiles/navfn_geneus.dir/rule:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/navfn/CMakeFiles/navfn_geneus.dir/rule
-.PHONY : navigation/navfn/CMakeFiles/navfn_geneus.dir/rule
-
-# Convenience name for target.
-navfn_geneus: navigation/navfn/CMakeFiles/navfn_geneus.dir/rule
-
-.PHONY : navfn_geneus
-
-# fast build rule for target.
-navfn_geneus/fast:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f navigation/navfn/CMakeFiles/navfn_geneus.dir/build.make navigation/navfn/CMakeFiles/navfn_geneus.dir/build
-.PHONY : navfn_geneus/fast
-
-# Convenience name for target.
-navigation/navfn/CMakeFiles/navfn_genlisp.dir/rule:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/navfn/CMakeFiles/navfn_genlisp.dir/rule
-.PHONY : navigation/navfn/CMakeFiles/navfn_genlisp.dir/rule
-
-# Convenience name for target.
-navfn_genlisp: navigation/navfn/CMakeFiles/navfn_genlisp.dir/rule
-
-.PHONY : navfn_genlisp
-
-# fast build rule for target.
-navfn_genlisp/fast:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f navigation/navfn/CMakeFiles/navfn_genlisp.dir/build.make navigation/navfn/CMakeFiles/navfn_genlisp.dir/build
-.PHONY : navfn_genlisp/fast
+navfn_generate_messages_nodejs/fast:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f navigation/navfn/CMakeFiles/navfn_generate_messages_nodejs.dir/build.make navigation/navfn/CMakeFiles/navfn_generate_messages_nodejs.dir/build
+.PHONY : navfn_generate_messages_nodejs/fast
 
 # Convenience name for target.
 navigation/navfn/CMakeFiles/navfn_generate_messages_lisp.dir/rule:
@@ -376,19 +196,214 @@ navfn_generate_messages_lisp/fast:
 .PHONY : navfn_generate_messages_lisp/fast
 
 # Convenience name for target.
-navigation/navfn/CMakeFiles/navfn_generate_messages_nodejs.dir/rule:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/navfn/CMakeFiles/navfn_generate_messages_nodejs.dir/rule
-.PHONY : navigation/navfn/CMakeFiles/navfn_generate_messages_nodejs.dir/rule
+navigation/navfn/CMakeFiles/navfn_geneus.dir/rule:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/navfn/CMakeFiles/navfn_geneus.dir/rule
+.PHONY : navigation/navfn/CMakeFiles/navfn_geneus.dir/rule
 
 # Convenience name for target.
-navfn_generate_messages_nodejs: navigation/navfn/CMakeFiles/navfn_generate_messages_nodejs.dir/rule
+navfn_geneus: navigation/navfn/CMakeFiles/navfn_geneus.dir/rule
 
-.PHONY : navfn_generate_messages_nodejs
+.PHONY : navfn_geneus
 
 # fast build rule for target.
-navfn_generate_messages_nodejs/fast:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f navigation/navfn/CMakeFiles/navfn_generate_messages_nodejs.dir/build.make navigation/navfn/CMakeFiles/navfn_generate_messages_nodejs.dir/build
-.PHONY : navfn_generate_messages_nodejs/fast
+navfn_geneus/fast:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f navigation/navfn/CMakeFiles/navfn_geneus.dir/build.make navigation/navfn/CMakeFiles/navfn_geneus.dir/build
+.PHONY : navfn_geneus/fast
+
+# Convenience name for target.
+navigation/navfn/CMakeFiles/navfn_gencpp.dir/rule:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/navfn/CMakeFiles/navfn_gencpp.dir/rule
+.PHONY : navigation/navfn/CMakeFiles/navfn_gencpp.dir/rule
+
+# Convenience name for target.
+navfn_gencpp: navigation/navfn/CMakeFiles/navfn_gencpp.dir/rule
+
+.PHONY : navfn_gencpp
+
+# fast build rule for target.
+navfn_gencpp/fast:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f navigation/navfn/CMakeFiles/navfn_gencpp.dir/build.make navigation/navfn/CMakeFiles/navfn_gencpp.dir/build
+.PHONY : navfn_gencpp/fast
+
+# Convenience name for target.
+navigation/navfn/CMakeFiles/navfn_generate_messages_eus.dir/rule:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/navfn/CMakeFiles/navfn_generate_messages_eus.dir/rule
+.PHONY : navigation/navfn/CMakeFiles/navfn_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+navfn_generate_messages_eus: navigation/navfn/CMakeFiles/navfn_generate_messages_eus.dir/rule
+
+.PHONY : navfn_generate_messages_eus
+
+# fast build rule for target.
+navfn_generate_messages_eus/fast:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f navigation/navfn/CMakeFiles/navfn_generate_messages_eus.dir/build.make navigation/navfn/CMakeFiles/navfn_generate_messages_eus.dir/build
+.PHONY : navfn_generate_messages_eus/fast
+
+# Convenience name for target.
+navigation/navfn/CMakeFiles/navfn_generate_messages.dir/rule:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/navfn/CMakeFiles/navfn_generate_messages.dir/rule
+.PHONY : navigation/navfn/CMakeFiles/navfn_generate_messages.dir/rule
+
+# Convenience name for target.
+navfn_generate_messages: navigation/navfn/CMakeFiles/navfn_generate_messages.dir/rule
+
+.PHONY : navfn_generate_messages
+
+# fast build rule for target.
+navfn_generate_messages/fast:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f navigation/navfn/CMakeFiles/navfn_generate_messages.dir/build.make navigation/navfn/CMakeFiles/navfn_generate_messages.dir/build
+.PHONY : navfn_generate_messages/fast
+
+# Convenience name for target.
+navigation/navfn/CMakeFiles/_navfn_generate_messages_check_deps_MakeNavPlan.dir/rule:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/navfn/CMakeFiles/_navfn_generate_messages_check_deps_MakeNavPlan.dir/rule
+.PHONY : navigation/navfn/CMakeFiles/_navfn_generate_messages_check_deps_MakeNavPlan.dir/rule
+
+# Convenience name for target.
+_navfn_generate_messages_check_deps_MakeNavPlan: navigation/navfn/CMakeFiles/_navfn_generate_messages_check_deps_MakeNavPlan.dir/rule
+
+.PHONY : _navfn_generate_messages_check_deps_MakeNavPlan
+
+# fast build rule for target.
+_navfn_generate_messages_check_deps_MakeNavPlan/fast:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f navigation/navfn/CMakeFiles/_navfn_generate_messages_check_deps_MakeNavPlan.dir/build.make navigation/navfn/CMakeFiles/_navfn_generate_messages_check_deps_MakeNavPlan.dir/build
+.PHONY : _navfn_generate_messages_check_deps_MakeNavPlan/fast
+
+# Convenience name for target.
+navigation/navfn/CMakeFiles/navfn_genlisp.dir/rule:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/navfn/CMakeFiles/navfn_genlisp.dir/rule
+.PHONY : navigation/navfn/CMakeFiles/navfn_genlisp.dir/rule
+
+# Convenience name for target.
+navfn_genlisp: navigation/navfn/CMakeFiles/navfn_genlisp.dir/rule
+
+.PHONY : navfn_genlisp
+
+# fast build rule for target.
+navfn_genlisp/fast:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f navigation/navfn/CMakeFiles/navfn_genlisp.dir/build.make navigation/navfn/CMakeFiles/navfn_genlisp.dir/build
+.PHONY : navfn_genlisp/fast
+
+# Convenience name for target.
+navigation/navfn/CMakeFiles/_navfn_generate_messages_check_deps_SetCostmap.dir/rule:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/navfn/CMakeFiles/_navfn_generate_messages_check_deps_SetCostmap.dir/rule
+.PHONY : navigation/navfn/CMakeFiles/_navfn_generate_messages_check_deps_SetCostmap.dir/rule
+
+# Convenience name for target.
+_navfn_generate_messages_check_deps_SetCostmap: navigation/navfn/CMakeFiles/_navfn_generate_messages_check_deps_SetCostmap.dir/rule
+
+.PHONY : _navfn_generate_messages_check_deps_SetCostmap
+
+# fast build rule for target.
+_navfn_generate_messages_check_deps_SetCostmap/fast:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f navigation/navfn/CMakeFiles/_navfn_generate_messages_check_deps_SetCostmap.dir/build.make navigation/navfn/CMakeFiles/_navfn_generate_messages_check_deps_SetCostmap.dir/build
+.PHONY : _navfn_generate_messages_check_deps_SetCostmap/fast
+
+# Convenience name for target.
+navigation/navfn/CMakeFiles/navfn_generate_messages_cpp.dir/rule:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/navfn/CMakeFiles/navfn_generate_messages_cpp.dir/rule
+.PHONY : navigation/navfn/CMakeFiles/navfn_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+navfn_generate_messages_cpp: navigation/navfn/CMakeFiles/navfn_generate_messages_cpp.dir/rule
+
+.PHONY : navfn_generate_messages_cpp
+
+# fast build rule for target.
+navfn_generate_messages_cpp/fast:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f navigation/navfn/CMakeFiles/navfn_generate_messages_cpp.dir/build.make navigation/navfn/CMakeFiles/navfn_generate_messages_cpp.dir/build
+.PHONY : navfn_generate_messages_cpp/fast
+
+# Convenience name for target.
+navigation/navfn/CMakeFiles/navtest.dir/rule:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/navfn/CMakeFiles/navtest.dir/rule
+.PHONY : navigation/navfn/CMakeFiles/navtest.dir/rule
+
+# Convenience name for target.
+navtest: navigation/navfn/CMakeFiles/navtest.dir/rule
+
+.PHONY : navtest
+
+# fast build rule for target.
+navtest/fast:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f navigation/navfn/CMakeFiles/navtest.dir/build.make navigation/navfn/CMakeFiles/navtest.dir/build
+.PHONY : navtest/fast
+
+# Convenience name for target.
+navigation/navfn/CMakeFiles/navfn_generate_messages_py.dir/rule:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/navfn/CMakeFiles/navfn_generate_messages_py.dir/rule
+.PHONY : navigation/navfn/CMakeFiles/navfn_generate_messages_py.dir/rule
+
+# Convenience name for target.
+navfn_generate_messages_py: navigation/navfn/CMakeFiles/navfn_generate_messages_py.dir/rule
+
+.PHONY : navfn_generate_messages_py
+
+# fast build rule for target.
+navfn_generate_messages_py/fast:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f navigation/navfn/CMakeFiles/navfn_generate_messages_py.dir/build.make navigation/navfn/CMakeFiles/navfn_generate_messages_py.dir/build
+.PHONY : navfn_generate_messages_py/fast
+
+# Convenience name for target.
+navigation/navfn/CMakeFiles/navfn_genpy.dir/rule:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/navfn/CMakeFiles/navfn_genpy.dir/rule
+.PHONY : navigation/navfn/CMakeFiles/navfn_genpy.dir/rule
+
+# Convenience name for target.
+navfn_genpy: navigation/navfn/CMakeFiles/navfn_genpy.dir/rule
+
+.PHONY : navfn_genpy
+
+# fast build rule for target.
+navfn_genpy/fast:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f navigation/navfn/CMakeFiles/navfn_genpy.dir/build.make navigation/navfn/CMakeFiles/navfn_genpy.dir/build
+.PHONY : navfn_genpy/fast
+
+# Convenience name for target.
+navigation/navfn/CMakeFiles/navfn.dir/rule:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/navfn/CMakeFiles/navfn.dir/rule
+.PHONY : navigation/navfn/CMakeFiles/navfn.dir/rule
+
+# Convenience name for target.
+navfn: navigation/navfn/CMakeFiles/navfn.dir/rule
+
+.PHONY : navfn
+
+# fast build rule for target.
+navfn/fast:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f navigation/navfn/CMakeFiles/navfn.dir/build.make navigation/navfn/CMakeFiles/navfn.dir/build
+.PHONY : navfn/fast
+
+# Convenience name for target.
+navigation/navfn/CMakeFiles/navfn_gennodejs.dir/rule:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/navfn/CMakeFiles/navfn_gennodejs.dir/rule
+.PHONY : navigation/navfn/CMakeFiles/navfn_gennodejs.dir/rule
+
+# Convenience name for target.
+navfn_gennodejs: navigation/navfn/CMakeFiles/navfn_gennodejs.dir/rule
+
+.PHONY : navfn_gennodejs
+
+# fast build rule for target.
+navfn_gennodejs/fast:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f navigation/navfn/CMakeFiles/navfn_gennodejs.dir/build.make navigation/navfn/CMakeFiles/navfn_gennodejs.dir/build
+.PHONY : navfn_gennodejs/fast
+
+# Convenience name for target.
+navigation/navfn/CMakeFiles/navfn_node.dir/rule:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/navfn/CMakeFiles/navfn_node.dir/rule
+.PHONY : navigation/navfn/CMakeFiles/navfn_node.dir/rule
+
+# Convenience name for target.
+navfn_node: navigation/navfn/CMakeFiles/navfn_node.dir/rule
+
+.PHONY : navfn_node
+
+# fast build rule for target.
+navfn_node/fast:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f navigation/navfn/CMakeFiles/navfn_node.dir/build.make navigation/navfn/CMakeFiles/navfn_node.dir/build
+.PHONY : navfn_node/fast
 
 src/navfn.o: src/navfn.cpp.o
 
@@ -471,34 +486,89 @@ src/navfn_ros.cpp.s:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f navigation/navfn/CMakeFiles/navfn.dir/build.make navigation/navfn/CMakeFiles/navfn.dir/src/navfn_ros.cpp.s
 .PHONY : src/navfn_ros.cpp.s
 
+src/navtest.o: src/navtest.cpp.o
+
+.PHONY : src/navtest.o
+
+# target to build an object file
+src/navtest.cpp.o:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f navigation/navfn/CMakeFiles/navtest.dir/build.make navigation/navfn/CMakeFiles/navtest.dir/src/navtest.cpp.o
+.PHONY : src/navtest.cpp.o
+
+src/navtest.i: src/navtest.cpp.i
+
+.PHONY : src/navtest.i
+
+# target to preprocess a source file
+src/navtest.cpp.i:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f navigation/navfn/CMakeFiles/navtest.dir/build.make navigation/navfn/CMakeFiles/navtest.dir/src/navtest.cpp.i
+.PHONY : src/navtest.cpp.i
+
+src/navtest.s: src/navtest.cpp.s
+
+.PHONY : src/navtest.s
+
+# target to generate assembly for a file
+src/navtest.cpp.s:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f navigation/navfn/CMakeFiles/navtest.dir/build.make navigation/navfn/CMakeFiles/navtest.dir/src/navtest.cpp.s
+.PHONY : src/navtest.cpp.s
+
+src/navwin.o: src/navwin.cpp.o
+
+.PHONY : src/navwin.o
+
+# target to build an object file
+src/navwin.cpp.o:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f navigation/navfn/CMakeFiles/navtest.dir/build.make navigation/navfn/CMakeFiles/navtest.dir/src/navwin.cpp.o
+.PHONY : src/navwin.cpp.o
+
+src/navwin.i: src/navwin.cpp.i
+
+.PHONY : src/navwin.i
+
+# target to preprocess a source file
+src/navwin.cpp.i:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f navigation/navfn/CMakeFiles/navtest.dir/build.make navigation/navfn/CMakeFiles/navtest.dir/src/navwin.cpp.i
+.PHONY : src/navwin.cpp.i
+
+src/navwin.s: src/navwin.cpp.s
+
+.PHONY : src/navwin.s
+
+# target to generate assembly for a file
+src/navwin.cpp.s:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f navigation/navfn/CMakeFiles/navtest.dir/build.make navigation/navfn/CMakeFiles/navtest.dir/src/navwin.cpp.s
+.PHONY : src/navwin.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... rebuild_cache"
-	@echo "... test"
-	@echo "... install/local"
-	@echo "... navfn_node"
-	@echo "... navfn"
-	@echo "... navfn_genpy"
-	@echo "... navfn_generate_messages_py"
-	@echo "... navfn_gennodejs"
-	@echo "... navfn_generate_messages_cpp"
-	@echo "... edit_cache"
-	@echo "... _navfn_generate_messages_check_deps_SetCostmap"
 	@echo "... list_install_components"
-	@echo "... install/strip"
-	@echo "... _navfn_generate_messages_check_deps_MakeNavPlan"
-	@echo "... navfn_generate_messages"
-	@echo "... install"
-	@echo "... navfn_generate_messages_eus"
-	@echo "... navfn_gencpp"
-	@echo "... navfn_geneus"
-	@echo "... navfn_genlisp"
-	@echo "... navfn_generate_messages_lisp"
 	@echo "... navfn_generate_messages_nodejs"
+	@echo "... navfn_generate_messages_lisp"
+	@echo "... navfn_geneus"
+	@echo "... navfn_gencpp"
+	@echo "... navfn_generate_messages_eus"
+	@echo "... install"
+	@echo "... navfn_generate_messages"
+	@echo "... _navfn_generate_messages_check_deps_MakeNavPlan"
+	@echo "... navfn_genlisp"
+	@echo "... install/strip"
+	@echo "... _navfn_generate_messages_check_deps_SetCostmap"
+	@echo "... edit_cache"
+	@echo "... navfn_generate_messages_cpp"
+	@echo "... navtest"
+	@echo "... navfn_generate_messages_py"
+	@echo "... navfn_genpy"
+	@echo "... navfn"
+	@echo "... navfn_gennodejs"
+	@echo "... navfn_node"
+	@echo "... install/local"
+	@echo "... test"
+	@echo "... rebuild_cache"
 	@echo "... src/navfn.o"
 	@echo "... src/navfn.i"
 	@echo "... src/navfn.s"
@@ -508,6 +578,12 @@ help:
 	@echo "... src/navfn_ros.o"
 	@echo "... src/navfn_ros.i"
 	@echo "... src/navfn_ros.s"
+	@echo "... src/navtest.o"
+	@echo "... src/navtest.i"
+	@echo "... src/navtest.s"
+	@echo "... src/navwin.o"
+	@echo "... src/navwin.i"
+	@echo "... src/navwin.s"
 .PHONY : help
 
 

@@ -1,8 +1,0 @@
-prefix=/home/simoneforno/simon_ws/install
-
-Name: data_converter
-Description: Description of data_converter
-Version: 0.0.0
-Cflags: -I/home/simoneforno/simon_ws/install/include
-Libs: -L/home/simoneforno/simon_ws/install/lib -ldata_converter
-Requires: geometry_msgs roscpp rospy std_msgs tf ar_track_alvar
