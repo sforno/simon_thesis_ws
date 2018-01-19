@@ -152,12 +152,13 @@ alpha4 & same as alpha3, but for the translational component\\
 
 \subsection{AMCL with GMapping map}
 
+\textbf{We do not tune the AMLC for both the maps, we keep AMCL params the same as the Graph Localizer and give the two map inputs for comparison (map inputs are the one changing in parameters)}. \\
+
 This case presents a deviation (a translation) due to angular drift; therefore the first parameter that should be tuned is \textbf{alfa4}. The strategy is to put all alfas to a small value, then increase it progressionally till the optimal. \\
 The particles of the filter are fixed to \textbf{6000,9000}.
 
 See this link for an answer: https://answers.ros.org/question/227811/tuning-amcls-diff-corrected-and-omni-corrected-odom-models/
 
-\newpage
 \begin{center}
 \captionof{table}{alfa parameters and results}
 \begin{tabular}{| m{12em} | m{13em}|} 
@@ -188,10 +189,14 @@ alfas=0.0001 & works now, I loose global localization property with such a small
 alfa3,4=0,001 (try a factor of 10 higher) & Still get considerably good results \\
 \hline
 \hline
-alfa3,4=0,01 (try a factor of 10 higher) & With those value the error is not anymore bounded to the 5 centimeters, hence we keep as a good result the value of before. \\
+alfa3,4=0,01 (try a factor of 10 higher) & With those value the error is not anymore bounded to the 5 centimeters, hence we keep as a good result the value of before with alfas3,4=0,001. \\
+\hline
+minparticle = 6000, maxparticle= 9000 & The tuned ones\\
 \hline
 \end{tabular}
 \end{center}
+
+For the update of min{\_} and min{\_}d see the folder update{\_}min{\_}a{\_}d under bagfiles/amcl{\_}localization.
 
 \begin{center}
 \captionof{table}{Update min a/d}
@@ -199,13 +204,19 @@ alfa3,4=0,01 (try a factor of 10 higher) & With those value the error is not any
 \hline
 \textbf{Parameters} & \textbf{Results} \\
 \hline
-& \\
-\hline
-\hline
+Keep min{\_}d 0.2 and min{\_}a = 0.25 as default values & Plot the difference in changing their values. \\
 \hline
 \end{tabular}
 \end{center}
 
+
+\section{Comparing AMCL with the two different map inputs}
+
+
+
+\section{Comparing Graph-Localizer with the two different map inputs}
+
+The Graph Localizer is not working with the same params as the AMCL, it should be tuned the same way as the AMCL, starting from particles, then alfas and finally update translation and rotation. We tune this on the \textbf{GMapping tuned} map. 
 
 \end{document}
 

@@ -110,6 +110,9 @@ gazebo_ros_paths_plugin_EXTERNAL_OBJECTS =
 /home/simoneforno/simon_ws/devel/lib/libgazebo_ros_paths_plugin.so: /usr/lib/x86_64-linux-gnu/libprotobuf.so
 /home/simoneforno/simon_ws/devel/lib/libgazebo_ros_paths_plugin.so: /usr/lib/x86_64-linux-gnu/libsdformat.so
 /home/simoneforno/simon_ws/devel/lib/libgazebo_ros_paths_plugin.so: /usr/lib/x86_64-linux-gnu/libignition-math2.so
+/home/simoneforno/simon_ws/devel/lib/libgazebo_ros_paths_plugin.so: /usr/lib/x86_64-linux-gnu/libOgreMain.so
+/home/simoneforno/simon_ws/devel/lib/libgazebo_ros_paths_plugin.so: /usr/lib/x86_64-linux-gnu/libOgreTerrain.so
+/home/simoneforno/simon_ws/devel/lib/libgazebo_ros_paths_plugin.so: /usr/lib/x86_64-linux-gnu/libOgrePaging.so
 /home/simoneforno/simon_ws/devel/lib/libgazebo_ros_paths_plugin.so: /usr/lib/x86_64-linux-gnu/libignition-math2.so
 /home/simoneforno/simon_ws/devel/lib/libgazebo_ros_paths_plugin.so: /opt/ros/kinetic/lib/libroslib.so
 /home/simoneforno/simon_ws/devel/lib/libgazebo_ros_paths_plugin.so: /opt/ros/kinetic/lib/librospack.so
@@ -147,6 +150,9 @@ gazebo_ros_paths_plugin_EXTERNAL_OBJECTS =
 /home/simoneforno/simon_ws/devel/lib/libgazebo_ros_paths_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
 /home/simoneforno/simon_ws/devel/lib/libgazebo_ros_paths_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
 /home/simoneforno/simon_ws/devel/lib/libgazebo_ros_paths_plugin.so: /usr/lib/x86_64-linux-gnu/libpthread.so
+/home/simoneforno/simon_ws/devel/lib/libgazebo_ros_paths_plugin.so: /usr/lib/x86_64-linux-gnu/libOgreMain.so
+/home/simoneforno/simon_ws/devel/lib/libgazebo_ros_paths_plugin.so: /usr/lib/x86_64-linux-gnu/libOgreTerrain.so
+/home/simoneforno/simon_ws/devel/lib/libgazebo_ros_paths_plugin.so: /usr/lib/x86_64-linux-gnu/libOgrePaging.so
 /home/simoneforno/simon_ws/devel/lib/libgazebo_ros_paths_plugin.so: /opt/ros/kinetic/lib/libroslib.so
 /home/simoneforno/simon_ws/devel/lib/libgazebo_ros_paths_plugin.so: /opt/ros/kinetic/lib/librospack.so
 /home/simoneforno/simon_ws/devel/lib/libgazebo_ros_paths_plugin.so: /usr/lib/x86_64-linux-gnu/libpython2.7.so

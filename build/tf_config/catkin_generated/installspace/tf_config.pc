@@ -1,0 +1,8 @@
+prefix=/home/simoneforno/simon_ws/install
+
+Name: tf_config
+Description: Description of tf_config
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/simoneforno/simon_ws/install/lib 
+Requires: 
