@@ -13,7 +13,7 @@
   while(n.ok()){
     broadcaster.sendTransform(
       tf::StampedTransform(
-        tf::Transform(tf::Quaternion(0, 0, 0, 1), tf::Vector3(4, .25, 0)),
+        tf::Transform(tf::Quaternion(0, 0, 0, 1), tf::Vector3(4, 0.25, 0)),
         ros::Time::now(),"map", "ar_marker_1"));
    broadcaster.sendTransform(
       tf::StampedTransform(
