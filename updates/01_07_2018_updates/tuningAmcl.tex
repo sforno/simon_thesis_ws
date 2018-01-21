@@ -152,10 +152,11 @@ alpha4 & same as alpha3, but for the translational component\\
 
 \subsection{AMCL with GMapping map}
 
-\textbf{We do not tune the AMLC for both the maps, we keep AMCL params the same as the Graph Localizer and give the two map inputs for comparison (map inputs are the one changing in parameters)}. \\
+%\textbf{We do not tune the AMLC for both the maps, we keep AMCL params the same as the Graph Localizer and give the two map inputs for comparison (map inputs are the one changing in parameters)}. \\
 
-This case presents a deviation (a translation) due to angular drift; therefore the first parameter that should be tuned is \textbf{alfa4}. The strategy is to put all alfas to a small value, then increase it progressionally till the optimal. \\
-The particles of the filter are fixed to \textbf{6000,9000}.
+%The particles of the filter are fixed to \textbf{6000,9000}.
+
+Due to a small deviation (1/2 cm over 37 meters) between the $odometry/filtered$ and the markers, we can assume the EKF to be our ground thruth. We also did some wrong considerations for tuning, please see \textbf{Table5} for the new tuning.
 
 See this link for an answer: https://answers.ros.org/question/227811/tuning-amcls-diff-corrected-and-omni-corrected-odom-models/
 
@@ -209,14 +210,51 @@ Keep min{\_}d 0.2 and min{\_}a = 0.25 as default values & Plot the difference in
 \end{tabular}
 \end{center}
 
+\begin{center}
+\captionof{table}{Final tuning Amcl}
+\begin{tabular}{| m{12em} | m{13em}|} 
+\hline
+\textbf{Parameters} & \textbf{Results} \\
+\hline
+min{\_}particles= 10 max{\_}particles= 9000 & min is the end number of particles after filter update, max is the spread number at the beginning\\
+\hline
+min=10, max=9000, alfas=0.2 (default) & Here I am expecting the large error value, infact. \textbf{This works} \\
+\hline
+Curious to see how the error changes with an max= 12000 & Interesting, with too high particles unable to get convergence, but multimodal distribution. This can be explained by: http://roboticsknowledgebase.com/wiki/state-estimation/adaptive-monte-carlo-localization/. Infact, as the robot moves forward we apply the odom to all the samples (particles), a weight needs to be adressed to all particle, and more resampling steps are needed for convergence. This cause a delay in the filter convergence. \\
+\hline
+maxparticle 10000 & Converging wrongly\\
+\hline
+max particle= 9000, alfas.1 & No difference with previous case\\
+\hline
+mapart= 9000, alfa1,2,3=0.1, alfa4=0.005 (error is translation due to rotation)& No results\\
+\hline
+maxpart = 9000, alfa1,2=0.1 alfa3,4=0.005 & Converges correctly but no final result\\
+\hline
+max part = 9000 alfa1,2 = 0.005, alfa3,4=0.1 & Results in wrong convergence after global localization, lost global loc \\
+\hline
+max part = 9000, alfa1,2 = 0.1,  alfa3,4 = 0.0005 & Still 20 cm error \\
+\hline
+max part = 9000, alfa1,2 = 0.1,  alfa3,4 = 0.0001 & Still 20 cm error \\
+\hline
+alfa1,2,3 = 0.1 alfa 4= 0.0001 & If this does not work I keep alfas 3,4 low = 0.0005 and go back with alfa 1,2 till I loose global loc. This does not work\\
+\hline
+alfa1,2 = 0.08, alfa3,4 = 0.0005 (get alfas 1,2 to a lower value progressively) & No result in lowering progressively alfas 1,2\\ 
+\hline
+alfa 1,2 = 0.1 and alfa3,4 = 0.00005 & No change\\
+\hline
+Tried stupid values like 1 & The error is not alfa sensitive \\
+\hline
+\end{tabular}
+\end{center}
 
-\section{Comparing AMCL with the two different map inputs}
+
+%\section{Comparing AMCL with the two different map inputs}
 
 
 
-\section{Comparing Graph-Localizer with the two different map inputs}
+%\section{Comparing Graph-Localizer with the two different map inputs}
 
-The Graph Localizer is not working with the same params as the AMCL, it should be tuned the same way as the AMCL, starting from particles, then alfas and finally update translation and rotation. We tune this on the \textbf{GMapping tuned} map. 
+%The Graph Localizer is not working with the same params as the AMCL, it should be tuned the same way as the AMCL, starting from particles, then alfas and finally update translation and rotation. We tune this on the \textbf{GMapping tuned} map. 
 
 \end{document}
 

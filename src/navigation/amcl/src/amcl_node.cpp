@@ -333,7 +333,7 @@ AmclNode::AmclNode() :
   double tmp;
   private_nh_.param("gui_publish_rate", tmp, -1.0);
   gui_publish_period = ros::Duration(1.0/tmp);
-  private_nh_.param("save_pose_rate", tmp, 0.5);
+  private_nh_.param("save_pose_rate", tmp, 0.5); //oroginal 0.5
   save_pose_period = ros::Duration(1.0/tmp);
 
   private_nh_.param("laser_min_range", laser_min_range_, -1.0);

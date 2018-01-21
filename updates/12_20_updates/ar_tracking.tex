@@ -126,18 +126,23 @@
 \section{Inserting the Kinect camera into Husky}
 Short description on how to modify the Gazebo files to put Sick Laser range finder or alternatively the Kinect camera. it is sufficient to modify the husky-fabrickhalle.launch file to change the robot configuration. The \textbf{urdf} and \textbf{gazebo} files in the husky kinetic devel should remain the same. \\
 
-\section{Kinect camera data}
+\section{Data Converter node}
 
-Order data after in a table:
-\begin{itemize}
-\item update rate: publish a message of the sensor every N. frames specified. Eg. 200, publish the message every 200 frames, not perfectly sure with it.
-\item RGB image height and width
-\item horizontal Field of View has been placed to 90 deg to capture tags properly
-\end{itemize}
+Transforms PoseStamped messages arriving from the \textbf{ar track pkg} into PoseWithCovarianceStamped. We publish separate markers into separate topics. To have this type of data structure similar to the original message type PoseStamped, message $headers$ should be copied: new message.header = old message.header .
+
+\begin{figure}[H]
+	\center
+	\includegraphics[width=1\textwidth]{figures/marker_struct.png}
+	\caption{Data structure of PoseWithCovariance message of the node dataconverter}
+	\label{fig:marker}
+\end{figure}
+
+Ones values were the same we are satisfied. \\
+
 
 \section{Robot localization pkg}
 
-Some useful parameters of the package robot{\_}localization: http://wiki.ros.org/robot{\_}localization.
+We have to find a way to get a map to markers transformation for the EKF node.
 
 \end{document}
 

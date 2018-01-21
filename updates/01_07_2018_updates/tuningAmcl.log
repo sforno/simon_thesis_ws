@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6400) (preloaded format=pdflatex 2017.9.18)  18 JAN 2018 14:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6400) (preloaded format=pdflatex 2017.9.18)  20 JAN 2018 20:29
 entering extended mode
 **./tuningAmcl.tex
 (tuningAmcl.tex
@@ -1167,17 +1167,22 @@ input line 148.
 Package pdftex.def Info: Requested size: 338.58632pt x 103.44319pt on input lin
 e 148.
 
-Underfull \hbox (badness 10000) in paragraph at lines 155--156
+Underfull \hbox (badness 10000) in paragraph at lines 173--173
+[]|\OT1/cmr/m/n/10.95 alfa3,4=default=2,
+ []
 
+
+Underfull \hbox (badness 6396) in paragraph at lines 177--177
+[]|\OT1/cmr/m/n/10.95 alfa1=0.005, alfa2=0.005,
  []
 
 <figures/tue_logo.png, id=5, 813.0375pt x 426.59375pt>
 File: figures/tue_logo.png Graphic file (type png)
 <use figures/tue_logo.png>
-Package pdftex.def Info: figures/tue_logo.png  used on input line 160. on input
- line 160.
+Package pdftex.def Info: figures/tue_logo.png  used on input line 182. on input
+ line 182.
 Package pdftex.def Info: Requested size: 43.37115pt x 22.76228pt on input line 
-160.
+182.
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 26.84232pt.
@@ -1189,58 +1194,128 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 
  <./figures/tue_logo.png> <./figures/motion_models.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 172--172
-[]|\OT1/cmr/m/n/10.95 alfa3,4=default=2,
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
+[]|\OT1/cmr/m/n/10.95 min[]particles= 10
  []
 
 
-Underfull \hbox (badness 6396) in paragraph at lines 176--176
-[]|\OT1/cmr/m/n/10.95 alfa1=0.005, alfa2=0.005,
+Underfull \hbox (badness 5475) in paragraph at lines 221--221
+[]|\OT1/cmr/m/n/10.95 min=10, max=9000, al-
+ []
+
+
+Underfull \hbox (badness 1762) in paragraph at lines 221--222
+\OT1/cmr/m/n/10.95 er-ror value, in-fact. \OT1/cmr/bx/n/10.95 This
+ []
+
+
+Underfull \hbox (badness 3646) in paragraph at lines 223--224
+[]|\OT1/cmr/m/n/10.95 Interesting, with too high
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 223--224
+\OT1/cmr/m/n/10.95 par-ti-cles un-able to get
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 223--224
+\OT1/cmr/m/n/10.95 con-ver-gence, but mul-ti-
+ []
+
+
+Underfull \hbox (badness 3492) in paragraph at lines 223--224
+\OT1/cmr/m/n/10.95 modal dis-tri-bu-tion. This
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 223--224
+\OT1/cmr/m/n/10.95 can be ex-plained by:
+ []
+
+
+Overfull \hbox (80.20868pt too wide) in paragraph at lines 223--224
+\OT1/cmr/m/n/10.95 http://roboticsknowledgebase.com/wiki/state-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 223--224
+\OT1/cmr/m/n/10.95 estimation/adaptive-monte-
+ []
+
+
+Underfull \hbox (badness 2828) in paragraph at lines 223--224
+\OT1/cmr/m/n/10.95 carlo-localization/. In-fact,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 229--229
+[]|\OT1/cmr/m/n/10.95 mapart= 9000,
+ []
+
+
+Underfull \hbox (badness 1895) in paragraph at lines 229--229
+\OT1/cmr/m/n/10.95 alfa1,2,3=0.1, alfa4=0.005
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 231--231
+[]|\OT1/cmr/m/n/10.95 maxpart = 9000,
+ []
+
+
+Underfull \hbox (badness 3168) in paragraph at lines 239--239
+[]|\OT1/cmr/m/n/10.95 alfa1,2,3 = 0.1 alfa 4=
  []
 
 File: figures/tue_logo.png Graphic file (type png)
 <use figures/tue_logo.png>
-Package pdftex.def Info: figures/tue_logo.png  used on input line 220. on input
- line 220.
+Package pdftex.def Info: figures/tue_logo.png  used on input line 248. on input
+ line 248.
 Package pdftex.def Info: Requested size: 43.37115pt x 22.76228pt on input line 
-220.
+248.
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 26.84232pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[2] 
+[2]
+Overfull \vbox (98.37045pt too high) has occurred while \output is active []
+
+File: figures/tue_logo.png Graphic file (type png)
+<use figures/tue_logo.png>
+Package pdftex.def Info: figures/tue_logo.png  used on input line 248. on input
+ line 248.
+Package pdftex.def Info: Requested size: 43.37115pt x 22.76228pt on input line 
+248.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 26.84232pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[3] 
 AED: lastpage setting LastPage
-File: figures/tue_logo.png Graphic file (type png)
-<use figures/tue_logo.png>
-Package pdftex.def Info: figures/tue_logo.png  used on input line 221. on input
- line 221.
-Package pdftex.def Info: Requested size: 43.37115pt x 22.76228pt on input line 
-221.
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 26.84232pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[3] (tuningAmcl.aux) ) 
+(tuningAmcl.aux) ) 
 Here is how much of TeX's memory you used:
  16601 strings out of 495217
  319460 string characters out of 3181069
- 386745 words of memory out of 3000000
+ 392745 words of memory out of 3000000
  19537 multiletter control sequences out of 15000+200000
  10159 words of font info for 38 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 62i,16n,56p,542b,377s stack positions out of 5000i,500n,10000p,200000b,50000s
-</home/simoneforno/.miktex/texmfs/install/fonts/type1/pub
-lic/amsfonts/cm/cmbx10.pfb></home/simoneforno/.miktex/texmfs/install/fonts/type
-1/public/amsfonts/cm/cmbx12.pfb></home/simoneforno/.miktex/texmfs/install/fonts
-/type1/public/amsfonts/cm/cmr10.pfb></home/simoneforno/.miktex/texmfs/install/f
-onts/type1/public/amsfonts/cm/cmsl10.pfb>
-Output written on tuningAmcl.pdf (3 pages, 138512 bytes).
+ 62i,15n,56p,542b,456s stack positions out of 5000i,500n,10000p,200000b,50000s
+</home/simoneforno/.miktex/texmfs/install/fonts/type1/public/
+amsfonts/cm/cmbx10.pfb></home/simoneforno/.miktex/texmfs/install/fonts/type1/pu
+blic/amsfonts/cm/cmbx12.pfb></home/simoneforno/.miktex/texmfs/install/fonts/typ
+e1/public/amsfonts/cm/cmmi10.pfb></home/simoneforno/.miktex/texmfs/install/font
+s/type1/public/amsfonts/cm/cmr10.pfb></home/simoneforno/.miktex/texmfs/install/
+fonts/type1/public/amsfonts/cm/cmsl10.pfb>
+Output written on tuningAmcl.pdf (3 pages, 145052 bytes).
 PDF statistics:
- 34 PDF objects out of 1000 (max. 8388607)
+ 38 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  23 words of extra memory for PDF output out of 10000 (max. 10000000)
 
