@@ -130,6 +130,55 @@ navigation/map_server/CMakeFiles/map_server-map_saver.dir/build: /home/simonefor
 
 .PHONY : navigation/map_server/CMakeFiles/map_server-map_saver.dir/build
 
+# Object files for target map_server-map_saver
+map_server__map_saver_OBJECTS = \
+"CMakeFiles/map_server-map_saver.dir/src/map_saver.cpp.o"
+
+# External object files for target map_server-map_saver
+map_server__map_saver_EXTERNAL_OBJECTS =
+
+navigation/map_server/CMakeFiles/CMakeRelink.dir/map_saver: navigation/map_server/CMakeFiles/map_server-map_saver.dir/src/map_saver.cpp.o
+navigation/map_server/CMakeFiles/CMakeRelink.dir/map_saver: navigation/map_server/CMakeFiles/map_server-map_saver.dir/build.make
+navigation/map_server/CMakeFiles/CMakeRelink.dir/map_saver: /opt/ros/kinetic/lib/libroscpp.so
+navigation/map_server/CMakeFiles/CMakeRelink.dir/map_saver: /usr/lib/x86_64-linux-gnu/libboost_signals.so
+navigation/map_server/CMakeFiles/CMakeRelink.dir/map_saver: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
+navigation/map_server/CMakeFiles/CMakeRelink.dir/map_saver: /opt/ros/kinetic/lib/librosconsole.so
+navigation/map_server/CMakeFiles/CMakeRelink.dir/map_saver: /opt/ros/kinetic/lib/librosconsole_log4cxx.so
+navigation/map_server/CMakeFiles/CMakeRelink.dir/map_saver: /opt/ros/kinetic/lib/librosconsole_backend_interface.so
+navigation/map_server/CMakeFiles/CMakeRelink.dir/map_saver: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
+navigation/map_server/CMakeFiles/CMakeRelink.dir/map_saver: /usr/lib/x86_64-linux-gnu/libboost_regex.so
+navigation/map_server/CMakeFiles/CMakeRelink.dir/map_saver: /opt/ros/kinetic/lib/libxmlrpcpp.so
+navigation/map_server/CMakeFiles/CMakeRelink.dir/map_saver: /home/simoneforno/simon_ws/devel/lib/libtf2.so
+navigation/map_server/CMakeFiles/CMakeRelink.dir/map_saver: /opt/ros/kinetic/lib/libroscpp_serialization.so
+navigation/map_server/CMakeFiles/CMakeRelink.dir/map_saver: /opt/ros/kinetic/lib/librostime.so
+navigation/map_server/CMakeFiles/CMakeRelink.dir/map_saver: /opt/ros/kinetic/lib/libcpp_common.so
+navigation/map_server/CMakeFiles/CMakeRelink.dir/map_saver: /usr/lib/x86_64-linux-gnu/libboost_system.so
+navigation/map_server/CMakeFiles/CMakeRelink.dir/map_saver: /usr/lib/x86_64-linux-gnu/libboost_thread.so
+navigation/map_server/CMakeFiles/CMakeRelink.dir/map_saver: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
+navigation/map_server/CMakeFiles/CMakeRelink.dir/map_saver: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
+navigation/map_server/CMakeFiles/CMakeRelink.dir/map_saver: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
+navigation/map_server/CMakeFiles/CMakeRelink.dir/map_saver: /usr/lib/x86_64-linux-gnu/libpthread.so
+navigation/map_server/CMakeFiles/CMakeRelink.dir/map_saver: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
+navigation/map_server/CMakeFiles/CMakeRelink.dir/map_saver: /usr/lib/x86_64-linux-gnu/libboost_signals.so
+navigation/map_server/CMakeFiles/CMakeRelink.dir/map_saver: /opt/ros/kinetic/lib/libroscpp_serialization.so
+navigation/map_server/CMakeFiles/CMakeRelink.dir/map_saver: /opt/ros/kinetic/lib/librostime.so
+navigation/map_server/CMakeFiles/CMakeRelink.dir/map_saver: /opt/ros/kinetic/lib/libcpp_common.so
+navigation/map_server/CMakeFiles/CMakeRelink.dir/map_saver: /usr/lib/x86_64-linux-gnu/libboost_system.so
+navigation/map_server/CMakeFiles/CMakeRelink.dir/map_saver: /usr/lib/x86_64-linux-gnu/libboost_thread.so
+navigation/map_server/CMakeFiles/CMakeRelink.dir/map_saver: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
+navigation/map_server/CMakeFiles/CMakeRelink.dir/map_saver: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
+navigation/map_server/CMakeFiles/CMakeRelink.dir/map_saver: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
+navigation/map_server/CMakeFiles/CMakeRelink.dir/map_saver: /usr/lib/x86_64-linux-gnu/libpthread.so
+navigation/map_server/CMakeFiles/CMakeRelink.dir/map_saver: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
+navigation/map_server/CMakeFiles/CMakeRelink.dir/map_saver: navigation/map_server/CMakeFiles/map_server-map_saver.dir/relink.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/simoneforno/simon_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable CMakeFiles/CMakeRelink.dir/map_saver"
+	cd /home/simoneforno/simon_ws/build/navigation/map_server && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/map_server-map_saver.dir/relink.txt --verbose=$(VERBOSE)
+
+# Rule to relink during preinstall.
+navigation/map_server/CMakeFiles/map_server-map_saver.dir/preinstall: navigation/map_server/CMakeFiles/CMakeRelink.dir/map_saver
+
+.PHONY : navigation/map_server/CMakeFiles/map_server-map_saver.dir/preinstall
+
 navigation/map_server/CMakeFiles/map_server-map_saver.dir/requires: navigation/map_server/CMakeFiles/map_server-map_saver.dir/src/map_saver.cpp.o.requires
 
 .PHONY : navigation/map_server/CMakeFiles/map_server-map_saver.dir/requires

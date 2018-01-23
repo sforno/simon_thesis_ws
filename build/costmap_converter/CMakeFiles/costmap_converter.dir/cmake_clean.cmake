@@ -11,6 +11,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/costmap_converter.dir/src/costmap_to_dynamic_obstacles/multitarget_tracker/HungarianAlg.cpp.o"
   "/home/simoneforno/simon_ws/devel/lib/libcostmap_converter.pdb"
   "/home/simoneforno/simon_ws/devel/lib/libcostmap_converter.so"
+  "/home/simoneforno/simon_ws/devel/lib/libcostmap_converter.pdb"
+  "CMakeFiles/CMakeRelink.dir/libcostmap_converter.so"
 )
 
 # Per-language clean rules from dependency scanning.

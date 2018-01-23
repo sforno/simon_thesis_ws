@@ -100,17 +100,6 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-
-.PHONY : install/strip/fast
-
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
@@ -179,6 +168,11 @@ ExplorationPlugins: navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugin
 ExplorationPlugins/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/build.make navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/build
 .PHONY : ExplorationPlugins/fast
+
+# Manual pre-install relink rule for target.
+ExplorationPlugins/preinstall:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/preinstall
+.PHONY : ExplorationPlugins/preinstall
 
 src/MinPosPlanner.o: src/MinPosPlanner.cpp.o
 
@@ -297,9 +291,8 @@ help:
 	@echo "... list_install_components"
 	@echo "... install"
 	@echo "... rebuild_cache"
-	@echo "... edit_cache"
 	@echo "... ExplorationPlugins"
-	@echo "... install/strip"
+	@echo "... edit_cache"
 	@echo "... install/local"
 	@echo "... test"
 	@echo "... src/MinPosPlanner.o"

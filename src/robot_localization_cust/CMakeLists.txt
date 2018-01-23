@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(robot_localization)
+project(robot_localization_cust)
 
 find_package(catkin REQUIRED COMPONENTS
   diagnostic_msgs

@@ -5,6 +5,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/mapper.dir/src/csparse.cpp.o"
   "/home/simoneforno/simon_ws/devel/lib/nav2d_karto/mapper.pdb"
   "/home/simoneforno/simon_ws/devel/lib/nav2d_karto/mapper"
+  "/home/simoneforno/simon_ws/devel/lib/nav2d_karto/mapper.pdb"
+  "CMakeFiles/CMakeRelink.dir/mapper"
 )
 
 # Per-language clean rules from dependency scanning.

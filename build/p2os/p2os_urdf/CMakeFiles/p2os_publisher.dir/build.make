@@ -133,6 +133,58 @@ p2os/p2os_urdf/CMakeFiles/p2os_publisher.dir/build: /home/simoneforno/simon_ws/d
 
 .PHONY : p2os/p2os_urdf/CMakeFiles/p2os_publisher.dir/build
 
+# Object files for target p2os_publisher
+p2os_publisher_OBJECTS = \
+"CMakeFiles/p2os_publisher.dir/src/publisher.cc.o"
+
+# External object files for target p2os_publisher
+p2os_publisher_EXTERNAL_OBJECTS =
+
+p2os/p2os_urdf/CMakeFiles/CMakeRelink.dir/p2os_publisher: p2os/p2os_urdf/CMakeFiles/p2os_publisher.dir/src/publisher.cc.o
+p2os/p2os_urdf/CMakeFiles/CMakeRelink.dir/p2os_publisher: p2os/p2os_urdf/CMakeFiles/p2os_publisher.dir/build.make
+p2os/p2os_urdf/CMakeFiles/CMakeRelink.dir/p2os_publisher: /opt/ros/kinetic/lib/libtf.so
+p2os/p2os_urdf/CMakeFiles/CMakeRelink.dir/p2os_publisher: /home/simoneforno/simon_ws/devel/lib/libtf2_ros.so
+p2os/p2os_urdf/CMakeFiles/CMakeRelink.dir/p2os_publisher: /opt/ros/kinetic/lib/libactionlib.so
+p2os/p2os_urdf/CMakeFiles/CMakeRelink.dir/p2os_publisher: /opt/ros/kinetic/lib/libmessage_filters.so
+p2os/p2os_urdf/CMakeFiles/CMakeRelink.dir/p2os_publisher: /home/simoneforno/simon_ws/devel/lib/libtf2.so
+p2os/p2os_urdf/CMakeFiles/CMakeRelink.dir/p2os_publisher: /opt/ros/kinetic/lib/libkdl_parser.so
+p2os/p2os_urdf/CMakeFiles/CMakeRelink.dir/p2os_publisher: /opt/ros/kinetic/lib/liborocos-kdl.so
+p2os/p2os_urdf/CMakeFiles/CMakeRelink.dir/p2os_publisher: /opt/ros/kinetic/lib/liborocos-kdl.so.1.3.0
+p2os/p2os_urdf/CMakeFiles/CMakeRelink.dir/p2os_publisher: /usr/lib/x86_64-linux-gnu/libtinyxml.so
+p2os/p2os_urdf/CMakeFiles/CMakeRelink.dir/p2os_publisher: /opt/ros/kinetic/lib/liburdf.so
+p2os/p2os_urdf/CMakeFiles/CMakeRelink.dir/p2os_publisher: /usr/lib/x86_64-linux-gnu/liburdfdom_sensor.so
+p2os/p2os_urdf/CMakeFiles/CMakeRelink.dir/p2os_publisher: /usr/lib/x86_64-linux-gnu/liburdfdom_model_state.so
+p2os/p2os_urdf/CMakeFiles/CMakeRelink.dir/p2os_publisher: /usr/lib/x86_64-linux-gnu/liburdfdom_model.so
+p2os/p2os_urdf/CMakeFiles/CMakeRelink.dir/p2os_publisher: /usr/lib/x86_64-linux-gnu/liburdfdom_world.so
+p2os/p2os_urdf/CMakeFiles/CMakeRelink.dir/p2os_publisher: /opt/ros/kinetic/lib/librosconsole_bridge.so
+p2os/p2os_urdf/CMakeFiles/CMakeRelink.dir/p2os_publisher: /opt/ros/kinetic/lib/libroscpp.so
+p2os/p2os_urdf/CMakeFiles/CMakeRelink.dir/p2os_publisher: /usr/lib/x86_64-linux-gnu/libboost_signals.so
+p2os/p2os_urdf/CMakeFiles/CMakeRelink.dir/p2os_publisher: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
+p2os/p2os_urdf/CMakeFiles/CMakeRelink.dir/p2os_publisher: /opt/ros/kinetic/lib/librosconsole.so
+p2os/p2os_urdf/CMakeFiles/CMakeRelink.dir/p2os_publisher: /opt/ros/kinetic/lib/librosconsole_log4cxx.so
+p2os/p2os_urdf/CMakeFiles/CMakeRelink.dir/p2os_publisher: /opt/ros/kinetic/lib/librosconsole_backend_interface.so
+p2os/p2os_urdf/CMakeFiles/CMakeRelink.dir/p2os_publisher: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
+p2os/p2os_urdf/CMakeFiles/CMakeRelink.dir/p2os_publisher: /usr/lib/x86_64-linux-gnu/libboost_regex.so
+p2os/p2os_urdf/CMakeFiles/CMakeRelink.dir/p2os_publisher: /opt/ros/kinetic/lib/libroscpp_serialization.so
+p2os/p2os_urdf/CMakeFiles/CMakeRelink.dir/p2os_publisher: /opt/ros/kinetic/lib/librostime.so
+p2os/p2os_urdf/CMakeFiles/CMakeRelink.dir/p2os_publisher: /opt/ros/kinetic/lib/libxmlrpcpp.so
+p2os/p2os_urdf/CMakeFiles/CMakeRelink.dir/p2os_publisher: /opt/ros/kinetic/lib/libcpp_common.so
+p2os/p2os_urdf/CMakeFiles/CMakeRelink.dir/p2os_publisher: /usr/lib/x86_64-linux-gnu/libboost_system.so
+p2os/p2os_urdf/CMakeFiles/CMakeRelink.dir/p2os_publisher: /usr/lib/x86_64-linux-gnu/libboost_thread.so
+p2os/p2os_urdf/CMakeFiles/CMakeRelink.dir/p2os_publisher: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
+p2os/p2os_urdf/CMakeFiles/CMakeRelink.dir/p2os_publisher: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
+p2os/p2os_urdf/CMakeFiles/CMakeRelink.dir/p2os_publisher: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
+p2os/p2os_urdf/CMakeFiles/CMakeRelink.dir/p2os_publisher: /usr/lib/x86_64-linux-gnu/libpthread.so
+p2os/p2os_urdf/CMakeFiles/CMakeRelink.dir/p2os_publisher: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
+p2os/p2os_urdf/CMakeFiles/CMakeRelink.dir/p2os_publisher: p2os/p2os_urdf/CMakeFiles/p2os_publisher.dir/relink.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/simoneforno/simon_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable CMakeFiles/CMakeRelink.dir/p2os_publisher"
+	cd /home/simoneforno/simon_ws/build/p2os/p2os_urdf && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/p2os_publisher.dir/relink.txt --verbose=$(VERBOSE)
+
+# Rule to relink during preinstall.
+p2os/p2os_urdf/CMakeFiles/p2os_publisher.dir/preinstall: p2os/p2os_urdf/CMakeFiles/CMakeRelink.dir/p2os_publisher
+
+.PHONY : p2os/p2os_urdf/CMakeFiles/p2os_publisher.dir/preinstall
+
 p2os/p2os_urdf/CMakeFiles/p2os_publisher.dir/requires: p2os/p2os_urdf/CMakeFiles/p2os_publisher.dir/src/publisher.cc.o.requires
 
 .PHONY : p2os/p2os_urdf/CMakeFiles/p2os_publisher.dir/requires

@@ -2,6 +2,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/gazebo_ros_hand_of_god.dir/src/gazebo_ros_hand_of_god.cpp.o"
   "/home/simoneforno/simon_ws/devel/lib/libgazebo_ros_hand_of_god.pdb"
   "/home/simoneforno/simon_ws/devel/lib/libgazebo_ros_hand_of_god.so"
+  "/home/simoneforno/simon_ws/devel/lib/libgazebo_ros_hand_of_god.pdb"
+  "CMakeFiles/CMakeRelink.dir/libgazebo_ros_hand_of_god.so"
 )
 
 # Per-language clean rules from dependency scanning.

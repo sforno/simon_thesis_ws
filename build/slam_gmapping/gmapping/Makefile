@@ -88,17 +88,6 @@ install/local/fast: install/local
 
 .PHONY : install/local/fast
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-
-.PHONY : install/strip/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -510,6 +499,11 @@ slam_gmapping/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f slam_gmapping/gmapping/CMakeFiles/slam_gmapping.dir/build.make slam_gmapping/gmapping/CMakeFiles/slam_gmapping.dir/build
 .PHONY : slam_gmapping/fast
 
+# Manual pre-install relink rule for target.
+slam_gmapping/preinstall:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 slam_gmapping/gmapping/CMakeFiles/slam_gmapping.dir/preinstall
+.PHONY : slam_gmapping/preinstall
+
 # Convenience name for target.
 slam_gmapping/gmapping/CMakeFiles/slam_gmapping_nodelet.dir/rule:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 slam_gmapping/gmapping/CMakeFiles/slam_gmapping_nodelet.dir/rule
@@ -569,6 +563,11 @@ slam_gmapping_replay: slam_gmapping/gmapping/CMakeFiles/slam_gmapping_replay.dir
 slam_gmapping_replay/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f slam_gmapping/gmapping/CMakeFiles/slam_gmapping_replay.dir/build.make slam_gmapping/gmapping/CMakeFiles/slam_gmapping_replay.dir/build
 .PHONY : slam_gmapping_replay/fast
+
+# Manual pre-install relink rule for target.
+slam_gmapping_replay/preinstall:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 slam_gmapping/gmapping/CMakeFiles/slam_gmapping_replay.dir/preinstall
+.PHONY : slam_gmapping_replay/preinstall
 
 # Convenience name for target.
 slam_gmapping/gmapping/CMakeFiles/run_tests_gmapping.dir/rule:
@@ -870,7 +869,6 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... install/local"
-	@echo "... install/strip"
 	@echo "... run_tests_gmapping_rostest_test_basic_localization_laser_different_beamcount.test"
 	@echo "... _run_tests_gmapping_rostest_test_basic_localization_upside_down.launch"
 	@echo "... _run_tests_gmapping_rostest_test_basic_localization_symmetry.launch"

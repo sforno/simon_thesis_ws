@@ -3,6 +3,6 @@ prefix=/home/simoneforno/simon_ws/devel
 Name: ar_track_alvar
 Description: Description of ar_track_alvar
 Version: 0.7.1
-Cflags: -I/home/simoneforno/simon_ws/devel/include -I/home/simoneforno/simon_ws/src/artrack_alvar/ar_track_alvar/include
+Cflags: -I/home/simoneforno/simon_ws/devel/include -I/home/simoneforno/simon_ws/src/ar_track_alvar_cust/ar_track_alvar/include
 Libs: -L/home/simoneforno/simon_ws/devel/lib -lar_track_alvar
 Requires: ar_track_alvar_msgs std_msgs roscpp tf tf2 message_runtime image_transport sensor_msgs geometry_msgs visualization_msgs resource_retriever cv_bridge pcl_ros pcl_conversions dynamic_reconfigure

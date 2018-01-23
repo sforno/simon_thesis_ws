@@ -89,17 +89,6 @@ test/fast: test
 
 .PHONY : test/fast
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-
-.PHONY : install/strip/fast
-
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
@@ -240,6 +229,11 @@ costmap_2d_cloud/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f navigation/costmap_2d/CMakeFiles/costmap_2d_cloud.dir/build.make navigation/costmap_2d/CMakeFiles/costmap_2d_cloud.dir/build
 .PHONY : costmap_2d_cloud/fast
 
+# Manual pre-install relink rule for target.
+costmap_2d_cloud/preinstall:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/costmap_2d/CMakeFiles/costmap_2d_cloud.dir/preinstall
+.PHONY : costmap_2d_cloud/preinstall
+
 # Convenience name for target.
 navigation/costmap_2d/CMakeFiles/costmap_2d.dir/rule:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/costmap_2d/CMakeFiles/costmap_2d.dir/rule
@@ -254,6 +248,11 @@ costmap_2d: navigation/costmap_2d/CMakeFiles/costmap_2d.dir/rule
 costmap_2d/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f navigation/costmap_2d/CMakeFiles/costmap_2d.dir/build.make navigation/costmap_2d/CMakeFiles/costmap_2d.dir/build
 .PHONY : costmap_2d/fast
+
+# Manual pre-install relink rule for target.
+costmap_2d/preinstall:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/costmap_2d/CMakeFiles/costmap_2d.dir/preinstall
+.PHONY : costmap_2d/preinstall
 
 # Convenience name for target.
 navigation/costmap_2d/CMakeFiles/costmap_2d_generate_messages_nodejs.dir/rule:
@@ -345,6 +344,11 @@ layers/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f navigation/costmap_2d/CMakeFiles/layers.dir/build.make navigation/costmap_2d/CMakeFiles/layers.dir/build
 .PHONY : layers/fast
 
+# Manual pre-install relink rule for target.
+layers/preinstall:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/costmap_2d/CMakeFiles/layers.dir/preinstall
+.PHONY : layers/preinstall
+
 # Convenience name for target.
 navigation/costmap_2d/CMakeFiles/costmap_2d_gencfg.dir/rule:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/costmap_2d/CMakeFiles/costmap_2d_gencfg.dir/rule
@@ -405,6 +409,11 @@ costmap_2d_node/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f navigation/costmap_2d/CMakeFiles/costmap_2d_node.dir/build.make navigation/costmap_2d/CMakeFiles/costmap_2d_node.dir/build
 .PHONY : costmap_2d_node/fast
 
+# Manual pre-install relink rule for target.
+costmap_2d_node/preinstall:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/costmap_2d/CMakeFiles/costmap_2d_node.dir/preinstall
+.PHONY : costmap_2d_node/preinstall
+
 # Convenience name for target.
 navigation/costmap_2d/CMakeFiles/map_msgs_generate_messages_eus.dir/rule:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/costmap_2d/CMakeFiles/map_msgs_generate_messages_eus.dir/rule
@@ -449,6 +458,11 @@ costmap_2d_markers: navigation/costmap_2d/CMakeFiles/costmap_2d_markers.dir/rule
 costmap_2d_markers/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f navigation/costmap_2d/CMakeFiles/costmap_2d_markers.dir/build.make navigation/costmap_2d/CMakeFiles/costmap_2d_markers.dir/build
 .PHONY : costmap_2d_markers/fast
+
+# Manual pre-install relink rule for target.
+costmap_2d_markers/preinstall:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/costmap_2d/CMakeFiles/costmap_2d_markers.dir/preinstall
+.PHONY : costmap_2d_markers/preinstall
 
 # Convenience name for target.
 navigation/costmap_2d/CMakeFiles/clean_test_results_costmap_2d.dir/rule:
@@ -1548,7 +1562,6 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... test"
-	@echo "... install/strip"
 	@echo "... _run_tests_costmap_2d_gtest_array_parser_test"
 	@echo "... run_tests_costmap_2d_gtest_array_parser_test"
 	@echo "... _run_tests_costmap_2d_gtest"

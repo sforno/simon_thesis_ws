@@ -68,17 +68,6 @@ install/fast: preinstall/fast
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-
-.PHONY : test/fast
-
 # Special rule for the target list_install_components
 list_install_components:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
@@ -88,17 +77,6 @@ list_install_components:
 list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
-
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-
-.PHONY : install/strip/fast
 
 # Special rule for the target install/local
 install/local: preinstall
@@ -132,6 +110,17 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -181,21 +170,6 @@ visualization_msgs_generate_messages_nodejs/fast:
 .PHONY : visualization_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
-navigation_2d/nav2d_karto/CMakeFiles/visualization_msgs_generate_messages_eus.dir/rule:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation_2d/nav2d_karto/CMakeFiles/visualization_msgs_generate_messages_eus.dir/rule
-.PHONY : navigation_2d/nav2d_karto/CMakeFiles/visualization_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-visualization_msgs_generate_messages_eus: navigation_2d/nav2d_karto/CMakeFiles/visualization_msgs_generate_messages_eus.dir/rule
-
-.PHONY : visualization_msgs_generate_messages_eus
-
-# fast build rule for target.
-visualization_msgs_generate_messages_eus/fast:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f navigation_2d/nav2d_karto/CMakeFiles/visualization_msgs_generate_messages_eus.dir/build.make navigation_2d/nav2d_karto/CMakeFiles/visualization_msgs_generate_messages_eus.dir/build
-.PHONY : visualization_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
 navigation_2d/nav2d_karto/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/rule:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation_2d/nav2d_karto/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/rule
 .PHONY : navigation_2d/nav2d_karto/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/rule
@@ -209,6 +183,21 @@ visualization_msgs_generate_messages_lisp: navigation_2d/nav2d_karto/CMakeFiles/
 visualization_msgs_generate_messages_lisp/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f navigation_2d/nav2d_karto/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/build.make navigation_2d/nav2d_karto/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/build
 .PHONY : visualization_msgs_generate_messages_lisp/fast
+
+# Convenience name for target.
+navigation_2d/nav2d_karto/CMakeFiles/visualization_msgs_generate_messages_eus.dir/rule:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation_2d/nav2d_karto/CMakeFiles/visualization_msgs_generate_messages_eus.dir/rule
+.PHONY : navigation_2d/nav2d_karto/CMakeFiles/visualization_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+visualization_msgs_generate_messages_eus: navigation_2d/nav2d_karto/CMakeFiles/visualization_msgs_generate_messages_eus.dir/rule
+
+.PHONY : visualization_msgs_generate_messages_eus
+
+# fast build rule for target.
+visualization_msgs_generate_messages_eus/fast:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f navigation_2d/nav2d_karto/CMakeFiles/visualization_msgs_generate_messages_eus.dir/build.make navigation_2d/nav2d_karto/CMakeFiles/visualization_msgs_generate_messages_eus.dir/build
+.PHONY : visualization_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
 navigation_2d/nav2d_karto/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/rule:
@@ -255,6 +244,11 @@ MultiMapper/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f navigation_2d/nav2d_karto/CMakeFiles/MultiMapper.dir/build.make navigation_2d/nav2d_karto/CMakeFiles/MultiMapper.dir/build
 .PHONY : MultiMapper/fast
 
+# Manual pre-install relink rule for target.
+MultiMapper/preinstall:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation_2d/nav2d_karto/CMakeFiles/MultiMapper.dir/preinstall
+.PHONY : MultiMapper/preinstall
+
 # Convenience name for target.
 navigation_2d/nav2d_karto/CMakeFiles/OpenKarto.dir/rule:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation_2d/nav2d_karto/CMakeFiles/OpenKarto.dir/rule
@@ -270,6 +264,11 @@ OpenKarto/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f navigation_2d/nav2d_karto/CMakeFiles/OpenKarto.dir/build.make navigation_2d/nav2d_karto/CMakeFiles/OpenKarto.dir/build
 .PHONY : OpenKarto/fast
 
+# Manual pre-install relink rule for target.
+OpenKarto/preinstall:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation_2d/nav2d_karto/CMakeFiles/OpenKarto.dir/preinstall
+.PHONY : OpenKarto/preinstall
+
 # Convenience name for target.
 navigation_2d/nav2d_karto/CMakeFiles/mapper.dir/rule:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation_2d/nav2d_karto/CMakeFiles/mapper.dir/rule
@@ -284,6 +283,11 @@ mapper: navigation_2d/nav2d_karto/CMakeFiles/mapper.dir/rule
 mapper/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f navigation_2d/nav2d_karto/CMakeFiles/mapper.dir/build.make navigation_2d/nav2d_karto/CMakeFiles/mapper.dir/build
 .PHONY : mapper/fast
+
+# Manual pre-install relink rule for target.
+mapper/preinstall:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation_2d/nav2d_karto/CMakeFiles/mapper.dir/preinstall
+.PHONY : mapper/preinstall
 
 OpenKarto/source/Any.o: OpenKarto/source/Any.cpp.o
 
@@ -1291,12 +1295,10 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... install"
-	@echo "... test"
 	@echo "... visualization_msgs_generate_messages_nodejs"
-	@echo "... visualization_msgs_generate_messages_eus"
 	@echo "... list_install_components"
 	@echo "... visualization_msgs_generate_messages_lisp"
-	@echo "... install/strip"
+	@echo "... visualization_msgs_generate_messages_eus"
 	@echo "... install/local"
 	@echo "... rebuild_cache"
 	@echo "... visualization_msgs_generate_messages_cpp"
@@ -1305,6 +1307,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... OpenKarto"
 	@echo "... mapper"
+	@echo "... test"
 	@echo "... OpenKarto/source/Any.o"
 	@echo "... OpenKarto/source/Any.i"
 	@echo "... OpenKarto/source/Any.s"

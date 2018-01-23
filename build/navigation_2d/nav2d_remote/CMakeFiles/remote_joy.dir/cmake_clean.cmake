@@ -2,6 +2,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/remote_joy.dir/src/remote_joy.cpp.o"
   "/home/simoneforno/simon_ws/devel/lib/nav2d_remote/remote_joy.pdb"
   "/home/simoneforno/simon_ws/devel/lib/nav2d_remote/remote_joy"
+  "/home/simoneforno/simon_ws/devel/lib/nav2d_remote/remote_joy.pdb"
+  "CMakeFiles/CMakeRelink.dir/remote_joy"
 )
 
 # Per-language clean rules from dependency scanning.

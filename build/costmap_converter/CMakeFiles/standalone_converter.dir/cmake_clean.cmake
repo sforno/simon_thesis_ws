@@ -2,6 +2,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/standalone_converter.dir/src/costmap_converter_node.cpp.o"
   "/home/simoneforno/simon_ws/devel/lib/costmap_converter/standalone_converter.pdb"
   "/home/simoneforno/simon_ws/devel/lib/costmap_converter/standalone_converter"
+  "/home/simoneforno/simon_ws/devel/lib/costmap_converter/standalone_converter.pdb"
+  "CMakeFiles/CMakeRelink.dir/standalone_converter"
 )
 
 # Per-language clean rules from dependency scanning.

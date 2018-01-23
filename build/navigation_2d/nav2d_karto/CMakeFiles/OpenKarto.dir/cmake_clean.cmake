@@ -33,6 +33,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/OpenKarto.dir/OpenKarto/source/StringHelper.cpp.o"
   "/home/simoneforno/simon_ws/devel/lib/libOpenKarto.pdb"
   "/home/simoneforno/simon_ws/devel/lib/libOpenKarto.so"
+  "/home/simoneforno/simon_ws/devel/lib/libOpenKarto.pdb"
+  "CMakeFiles/CMakeRelink.dir/libOpenKarto.so"
 )
 
 # Per-language clean rules from dependency scanning.

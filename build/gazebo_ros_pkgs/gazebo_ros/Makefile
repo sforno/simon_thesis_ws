@@ -122,17 +122,6 @@ install/local/fast: install/local
 
 .PHONY : install/local/fast
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-
-.PHONY : install/strip/fast
-
 # The main all target
 all: cmake_check_build_system
 	cd /home/simoneforno/simon_ws/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/simoneforno/simon_ws/build/CMakeFiles /home/simoneforno/simon_ws/build/gazebo_ros_pkgs/gazebo_ros/CMakeFiles/progress.marks
@@ -166,21 +155,6 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-gazebo_ros_pkgs/gazebo_ros/CMakeFiles/gazebo_ros_api_plugin.dir/rule:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 gazebo_ros_pkgs/gazebo_ros/CMakeFiles/gazebo_ros_api_plugin.dir/rule
-.PHONY : gazebo_ros_pkgs/gazebo_ros/CMakeFiles/gazebo_ros_api_plugin.dir/rule
-
-# Convenience name for target.
-gazebo_ros_api_plugin: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/gazebo_ros_api_plugin.dir/rule
-
-.PHONY : gazebo_ros_api_plugin
-
-# fast build rule for target.
-gazebo_ros_api_plugin/fast:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f gazebo_ros_pkgs/gazebo_ros/CMakeFiles/gazebo_ros_api_plugin.dir/build.make gazebo_ros_pkgs/gazebo_ros/CMakeFiles/gazebo_ros_api_plugin.dir/build
-.PHONY : gazebo_ros_api_plugin/fast
-
-# Convenience name for target.
 gazebo_ros_pkgs/gazebo_ros/CMakeFiles/gazebo_ros_gencfg.dir/rule:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 gazebo_ros_pkgs/gazebo_ros/CMakeFiles/gazebo_ros_gencfg.dir/rule
 .PHONY : gazebo_ros_pkgs/gazebo_ros/CMakeFiles/gazebo_ros_gencfg.dir/rule
@@ -209,6 +183,31 @@ gazebo_ros_paths_plugin: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/gazebo_ros_paths_
 gazebo_ros_paths_plugin/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f gazebo_ros_pkgs/gazebo_ros/CMakeFiles/gazebo_ros_paths_plugin.dir/build.make gazebo_ros_pkgs/gazebo_ros/CMakeFiles/gazebo_ros_paths_plugin.dir/build
 .PHONY : gazebo_ros_paths_plugin/fast
+
+# Manual pre-install relink rule for target.
+gazebo_ros_paths_plugin/preinstall:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 gazebo_ros_pkgs/gazebo_ros/CMakeFiles/gazebo_ros_paths_plugin.dir/preinstall
+.PHONY : gazebo_ros_paths_plugin/preinstall
+
+# Convenience name for target.
+gazebo_ros_pkgs/gazebo_ros/CMakeFiles/gazebo_ros_api_plugin.dir/rule:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 gazebo_ros_pkgs/gazebo_ros/CMakeFiles/gazebo_ros_api_plugin.dir/rule
+.PHONY : gazebo_ros_pkgs/gazebo_ros/CMakeFiles/gazebo_ros_api_plugin.dir/rule
+
+# Convenience name for target.
+gazebo_ros_api_plugin: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/gazebo_ros_api_plugin.dir/rule
+
+.PHONY : gazebo_ros_api_plugin
+
+# fast build rule for target.
+gazebo_ros_api_plugin/fast:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f gazebo_ros_pkgs/gazebo_ros/CMakeFiles/gazebo_ros_api_plugin.dir/build.make gazebo_ros_pkgs/gazebo_ros/CMakeFiles/gazebo_ros_api_plugin.dir/build
+.PHONY : gazebo_ros_api_plugin/fast
+
+# Manual pre-install relink rule for target.
+gazebo_ros_api_plugin/preinstall:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 gazebo_ros_pkgs/gazebo_ros/CMakeFiles/gazebo_ros_api_plugin.dir/preinstall
+.PHONY : gazebo_ros_api_plugin/preinstall
 
 src/gazebo_ros_api_plugin.o: src/gazebo_ros_api_plugin.cpp.o
 
@@ -275,11 +274,10 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... test"
-	@echo "... install/local"
-	@echo "... install/strip"
-	@echo "... gazebo_ros_api_plugin"
 	@echo "... gazebo_ros_gencfg"
 	@echo "... gazebo_ros_paths_plugin"
+	@echo "... gazebo_ros_api_plugin"
+	@echo "... install/local"
 	@echo "... src/gazebo_ros_api_plugin.o"
 	@echo "... src/gazebo_ros_api_plugin.i"
 	@echo "... src/gazebo_ros_api_plugin.s"

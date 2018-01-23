@@ -11,6 +11,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/costmap_2d.dir/src/costmap_layer.cpp.o"
   "/home/simoneforno/simon_ws/devel/lib/libcostmap_2d.pdb"
   "/home/simoneforno/simon_ws/devel/lib/libcostmap_2d.so"
+  "/home/simoneforno/simon_ws/devel/lib/libcostmap_2d.pdb"
+  "CMakeFiles/CMakeRelink.dir/libcostmap_2d.so"
 )
 
 # Per-language clean rules from dependency scanning.

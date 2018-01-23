@@ -147,6 +147,72 @@ stage_ros/CMakeFiles/stageros.dir/build: /home/simoneforno/simon_ws/devel/lib/st
 
 .PHONY : stage_ros/CMakeFiles/stageros.dir/build
 
+# Object files for target stageros
+stageros_OBJECTS = \
+"CMakeFiles/stageros.dir/src/stageros.cpp.o"
+
+# External object files for target stageros
+stageros_EXTERNAL_OBJECTS =
+
+stage_ros/CMakeFiles/CMakeRelink.dir/stageros: stage_ros/CMakeFiles/stageros.dir/src/stageros.cpp.o
+stage_ros/CMakeFiles/CMakeRelink.dir/stageros: stage_ros/CMakeFiles/stageros.dir/build.make
+stage_ros/CMakeFiles/CMakeRelink.dir/stageros: /opt/ros/kinetic/lib/libtf.so
+stage_ros/CMakeFiles/CMakeRelink.dir/stageros: /home/simoneforno/simon_ws/devel/lib/libtf2_ros.so
+stage_ros/CMakeFiles/CMakeRelink.dir/stageros: /opt/ros/kinetic/lib/libactionlib.so
+stage_ros/CMakeFiles/CMakeRelink.dir/stageros: /opt/ros/kinetic/lib/libmessage_filters.so
+stage_ros/CMakeFiles/CMakeRelink.dir/stageros: /opt/ros/kinetic/lib/libroscpp.so
+stage_ros/CMakeFiles/CMakeRelink.dir/stageros: /usr/lib/x86_64-linux-gnu/libboost_signals.so
+stage_ros/CMakeFiles/CMakeRelink.dir/stageros: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
+stage_ros/CMakeFiles/CMakeRelink.dir/stageros: /opt/ros/kinetic/lib/libxmlrpcpp.so
+stage_ros/CMakeFiles/CMakeRelink.dir/stageros: /home/simoneforno/simon_ws/devel/lib/libtf2.so
+stage_ros/CMakeFiles/CMakeRelink.dir/stageros: /opt/ros/kinetic/lib/libroscpp_serialization.so
+stage_ros/CMakeFiles/CMakeRelink.dir/stageros: /opt/ros/kinetic/lib/librosconsole.so
+stage_ros/CMakeFiles/CMakeRelink.dir/stageros: /opt/ros/kinetic/lib/librosconsole_log4cxx.so
+stage_ros/CMakeFiles/CMakeRelink.dir/stageros: /opt/ros/kinetic/lib/librosconsole_backend_interface.so
+stage_ros/CMakeFiles/CMakeRelink.dir/stageros: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
+stage_ros/CMakeFiles/CMakeRelink.dir/stageros: /usr/lib/x86_64-linux-gnu/libboost_regex.so
+stage_ros/CMakeFiles/CMakeRelink.dir/stageros: /opt/ros/kinetic/lib/librostime.so
+stage_ros/CMakeFiles/CMakeRelink.dir/stageros: /opt/ros/kinetic/lib/libcpp_common.so
+stage_ros/CMakeFiles/CMakeRelink.dir/stageros: /usr/lib/x86_64-linux-gnu/libboost_system.so
+stage_ros/CMakeFiles/CMakeRelink.dir/stageros: /usr/lib/x86_64-linux-gnu/libboost_thread.so
+stage_ros/CMakeFiles/CMakeRelink.dir/stageros: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
+stage_ros/CMakeFiles/CMakeRelink.dir/stageros: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
+stage_ros/CMakeFiles/CMakeRelink.dir/stageros: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
+stage_ros/CMakeFiles/CMakeRelink.dir/stageros: /usr/lib/x86_64-linux-gnu/libpthread.so
+stage_ros/CMakeFiles/CMakeRelink.dir/stageros: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
+stage_ros/CMakeFiles/CMakeRelink.dir/stageros: /usr/lib/x86_64-linux-gnu/libboost_system.so
+stage_ros/CMakeFiles/CMakeRelink.dir/stageros: /usr/lib/x86_64-linux-gnu/libboost_thread.so
+stage_ros/CMakeFiles/CMakeRelink.dir/stageros: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
+stage_ros/CMakeFiles/CMakeRelink.dir/stageros: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
+stage_ros/CMakeFiles/CMakeRelink.dir/stageros: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
+stage_ros/CMakeFiles/CMakeRelink.dir/stageros: /usr/lib/x86_64-linux-gnu/libpthread.so
+stage_ros/CMakeFiles/CMakeRelink.dir/stageros: /opt/ros/kinetic/lib/cmake/Stage/../../../lib/libstage.so.4.1.1
+stage_ros/CMakeFiles/CMakeRelink.dir/stageros: /usr/lib/x86_64-linux-gnu/libGL.so
+stage_ros/CMakeFiles/CMakeRelink.dir/stageros: /usr/lib/x86_64-linux-gnu/libSM.so
+stage_ros/CMakeFiles/CMakeRelink.dir/stageros: /usr/lib/x86_64-linux-gnu/libICE.so
+stage_ros/CMakeFiles/CMakeRelink.dir/stageros: /usr/lib/x86_64-linux-gnu/libX11.so
+stage_ros/CMakeFiles/CMakeRelink.dir/stageros: /usr/lib/x86_64-linux-gnu/libXext.so
+stage_ros/CMakeFiles/CMakeRelink.dir/stageros: /usr/lib/x86_64-linux-gnu/libm.so
+stage_ros/CMakeFiles/CMakeRelink.dir/stageros: /usr/lib/x86_64-linux-gnu/libboost_signals.so
+stage_ros/CMakeFiles/CMakeRelink.dir/stageros: /opt/ros/kinetic/lib/libroscpp_serialization.so
+stage_ros/CMakeFiles/CMakeRelink.dir/stageros: /opt/ros/kinetic/lib/librostime.so
+stage_ros/CMakeFiles/CMakeRelink.dir/stageros: /opt/ros/kinetic/lib/libcpp_common.so
+stage_ros/CMakeFiles/CMakeRelink.dir/stageros: /usr/lib/x86_64-linux-gnu/libboost_system.so
+stage_ros/CMakeFiles/CMakeRelink.dir/stageros: /usr/lib/x86_64-linux-gnu/libboost_thread.so
+stage_ros/CMakeFiles/CMakeRelink.dir/stageros: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
+stage_ros/CMakeFiles/CMakeRelink.dir/stageros: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
+stage_ros/CMakeFiles/CMakeRelink.dir/stageros: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
+stage_ros/CMakeFiles/CMakeRelink.dir/stageros: /usr/lib/x86_64-linux-gnu/libpthread.so
+stage_ros/CMakeFiles/CMakeRelink.dir/stageros: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
+stage_ros/CMakeFiles/CMakeRelink.dir/stageros: stage_ros/CMakeFiles/stageros.dir/relink.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/simoneforno/simon_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable CMakeFiles/CMakeRelink.dir/stageros"
+	cd /home/simoneforno/simon_ws/build/stage_ros && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/stageros.dir/relink.txt --verbose=$(VERBOSE)
+
+# Rule to relink during preinstall.
+stage_ros/CMakeFiles/stageros.dir/preinstall: stage_ros/CMakeFiles/CMakeRelink.dir/stageros
+
+.PHONY : stage_ros/CMakeFiles/stageros.dir/preinstall
+
 stage_ros/CMakeFiles/stageros.dir/requires: stage_ros/CMakeFiles/stageros.dir/src/stageros.cpp.o.requires
 
 .PHONY : stage_ros/CMakeFiles/stageros.dir/requires

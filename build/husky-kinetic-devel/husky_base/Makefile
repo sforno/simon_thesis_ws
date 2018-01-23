@@ -78,17 +78,6 @@ install/local/fast: install/local
 
 .PHONY : install/local/fast
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-
-.PHONY : install/strip/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -299,6 +288,11 @@ husky_node: husky-kinetic-devel/husky_base/CMakeFiles/husky_node.dir/rule
 husky_node/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f husky-kinetic-devel/husky_base/CMakeFiles/husky_node.dir/build.make husky-kinetic-devel/husky_base/CMakeFiles/husky_node.dir/build
 .PHONY : husky_node/fast
+
+# Manual pre-install relink rule for target.
+husky_node/preinstall:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 husky-kinetic-devel/husky_base/CMakeFiles/husky_node.dir/preinstall
+.PHONY : husky_node/preinstall
 
 # Convenience name for target.
 husky-kinetic-devel/husky_base/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule:
@@ -989,7 +983,6 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... install/local"
-	@echo "... install/strip"
 	@echo "... clean_test_results_husky_base"
 	@echo "... _run_tests_husky_base_roslaunch-check_launch"
 	@echo "... _run_tests_husky_base_roslaunch-check"

@@ -79,17 +79,6 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
@@ -111,17 +100,6 @@ list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-
-.PHONY : install/strip/fast
-
 # Special rule for the target test
 test:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
@@ -132,6 +110,17 @@ test:
 test/fast: test
 
 .PHONY : test/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -164,21 +153,6 @@ preinstall/fast:
 depend:
 	cd /home/simoneforno/simon_ws/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
-
-# Convenience name for target.
-husky-kinetic-devel/husky_description/CMakeFiles/run_tests_husky_description_roslaunch-check.dir/rule:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 husky-kinetic-devel/husky_description/CMakeFiles/run_tests_husky_description_roslaunch-check.dir/rule
-.PHONY : husky-kinetic-devel/husky_description/CMakeFiles/run_tests_husky_description_roslaunch-check.dir/rule
-
-# Convenience name for target.
-run_tests_husky_description_roslaunch-check: husky-kinetic-devel/husky_description/CMakeFiles/run_tests_husky_description_roslaunch-check.dir/rule
-
-.PHONY : run_tests_husky_description_roslaunch-check
-
-# fast build rule for target.
-run_tests_husky_description_roslaunch-check/fast:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f husky-kinetic-devel/husky_description/CMakeFiles/run_tests_husky_description_roslaunch-check.dir/build.make husky-kinetic-devel/husky_description/CMakeFiles/run_tests_husky_description_roslaunch-check.dir/build
-.PHONY : run_tests_husky_description_roslaunch-check/fast
 
 # Convenience name for target.
 husky-kinetic-devel/husky_description/CMakeFiles/_run_tests_husky_description.dir/rule:
@@ -270,6 +244,21 @@ _run_tests_husky_description_roslaunch-check_launch/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f husky-kinetic-devel/husky_description/CMakeFiles/_run_tests_husky_description_roslaunch-check_launch.dir/build.make husky-kinetic-devel/husky_description/CMakeFiles/_run_tests_husky_description_roslaunch-check_launch.dir/build
 .PHONY : _run_tests_husky_description_roslaunch-check_launch/fast
 
+# Convenience name for target.
+husky-kinetic-devel/husky_description/CMakeFiles/run_tests_husky_description_roslaunch-check.dir/rule:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 husky-kinetic-devel/husky_description/CMakeFiles/run_tests_husky_description_roslaunch-check.dir/rule
+.PHONY : husky-kinetic-devel/husky_description/CMakeFiles/run_tests_husky_description_roslaunch-check.dir/rule
+
+# Convenience name for target.
+run_tests_husky_description_roslaunch-check: husky-kinetic-devel/husky_description/CMakeFiles/run_tests_husky_description_roslaunch-check.dir/rule
+
+.PHONY : run_tests_husky_description_roslaunch-check
+
+# fast build rule for target.
+run_tests_husky_description_roslaunch-check/fast:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f husky-kinetic-devel/husky_description/CMakeFiles/run_tests_husky_description_roslaunch-check.dir/build.make husky-kinetic-devel/husky_description/CMakeFiles/run_tests_husky_description_roslaunch-check.dir/build
+.PHONY : run_tests_husky_description_roslaunch-check/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -278,8 +267,6 @@ help:
 	@echo "... depend"
 	@echo "... install"
 	@echo "... rebuild_cache"
-	@echo "... edit_cache"
-	@echo "... run_tests_husky_description_roslaunch-check"
 	@echo "... _run_tests_husky_description"
 	@echo "... _run_tests_husky_description_roslaunch-check"
 	@echo "... run_tests_husky_description"
@@ -287,9 +274,10 @@ help:
 	@echo "... run_tests_husky_description_roslaunch-check_launch"
 	@echo "... clean_test_results_husky_description"
 	@echo "... list_install_components"
-	@echo "... install/strip"
 	@echo "... _run_tests_husky_description_roslaunch-check_launch"
 	@echo "... test"
+	@echo "... run_tests_husky_description_roslaunch-check"
+	@echo "... edit_cache"
 .PHONY : help
 
 

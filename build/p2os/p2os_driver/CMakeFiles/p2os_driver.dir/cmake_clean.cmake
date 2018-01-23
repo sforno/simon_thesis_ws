@@ -8,6 +8,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/p2os_driver.dir/src/p2os_ptz.cpp.o"
   "/home/simoneforno/simon_ws/devel/lib/p2os_driver/p2os_driver.pdb"
   "/home/simoneforno/simon_ws/devel/lib/p2os_driver/p2os_driver"
+  "/home/simoneforno/simon_ws/devel/lib/p2os_driver/p2os_driver.pdb"
+  "CMakeFiles/CMakeRelink.dir/p2os_driver"
 )
 
 # Per-language clean rules from dependency scanning.

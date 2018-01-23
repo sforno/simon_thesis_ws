@@ -56,6 +56,16 @@ CMAKE_BINARY_DIR = /home/simoneforno/simon_ws/build
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
+
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -66,17 +76,6 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
-
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: install/local
-
-.PHONY : install/local/fast
 
 # Special rule for the target test
 test:
@@ -112,26 +111,16 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
 
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
+# Special rule for the target install/local
+install/local/fast: install/local
 
-.PHONY : list_install_components/fast
-
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-
-.PHONY : install/strip/fast
+.PHONY : install/local/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -239,6 +228,11 @@ voxel_grid: navigation/voxel_grid/CMakeFiles/voxel_grid.dir/rule
 voxel_grid/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f navigation/voxel_grid/CMakeFiles/voxel_grid.dir/build.make navigation/voxel_grid/CMakeFiles/voxel_grid.dir/build
 .PHONY : voxel_grid/fast
+
+# Manual pre-install relink rule for target.
+voxel_grid/preinstall:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/voxel_grid/CMakeFiles/voxel_grid.dir/preinstall
+.PHONY : voxel_grid/preinstall
 
 # Convenience name for target.
 navigation/voxel_grid/CMakeFiles/run_tests_voxel_grid_gtest.dir/rule:
@@ -360,8 +354,8 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... install/local"
 	@echo "... test"
 	@echo "... voxel_grid_tests"
 	@echo "... _run_tests_voxel_grid_gtest_voxel_grid_tests"
@@ -374,8 +368,7 @@ help:
 	@echo "... run_tests_voxel_grid_gtest_voxel_grid_tests"
 	@echo "... _run_tests_voxel_grid_gtest"
 	@echo "... clean_test_results_voxel_grid"
-	@echo "... list_install_components"
-	@echo "... install/strip"
+	@echo "... install/local"
 	@echo "... src/voxel_grid.o"
 	@echo "... src/voxel_grid.i"
 	@echo "... src/voxel_grid.s"

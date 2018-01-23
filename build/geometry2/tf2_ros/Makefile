@@ -56,6 +56,16 @@ CMAKE_BINARY_DIR = /home/simoneforno/simon_ws/build
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
+
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
@@ -78,27 +88,6 @@ install/local: preinstall
 install/local/fast: install/local
 
 .PHONY : install/local/fast
-
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
-
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-
-.PHONY : install/strip/fast
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
@@ -240,6 +229,11 @@ tf2_ros_static_transform_publisher/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f geometry2/tf2_ros/CMakeFiles/tf2_ros_static_transform_publisher.dir/build.make geometry2/tf2_ros/CMakeFiles/tf2_ros_static_transform_publisher.dir/build
 .PHONY : tf2_ros_static_transform_publisher/fast
 
+# Manual pre-install relink rule for target.
+tf2_ros_static_transform_publisher/preinstall:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 geometry2/tf2_ros/CMakeFiles/tf2_ros_static_transform_publisher.dir/preinstall
+.PHONY : tf2_ros_static_transform_publisher/preinstall
+
 # Convenience name for target.
 geometry2/tf2_ros/CMakeFiles/tf2_ros_test_time_reset.dir/rule:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 geometry2/tf2_ros/CMakeFiles/tf2_ros_test_time_reset.dir/rule
@@ -285,6 +279,11 @@ tf2_ros/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f geometry2/tf2_ros/CMakeFiles/tf2_ros.dir/build.make geometry2/tf2_ros/CMakeFiles/tf2_ros.dir/build
 .PHONY : tf2_ros/fast
 
+# Manual pre-install relink rule for target.
+tf2_ros/preinstall:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 geometry2/tf2_ros/CMakeFiles/tf2_ros.dir/preinstall
+.PHONY : tf2_ros/preinstall
+
 # Convenience name for target.
 geometry2/tf2_ros/CMakeFiles/_run_tests_tf2_ros.dir/rule:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 geometry2/tf2_ros/CMakeFiles/_run_tests_tf2_ros.dir/rule
@@ -314,6 +313,11 @@ tf2_ros_buffer_server: geometry2/tf2_ros/CMakeFiles/tf2_ros_buffer_server.dir/ru
 tf2_ros_buffer_server/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f geometry2/tf2_ros/CMakeFiles/tf2_ros_buffer_server.dir/build.make geometry2/tf2_ros/CMakeFiles/tf2_ros_buffer_server.dir/build
 .PHONY : tf2_ros_buffer_server/fast
+
+# Manual pre-install relink rule for target.
+tf2_ros_buffer_server/preinstall:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 geometry2/tf2_ros/CMakeFiles/tf2_ros_buffer_server.dir/preinstall
+.PHONY : tf2_ros_buffer_server/preinstall
 
 # Convenience name for target.
 geometry2/tf2_ros/CMakeFiles/run_tests_tf2_ros.dir/rule:
@@ -651,10 +655,9 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... list_install_components"
 	@echo "... install"
 	@echo "... install/local"
-	@echo "... list_install_components"
-	@echo "... install/strip"
 	@echo "... _run_tests_tf2_ros_rostest_test_transform_listener_time_reset_test.launch"
 	@echo "... clean_test_results_tf2_ros"
 	@echo "... run_tests_tf2_ros_rostest_test_transform_listener_time_reset_test.launch"

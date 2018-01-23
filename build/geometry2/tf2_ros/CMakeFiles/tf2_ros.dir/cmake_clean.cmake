@@ -7,6 +7,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/tf2_ros.dir/src/static_transform_broadcaster.cpp.o"
   "/home/simoneforno/simon_ws/devel/lib/libtf2_ros.pdb"
   "/home/simoneforno/simon_ws/devel/lib/libtf2_ros.so"
+  "/home/simoneforno/simon_ws/devel/lib/libtf2_ros.pdb"
+  "CMakeFiles/CMakeRelink.dir/libtf2_ros.so"
 )
 
 # Per-language clean rules from dependency scanning.

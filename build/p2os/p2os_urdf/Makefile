@@ -122,17 +122,6 @@ install/local/fast: install/local
 
 .PHONY : install/local/fast
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-
-.PHONY : install/strip/fast
-
 # The main all target
 all: cmake_check_build_system
 	cd /home/simoneforno/simon_ws/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/simoneforno/simon_ws/build/CMakeFiles /home/simoneforno/simon_ws/build/p2os/p2os_urdf/CMakeFiles/progress.marks
@@ -180,6 +169,11 @@ p2os_publisher/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f p2os/p2os_urdf/CMakeFiles/p2os_publisher.dir/build.make p2os/p2os_urdf/CMakeFiles/p2os_publisher.dir/build
 .PHONY : p2os_publisher/fast
 
+# Manual pre-install relink rule for target.
+p2os_publisher/preinstall:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 p2os/p2os_urdf/CMakeFiles/p2os_publisher.dir/preinstall
+.PHONY : p2os_publisher/preinstall
+
 # Convenience name for target.
 p2os/p2os_urdf/CMakeFiles/p2os_publisher_3dx.dir/rule:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 p2os/p2os_urdf/CMakeFiles/p2os_publisher_3dx.dir/rule
@@ -195,6 +189,11 @@ p2os_publisher_3dx/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f p2os/p2os_urdf/CMakeFiles/p2os_publisher_3dx.dir/build.make p2os/p2os_urdf/CMakeFiles/p2os_publisher_3dx.dir/build
 .PHONY : p2os_publisher_3dx/fast
 
+# Manual pre-install relink rule for target.
+p2os_publisher_3dx/preinstall:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 p2os/p2os_urdf/CMakeFiles/p2os_publisher_3dx.dir/preinstall
+.PHONY : p2os_publisher_3dx/preinstall
+
 # Convenience name for target.
 p2os/p2os_urdf/CMakeFiles/p2os_publisher_3at.dir/rule:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 p2os/p2os_urdf/CMakeFiles/p2os_publisher_3at.dir/rule
@@ -209,6 +208,11 @@ p2os_publisher_3at: p2os/p2os_urdf/CMakeFiles/p2os_publisher_3at.dir/rule
 p2os_publisher_3at/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f p2os/p2os_urdf/CMakeFiles/p2os_publisher_3at.dir/build.make p2os/p2os_urdf/CMakeFiles/p2os_publisher_3at.dir/build
 .PHONY : p2os_publisher_3at/fast
+
+# Manual pre-install relink rule for target.
+p2os_publisher_3at/preinstall:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 p2os/p2os_urdf/CMakeFiles/p2os_publisher_3at.dir/preinstall
+.PHONY : p2os_publisher_3at/preinstall
 
 src/publisher.o: src/publisher.cc.o
 
@@ -306,7 +310,6 @@ help:
 	@echo "... install"
 	@echo "... p2os_publisher_3at"
 	@echo "... install/local"
-	@echo "... install/strip"
 	@echo "... src/publisher.o"
 	@echo "... src/publisher.i"
 	@echo "... src/publisher.s"

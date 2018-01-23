@@ -2,6 +2,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/gazebo_ros_joint_state_publisher.dir/src/gazebo_ros_joint_state_publisher.cpp.o"
   "/home/simoneforno/simon_ws/devel/lib/libgazebo_ros_joint_state_publisher.pdb"
   "/home/simoneforno/simon_ws/devel/lib/libgazebo_ros_joint_state_publisher.so"
+  "/home/simoneforno/simon_ws/devel/lib/libgazebo_ros_joint_state_publisher.pdb"
+  "CMakeFiles/CMakeRelink.dir/libgazebo_ros_joint_state_publisher.so"
 )
 
 # Per-language clean rules from dependency scanning.

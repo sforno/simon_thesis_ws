@@ -6,6 +6,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/layers.dir/src/observation_buffer.cpp.o"
   "/home/simoneforno/simon_ws/devel/lib/liblayers.pdb"
   "/home/simoneforno/simon_ws/devel/lib/liblayers.so"
+  "/home/simoneforno/simon_ws/devel/lib/liblayers.pdb"
+  "CMakeFiles/CMakeRelink.dir/liblayers.so"
 )
 
 # Per-language clean rules from dependency scanning.

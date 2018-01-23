@@ -2,6 +2,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/localizer.dir/src/LocalizerNode.cpp.o"
   "/home/simoneforno/simon_ws/devel/lib/nav2d_localizer/localizer.pdb"
   "/home/simoneforno/simon_ws/devel/lib/nav2d_localizer/localizer"
+  "/home/simoneforno/simon_ws/devel/lib/nav2d_localizer/localizer.pdb"
+  "CMakeFiles/CMakeRelink.dir/localizer"
 )
 
 # Per-language clean rules from dependency scanning.

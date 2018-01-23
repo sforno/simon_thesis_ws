@@ -101,17 +101,6 @@ test/fast: test
 
 .PHONY : test/fast
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-
-.PHONY : install/strip/fast
-
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
@@ -480,6 +469,11 @@ navigator/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f navigation_2d/nav2d_navigator/CMakeFiles/navigator.dir/build.make navigation_2d/nav2d_navigator/CMakeFiles/navigator.dir/build
 .PHONY : navigator/fast
 
+# Manual pre-install relink rule for target.
+navigator/preinstall:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation_2d/nav2d_navigator/CMakeFiles/navigator.dir/preinstall
+.PHONY : navigator/preinstall
+
 # Convenience name for target.
 navigation_2d/nav2d_navigator/CMakeFiles/_nav2d_navigator_generate_messages_check_deps_ExploreAction.dir/rule:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation_2d/nav2d_navigator/CMakeFiles/_nav2d_navigator_generate_messages_check_deps_ExploreAction.dir/rule
@@ -585,6 +579,11 @@ explore_client/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f navigation_2d/nav2d_navigator/CMakeFiles/explore_client.dir/build.make navigation_2d/nav2d_navigator/CMakeFiles/explore_client.dir/build
 .PHONY : explore_client/fast
 
+# Manual pre-install relink rule for target.
+explore_client/preinstall:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation_2d/nav2d_navigator/CMakeFiles/explore_client.dir/preinstall
+.PHONY : explore_client/preinstall
+
 # Convenience name for target.
 navigation_2d/nav2d_navigator/CMakeFiles/_nav2d_navigator_generate_messages_check_deps_ExploreActionResult.dir/rule:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation_2d/nav2d_navigator/CMakeFiles/_nav2d_navigator_generate_messages_check_deps_ExploreActionResult.dir/rule
@@ -629,6 +628,11 @@ localize_client: navigation_2d/nav2d_navigator/CMakeFiles/localize_client.dir/ru
 localize_client/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f navigation_2d/nav2d_navigator/CMakeFiles/localize_client.dir/build.make navigation_2d/nav2d_navigator/CMakeFiles/localize_client.dir/build
 .PHONY : localize_client/fast
+
+# Manual pre-install relink rule for target.
+localize_client/preinstall:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation_2d/nav2d_navigator/CMakeFiles/localize_client.dir/preinstall
+.PHONY : localize_client/preinstall
 
 # Convenience name for target.
 navigation_2d/nav2d_navigator/CMakeFiles/_nav2d_navigator_generate_messages_check_deps_GetFirstMapFeedback.dir/rule:
@@ -704,6 +708,11 @@ get_map_client: navigation_2d/nav2d_navigator/CMakeFiles/get_map_client.dir/rule
 get_map_client/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f navigation_2d/nav2d_navigator/CMakeFiles/get_map_client.dir/build.make navigation_2d/nav2d_navigator/CMakeFiles/get_map_client.dir/build
 .PHONY : get_map_client/fast
+
+# Manual pre-install relink rule for target.
+get_map_client/preinstall:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation_2d/nav2d_navigator/CMakeFiles/get_map_client.dir/preinstall
+.PHONY : get_map_client/preinstall
 
 # Convenience name for target.
 navigation_2d/nav2d_navigator/CMakeFiles/_nav2d_navigator_generate_messages_check_deps_LocalizeGoal.dir/rule:
@@ -840,6 +849,11 @@ RobotNavigator/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f navigation_2d/nav2d_navigator/CMakeFiles/RobotNavigator.dir/build.make navigation_2d/nav2d_navigator/CMakeFiles/RobotNavigator.dir/build
 .PHONY : RobotNavigator/fast
 
+# Manual pre-install relink rule for target.
+RobotNavigator/preinstall:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation_2d/nav2d_navigator/CMakeFiles/RobotNavigator.dir/preinstall
+.PHONY : RobotNavigator/preinstall
+
 # Convenience name for target.
 navigation_2d/nav2d_navigator/CMakeFiles/set_goal_client.dir/rule:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation_2d/nav2d_navigator/CMakeFiles/set_goal_client.dir/rule
@@ -854,6 +868,11 @@ set_goal_client: navigation_2d/nav2d_navigator/CMakeFiles/set_goal_client.dir/ru
 set_goal_client/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f navigation_2d/nav2d_navigator/CMakeFiles/set_goal_client.dir/build.make navigation_2d/nav2d_navigator/CMakeFiles/set_goal_client.dir/build
 .PHONY : set_goal_client/fast
+
+# Manual pre-install relink rule for target.
+set_goal_client/preinstall:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation_2d/nav2d_navigator/CMakeFiles/set_goal_client.dir/preinstall
+.PHONY : set_goal_client/preinstall
 
 src/MapInflationTool.o: src/MapInflationTool.cpp.o
 
@@ -1057,7 +1076,6 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... test"
-	@echo "... install/strip"
 	@echo "... _nav2d_navigator_generate_messages_check_deps_ExploreFeedback"
 	@echo "... _nav2d_navigator_generate_messages_check_deps_MoveToPosition2DActionFeedback"
 	@echo "... _nav2d_navigator_generate_messages_check_deps_LocalizeActionGoal"

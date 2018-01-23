@@ -2,6 +2,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/gazebo_ros_elevator.dir/src/gazebo_ros_elevator.cpp.o"
   "/home/simoneforno/simon_ws/devel/lib/libgazebo_ros_elevator.pdb"
   "/home/simoneforno/simon_ws/devel/lib/libgazebo_ros_elevator.so"
+  "/home/simoneforno/simon_ws/devel/lib/libgazebo_ros_elevator.pdb"
+  "CMakeFiles/CMakeRelink.dir/libgazebo_ros_elevator.so"
 )
 
 # Per-language clean rules from dependency scanning.

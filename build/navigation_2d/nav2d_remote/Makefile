@@ -111,17 +111,6 @@ test/fast: test
 
 .PHONY : test/fast
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-
-.PHONY : install/strip/fast
-
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
@@ -180,6 +169,11 @@ remote_joy/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f navigation_2d/nav2d_remote/CMakeFiles/remote_joy.dir/build.make navigation_2d/nav2d_remote/CMakeFiles/remote_joy.dir/build
 .PHONY : remote_joy/fast
 
+# Manual pre-install relink rule for target.
+remote_joy/preinstall:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation_2d/nav2d_remote/CMakeFiles/remote_joy.dir/preinstall
+.PHONY : remote_joy/preinstall
+
 # Convenience name for target.
 navigation_2d/nav2d_remote/CMakeFiles/sim_joy.dir/rule:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation_2d/nav2d_remote/CMakeFiles/sim_joy.dir/rule
@@ -194,6 +188,11 @@ sim_joy: navigation_2d/nav2d_remote/CMakeFiles/sim_joy.dir/rule
 sim_joy/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f navigation_2d/nav2d_remote/CMakeFiles/sim_joy.dir/build.make navigation_2d/nav2d_remote/CMakeFiles/sim_joy.dir/build
 .PHONY : sim_joy/fast
+
+# Manual pre-install relink rule for target.
+sim_joy/preinstall:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation_2d/nav2d_remote/CMakeFiles/sim_joy.dir/preinstall
+.PHONY : sim_joy/preinstall
 
 src/remote_joy.o: src/remote_joy.cpp.o
 
@@ -259,10 +258,9 @@ help:
 	@echo "... install"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... test"
 	@echo "... remote_joy"
+	@echo "... test"
 	@echo "... sim_joy"
-	@echo "... install/strip"
 	@echo "... install/local"
 	@echo "... src/remote_joy.o"
 	@echo "... src/remote_joy.i"

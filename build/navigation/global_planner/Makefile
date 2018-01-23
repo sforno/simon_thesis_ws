@@ -89,6 +89,17 @@ test/fast: test
 
 .PHONY : test/fast
 
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: install/local
+
+.PHONY : install/local/fast
+
 # Special rule for the target list_install_components
 list_install_components:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
@@ -110,28 +121,6 @@ install/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
-
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: install/local
-
-.PHONY : install/local/fast
-
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-
-.PHONY : install/strip/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -195,6 +184,11 @@ global_planner/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f navigation/global_planner/CMakeFiles/global_planner.dir/build.make navigation/global_planner/CMakeFiles/global_planner.dir/build
 .PHONY : global_planner/fast
 
+# Manual pre-install relink rule for target.
+global_planner/preinstall:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/global_planner/CMakeFiles/global_planner.dir/preinstall
+.PHONY : global_planner/preinstall
+
 # Convenience name for target.
 navigation/global_planner/CMakeFiles/planner.dir/rule:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/global_planner/CMakeFiles/planner.dir/rule
@@ -209,6 +203,11 @@ planner: navigation/global_planner/CMakeFiles/planner.dir/rule
 planner/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f navigation/global_planner/CMakeFiles/planner.dir/build.make navigation/global_planner/CMakeFiles/planner.dir/build
 .PHONY : planner/fast
+
+# Manual pre-install relink rule for target.
+planner/preinstall:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/global_planner/CMakeFiles/planner.dir/preinstall
+.PHONY : planner/preinstall
 
 src/astar.o: src/astar.cpp.o
 
@@ -435,13 +434,12 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... test"
+	@echo "... install/local"
 	@echo "... global_planner_gencfg"
 	@echo "... global_planner"
 	@echo "... list_install_components"
 	@echo "... install"
 	@echo "... planner"
-	@echo "... install/local"
-	@echo "... install/strip"
 	@echo "... src/astar.o"
 	@echo "... src/astar.i"
 	@echo "... src/astar.s"

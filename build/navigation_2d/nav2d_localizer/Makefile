@@ -89,17 +89,6 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-
-.PHONY : test/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -122,16 +111,16 @@ install/local/fast: install/local
 
 .PHONY : install/local/fast
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
 
-# Special rule for the target install/strip
-install/strip/fast: install/strip
+# Special rule for the target test
+test/fast: test
 
-.PHONY : install/strip/fast
+.PHONY : test/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -194,6 +183,11 @@ localizer: navigation_2d/nav2d_localizer/CMakeFiles/localizer.dir/rule
 localizer/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f navigation_2d/nav2d_localizer/CMakeFiles/localizer.dir/build.make navigation_2d/nav2d_localizer/CMakeFiles/localizer.dir/build
 .PHONY : localizer/fast
+
+# Manual pre-install relink rule for target.
+localizer/preinstall:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation_2d/nav2d_localizer/CMakeFiles/localizer.dir/preinstall
+.PHONY : localizer/preinstall
 
 src/LocalizerNode.o: src/LocalizerNode.cpp.o
 
@@ -555,12 +549,11 @@ help:
 	@echo "... list_install_components"
 	@echo "... install"
 	@echo "... edit_cache"
-	@echo "... test"
 	@echo "... rebuild_cache"
 	@echo "... SelfLocalizer"
-	@echo "... localizer"
 	@echo "... install/local"
-	@echo "... install/strip"
+	@echo "... localizer"
+	@echo "... test"
 	@echo "... src/LocalizerNode.o"
 	@echo "... src/LocalizerNode.i"
 	@echo "... src/LocalizerNode.s"
