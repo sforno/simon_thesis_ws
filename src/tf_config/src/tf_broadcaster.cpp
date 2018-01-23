@@ -14,19 +14,19 @@
     broadcaster.sendTransform(
       tf::StampedTransform(
         tf::Transform(tf::Quaternion(0, 0, 0, 1), tf::Vector3(4, 0.25, 0)),
-        ros::Time::now(),"map", "ar_marker_1"));
+        ros::Time::now(),"odom", "ar_marker_1"));
    broadcaster.sendTransform(
       tf::StampedTransform(
         tf::Transform(tf::Quaternion(0, 0, 0, 1), tf::Vector3(4, -0.25, 0)),
-        ros::Time::now(),"map", "ar_marker_2"));
+        ros::Time::now(),"odom", "ar_marker_2"));
    broadcaster.sendTransform(
       tf::StampedTransform(
         tf::Transform(tf::Quaternion(0, 0, 0, 1), tf::Vector3(6, -0.25, 0)),
-        ros::Time::now(),"map", "ar_marker_3"));
+        ros::Time::now(),"odom", "ar_marker_3"));
 broadcaster.sendTransform(
       tf::StampedTransform(
         tf::Transform(tf::Quaternion(0, 0, 0, 1), tf::Vector3(6, 0.25, 0)),
-        ros::Time::now(),"map", "ar_marker_4"));
+        ros::Time::now(),"odom", "ar_marker_4"));
   /*
     broadcaster.sendTransform(
       tf::StampedTransform(

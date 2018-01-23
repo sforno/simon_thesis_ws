@@ -1,0 +1,7 @@
+
+
+https://answers.ros.org/question/199835/robot-localization-using-ar-tags/
+
+https://answers.ros.org/question/207141/localizing-using-ar-tags-and-wheel-odometry/
+
+https://answers.ros.org/question/226839/using-tf-to-connect-camera-observed-tag-to-base_link/

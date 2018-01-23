@@ -157,7 +157,7 @@ int main(int argc, char **argv)
 
 
   Converter convert;  
-  int desidered_freq = 5.0;
+  int desidered_freq = 15.0;
 
   ros::Rate r(desidered_freq);
 
