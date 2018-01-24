@@ -1,0 +1,9 @@
+# Data used
+
+Input to the Ekf: 4 markers
+		  odometry/filtered
+		  going back and forth
+
+process_noise_covariance: default
+
+initial_state_covariance: default
