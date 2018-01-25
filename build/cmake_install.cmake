@@ -190,6 +190,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/simoneforno/simon_ws/build/navigation/move_slow_and_clear/cmake_install.cmake")
   include("/home/simoneforno/simon_ws/build/navigation/navfn/cmake_install.cmake")
   include("/home/simoneforno/simon_ws/build/navigation/global_planner/cmake_install.cmake")
+  include("/home/simoneforno/simon_ws/build/map_groundtruth/cmake_install.cmake")
   include("/home/simoneforno/simon_ws/build/navigation/rotate_recovery/cmake_install.cmake")
   include("/home/simoneforno/simon_ws/build/navigation/move_base/cmake_install.cmake")
 

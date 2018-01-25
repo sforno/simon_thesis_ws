@@ -1,0 +1,8 @@
+prefix=/home/simoneforno/simon_ws/install
+
+Name: map_groundtruth
+Description: Description of map_groundtruth
+Version: 0.0.0
+Cflags: -I/home/simoneforno/simon_ws/install/include
+Libs: -L/home/simoneforno/simon_ws/install/lib -lmap_groundtruth
+Requires: roscpp rospy std_msgs nav_msgs costmap_2d navfn rosgraph_msgs
