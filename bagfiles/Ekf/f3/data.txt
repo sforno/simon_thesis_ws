@@ -1,8 +1,9 @@
 # Data used
 
 Input to the Ekf: 4 markers
-		  odometry/filtered
 		  going back and forth
+
+Map frame: map -> if set it to odom don t get the final pose published
 
 process_noise_covariance: default
 

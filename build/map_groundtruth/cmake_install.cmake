@@ -32,18 +32,3 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
   set(CMAKE_INSTALL_SO_NO_EXE "1")
 endif()
 
-if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/simoneforno/simon_ws/build/map_groundtruth/catkin_generated/installspace/map_groundtruth.pc")
-endif()
-
-if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/map_groundtruth/cmake" TYPE FILE FILES
-    "/home/simoneforno/simon_ws/build/map_groundtruth/catkin_generated/installspace/map_groundtruthConfig.cmake"
-    "/home/simoneforno/simon_ws/build/map_groundtruth/catkin_generated/installspace/map_groundtruthConfig-version.cmake"
-    )
-endif()
-
-if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/map_groundtruth" TYPE FILE FILES "/home/simoneforno/simon_ws/src/map_groundtruth/package.xml")
-endif()
-

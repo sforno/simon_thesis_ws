@@ -78,6 +78,17 @@ install/fast: preinstall/fast
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: install/local
+
+.PHONY : install/local/fast
+
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -99,17 +110,6 @@ test:
 test/fast: test
 
 .PHONY : test/fast
-
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: install/local
-
-.PHONY : install/local/fast
 
 # Special rule for the target edit_cache
 edit_cache:
@@ -154,75 +154,6 @@ depend:
 	cd /home/simoneforno/simon_ws/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-# Convenience name for target.
-map_groundtruth/CMakeFiles/map_groundtruth.dir/rule:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 map_groundtruth/CMakeFiles/map_groundtruth.dir/rule
-.PHONY : map_groundtruth/CMakeFiles/map_groundtruth.dir/rule
-
-# Convenience name for target.
-map_groundtruth: map_groundtruth/CMakeFiles/map_groundtruth.dir/rule
-
-.PHONY : map_groundtruth
-
-# fast build rule for target.
-map_groundtruth/fast:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f map_groundtruth/CMakeFiles/map_groundtruth.dir/build.make map_groundtruth/CMakeFiles/map_groundtruth.dir/build
-.PHONY : map_groundtruth/fast
-
-src/generator.o: src/generator.cpp.o
-
-.PHONY : src/generator.o
-
-# target to build an object file
-src/generator.cpp.o:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f map_groundtruth/CMakeFiles/map_groundtruth.dir/build.make map_groundtruth/CMakeFiles/map_groundtruth.dir/src/generator.cpp.o
-.PHONY : src/generator.cpp.o
-
-src/generator.i: src/generator.cpp.i
-
-.PHONY : src/generator.i
-
-# target to preprocess a source file
-src/generator.cpp.i:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f map_groundtruth/CMakeFiles/map_groundtruth.dir/build.make map_groundtruth/CMakeFiles/map_groundtruth.dir/src/generator.cpp.i
-.PHONY : src/generator.cpp.i
-
-src/generator.s: src/generator.cpp.s
-
-.PHONY : src/generator.s
-
-# target to generate assembly for a file
-src/generator.cpp.s:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f map_groundtruth/CMakeFiles/map_groundtruth.dir/build.make map_groundtruth/CMakeFiles/map_groundtruth.dir/src/generator.cpp.s
-.PHONY : src/generator.cpp.s
-
-src/mapfetcher.o: src/mapfetcher.cpp.o
-
-.PHONY : src/mapfetcher.o
-
-# target to build an object file
-src/mapfetcher.cpp.o:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f map_groundtruth/CMakeFiles/map_groundtruth.dir/build.make map_groundtruth/CMakeFiles/map_groundtruth.dir/src/mapfetcher.cpp.o
-.PHONY : src/mapfetcher.cpp.o
-
-src/mapfetcher.i: src/mapfetcher.cpp.i
-
-.PHONY : src/mapfetcher.i
-
-# target to preprocess a source file
-src/mapfetcher.cpp.i:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f map_groundtruth/CMakeFiles/map_groundtruth.dir/build.make map_groundtruth/CMakeFiles/map_groundtruth.dir/src/mapfetcher.cpp.i
-.PHONY : src/mapfetcher.cpp.i
-
-src/mapfetcher.s: src/mapfetcher.cpp.s
-
-.PHONY : src/mapfetcher.s
-
-# target to generate assembly for a file
-src/mapfetcher.cpp.s:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f map_groundtruth/CMakeFiles/map_groundtruth.dir/build.make map_groundtruth/CMakeFiles/map_groundtruth.dir/src/mapfetcher.cpp.s
-.PHONY : src/mapfetcher.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -231,17 +162,10 @@ help:
 	@echo "... depend"
 	@echo "... list_install_components"
 	@echo "... install"
+	@echo "... install/local"
 	@echo "... rebuild_cache"
 	@echo "... test"
-	@echo "... map_groundtruth"
-	@echo "... install/local"
 	@echo "... edit_cache"
-	@echo "... src/generator.o"
-	@echo "... src/generator.i"
-	@echo "... src/generator.s"
-	@echo "... src/mapfetcher.o"
-	@echo "... src/mapfetcher.i"
-	@echo "... src/mapfetcher.s"
 .PHONY : help
 
 

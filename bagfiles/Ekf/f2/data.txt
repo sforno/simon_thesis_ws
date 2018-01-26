@@ -3,6 +3,8 @@
 Input to the Ekf: 4 markers
 		  odometry/filtered
 
+Map frame: map
+
 process_noise_covariance: default
 
 initial_state_covariance: default

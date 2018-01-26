@@ -4,15 +4,15 @@ project(map_groundtruth)
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
-find_package(catkin REQUIRED COMPONENTS
-  roscpp
-  rospy
-  std_msgs
-  nav_msgs
-  costmap_2d
-  navfn
-  rosgraph_msgs
-)
+#find_package(catkin REQUIRED COMPONENTS
+#  roscpp
+#  rospy
+#  std_msgs
+#  nav_msgs
+#  costmap_2d
+#  navfn
+#  rosgraph_msgs
+#)
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
@@ -103,12 +103,12 @@ find_package(catkin REQUIRED COMPONENTS
 ## LIBRARIES: libraries you create in this project that dependent projects also need
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
-catkin_package(
-  INCLUDE_DIRS include
-  LIBRARIES map_groundtruth
-  CATKIN_DEPENDS roscpp rospy std_msgs nav_msgs costmap_2d navfn rosgraph_msgs
+#catkin_package(
+#  INCLUDE_DIRS include
+#  LIBRARIES map_groundtruth
+#  CATKIN_DEPENDS roscpp rospy std_msgs nav_msgs costmap_2d navfn rosgraph_msgs
 #  DEPENDS system_lib
-)
+#)
 
 ###########
 ## Build ##
@@ -117,9 +117,9 @@ catkin_package(
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
 # include_directories(include)
-include_directories(
-  ${catkin_INCLUDE_DIRS}
-)
+#include_directories(
+#  ${catkin_INCLUDE_DIRS}
+#)
 
 ## Declare a C++ library
 # add_library(map_groundtruth
@@ -132,17 +132,17 @@ include_directories(
 # add_dependencies(map_groundtruth ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Declare a C++ executable
- add_executable(map_groundtruth src/generator.cpp
- src/mapfetcher.cpp
-)
+# add_executable(map_groundtruth src/generator.cpp
+# src/mapfetcher.cpp
+#)
 
 ## Add cmake target dependencies of the executable
 ## same as for the library above
 # add_dependencies(map_groundtruth_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
- target_link_libraries(map_groundtruth
-   ${catkin_LIBRARIES} )
+# target_link_libraries(map_groundtruth
+#   ${catkin_LIBRARIES} )
 
 #############
 ## Install ##

@@ -12859,19 +12859,6 @@ planner/preinstall:
 .PHONY : planner/preinstall
 
 #=============================================================================
-# Target rules for targets named map_groundtruth
-
-# Build rule for target.
-map_groundtruth: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 map_groundtruth
-.PHONY : map_groundtruth
-
-# fast build rule for target.
-map_groundtruth/fast:
-	$(MAKE) -f map_groundtruth/CMakeFiles/map_groundtruth.dir/build.make map_groundtruth/CMakeFiles/map_groundtruth.dir/build
-.PHONY : map_groundtruth/fast
-
-#=============================================================================
 # Target rules for targets named rotate_recovery
 
 # Build rule for target.
@@ -13883,7 +13870,6 @@ help:
 	@echo "... global_planner_gencfg"
 	@echo "... global_planner"
 	@echo "... planner"
-	@echo "... map_groundtruth"
 	@echo "... rotate_recovery"
 	@echo "... move_base_gencfg"
 	@echo "... move_base"
