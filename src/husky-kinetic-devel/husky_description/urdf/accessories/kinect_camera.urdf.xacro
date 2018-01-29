@@ -68,7 +68,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
           </image>
           <clip>
             <near>0.05</near>
-            <far>8.0</far>
+            <far>4.0</far>
           </clip>
         </camera>
         <plugin name="kinect_${prefix}_controller" filename="libgazebo_ros_openni_kinect.so">

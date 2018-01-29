@@ -1,7 +1,8 @@
 # Data used
 
-Input to the Ekf: 4 markers
-		  going back and forth
+Input to the Ekf: 6 markers
+
+Path: performing "L"
 
 Map frame: map -> if set it to odom don t get the final pose published
 

@@ -27,6 +27,12 @@ public:
     ros::Publisher marker6_pub;
     ros::Publisher marker7_pub;
     ros::Publisher marker8_pub;
+    ros::Publisher marker9_pub;
+    ros::Publisher marker10_pub;
+    ros::Publisher marker11_pub;
+    ros::Publisher marker12_pub;
+    ros::Publisher marker13_pub;
+    ros::Publisher marker14_pub;
     int counter;
     float desired_freq_;
 void ar_pose_callback(const ar_track_alvar_msgs::AlvarMarkers::ConstPtr & msg);
@@ -47,14 +53,21 @@ void ar_pose_callback(const ar_track_alvar_msgs::AlvarMarkers::ConstPtr & msg);
         marker6_pub = nh_.advertise < geometry_msgs::PoseWithCovarianceStamped > ("/marker6", 1);
         marker7_pub = nh_.advertise < geometry_msgs::PoseWithCovarianceStamped > ("/marker7", 1);
         marker8_pub = nh_.advertise < geometry_msgs::PoseWithCovarianceStamped > ("/marker8", 1);
+        marker9_pub = nh_.advertise < geometry_msgs::PoseWithCovarianceStamped > ("/marker9", 1);
+        marker10_pub = nh_.advertise < geometry_msgs::PoseWithCovarianceStamped > ("/marker10", 1);
+        marker11_pub = nh_.advertise < geometry_msgs::PoseWithCovarianceStamped > ("/marker11", 1);
+        marker12_pub = nh_.advertise < geometry_msgs::PoseWithCovarianceStamped > ("/marker12", 1);
+        marker13_pub = nh_.advertise < geometry_msgs::PoseWithCovarianceStamped > ("/marker13", 1);
+        marker14_pub = nh_.advertise < geometry_msgs::PoseWithCovarianceStamped > ("/marker14", 1);
 
         ROS_INFO("Setup finished");
+        
     };
     };
     
  void Converter::ar_pose_callback(const ar_track_alvar_msgs::AlvarMarkers::ConstPtr & msg)
 {
-    geometry_msgs::PoseWithCovarianceStamped  m1, m2, m3, m4, m5, m6, m7, m8; // define a PosewithCovariance message
+    geometry_msgs::PoseWithCovarianceStamped  m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13, m14; // define a PosewithCovariance message
 
     int size = msg->markers.size();
     for(int i = 0; i< size; i ++)
@@ -252,7 +265,159 @@ marker8_pub.publish(m8);
 //ROS_INFO("x: %f, y: %f, z: %f,rot_x: %f,rot_y: %f,rot_z: %f",m4.pose.pose.position.x, m4.pose.pose.position.y, m4.pose.pose.position.z, m4.pose.pose.orientation.x, m4.pose.pose.orientation.y,m4.pose.pose.orientation.z);
 }
 
+if (msg->markers[i].id == 9)
+{
+    m9.header = msg->header;
+m9.header.frame_id = "ar_marker_9";
+m9.pose.pose.position = msg->markers[i].pose.pose.position;
+m9.pose.pose.orientation = msg->markers[i].pose.pose.orientation;
+for(counter=0; counter < 36; counter ++)
+{
+    if(counter != 7 && counter != 14 && counter != 21 && counter != 28 && counter != 35)
+    {
+        m9.pose.covariance[counter] = 0;
+    }
+}
+// set diagonals
+
+m9.pose.covariance[7] = 0.001;
+m9.pose.covariance[14] = 0.001;
+m9.pose.covariance[21] = 0.001;
+m9.pose.covariance[28] = 0.001;
+m9.pose.covariance[35] = 0.001;
+
+marker9_pub.publish(m9);
+//ROS_INFO("x: %f, y: %f, z: %f,rot_x: %f,rot_y: %f,rot_z: %f",m4.pose.pose.position.x, m4.pose.pose.position.y, m4.pose.pose.position.z, m4.pose.pose.orientation.x, m4.pose.pose.orientation.y,m4.pose.pose.orientation.z);
+}
+
+if (msg->markers[i].id == 10)
+{
+    m10.header = msg->header;
+m10.header.frame_id = "ar_marker_10";
+m10.pose.pose.position = msg->markers[i].pose.pose.position;
+m10.pose.pose.orientation = msg->markers[i].pose.pose.orientation;
+for(counter=0; counter < 36; counter ++)
+{
+    if(counter != 7 && counter != 14 && counter != 21 && counter != 28 && counter != 35)
+    {
+        m10.pose.covariance[counter] = 0;
+    }
+}
+// set diagonals
+
+m10.pose.covariance[7] = 0.001;
+m10.pose.covariance[14] = 0.001;
+m10.pose.covariance[21] = 0.001;
+m10.pose.covariance[28] = 0.001;
+m10.pose.covariance[35] = 0.001;
+
+marker10_pub.publish(m10);
+//ROS_INFO("x: %f, y: %f, z: %f,rot_x: %f,rot_y: %f,rot_z: %f",m4.pose.pose.position.x, m4.pose.pose.position.y, m4.pose.pose.position.z, m4.pose.pose.orientation.x, m4.pose.pose.orientation.y,m4.pose.pose.orientation.z);
+}
+
+if (msg->markers[i].id == 11)
+{
+    m11.header = msg->header;
+m11.header.frame_id = "ar_marker_11";
+m11.pose.pose.position = msg->markers[i].pose.pose.position;
+m11.pose.pose.orientation = msg->markers[i].pose.pose.orientation;
+for(counter=0; counter < 36; counter ++)
+{
+    if(counter != 7 && counter != 14 && counter != 21 && counter != 28 && counter != 35)
+    {
+        m11.pose.covariance[counter] = 0;
+    }
+}
+// set diagonals
+
+m11.pose.covariance[7] = 0.001;
+m11.pose.covariance[14] = 0.001;
+m11.pose.covariance[21] = 0.001;
+m11.pose.covariance[28] = 0.001;
+m11.pose.covariance[35] = 0.001;
+
+marker11_pub.publish(m12);
+//ROS_INFO("x: %f, y: %f, z: %f,rot_x: %f,rot_y: %f,rot_z: %f",m4.pose.pose.position.x, m4.pose.pose.position.y, m4.pose.pose.position.z, m4.pose.pose.orientation.x, m4.pose.pose.orientation.y,m4.pose.pose.orientation.z);
+}
+
+if (msg->markers[i].id == 12)
+{
+    m12.header = msg->header;
+m12.header.frame_id = "ar_marker_12";
+m12.pose.pose.position = msg->markers[i].pose.pose.position;
+m12.pose.pose.orientation = msg->markers[i].pose.pose.orientation;
+for(counter=0; counter < 36; counter ++)
+{
+    if(counter != 7 && counter != 14 && counter != 21 && counter != 28 && counter != 35)
+    {
+        m12.pose.covariance[counter] = 0;
+    }
+}
+// set diagonals
+
+m12.pose.covariance[7] = 0.001;
+m12.pose.covariance[14] = 0.001;
+m12.pose.covariance[21] = 0.001;
+m12.pose.covariance[28] = 0.001;
+m12.pose.covariance[35] = 0.001;
+
+marker12_pub.publish(m12);
+//ROS_INFO("x: %f, y: %f, z: %f,rot_x: %f,rot_y: %f,rot_z: %f",m4.pose.pose.position.x, m4.pose.pose.position.y, m4.pose.pose.position.z, m4.pose.pose.orientation.x, m4.pose.pose.orientation.y,m4.pose.pose.orientation.z);
+}
+
+if (msg->markers[i].id == 13)
+{
+    m13.header = msg->header;
+m13.header.frame_id = "ar_marker_13";
+m13.pose.pose.position = msg->markers[i].pose.pose.position;
+m13.pose.pose.orientation = msg->markers[i].pose.pose.orientation;
+for(counter=0; counter < 36; counter ++)
+{
+    if(counter != 7 && counter != 14 && counter != 21 && counter != 28 && counter != 35)
+    {
+        m13.pose.covariance[counter] = 0;
+    }
+}
+// set diagonals
+
+m13.pose.covariance[7] = 0.001;
+m13.pose.covariance[14] = 0.001;
+m13.pose.covariance[21] = 0.001;
+m13.pose.covariance[28] = 0.001;
+m13.pose.covariance[35] = 0.001;
+
+marker13_pub.publish(m13);
+//ROS_INFO("x: %f, y: %f, z: %f,rot_x: %f,rot_y: %f,rot_z: %f",m4.pose.pose.position.x, m4.pose.pose.position.y, m4.pose.pose.position.z, m4.pose.pose.orientation.x, m4.pose.pose.orientation.y,m4.pose.pose.orientation.z);
+}
+
+if (msg->markers[i].id == 14)
+{
+    m14.header = msg->header;
+m14.header.frame_id = "ar_marker_14";
+m14.pose.pose.position = msg->markers[i].pose.pose.position;
+m14.pose.pose.orientation = msg->markers[i].pose.pose.orientation;
+for(counter=0; counter < 36; counter ++)
+{
+    if(counter != 7 && counter != 14 && counter != 21 && counter != 28 && counter != 35)
+    {
+        m14.pose.covariance[counter] = 0;
+    }
+}
+// set diagonals
+
+m14.pose.covariance[7] = 0.001;
+m14.pose.covariance[14] = 0.001;
+m14.pose.covariance[21] = 0.001;
+m14.pose.covariance[28] = 0.001;
+m14.pose.covariance[35] = 0.001;
+
+marker14_pub.publish(m14);
+//ROS_INFO("x: %f, y: %f, z: %f,rot_x: %f,rot_y: %f,rot_z: %f",m4.pose.pose.position.x, m4.pose.pose.position.y, m4.pose.pose.position.z, m4.pose.pose.orientation.x, m4.pose.pose.orientation.y,m4.pose.pose.orientation.z);
+}
+
 } //end of external foor loop
+
+ROS_INFO("Size: %d",size);
 }
 
 

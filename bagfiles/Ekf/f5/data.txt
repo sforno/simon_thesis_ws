@@ -1,0 +1,11 @@
+# Data used
+
+Input to the Ekf: 14 markers
+
+Path: performing "L" starting robot at x= -2.5, y= 3 (see world Fabric_tag.world)
+
+Map frame: map -> if set it to odom don t get the final pose published
+
+process_noise_covariance: default
+
+initial_state_covariance: default

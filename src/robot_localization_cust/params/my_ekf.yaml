@@ -13,7 +13,7 @@ debug: false
 publish_tf: true
 
 #initial_state: [0,  0,  0,
- #              0, 0, 3.1415926535,
+ #              0, 0, 0,
   #             0, 0, 0,
    #           0, 0, 0,
     #           0, 0, 0] # don t know if needed
@@ -27,16 +27,16 @@ world_frame: map           # Defaults to the value of odom_frame if unspecified
 
 dynamic_process_noise_covariance: true
 
-#odom0: odometry/filtered
-#odom0_config: [true,  true,  true,
-#               true, true, true,
-#               false, false, false,
-#              false, true, false,
-#               false, false, false]      # See suggestion for Y_dot:http://docs.ros.org/lunar/api/robot_localization/html/configuring_robot_localization.html
-#odom0_differential: false
-#odom0_relative: false
-#odom0_queue_size: 40
-#odom0_nodelay: false
+odom0: odometry/filtered
+odom0_config: [true,  true,  true,
+               true, true, true,
+               false, false, false,
+              false, true, false,
+               false, false, false]      # See suggestion for Y_dot:http://docs.ros.org/lunar/api/robot_localization/html/configuring_robot_localization.html
+odom0_differential: false
+odom0_relative: false
+odom0_queue_size: 40
+odom0_nodelay: false
 
 pose0: marker1
 pose0_config: [true,  true,  true,
@@ -81,6 +81,116 @@ pose3_differential: false
 pose3_relative: false
 pose3_queue_size: 40
 pose3_nodelay: false
+
+pose4: marker5
+pose4_config: [true,  true,  true,
+               true, true, true,
+               false, false, false,
+              false, false, false,
+               false, false, false]
+pose4_differential: false
+pose4_relative: false
+pose4_queue_size: 40
+pose4_nodelay: false
+
+pose5: marker6
+pose5_config: [true,  true,  true,
+               true, true, true,
+               false, false, false,
+              false, false, false,
+               false, false, false]
+pose5_differential: false
+pose5_relative: false
+pose5_queue_size: 40
+pose5_nodelay: false
+
+pose6: marker7
+pose6_config: [true,  true,  true,
+               true, true, true,
+               false, false, false,
+              false, false, false,
+               false, false, false]
+pose6_differential: false
+pose6_relative: false
+pose6_queue_size: 40
+pose6_nodelay: false
+
+pose7: marker8
+pose7_config: [true,  true,  true,
+               true, true, true,
+               false, false, false,
+              false, false, false,
+               false, false, false]
+pose7_differential: false
+pose7_relative: false
+pose7_queue_size: 40
+pose7_nodelay: false
+
+pose8: marker9
+pose8_config: [true,  true,  true,
+               true, true, true,
+               false, false, false,
+              false, false, false,
+               false, false, false]
+pose8_differential: false
+pose8_relative: false
+pose8_queue_size: 40
+pose8_nodelay: false
+
+pose9: marker10
+pose9_config: [true,  true,  true,
+               true, true, true,
+               false, false, false,
+              false, false, false,
+               false, false, false]
+pose9_differential: false
+pose9_relative: false
+pose9_queue_size: 40
+pose9_nodelay: false
+
+pose10: marker11
+pose10_config: [true,  true,  true,
+               true, true, true,
+               false, false, false,
+              false, false, false,
+               false, false, false]
+pose10_differential: false
+pose10_relative: false
+pose10_queue_size: 40
+pose10_nodelay: false
+
+pose11: marker12
+pose11_config: [true,  true,  true,
+               true, true, true,
+               false, false, false,
+              false, false, false,
+               false, false, false]
+pose11_differential: false
+pose11_relative: false
+pose11_queue_size: 40
+pose11_nodelay: false
+
+pose12: marker13
+pose12_config: [true,  true,  true,
+               true, true, true,
+               false, false, false,
+              false, false, false,
+               false, false, false]
+pose12_differential: false
+pose12_relative: false
+pose12_queue_size: 40
+pose12_nodelay: false
+
+pose13: marker14
+pose13_config: [true,  true,  true,
+               true, true, true,
+               false, false, false,
+              false, false, false,
+               false, false, false]
+pose13_differential: false
+pose13_relative: false
+pose13_queue_size: 40
+pose13_nodelay: false
 
 process_noise_covariance: [0.0001, 0,    0,    0,    0,    0,    0,     0,     0,    0,    0,    0,    0,    0,    0,
                            0,    0.0001, 0,    0,    0,    0,    0,     0,     0,    0,    0,    0,    0,    0,    0,

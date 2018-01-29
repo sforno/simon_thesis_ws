@@ -24,7 +24,7 @@
         </image>
         <clip>
           <near>0.05</near>
-          <far>8.0</far>
+          <far>4.0</far> <!-- default 8, gave segmentation error problem in the camera-->
         </clip>
       </camera>
       <plugin name="kinect_${prefix}_controller" filename="libgazebo_ros_openni_kinect.so">
