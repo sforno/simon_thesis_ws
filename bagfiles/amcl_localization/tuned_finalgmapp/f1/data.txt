@@ -1,0 +1,5 @@
+min p10 max9.000 (calling the /global_localiz service)
+
+alfas default = 0.2 translationia and 0.25 rotation
+
+Same params as for Amcl Gmapping

@@ -1,0 +1,5 @@
+min p10 max12.000 (with 9000 get erroneous localization, filter converging wrongly)
+
+alfas default = 0.2 translationia and 0.25 rotation
+
+Same params as for Amcl Gmapping

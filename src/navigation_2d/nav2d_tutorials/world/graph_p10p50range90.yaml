@@ -1,6 +1,6 @@
 image: graph_p10p50range90.pgm
 resolution: 0.050000
-origin: [-3.679567, -9.790015, -nan]
+origin: [-3.679567, -9.790015, 0]
 negate: 0
 occupied_thresh: 0.65
 free_thresh: 0.196

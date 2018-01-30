@@ -1,0 +1,7 @@
+min p10 max9.000 (calling the /global_localiz service)
+
+alfa1,2 = 0.2 translation and 0.25 rotation
+
+alfa 3,4 = 0.1 --> want to see comparison with the Graph Amlc --> in that one obtained error between 6-8 cm
+
+Same params as for Amcl Gmapping

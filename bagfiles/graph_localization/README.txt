@@ -7,7 +7,7 @@ Max particles 20000
 
 == Map ===
 
-graph map p500_th60
+
 
 
 === Graph Localizer params using gmapping map ====
