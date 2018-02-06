@@ -78,6 +78,17 @@ install/local/fast: install/local
 
 .PHONY : install/local/fast
 
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: install/strip
+
+.PHONY : install/strip/fast
+
 # Special rule for the target test
 test:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
@@ -229,11 +240,6 @@ amcl/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f navigation/amcl/CMakeFiles/amcl.dir/build.make navigation/amcl/CMakeFiles/amcl.dir/build
 .PHONY : amcl/fast
 
-# Manual pre-install relink rule for target.
-amcl/preinstall:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/amcl/CMakeFiles/amcl.dir/preinstall
-.PHONY : amcl/preinstall
-
 # Convenience name for target.
 navigation/amcl/CMakeFiles/dynamic_reconfigure_gencfg.dir/rule:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/amcl/CMakeFiles/dynamic_reconfigure_gencfg.dir/rule
@@ -353,11 +359,6 @@ amcl_sensors: navigation/amcl/CMakeFiles/amcl_sensors.dir/rule
 amcl_sensors/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f navigation/amcl/CMakeFiles/amcl_sensors.dir/build.make navigation/amcl/CMakeFiles/amcl_sensors.dir/build
 .PHONY : amcl_sensors/fast
-
-# Manual pre-install relink rule for target.
-amcl_sensors/preinstall:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/amcl/CMakeFiles/amcl_sensors.dir/preinstall
-.PHONY : amcl_sensors/preinstall
 
 # Convenience name for target.
 navigation/amcl/CMakeFiles/_run_tests_amcl_rostest_test_texas_willow_hallway_loop.xml.dir/rule:
@@ -1342,6 +1343,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... install/local"
+	@echo "... install/strip"
 	@echo "... test"
 	@echo "... run_tests_amcl_rostest_test_texas_willow_hallway_loop.xml"
 	@echo "... _run_tests_amcl_rostest_test_rosie_multilaser.xml"

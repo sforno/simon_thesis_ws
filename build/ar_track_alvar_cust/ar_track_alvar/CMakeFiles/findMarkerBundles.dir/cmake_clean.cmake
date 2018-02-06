@@ -2,8 +2,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/findMarkerBundles.dir/nodes/FindMarkerBundles.cpp.o"
   "/home/simoneforno/simon_ws/devel/lib/ar_track_alvar/findMarkerBundles.pdb"
   "/home/simoneforno/simon_ws/devel/lib/ar_track_alvar/findMarkerBundles"
-  "/home/simoneforno/simon_ws/devel/lib/ar_track_alvar/findMarkerBundles.pdb"
-  "CMakeFiles/CMakeRelink.dir/findMarkerBundles"
 )
 
 # Per-language clean rules from dependency scanning.

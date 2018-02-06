@@ -122,6 +122,17 @@ list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
 
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: install/strip
+
+.PHONY : install/strip/fast
+
 # The main all target
 all: cmake_check_build_system
 	cd /home/simoneforno/simon_ws/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/simoneforno/simon_ws/build/CMakeFiles /home/simoneforno/simon_ws/build/geometry2/tf2_geometry_msgs/CMakeFiles/progress.marks
@@ -457,6 +468,7 @@ help:
 	@echo "... install"
 	@echo "... _run_tests_tf2_geometry_msgs_gtest_test_tomsg_frommsg"
 	@echo "... list_install_components"
+	@echo "... install/strip"
 	@echo "... _run_tests_tf2_geometry_msgs_rostest"
 	@echo "... test_geometry_msgs"
 	@echo "... run_tests_tf2_geometry_msgs_rostest"

@@ -135,60 +135,6 @@ navigation_2d/nav2d_localizer/CMakeFiles/localizer.dir/build: /home/simoneforno/
 
 .PHONY : navigation_2d/nav2d_localizer/CMakeFiles/localizer.dir/build
 
-# Object files for target localizer
-localizer_OBJECTS = \
-"CMakeFiles/localizer.dir/src/LocalizerNode.cpp.o"
-
-# External object files for target localizer
-localizer_EXTERNAL_OBJECTS =
-
-navigation_2d/nav2d_localizer/CMakeFiles/CMakeRelink.dir/localizer: navigation_2d/nav2d_localizer/CMakeFiles/localizer.dir/src/LocalizerNode.cpp.o
-navigation_2d/nav2d_localizer/CMakeFiles/CMakeRelink.dir/localizer: navigation_2d/nav2d_localizer/CMakeFiles/localizer.dir/build.make
-navigation_2d/nav2d_localizer/CMakeFiles/CMakeRelink.dir/localizer: /home/simoneforno/simon_ws/devel/lib/libSelfLocalizer.so
-navigation_2d/nav2d_localizer/CMakeFiles/CMakeRelink.dir/localizer: /opt/ros/kinetic/lib/libtf.so
-navigation_2d/nav2d_localizer/CMakeFiles/CMakeRelink.dir/localizer: /home/simoneforno/simon_ws/devel/lib/libtf2_ros.so
-navigation_2d/nav2d_localizer/CMakeFiles/CMakeRelink.dir/localizer: /opt/ros/kinetic/lib/libactionlib.so
-navigation_2d/nav2d_localizer/CMakeFiles/CMakeRelink.dir/localizer: /opt/ros/kinetic/lib/libmessage_filters.so
-navigation_2d/nav2d_localizer/CMakeFiles/CMakeRelink.dir/localizer: /opt/ros/kinetic/lib/libroscpp.so
-navigation_2d/nav2d_localizer/CMakeFiles/CMakeRelink.dir/localizer: /usr/lib/x86_64-linux-gnu/libboost_signals.so
-navigation_2d/nav2d_localizer/CMakeFiles/CMakeRelink.dir/localizer: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
-navigation_2d/nav2d_localizer/CMakeFiles/CMakeRelink.dir/localizer: /opt/ros/kinetic/lib/libxmlrpcpp.so
-navigation_2d/nav2d_localizer/CMakeFiles/CMakeRelink.dir/localizer: /home/simoneforno/simon_ws/devel/lib/libtf2.so
-navigation_2d/nav2d_localizer/CMakeFiles/CMakeRelink.dir/localizer: /opt/ros/kinetic/lib/librosconsole.so
-navigation_2d/nav2d_localizer/CMakeFiles/CMakeRelink.dir/localizer: /opt/ros/kinetic/lib/librosconsole_log4cxx.so
-navigation_2d/nav2d_localizer/CMakeFiles/CMakeRelink.dir/localizer: /opt/ros/kinetic/lib/librosconsole_backend_interface.so
-navigation_2d/nav2d_localizer/CMakeFiles/CMakeRelink.dir/localizer: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
-navigation_2d/nav2d_localizer/CMakeFiles/CMakeRelink.dir/localizer: /usr/lib/x86_64-linux-gnu/libboost_regex.so
-navigation_2d/nav2d_localizer/CMakeFiles/CMakeRelink.dir/localizer: /opt/ros/kinetic/lib/libroscpp_serialization.so
-navigation_2d/nav2d_localizer/CMakeFiles/CMakeRelink.dir/localizer: /opt/ros/kinetic/lib/librostime.so
-navigation_2d/nav2d_localizer/CMakeFiles/CMakeRelink.dir/localizer: /opt/ros/kinetic/lib/libcpp_common.so
-navigation_2d/nav2d_localizer/CMakeFiles/CMakeRelink.dir/localizer: /usr/lib/x86_64-linux-gnu/libboost_system.so
-navigation_2d/nav2d_localizer/CMakeFiles/CMakeRelink.dir/localizer: /usr/lib/x86_64-linux-gnu/libboost_thread.so
-navigation_2d/nav2d_localizer/CMakeFiles/CMakeRelink.dir/localizer: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
-navigation_2d/nav2d_localizer/CMakeFiles/CMakeRelink.dir/localizer: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
-navigation_2d/nav2d_localizer/CMakeFiles/CMakeRelink.dir/localizer: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
-navigation_2d/nav2d_localizer/CMakeFiles/CMakeRelink.dir/localizer: /usr/lib/x86_64-linux-gnu/libpthread.so
-navigation_2d/nav2d_localizer/CMakeFiles/CMakeRelink.dir/localizer: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
-navigation_2d/nav2d_localizer/CMakeFiles/CMakeRelink.dir/localizer: /usr/lib/x86_64-linux-gnu/libboost_signals.so
-navigation_2d/nav2d_localizer/CMakeFiles/CMakeRelink.dir/localizer: /opt/ros/kinetic/lib/libroscpp_serialization.so
-navigation_2d/nav2d_localizer/CMakeFiles/CMakeRelink.dir/localizer: /opt/ros/kinetic/lib/librostime.so
-navigation_2d/nav2d_localizer/CMakeFiles/CMakeRelink.dir/localizer: /opt/ros/kinetic/lib/libcpp_common.so
-navigation_2d/nav2d_localizer/CMakeFiles/CMakeRelink.dir/localizer: /usr/lib/x86_64-linux-gnu/libboost_system.so
-navigation_2d/nav2d_localizer/CMakeFiles/CMakeRelink.dir/localizer: /usr/lib/x86_64-linux-gnu/libboost_thread.so
-navigation_2d/nav2d_localizer/CMakeFiles/CMakeRelink.dir/localizer: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
-navigation_2d/nav2d_localizer/CMakeFiles/CMakeRelink.dir/localizer: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
-navigation_2d/nav2d_localizer/CMakeFiles/CMakeRelink.dir/localizer: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
-navigation_2d/nav2d_localizer/CMakeFiles/CMakeRelink.dir/localizer: /usr/lib/x86_64-linux-gnu/libpthread.so
-navigation_2d/nav2d_localizer/CMakeFiles/CMakeRelink.dir/localizer: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
-navigation_2d/nav2d_localizer/CMakeFiles/CMakeRelink.dir/localizer: navigation_2d/nav2d_localizer/CMakeFiles/localizer.dir/relink.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/simoneforno/simon_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable CMakeFiles/CMakeRelink.dir/localizer"
-	cd /home/simoneforno/simon_ws/build/navigation_2d/nav2d_localizer && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/localizer.dir/relink.txt --verbose=$(VERBOSE)
-
-# Rule to relink during preinstall.
-navigation_2d/nav2d_localizer/CMakeFiles/localizer.dir/preinstall: navigation_2d/nav2d_localizer/CMakeFiles/CMakeRelink.dir/localizer
-
-.PHONY : navigation_2d/nav2d_localizer/CMakeFiles/localizer.dir/preinstall
-
 navigation_2d/nav2d_localizer/CMakeFiles/localizer.dir/requires: navigation_2d/nav2d_localizer/CMakeFiles/localizer.dir/src/LocalizerNode.cpp.o.requires
 
 .PHONY : navigation_2d/nav2d_localizer/CMakeFiles/localizer.dir/requires

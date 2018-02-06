@@ -56,6 +56,17 @@ CMAKE_BINARY_DIR = /home/simoneforno/simon_ws/build
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
+
 # Special rule for the target list_install_components
 list_install_components:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
@@ -66,28 +77,27 @@ list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
 
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
 
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
+# Special rule for the target install/strip
+install/strip/fast: install/strip
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
+.PHONY : install/strip/fast
 
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
 
-.PHONY : rebuild_cache/fast
+# Special rule for the target install/local
+install/local/fast: install/local
+
+.PHONY : install/local/fast
 
 # Special rule for the target edit_cache
 edit_cache:
@@ -100,27 +110,28 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
 
-# Special rule for the target test
-test/fast: test
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
 
-.PHONY : test/fast
+.PHONY : rebuild_cache/fast
 
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
 
-# Special rule for the target install/local
-install/local/fast: install/local
-
-.PHONY : install/local/fast
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -185,19 +196,34 @@ tf_broadcaster/fast:
 .PHONY : tf_broadcaster/fast
 
 # Convenience name for target.
-tf_config/CMakeFiles/tf_broadcaster_car.dir/rule:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 tf_config/CMakeFiles/tf_broadcaster_car.dir/rule
-.PHONY : tf_config/CMakeFiles/tf_broadcaster_car.dir/rule
+tf_config/CMakeFiles/tf_listener_husky.dir/rule:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 tf_config/CMakeFiles/tf_listener_husky.dir/rule
+.PHONY : tf_config/CMakeFiles/tf_listener_husky.dir/rule
 
 # Convenience name for target.
-tf_broadcaster_car: tf_config/CMakeFiles/tf_broadcaster_car.dir/rule
+tf_listener_husky: tf_config/CMakeFiles/tf_listener_husky.dir/rule
 
-.PHONY : tf_broadcaster_car
+.PHONY : tf_listener_husky
 
 # fast build rule for target.
-tf_broadcaster_car/fast:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f tf_config/CMakeFiles/tf_broadcaster_car.dir/build.make tf_config/CMakeFiles/tf_broadcaster_car.dir/build
-.PHONY : tf_broadcaster_car/fast
+tf_listener_husky/fast:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f tf_config/CMakeFiles/tf_listener_husky.dir/build.make tf_config/CMakeFiles/tf_listener_husky.dir/build
+.PHONY : tf_listener_husky/fast
+
+# Convenience name for target.
+tf_config/CMakeFiles/tf_broadcaster_husky.dir/rule:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 tf_config/CMakeFiles/tf_broadcaster_husky.dir/rule
+.PHONY : tf_config/CMakeFiles/tf_broadcaster_husky.dir/rule
+
+# Convenience name for target.
+tf_broadcaster_husky: tf_config/CMakeFiles/tf_broadcaster_husky.dir/rule
+
+.PHONY : tf_broadcaster_husky
+
+# fast build rule for target.
+tf_broadcaster_husky/fast:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f tf_config/CMakeFiles/tf_broadcaster_husky.dir/build.make tf_config/CMakeFiles/tf_broadcaster_husky.dir/build
+.PHONY : tf_broadcaster_husky/fast
 
 src/tf_broadcaster.o: src/tf_broadcaster.cpp.o
 
@@ -226,32 +252,35 @@ src/tf_broadcaster.cpp.s:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f tf_config/CMakeFiles/tf_broadcaster.dir/build.make tf_config/CMakeFiles/tf_broadcaster.dir/src/tf_broadcaster.cpp.s
 .PHONY : src/tf_broadcaster.cpp.s
 
-src/tf_broadcaster_car.o: src/tf_broadcaster_car.cpp.o
+src/tf_broadcaster_husky.o: src/tf_broadcaster_husky.cpp.o
 
-.PHONY : src/tf_broadcaster_car.o
+.PHONY : src/tf_broadcaster_husky.o
 
 # target to build an object file
-src/tf_broadcaster_car.cpp.o:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f tf_config/CMakeFiles/tf_broadcaster_car.dir/build.make tf_config/CMakeFiles/tf_broadcaster_car.dir/src/tf_broadcaster_car.cpp.o
-.PHONY : src/tf_broadcaster_car.cpp.o
+src/tf_broadcaster_husky.cpp.o:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f tf_config/CMakeFiles/tf_listener_husky.dir/build.make tf_config/CMakeFiles/tf_listener_husky.dir/src/tf_broadcaster_husky.cpp.o
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f tf_config/CMakeFiles/tf_broadcaster_husky.dir/build.make tf_config/CMakeFiles/tf_broadcaster_husky.dir/src/tf_broadcaster_husky.cpp.o
+.PHONY : src/tf_broadcaster_husky.cpp.o
 
-src/tf_broadcaster_car.i: src/tf_broadcaster_car.cpp.i
+src/tf_broadcaster_husky.i: src/tf_broadcaster_husky.cpp.i
 
-.PHONY : src/tf_broadcaster_car.i
+.PHONY : src/tf_broadcaster_husky.i
 
 # target to preprocess a source file
-src/tf_broadcaster_car.cpp.i:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f tf_config/CMakeFiles/tf_broadcaster_car.dir/build.make tf_config/CMakeFiles/tf_broadcaster_car.dir/src/tf_broadcaster_car.cpp.i
-.PHONY : src/tf_broadcaster_car.cpp.i
+src/tf_broadcaster_husky.cpp.i:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f tf_config/CMakeFiles/tf_listener_husky.dir/build.make tf_config/CMakeFiles/tf_listener_husky.dir/src/tf_broadcaster_husky.cpp.i
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f tf_config/CMakeFiles/tf_broadcaster_husky.dir/build.make tf_config/CMakeFiles/tf_broadcaster_husky.dir/src/tf_broadcaster_husky.cpp.i
+.PHONY : src/tf_broadcaster_husky.cpp.i
 
-src/tf_broadcaster_car.s: src/tf_broadcaster_car.cpp.s
+src/tf_broadcaster_husky.s: src/tf_broadcaster_husky.cpp.s
 
-.PHONY : src/tf_broadcaster_car.s
+.PHONY : src/tf_broadcaster_husky.s
 
 # target to generate assembly for a file
-src/tf_broadcaster_car.cpp.s:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f tf_config/CMakeFiles/tf_broadcaster_car.dir/build.make tf_config/CMakeFiles/tf_broadcaster_car.dir/src/tf_broadcaster_car.cpp.s
-.PHONY : src/tf_broadcaster_car.cpp.s
+src/tf_broadcaster_husky.cpp.s:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f tf_config/CMakeFiles/tf_listener_husky.dir/build.make tf_config/CMakeFiles/tf_listener_husky.dir/src/tf_broadcaster_husky.cpp.s
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f tf_config/CMakeFiles/tf_broadcaster_husky.dir/build.make tf_config/CMakeFiles/tf_broadcaster_husky.dir/src/tf_broadcaster_husky.cpp.s
+.PHONY : src/tf_broadcaster_husky.cpp.s
 
 src/tf_listener.o: src/tf_listener.cpp.o
 
@@ -286,21 +315,23 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... list_install_components"
-	@echo "... install"
-	@echo "... rebuild_cache"
-	@echo "... edit_cache"
-	@echo "... test"
 	@echo "... tf_listener"
+	@echo "... test"
 	@echo "... tf_broadcaster"
-	@echo "... tf_broadcaster_car"
+	@echo "... list_install_components"
+	@echo "... install/strip"
 	@echo "... install/local"
+	@echo "... edit_cache"
+	@echo "... tf_listener_husky"
+	@echo "... rebuild_cache"
+	@echo "... tf_broadcaster_husky"
+	@echo "... install"
 	@echo "... src/tf_broadcaster.o"
 	@echo "... src/tf_broadcaster.i"
 	@echo "... src/tf_broadcaster.s"
-	@echo "... src/tf_broadcaster_car.o"
-	@echo "... src/tf_broadcaster_car.i"
-	@echo "... src/tf_broadcaster_car.s"
+	@echo "... src/tf_broadcaster_husky.o"
+	@echo "... src/tf_broadcaster_husky.i"
+	@echo "... src/tf_broadcaster_husky.s"
 	@echo "... src/tf_listener.o"
 	@echo "... src/tf_listener.i"
 	@echo "... src/tf_listener.s"

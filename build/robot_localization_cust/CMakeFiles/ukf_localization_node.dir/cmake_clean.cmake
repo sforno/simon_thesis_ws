@@ -2,8 +2,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/ukf_localization_node.dir/src/ukf_localization_node.cpp.o"
   "/home/simoneforno/simon_ws/devel/lib/robot_localization_cust/ukf_localization_node.pdb"
   "/home/simoneforno/simon_ws/devel/lib/robot_localization_cust/ukf_localization_node"
-  "/home/simoneforno/simon_ws/devel/lib/robot_localization_cust/ukf_localization_node.pdb"
-  "CMakeFiles/CMakeRelink.dir/ukf_localization_node"
 )
 
 # Per-language clean rules from dependency scanning.

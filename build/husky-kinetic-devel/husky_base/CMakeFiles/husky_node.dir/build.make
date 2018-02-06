@@ -214,67 +214,6 @@ husky-kinetic-devel/husky_base/CMakeFiles/husky_node.dir/build: /home/simoneforn
 
 .PHONY : husky-kinetic-devel/husky_base/CMakeFiles/husky_node.dir/build
 
-# Object files for target husky_node
-husky_node_OBJECTS = \
-"CMakeFiles/husky_node.dir/src/husky_base.cpp.o" \
-"CMakeFiles/husky_node.dir/src/husky_hardware.cpp.o" \
-"CMakeFiles/husky_node.dir/src/husky_diagnostics.cpp.o" \
-"CMakeFiles/husky_node.dir/src/horizon_legacy_wrapper.cpp.o"
-
-# External object files for target husky_node
-husky_node_EXTERNAL_OBJECTS =
-
-husky-kinetic-devel/husky_base/CMakeFiles/CMakeRelink.dir/husky_node: husky-kinetic-devel/husky_base/CMakeFiles/husky_node.dir/src/husky_base.cpp.o
-husky-kinetic-devel/husky_base/CMakeFiles/CMakeRelink.dir/husky_node: husky-kinetic-devel/husky_base/CMakeFiles/husky_node.dir/src/husky_hardware.cpp.o
-husky-kinetic-devel/husky_base/CMakeFiles/CMakeRelink.dir/husky_node: husky-kinetic-devel/husky_base/CMakeFiles/husky_node.dir/src/husky_diagnostics.cpp.o
-husky-kinetic-devel/husky_base/CMakeFiles/CMakeRelink.dir/husky_node: husky-kinetic-devel/husky_base/CMakeFiles/husky_node.dir/src/horizon_legacy_wrapper.cpp.o
-husky-kinetic-devel/husky_base/CMakeFiles/CMakeRelink.dir/husky_node: husky-kinetic-devel/husky_base/CMakeFiles/husky_node.dir/build.make
-husky-kinetic-devel/husky_base/CMakeFiles/CMakeRelink.dir/husky_node: /home/simoneforno/simon_ws/devel/lib/libhorizon_legacy.so
-husky-kinetic-devel/husky_base/CMakeFiles/CMakeRelink.dir/husky_node: /opt/ros/kinetic/lib/libcontroller_manager.so
-husky-kinetic-devel/husky_base/CMakeFiles/CMakeRelink.dir/husky_node: /opt/ros/kinetic/lib/librealtime_tools.so
-husky-kinetic-devel/husky_base/CMakeFiles/CMakeRelink.dir/husky_node: /opt/ros/kinetic/lib/libclass_loader.so
-husky-kinetic-devel/husky_base/CMakeFiles/CMakeRelink.dir/husky_node: /usr/lib/libPocoFoundation.so
-husky-kinetic-devel/husky_base/CMakeFiles/CMakeRelink.dir/husky_node: /usr/lib/x86_64-linux-gnu/libdl.so
-husky-kinetic-devel/husky_base/CMakeFiles/CMakeRelink.dir/husky_node: /opt/ros/kinetic/lib/libroslib.so
-husky-kinetic-devel/husky_base/CMakeFiles/CMakeRelink.dir/husky_node: /opt/ros/kinetic/lib/librospack.so
-husky-kinetic-devel/husky_base/CMakeFiles/CMakeRelink.dir/husky_node: /usr/lib/x86_64-linux-gnu/libpython2.7.so
-husky-kinetic-devel/husky_base/CMakeFiles/CMakeRelink.dir/husky_node: /usr/lib/x86_64-linux-gnu/libboost_program_options.so
-husky-kinetic-devel/husky_base/CMakeFiles/CMakeRelink.dir/husky_node: /usr/lib/x86_64-linux-gnu/libtinyxml.so
-husky-kinetic-devel/husky_base/CMakeFiles/CMakeRelink.dir/husky_node: /opt/ros/kinetic/lib/libroscpp.so
-husky-kinetic-devel/husky_base/CMakeFiles/CMakeRelink.dir/husky_node: /usr/lib/x86_64-linux-gnu/libboost_signals.so
-husky-kinetic-devel/husky_base/CMakeFiles/CMakeRelink.dir/husky_node: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
-husky-kinetic-devel/husky_base/CMakeFiles/CMakeRelink.dir/husky_node: /opt/ros/kinetic/lib/librosconsole.so
-husky-kinetic-devel/husky_base/CMakeFiles/CMakeRelink.dir/husky_node: /opt/ros/kinetic/lib/librosconsole_log4cxx.so
-husky-kinetic-devel/husky_base/CMakeFiles/CMakeRelink.dir/husky_node: /opt/ros/kinetic/lib/librosconsole_backend_interface.so
-husky-kinetic-devel/husky_base/CMakeFiles/CMakeRelink.dir/husky_node: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
-husky-kinetic-devel/husky_base/CMakeFiles/CMakeRelink.dir/husky_node: /usr/lib/x86_64-linux-gnu/libboost_regex.so
-husky-kinetic-devel/husky_base/CMakeFiles/CMakeRelink.dir/husky_node: /opt/ros/kinetic/lib/libxmlrpcpp.so
-husky-kinetic-devel/husky_base/CMakeFiles/CMakeRelink.dir/husky_node: /opt/ros/kinetic/lib/libroscpp_serialization.so
-husky-kinetic-devel/husky_base/CMakeFiles/CMakeRelink.dir/husky_node: /opt/ros/kinetic/lib/librostime.so
-husky-kinetic-devel/husky_base/CMakeFiles/CMakeRelink.dir/husky_node: /opt/ros/kinetic/lib/libcpp_common.so
-husky-kinetic-devel/husky_base/CMakeFiles/CMakeRelink.dir/husky_node: /usr/lib/x86_64-linux-gnu/libboost_system.so
-husky-kinetic-devel/husky_base/CMakeFiles/CMakeRelink.dir/husky_node: /usr/lib/x86_64-linux-gnu/libboost_thread.so
-husky-kinetic-devel/husky_base/CMakeFiles/CMakeRelink.dir/husky_node: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
-husky-kinetic-devel/husky_base/CMakeFiles/CMakeRelink.dir/husky_node: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
-husky-kinetic-devel/husky_base/CMakeFiles/CMakeRelink.dir/husky_node: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
-husky-kinetic-devel/husky_base/CMakeFiles/CMakeRelink.dir/husky_node: /usr/lib/x86_64-linux-gnu/libpthread.so
-husky-kinetic-devel/husky_base/CMakeFiles/CMakeRelink.dir/husky_node: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
-husky-kinetic-devel/husky_base/CMakeFiles/CMakeRelink.dir/husky_node: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
-husky-kinetic-devel/husky_base/CMakeFiles/CMakeRelink.dir/husky_node: /usr/lib/x86_64-linux-gnu/libboost_system.so
-husky-kinetic-devel/husky_base/CMakeFiles/CMakeRelink.dir/husky_node: /usr/lib/x86_64-linux-gnu/libboost_thread.so
-husky-kinetic-devel/husky_base/CMakeFiles/CMakeRelink.dir/husky_node: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
-husky-kinetic-devel/husky_base/CMakeFiles/CMakeRelink.dir/husky_node: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
-husky-kinetic-devel/husky_base/CMakeFiles/CMakeRelink.dir/husky_node: /usr/lib/x86_64-linux-gnu/libpthread.so
-husky-kinetic-devel/husky_base/CMakeFiles/CMakeRelink.dir/husky_node: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
-husky-kinetic-devel/husky_base/CMakeFiles/CMakeRelink.dir/husky_node: husky-kinetic-devel/husky_base/CMakeFiles/husky_node.dir/relink.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/simoneforno/simon_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable CMakeFiles/CMakeRelink.dir/husky_node"
-	cd /home/simoneforno/simon_ws/build/husky-kinetic-devel/husky_base && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/husky_node.dir/relink.txt --verbose=$(VERBOSE)
-
-# Rule to relink during preinstall.
-husky-kinetic-devel/husky_base/CMakeFiles/husky_node.dir/preinstall: husky-kinetic-devel/husky_base/CMakeFiles/CMakeRelink.dir/husky_node
-
-.PHONY : husky-kinetic-devel/husky_base/CMakeFiles/husky_node.dir/preinstall
-
 husky-kinetic-devel/husky_base/CMakeFiles/husky_node.dir/requires: husky-kinetic-devel/husky_base/CMakeFiles/husky_node.dir/src/husky_base.cpp.o.requires
 husky-kinetic-devel/husky_base/CMakeFiles/husky_node.dir/requires: husky-kinetic-devel/husky_base/CMakeFiles/husky_node.dir/src/husky_hardware.cpp.o.requires
 husky-kinetic-devel/husky_base/CMakeFiles/husky_node.dir/requires: husky-kinetic-devel/husky_base/CMakeFiles/husky_node.dir/src/husky_diagnostics.cpp.o.requires

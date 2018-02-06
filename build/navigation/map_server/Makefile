@@ -122,6 +122,17 @@ list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
 
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: install/strip
+
+.PHONY : install/strip/fast
+
 # The main all target
 all: cmake_check_build_system
 	cd /home/simoneforno/simon_ws/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/simoneforno/simon_ws/build/CMakeFiles /home/simoneforno/simon_ws/build/navigation/map_server/CMakeFiles/progress.marks
@@ -199,11 +210,6 @@ map_server/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f navigation/map_server/CMakeFiles/map_server.dir/build.make navigation/map_server/CMakeFiles/map_server.dir/build
 .PHONY : map_server/fast
 
-# Manual pre-install relink rule for target.
-map_server/preinstall:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/map_server/CMakeFiles/map_server.dir/preinstall
-.PHONY : map_server/preinstall
-
 # Convenience name for target.
 navigation/map_server/CMakeFiles/map_server_image_loader.dir/rule:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/map_server/CMakeFiles/map_server_image_loader.dir/rule
@@ -219,10 +225,20 @@ map_server_image_loader/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f navigation/map_server/CMakeFiles/map_server_image_loader.dir/build.make navigation/map_server/CMakeFiles/map_server_image_loader.dir/build
 .PHONY : map_server_image_loader/fast
 
-# Manual pre-install relink rule for target.
-map_server_image_loader/preinstall:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/map_server/CMakeFiles/map_server_image_loader.dir/preinstall
-.PHONY : map_server_image_loader/preinstall
+# Convenience name for target.
+navigation/map_server/CMakeFiles/nav_msgs_generate_messages_py.dir/rule:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/map_server/CMakeFiles/nav_msgs_generate_messages_py.dir/rule
+.PHONY : navigation/map_server/CMakeFiles/nav_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+nav_msgs_generate_messages_py: navigation/map_server/CMakeFiles/nav_msgs_generate_messages_py.dir/rule
+
+.PHONY : nav_msgs_generate_messages_py
+
+# fast build rule for target.
+nav_msgs_generate_messages_py/fast:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f navigation/map_server/CMakeFiles/nav_msgs_generate_messages_py.dir/build.make navigation/map_server/CMakeFiles/nav_msgs_generate_messages_py.dir/build
+.PHONY : nav_msgs_generate_messages_py/fast
 
 # Convenience name for target.
 navigation/map_server/CMakeFiles/rtest.dir/rule:
@@ -299,11 +315,6 @@ map_server-map_saver/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f navigation/map_server/CMakeFiles/map_server-map_saver.dir/build.make navigation/map_server/CMakeFiles/map_server-map_saver.dir/build
 .PHONY : map_server-map_saver/fast
 
-# Manual pre-install relink rule for target.
-map_server-map_saver/preinstall:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/map_server/CMakeFiles/map_server-map_saver.dir/preinstall
-.PHONY : map_server-map_saver/preinstall
-
 # Convenience name for target.
 navigation/map_server/CMakeFiles/nav_msgs_generate_messages_eus.dir/rule:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/map_server/CMakeFiles/nav_msgs_generate_messages_eus.dir/rule
@@ -333,21 +344,6 @@ run_tests_map_server_gtest: navigation/map_server/CMakeFiles/run_tests_map_serve
 run_tests_map_server_gtest/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f navigation/map_server/CMakeFiles/run_tests_map_server_gtest.dir/build.make navigation/map_server/CMakeFiles/run_tests_map_server_gtest.dir/build
 .PHONY : run_tests_map_server_gtest/fast
-
-# Convenience name for target.
-navigation/map_server/CMakeFiles/nav_msgs_generate_messages_py.dir/rule:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/map_server/CMakeFiles/nav_msgs_generate_messages_py.dir/rule
-.PHONY : navigation/map_server/CMakeFiles/nav_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-nav_msgs_generate_messages_py: navigation/map_server/CMakeFiles/nav_msgs_generate_messages_py.dir/rule
-
-.PHONY : nav_msgs_generate_messages_py
-
-# fast build rule for target.
-nav_msgs_generate_messages_py/fast:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f navigation/map_server/CMakeFiles/nav_msgs_generate_messages_py.dir/build.make navigation/map_server/CMakeFiles/nav_msgs_generate_messages_py.dir/build
-.PHONY : nav_msgs_generate_messages_py/fast
 
 # Convenience name for target.
 navigation/map_server/CMakeFiles/_run_tests_map_server_gtest.dir/rule:
@@ -662,6 +658,8 @@ help:
 	@echo "... nav_msgs_generate_messages_nodejs"
 	@echo "... map_server"
 	@echo "... map_server_image_loader"
+	@echo "... install/local"
+	@echo "... nav_msgs_generate_messages_py"
 	@echo "... rtest"
 	@echo "... nav_msgs_generate_messages_cpp"
 	@echo "... _run_tests_map_server"
@@ -669,8 +667,6 @@ help:
 	@echo "... map_server-map_saver"
 	@echo "... nav_msgs_generate_messages_eus"
 	@echo "... run_tests_map_server_gtest"
-	@echo "... nav_msgs_generate_messages_py"
-	@echo "... install/local"
 	@echo "... _run_tests_map_server_gtest"
 	@echo "... _run_tests_map_server_gtest_map_server_utest"
 	@echo "... run_tests_map_server_gtest_map_server_utest"
@@ -682,6 +678,7 @@ help:
 	@echo "... run_tests_map_server_rostest"
 	@echo "... list_install_components"
 	@echo "... _run_tests_map_server_rostest_test_rtest.xml"
+	@echo "... install/strip"
 	@echo "... src/image_loader.o"
 	@echo "... src/image_loader.i"
 	@echo "... src/image_loader.s"

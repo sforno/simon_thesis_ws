@@ -89,6 +89,17 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
+
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -111,16 +122,16 @@ install/local/fast: install/local
 
 .PHONY : install/local/fast
 
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
 
-# Special rule for the target test
-test/fast: test
+# Special rule for the target install/strip
+install/strip/fast: install/strip
 
-.PHONY : test/fast
+.PHONY : install/strip/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -183,11 +194,6 @@ dwa_local_planner: navigation/dwa_local_planner/CMakeFiles/dwa_local_planner.dir
 dwa_local_planner/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f navigation/dwa_local_planner/CMakeFiles/dwa_local_planner.dir/build.make navigation/dwa_local_planner/CMakeFiles/dwa_local_planner.dir/build
 .PHONY : dwa_local_planner/fast
-
-# Manual pre-install relink rule for target.
-dwa_local_planner/preinstall:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/dwa_local_planner/CMakeFiles/dwa_local_planner.dir/preinstall
-.PHONY : dwa_local_planner/preinstall
 
 src/dwa_planner.o: src/dwa_planner.cpp.o
 
@@ -252,11 +258,12 @@ help:
 	@echo "... list_install_components"
 	@echo "... install"
 	@echo "... rebuild_cache"
+	@echo "... test"
 	@echo "... dwa_local_planner_gencfg"
 	@echo "... edit_cache"
 	@echo "... dwa_local_planner"
 	@echo "... install/local"
-	@echo "... test"
+	@echo "... install/strip"
 	@echo "... src/dwa_planner.o"
 	@echo "... src/dwa_planner.i"
 	@echo "... src/dwa_planner.s"

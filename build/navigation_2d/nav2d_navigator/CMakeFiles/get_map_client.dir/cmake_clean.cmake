@@ -2,8 +2,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/get_map_client.dir/src/get_map_client.cpp.o"
   "/home/simoneforno/simon_ws/devel/lib/nav2d_navigator/get_map_client.pdb"
   "/home/simoneforno/simon_ws/devel/lib/nav2d_navigator/get_map_client"
-  "/home/simoneforno/simon_ws/devel/lib/nav2d_navigator/get_map_client.pdb"
-  "CMakeFiles/CMakeRelink.dir/get_map_client"
 )
 
 # Per-language clean rules from dependency scanning.

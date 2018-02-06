@@ -56,16 +56,6 @@ CMAKE_BINARY_DIR = /home/simoneforno/simon_ws/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
-
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
@@ -100,17 +90,6 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: install/local
-
-.PHONY : install/local/fast
-
 # Special rule for the target test
 test:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
@@ -121,6 +100,38 @@ test:
 test/fast: test
 
 .PHONY : test/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: install/strip
+
+.PHONY : install/strip/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: install/local
+
+.PHONY : install/local/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -214,11 +225,6 @@ default_robot_hw_sim/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f gazebo_ros_pkgs/gazebo_ros_control/CMakeFiles/default_robot_hw_sim.dir/build.make gazebo_ros_pkgs/gazebo_ros_control/CMakeFiles/default_robot_hw_sim.dir/build
 .PHONY : default_robot_hw_sim/fast
 
-# Manual pre-install relink rule for target.
-default_robot_hw_sim/preinstall:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 gazebo_ros_pkgs/gazebo_ros_control/CMakeFiles/default_robot_hw_sim.dir/preinstall
-.PHONY : default_robot_hw_sim/preinstall
-
 # Convenience name for target.
 gazebo_ros_pkgs/gazebo_ros_control/CMakeFiles/control_toolbox_gencfg.dir/rule:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 gazebo_ros_pkgs/gazebo_ros_control/CMakeFiles/control_toolbox_gencfg.dir/rule
@@ -278,11 +284,6 @@ gazebo_ros_control: gazebo_ros_pkgs/gazebo_ros_control/CMakeFiles/gazebo_ros_con
 gazebo_ros_control/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f gazebo_ros_pkgs/gazebo_ros_control/CMakeFiles/gazebo_ros_control.dir/build.make gazebo_ros_pkgs/gazebo_ros_control/CMakeFiles/gazebo_ros_control.dir/build
 .PHONY : gazebo_ros_control/fast
-
-# Manual pre-install relink rule for target.
-gazebo_ros_control/preinstall:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 gazebo_ros_pkgs/gazebo_ros_control/CMakeFiles/gazebo_ros_control.dir/preinstall
-.PHONY : gazebo_ros_control/preinstall
 
 src/default_robot_hw_sim.o: src/default_robot_hw_sim.cpp.o
 
@@ -344,10 +345,10 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... list_install_components"
 	@echo "... install"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... test"
 	@echo "... control_toolbox_generate_messages_lisp"
 	@echo "... control_toolbox_generate_messages_eus"
 	@echo "... control_toolbox_generate_messages_cpp"
@@ -356,8 +357,9 @@ help:
 	@echo "... control_toolbox_generate_messages_py"
 	@echo "... control_toolbox_generate_messages_nodejs"
 	@echo "... gazebo_ros_control"
+	@echo "... list_install_components"
+	@echo "... install/strip"
 	@echo "... install/local"
-	@echo "... test"
 	@echo "... src/default_robot_hw_sim.o"
 	@echo "... src/default_robot_hw_sim.i"
 	@echo "... src/default_robot_hw_sim.s"

@@ -7,6 +7,8 @@
 #include <ar_track_alvar_msgs/AlvarMarker.h>
 #include <math.h>
 #include <string.h>
+#include <tf/transform_broadcaster.h>
+#include <tf/transform_datatypes.h>
 
 #include <iostream>
 #include <fstream>
@@ -23,7 +25,7 @@ public:
     ros::Publisher marker2_pub;
     ros::Publisher marker3_pub;
     ros::Publisher marker4_pub;
-    ros::Publisher marker5_pub;
+    /* ros::Publisher marker5_pub;
     ros::Publisher marker6_pub;
     ros::Publisher marker7_pub;
     ros::Publisher marker8_pub;
@@ -32,7 +34,7 @@ public:
     ros::Publisher marker11_pub;
     ros::Publisher marker12_pub;
     ros::Publisher marker13_pub;
-    ros::Publisher marker14_pub;
+    ros::Publisher marker14_pub; */
     int counter;
     float desired_freq_;
 void ar_pose_callback(const ar_track_alvar_msgs::AlvarMarkers::ConstPtr & msg);
@@ -49,7 +51,7 @@ void ar_pose_callback(const ar_track_alvar_msgs::AlvarMarkers::ConstPtr & msg);
         marker2_pub = nh_.advertise < geometry_msgs::PoseWithCovarianceStamped > ("/marker2", 1);
         marker3_pub = nh_.advertise < geometry_msgs::PoseWithCovarianceStamped > ("/marker3", 1);
         marker4_pub = nh_.advertise < geometry_msgs::PoseWithCovarianceStamped > ("/marker4", 1);
-        marker5_pub = nh_.advertise < geometry_msgs::PoseWithCovarianceStamped > ("/marker5", 1);
+       /* marker5_pub = nh_.advertise < geometry_msgs::PoseWithCovarianceStamped > ("/marker5", 1);
         marker6_pub = nh_.advertise < geometry_msgs::PoseWithCovarianceStamped > ("/marker6", 1);
         marker7_pub = nh_.advertise < geometry_msgs::PoseWithCovarianceStamped > ("/marker7", 1);
         marker8_pub = nh_.advertise < geometry_msgs::PoseWithCovarianceStamped > ("/marker8", 1);
@@ -58,7 +60,7 @@ void ar_pose_callback(const ar_track_alvar_msgs::AlvarMarkers::ConstPtr & msg);
         marker11_pub = nh_.advertise < geometry_msgs::PoseWithCovarianceStamped > ("/marker11", 1);
         marker12_pub = nh_.advertise < geometry_msgs::PoseWithCovarianceStamped > ("/marker12", 1);
         marker13_pub = nh_.advertise < geometry_msgs::PoseWithCovarianceStamped > ("/marker13", 1);
-        marker14_pub = nh_.advertise < geometry_msgs::PoseWithCovarianceStamped > ("/marker14", 1);
+        marker14_pub = nh_.advertise < geometry_msgs::PoseWithCovarianceStamped > ("/marker14", 1); */
 
         ROS_INFO("Setup finished");
         
@@ -67,7 +69,7 @@ void ar_pose_callback(const ar_track_alvar_msgs::AlvarMarkers::ConstPtr & msg);
     
  void Converter::ar_pose_callback(const ar_track_alvar_msgs::AlvarMarkers::ConstPtr & msg)
 {
-    geometry_msgs::PoseWithCovarianceStamped  m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13, m14; // define a PosewithCovariance message
+    geometry_msgs::PoseWithCovarianceStamped  m1, m2, m3, m4; // m5, m6, m7, m8, m9, m10, m11, m12, m13, m14; // define a PosewithCovariance message
 
     int size = msg->markers.size();
     for(int i = 0; i< size; i ++)
@@ -92,6 +94,14 @@ void ar_pose_callback(const ar_track_alvar_msgs::AlvarMarkers::ConstPtr & msg);
     m1.pose.covariance[21] = 0.001;
     m1.pose.covariance[28] = 0.001;
     m1.pose.covariance[35] = 0.001;
+
+
+    // Get quaternions and transform them into RPY
+    //tf::Quaternion q(msg->markers[i].pose.pose.orientation.x,msg->markers[i].pose.pose.orientation.y,msg->markers[i].pose.pose.orientation.z,msg->markers[i].pose.pose.orientation.w);
+    //tf::Matrix3x3 m(q);
+    //double roll, pitch, yaw;
+    //m.getRPY(roll, pitch, yaw);
+    //std::cout << "Roll: " << roll << ", Pitch: " << pitch << ", Yaw: " << yaw << std::endl;
 
     marker1_pub.publish(m1);
  //ROS_INFO("x: %f, y: %f, z: %f,rot_x: %f,rot_y: %f,rot_z: %f",m1.pose.pose.position.x, m1.pose.pose.position.y, m1.pose.pose.position.z, m1.pose.pose.orientation.x, m1.pose.pose.orientation.y,m1.pose.pose.orientation.z);
@@ -167,7 +177,7 @@ void ar_pose_callback(const ar_track_alvar_msgs::AlvarMarkers::ConstPtr & msg);
     
     marker4_pub.publish(m4);
  //ROS_INFO("x: %f, y: %f, z: %f,rot_x: %f,rot_y: %f,rot_z: %f",m4.pose.pose.position.x, m4.pose.pose.position.y, m4.pose.pose.position.z, m4.pose.pose.orientation.x, m4.pose.pose.orientation.y,m4.pose.pose.orientation.z);
-   }
+   } /*
    if (msg->markers[i].id == 5)
    {
    m5.header = msg->header;
@@ -414,17 +424,16 @@ m14.pose.covariance[35] = 0.001;
 marker14_pub.publish(m14);
 //ROS_INFO("x: %f, y: %f, z: %f,rot_x: %f,rot_y: %f,rot_z: %f",m4.pose.pose.position.x, m4.pose.pose.position.y, m4.pose.pose.position.z, m4.pose.pose.orientation.x, m4.pose.pose.orientation.y,m4.pose.pose.orientation.z);
 }
-
+*/
 } //end of external foor loop
 
-ROS_INFO("Size: %d",size);
+// ROS_INFO("Size: %d",size);
 }
 
 
 int main(int argc, char **argv)
 {
-  ros::init(argc, argv, "subscriber");
-
+  ros::init(argc, argv, "data_converter");
 
   Converter convert;  
   int desidered_freq = 15.0;
@@ -433,6 +442,7 @@ int main(int argc, char **argv)
 
   while (ros::ok())
   {
+    //ROS_INFO("Size: %d",size);
     ros::spinOnce();
     r.sleep();
   } 

@@ -88,6 +88,17 @@ test/fast: test
 
 .PHONY : test/fast
 
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: install/strip
+
+.PHONY : install/strip/fast
+
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
@@ -229,11 +240,6 @@ gazebo_ros_block_laser/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_block_laser.dir/build.make gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_block_laser.dir/build
 .PHONY : gazebo_ros_block_laser/fast
 
-# Manual pre-install relink rule for target.
-gazebo_ros_block_laser/preinstall:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_block_laser.dir/preinstall
-.PHONY : gazebo_ros_block_laser/preinstall
-
 # Convenience name for target.
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_camera.dir/rule:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_camera.dir/rule
@@ -248,11 +254,6 @@ gazebo_ros_camera: gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_camera.d
 gazebo_ros_camera/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_camera.dir/build.make gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_camera.dir/build
 .PHONY : gazebo_ros_camera/fast
-
-# Manual pre-install relink rule for target.
-gazebo_ros_camera/preinstall:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_camera.dir/preinstall
-.PHONY : gazebo_ros_camera/preinstall
 
 # Convenience name for target.
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_laser.dir/rule:
@@ -269,11 +270,6 @@ gazebo_ros_laser/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_laser.dir/build.make gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_laser.dir/build
 .PHONY : gazebo_ros_laser/fast
 
-# Manual pre-install relink rule for target.
-gazebo_ros_laser/preinstall:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_laser.dir/preinstall
-.PHONY : gazebo_ros_laser/preinstall
-
 # Convenience name for target.
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_imu_sensor.dir/rule:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_imu_sensor.dir/rule
@@ -288,11 +284,6 @@ gazebo_ros_imu_sensor: gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_imu_
 gazebo_ros_imu_sensor/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_imu_sensor.dir/build.make gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_imu_sensor.dir/build
 .PHONY : gazebo_ros_imu_sensor/fast
-
-# Manual pre-install relink rule for target.
-gazebo_ros_imu_sensor/preinstall:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_imu_sensor.dir/preinstall
-.PHONY : gazebo_ros_imu_sensor/preinstall
 
 # Convenience name for target.
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_depth_camera.dir/rule:
@@ -309,11 +300,6 @@ gazebo_ros_depth_camera/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_depth_camera.dir/build.make gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_depth_camera.dir/build
 .PHONY : gazebo_ros_depth_camera/fast
 
-# Manual pre-install relink rule for target.
-gazebo_ros_depth_camera/preinstall:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_depth_camera.dir/preinstall
-.PHONY : gazebo_ros_depth_camera/preinstall
-
 # Convenience name for target.
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_gpu_laser.dir/rule:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_gpu_laser.dir/rule
@@ -329,11 +315,6 @@ gazebo_ros_gpu_laser/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_gpu_laser.dir/build.make gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_gpu_laser.dir/build
 .PHONY : gazebo_ros_gpu_laser/fast
 
-# Manual pre-install relink rule for target.
-gazebo_ros_gpu_laser/preinstall:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_gpu_laser.dir/preinstall
-.PHONY : gazebo_ros_gpu_laser/preinstall
-
 # Convenience name for target.
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_pose_trajectory.dir/rule:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_pose_trajectory.dir/rule
@@ -348,11 +329,6 @@ gazebo_ros_joint_pose_trajectory: gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gaze
 gazebo_ros_joint_pose_trajectory/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_pose_trajectory.dir/build.make gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_pose_trajectory.dir/build
 .PHONY : gazebo_ros_joint_pose_trajectory/fast
-
-# Manual pre-install relink rule for target.
-gazebo_ros_joint_pose_trajectory/preinstall:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_pose_trajectory.dir/preinstall
-.PHONY : gazebo_ros_joint_pose_trajectory/preinstall
 
 # Convenience name for target.
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/_run_tests_gazebo_plugins_rostest_test_set_model_state_test_set_model_state_test.test.dir/rule:
@@ -414,11 +390,6 @@ gazebo_ros_camera_utils/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_camera_utils.dir/build.make gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_camera_utils.dir/build
 .PHONY : gazebo_ros_camera_utils/fast
 
-# Manual pre-install relink rule for target.
-gazebo_ros_camera_utils/preinstall:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_camera_utils.dir/preinstall
-.PHONY : gazebo_ros_camera_utils/preinstall
-
 # Convenience name for target.
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_elevator.dir/rule:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_elevator.dir/rule
@@ -434,11 +405,6 @@ gazebo_ros_elevator/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_elevator.dir/build.make gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_elevator.dir/build
 .PHONY : gazebo_ros_elevator/fast
 
-# Manual pre-install relink rule for target.
-gazebo_ros_elevator/preinstall:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_elevator.dir/preinstall
-.PHONY : gazebo_ros_elevator/preinstall
-
 # Convenience name for target.
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/pub_joint_trajectory_test.dir/rule:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/pub_joint_trajectory_test.dir/rule
@@ -453,11 +419,6 @@ pub_joint_trajectory_test: gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/pub_joint_t
 pub_joint_trajectory_test/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/pub_joint_trajectory_test.dir/build.make gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/pub_joint_trajectory_test.dir/build
 .PHONY : pub_joint_trajectory_test/fast
-
-# Manual pre-install relink rule for target.
-pub_joint_trajectory_test/preinstall:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/pub_joint_trajectory_test.dir/preinstall
-.PHONY : pub_joint_trajectory_test/preinstall
 
 # Convenience name for target.
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/polled_camera_generate_messages_eus.dir/rule:
@@ -488,11 +449,6 @@ vision_reconfigure: gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/vision_reconfigure
 vision_reconfigure/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/vision_reconfigure.dir/build.make gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/vision_reconfigure.dir/build
 .PHONY : vision_reconfigure/fast
-
-# Manual pre-install relink rule for target.
-vision_reconfigure/preinstall:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/vision_reconfigure.dir/preinstall
-.PHONY : vision_reconfigure/preinstall
 
 # Convenience name for target.
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/set_model_state-test.dir/rule:
@@ -539,11 +495,6 @@ gazebo_ros_utils/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_utils.dir/build.make gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_utils.dir/build
 .PHONY : gazebo_ros_utils/fast
 
-# Manual pre-install relink rule for target.
-gazebo_ros_utils/preinstall:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_utils.dir/preinstall
-.PHONY : gazebo_ros_utils/preinstall
-
 # Convenience name for target.
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/camera_synchronizer.dir/rule:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/camera_synchronizer.dir/rule
@@ -559,11 +510,6 @@ camera_synchronizer/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/camera_synchronizer.dir/build.make gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/camera_synchronizer.dir/build
 .PHONY : camera_synchronizer/fast
 
-# Manual pre-install relink rule for target.
-camera_synchronizer/preinstall:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/camera_synchronizer.dir/preinstall
-.PHONY : camera_synchronizer/preinstall
-
 # Convenience name for target.
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/MultiCameraPlugin.dir/rule:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/MultiCameraPlugin.dir/rule
@@ -578,11 +524,6 @@ MultiCameraPlugin: gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/MultiCameraPlugin.d
 MultiCameraPlugin/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/MultiCameraPlugin.dir/build.make gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/MultiCameraPlugin.dir/build
 .PHONY : MultiCameraPlugin/fast
-
-# Manual pre-install relink rule for target.
-MultiCameraPlugin/preinstall:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/MultiCameraPlugin.dir/preinstall
-.PHONY : MultiCameraPlugin/preinstall
 
 # Convenience name for target.
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/polled_camera_generate_messages_cpp.dir/rule:
@@ -629,11 +570,6 @@ gazebo_ros_hand_of_god/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_hand_of_god.dir/build.make gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_hand_of_god.dir/build
 .PHONY : gazebo_ros_hand_of_god/fast
 
-# Manual pre-install relink rule for target.
-gazebo_ros_hand_of_god/preinstall:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_hand_of_god.dir/preinstall
-.PHONY : gazebo_ros_hand_of_god/preinstall
-
 # Convenience name for target.
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/hokuyo_node.dir/rule:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/hokuyo_node.dir/rule
@@ -649,11 +585,6 @@ hokuyo_node/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/hokuyo_node.dir/build.make gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/hokuyo_node.dir/build
 .PHONY : hokuyo_node/fast
 
-# Manual pre-install relink rule for target.
-hokuyo_node/preinstall:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/hokuyo_node.dir/preinstall
-.PHONY : hokuyo_node/preinstall
-
 # Convenience name for target.
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_ft_sensor.dir/rule:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_ft_sensor.dir/rule
@@ -668,11 +599,6 @@ gazebo_ros_ft_sensor: gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_ft_se
 gazebo_ros_ft_sensor/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_ft_sensor.dir/build.make gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_ft_sensor.dir/build
 .PHONY : gazebo_ros_ft_sensor/fast
-
-# Manual pre-install relink rule for target.
-gazebo_ros_ft_sensor/preinstall:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_ft_sensor.dir/preinstall
-.PHONY : gazebo_ros_ft_sensor/preinstall
 
 # Convenience name for target.
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/polled_camera_generate_messages_py.dir/rule:
@@ -704,11 +630,6 @@ gazebo_ros_imu/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_imu.dir/build.make gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_imu.dir/build
 .PHONY : gazebo_ros_imu/fast
 
-# Manual pre-install relink rule for target.
-gazebo_ros_imu/preinstall:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_imu.dir/preinstall
-.PHONY : gazebo_ros_imu/preinstall
-
 # Convenience name for target.
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_f3d.dir/rule:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_f3d.dir/rule
@@ -724,11 +645,6 @@ gazebo_ros_f3d/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_f3d.dir/build.make gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_f3d.dir/build
 .PHONY : gazebo_ros_f3d/fast
 
-# Manual pre-install relink rule for target.
-gazebo_ros_f3d/preinstall:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_f3d.dir/preinstall
-.PHONY : gazebo_ros_f3d/preinstall
-
 # Convenience name for target.
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_bumper.dir/rule:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_bumper.dir/rule
@@ -743,11 +659,6 @@ gazebo_ros_bumper: gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_bumper.d
 gazebo_ros_bumper/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_bumper.dir/build.make gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_bumper.dir/build
 .PHONY : gazebo_ros_bumper/fast
-
-# Manual pre-install relink rule for target.
-gazebo_ros_bumper/preinstall:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_bumper.dir/preinstall
-.PHONY : gazebo_ros_bumper/preinstall
 
 # Convenience name for target.
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/run_tests_gazebo_plugins.dir/rule:
@@ -779,11 +690,6 @@ gazebo_ros_projector/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_projector.dir/build.make gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_projector.dir/build
 .PHONY : gazebo_ros_projector/fast
 
-# Manual pre-install relink rule for target.
-gazebo_ros_projector/preinstall:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_projector.dir/preinstall
-.PHONY : gazebo_ros_projector/preinstall
-
 # Convenience name for target.
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_prosilica.dir/rule:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_prosilica.dir/rule
@@ -798,11 +704,6 @@ gazebo_ros_prosilica: gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_prosi
 gazebo_ros_prosilica/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_prosilica.dir/build.make gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_prosilica.dir/build
 .PHONY : gazebo_ros_prosilica/fast
-
-# Manual pre-install relink rule for target.
-gazebo_ros_prosilica/preinstall:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_prosilica.dir/preinstall
-.PHONY : gazebo_ros_prosilica/preinstall
 
 # Convenience name for target.
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_force.dir/rule:
@@ -819,11 +720,6 @@ gazebo_ros_force/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_force.dir/build.make gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_force.dir/build
 .PHONY : gazebo_ros_force/fast
 
-# Manual pre-install relink rule for target.
-gazebo_ros_force/preinstall:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_force.dir/preinstall
-.PHONY : gazebo_ros_force/preinstall
-
 # Convenience name for target.
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_trajectory.dir/rule:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_trajectory.dir/rule
@@ -838,11 +734,6 @@ gazebo_ros_joint_trajectory: gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ro
 gazebo_ros_joint_trajectory/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_trajectory.dir/build.make gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_trajectory.dir/build
 .PHONY : gazebo_ros_joint_trajectory/fast
-
-# Manual pre-install relink rule for target.
-gazebo_ros_joint_trajectory/preinstall:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_trajectory.dir/preinstall
-.PHONY : gazebo_ros_joint_trajectory/preinstall
 
 # Convenience name for target.
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_multicamera.dir/rule:
@@ -859,11 +750,6 @@ gazebo_ros_multicamera/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_multicamera.dir/build.make gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_multicamera.dir/build
 .PHONY : gazebo_ros_multicamera/fast
 
-# Manual pre-install relink rule for target.
-gazebo_ros_multicamera/preinstall:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_multicamera.dir/preinstall
-.PHONY : gazebo_ros_multicamera/preinstall
-
 # Convenience name for target.
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_planar_move.dir/rule:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_planar_move.dir/rule
@@ -878,11 +764,6 @@ gazebo_ros_planar_move: gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_pla
 gazebo_ros_planar_move/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_planar_move.dir/build.make gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_planar_move.dir/build
 .PHONY : gazebo_ros_planar_move/fast
-
-# Manual pre-install relink rule for target.
-gazebo_ros_planar_move/preinstall:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_planar_move.dir/preinstall
-.PHONY : gazebo_ros_planar_move/preinstall
 
 # Convenience name for target.
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_state_publisher.dir/rule:
@@ -899,11 +780,6 @@ gazebo_ros_joint_state_publisher/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_state_publisher.dir/build.make gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_state_publisher.dir/build
 .PHONY : gazebo_ros_joint_state_publisher/fast
 
-# Manual pre-install relink rule for target.
-gazebo_ros_joint_state_publisher/preinstall:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_state_publisher.dir/preinstall
-.PHONY : gazebo_ros_joint_state_publisher/preinstall
-
 # Convenience name for target.
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_diff_drive.dir/rule:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_diff_drive.dir/rule
@@ -918,11 +794,6 @@ gazebo_ros_diff_drive: gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_diff
 gazebo_ros_diff_drive/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_diff_drive.dir/build.make gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_diff_drive.dir/build
 .PHONY : gazebo_ros_diff_drive/fast
-
-# Manual pre-install relink rule for target.
-gazebo_ros_diff_drive/preinstall:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_diff_drive.dir/preinstall
-.PHONY : gazebo_ros_diff_drive/preinstall
 
 # Convenience name for target.
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_tricycle_drive.dir/rule:
@@ -939,11 +810,6 @@ gazebo_ros_tricycle_drive/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_tricycle_drive.dir/build.make gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_tricycle_drive.dir/build
 .PHONY : gazebo_ros_tricycle_drive/fast
 
-# Manual pre-install relink rule for target.
-gazebo_ros_tricycle_drive/preinstall:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_tricycle_drive.dir/preinstall
-.PHONY : gazebo_ros_tricycle_drive/preinstall
-
 # Convenience name for target.
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_skid_steer_drive.dir/rule:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_skid_steer_drive.dir/rule
@@ -958,11 +824,6 @@ gazebo_ros_skid_steer_drive: gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ro
 gazebo_ros_skid_steer_drive/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_skid_steer_drive.dir/build.make gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_skid_steer_drive.dir/build
 .PHONY : gazebo_ros_skid_steer_drive/fast
-
-# Manual pre-install relink rule for target.
-gazebo_ros_skid_steer_drive/preinstall:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_skid_steer_drive.dir/preinstall
-.PHONY : gazebo_ros_skid_steer_drive/preinstall
 
 # Convenience name for target.
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_p3d.dir/rule:
@@ -979,11 +840,6 @@ gazebo_ros_p3d/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_p3d.dir/build.make gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_p3d.dir/build
 .PHONY : gazebo_ros_p3d/fast
 
-# Manual pre-install relink rule for target.
-gazebo_ros_p3d/preinstall:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_p3d.dir/preinstall
-.PHONY : gazebo_ros_p3d/preinstall
-
 # Convenience name for target.
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_video.dir/rule:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_video.dir/rule
@@ -998,11 +854,6 @@ gazebo_ros_video: gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_video.dir
 gazebo_ros_video/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_video.dir/build.make gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_video.dir/build
 .PHONY : gazebo_ros_video/fast
-
-# Manual pre-install relink rule for target.
-gazebo_ros_video/preinstall:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_video.dir/preinstall
-.PHONY : gazebo_ros_video/preinstall
 
 # Convenience name for target.
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/run_tests_gazebo_plugins_rostest.dir/rule:
@@ -1034,11 +885,6 @@ gazebo_ros_range/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_range.dir/build.make gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_range.dir/build
 .PHONY : gazebo_ros_range/fast
 
-# Manual pre-install relink rule for target.
-gazebo_ros_range/preinstall:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_range.dir/preinstall
-.PHONY : gazebo_ros_range/preinstall
-
 # Convenience name for target.
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_vacuum_gripper.dir/rule:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_vacuum_gripper.dir/rule
@@ -1053,11 +899,6 @@ gazebo_ros_vacuum_gripper: gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_
 gazebo_ros_vacuum_gripper/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_vacuum_gripper.dir/build.make gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_vacuum_gripper.dir/build
 .PHONY : gazebo_ros_vacuum_gripper/fast
-
-# Manual pre-install relink rule for target.
-gazebo_ros_vacuum_gripper/preinstall:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_vacuum_gripper.dir/preinstall
-.PHONY : gazebo_ros_vacuum_gripper/preinstall
 
 # Convenience name for target.
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_template.dir/rule:
@@ -1074,11 +915,6 @@ gazebo_ros_template/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_template.dir/build.make gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_template.dir/build
 .PHONY : gazebo_ros_template/fast
 
-# Manual pre-install relink rule for target.
-gazebo_ros_template/preinstall:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_template.dir/preinstall
-.PHONY : gazebo_ros_template/preinstall
-
 # Convenience name for target.
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_openni_kinect.dir/rule:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_openni_kinect.dir/rule
@@ -1093,11 +929,6 @@ gazebo_ros_openni_kinect: gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_o
 gazebo_ros_openni_kinect/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_openni_kinect.dir/build.make gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_openni_kinect.dir/build
 .PHONY : gazebo_ros_openni_kinect/fast
-
-# Manual pre-install relink rule for target.
-gazebo_ros_openni_kinect/preinstall:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_openni_kinect.dir/preinstall
-.PHONY : gazebo_ros_openni_kinect/preinstall
 
 # Convenience name for target.
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/_run_tests_gazebo_plugins.dir/rule:
@@ -2122,6 +1953,7 @@ help:
 	@echo "... list_install_components"
 	@echo "... edit_cache"
 	@echo "... test"
+	@echo "... install/strip"
 	@echo "... _run_tests_gazebo_plugins_rostest_test_range_range_plugin.test"
 	@echo "... run_tests_gazebo_plugins_rostest_test_range_range_plugin.test"
 	@echo "... clean_test_results_gazebo_plugins"

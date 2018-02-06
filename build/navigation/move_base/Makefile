@@ -100,17 +100,6 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-
-.PHONY : test/fast
-
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
@@ -121,6 +110,28 @@ install/local: preinstall
 install/local/fast: install/local
 
 .PHONY : install/local/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: install/strip
+
+.PHONY : install/strip/fast
+
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -184,11 +195,6 @@ move_base/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f navigation/move_base/CMakeFiles/move_base.dir/build.make navigation/move_base/CMakeFiles/move_base.dir/build
 .PHONY : move_base/fast
 
-# Manual pre-install relink rule for target.
-move_base/preinstall:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/move_base/CMakeFiles/move_base.dir/preinstall
-.PHONY : move_base/preinstall
-
 # Convenience name for target.
 navigation/move_base/CMakeFiles/move_base_node.dir/rule:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/move_base/CMakeFiles/move_base_node.dir/rule
@@ -203,11 +209,6 @@ move_base_node: navigation/move_base/CMakeFiles/move_base_node.dir/rule
 move_base_node/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f navigation/move_base/CMakeFiles/move_base_node.dir/build.make navigation/move_base/CMakeFiles/move_base_node.dir/build
 .PHONY : move_base_node/fast
-
-# Manual pre-install relink rule for target.
-move_base_node/preinstall:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/move_base/CMakeFiles/move_base_node.dir/preinstall
-.PHONY : move_base_node/preinstall
 
 src/move_base.o: src/move_base.cpp.o
 
@@ -274,10 +275,11 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... move_base_gencfg"
+	@echo "... install/local"
+	@echo "... install/strip"
 	@echo "... test"
 	@echo "... move_base"
 	@echo "... move_base_node"
-	@echo "... install/local"
 	@echo "... src/move_base.o"
 	@echo "... src/move_base.i"
 	@echo "... src/move_base.s"

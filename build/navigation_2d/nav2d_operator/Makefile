@@ -100,6 +100,17 @@ list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
 
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: install/strip
+
+.PHONY : install/strip/fast
+
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -168,11 +179,6 @@ operator: navigation_2d/nav2d_operator/CMakeFiles/operator.dir/rule
 operator/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f navigation_2d/nav2d_operator/CMakeFiles/operator.dir/build.make navigation_2d/nav2d_operator/CMakeFiles/operator.dir/build
 .PHONY : operator/fast
-
-# Manual pre-install relink rule for target.
-operator/preinstall:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation_2d/nav2d_operator/CMakeFiles/operator.dir/preinstall
-.PHONY : operator/preinstall
 
 # Convenience name for target.
 navigation_2d/nav2d_operator/CMakeFiles/nav2d_operator_genpy.dir/rule:
@@ -248,11 +254,6 @@ RobotOperator: navigation_2d/nav2d_operator/CMakeFiles/RobotOperator.dir/rule
 RobotOperator/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f navigation_2d/nav2d_operator/CMakeFiles/RobotOperator.dir/build.make navigation_2d/nav2d_operator/CMakeFiles/RobotOperator.dir/build
 .PHONY : RobotOperator/fast
-
-# Manual pre-install relink rule for target.
-RobotOperator/preinstall:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation_2d/nav2d_operator/CMakeFiles/RobotOperator.dir/preinstall
-.PHONY : RobotOperator/preinstall
 
 # Convenience name for target.
 navigation_2d/nav2d_operator/CMakeFiles/nav2d_operator_generate_messages_cpp.dir/rule:
@@ -442,6 +443,7 @@ help:
 	@echo "... nav2d_operator_generate_messages_py"
 	@echo "... nav2d_operator_gencpp"
 	@echo "... list_install_components"
+	@echo "... install/strip"
 	@echo "... nav2d_operator_geneus"
 	@echo "... rebuild_cache"
 	@echo "... RobotOperator"

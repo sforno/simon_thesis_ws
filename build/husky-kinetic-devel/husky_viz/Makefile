@@ -122,6 +122,17 @@ list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
 
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: install/strip
+
+.PHONY : install/strip/fast
+
 # The main all target
 all: cmake_check_build_system
 	cd /home/simoneforno/simon_ws/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/simoneforno/simon_ws/build/CMakeFiles /home/simoneforno/simon_ws/build/husky-kinetic-devel/husky_viz/CMakeFiles/progress.marks
@@ -273,10 +284,11 @@ help:
 	@echo "... _run_tests_husky_viz"
 	@echo "... _run_tests_husky_viz_roslaunch-check"
 	@echo "... clean_test_results_husky_viz"
-	@echo "... run_tests_husky_viz"
 	@echo "... edit_cache"
+	@echo "... run_tests_husky_viz"
 	@echo "... run_tests_husky_viz_roslaunch-check_launch"
 	@echo "... list_install_components"
+	@echo "... install/strip"
 	@echo "... _run_tests_husky_viz_roslaunch-check_launch"
 .PHONY : help
 

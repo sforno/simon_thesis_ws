@@ -2,8 +2,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/robot_localization_listener_node.dir/src/robot_localization_listener_node.cpp.o"
   "/home/simoneforno/simon_ws/devel/lib/robot_localization_cust/robot_localization_listener_node.pdb"
   "/home/simoneforno/simon_ws/devel/lib/robot_localization_cust/robot_localization_listener_node"
-  "/home/simoneforno/simon_ws/devel/lib/robot_localization_cust/robot_localization_listener_node.pdb"
-  "CMakeFiles/CMakeRelink.dir/robot_localization_listener_node"
 )
 
 # Per-language clean rules from dependency scanning.

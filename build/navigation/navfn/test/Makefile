@@ -56,16 +56,6 @@ CMAKE_BINARY_DIR = /home/simoneforno/simon_ws/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
-
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
@@ -110,6 +100,27 @@ test:
 test/fast: test
 
 .PHONY : test/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: install/strip
+
+.PHONY : install/strip/fast
 
 # Special rule for the target install/local
 install/local: preinstall
@@ -170,6 +181,21 @@ _run_tests_navfn/fast:
 .PHONY : _run_tests_navfn/fast
 
 # Convenience name for target.
+navigation/navfn/test/CMakeFiles/run_tests_navfn.dir/rule:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/navfn/test/CMakeFiles/run_tests_navfn.dir/rule
+.PHONY : navigation/navfn/test/CMakeFiles/run_tests_navfn.dir/rule
+
+# Convenience name for target.
+run_tests_navfn: navigation/navfn/test/CMakeFiles/run_tests_navfn.dir/rule
+
+.PHONY : run_tests_navfn
+
+# fast build rule for target.
+run_tests_navfn/fast:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f navigation/navfn/test/CMakeFiles/run_tests_navfn.dir/build.make navigation/navfn/test/CMakeFiles/run_tests_navfn.dir/build
+.PHONY : run_tests_navfn/fast
+
+# Convenience name for target.
 navigation/navfn/test/CMakeFiles/path_calc_test.dir/rule:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/navfn/test/CMakeFiles/path_calc_test.dir/rule
 .PHONY : navigation/navfn/test/CMakeFiles/path_calc_test.dir/rule
@@ -198,21 +224,6 @@ _run_tests_navfn_gtest: navigation/navfn/test/CMakeFiles/_run_tests_navfn_gtest.
 _run_tests_navfn_gtest/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f navigation/navfn/test/CMakeFiles/_run_tests_navfn_gtest.dir/build.make navigation/navfn/test/CMakeFiles/_run_tests_navfn_gtest.dir/build
 .PHONY : _run_tests_navfn_gtest/fast
-
-# Convenience name for target.
-navigation/navfn/test/CMakeFiles/run_tests_navfn.dir/rule:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/navfn/test/CMakeFiles/run_tests_navfn.dir/rule
-.PHONY : navigation/navfn/test/CMakeFiles/run_tests_navfn.dir/rule
-
-# Convenience name for target.
-run_tests_navfn: navigation/navfn/test/CMakeFiles/run_tests_navfn.dir/rule
-
-.PHONY : run_tests_navfn
-
-# fast build rule for target.
-run_tests_navfn/fast:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f navigation/navfn/test/CMakeFiles/run_tests_navfn.dir/build.make navigation/navfn/test/CMakeFiles/run_tests_navfn.dir/build
-.PHONY : run_tests_navfn/fast
 
 # Convenience name for target.
 navigation/navfn/test/CMakeFiles/run_tests_navfn_gtest_path_calc_test.dir/rule:
@@ -334,18 +345,19 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... list_install_components"
 	@echo "... install"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... _run_tests_navfn"
+	@echo "... test"
+	@echo "... run_tests_navfn"
 	@echo "... path_calc_test"
 	@echo "... _run_tests_navfn_gtest"
-	@echo "... run_tests_navfn"
-	@echo "... test"
 	@echo "... run_tests_navfn_gtest_path_calc_test"
 	@echo "... _run_tests_navfn_gtest_path_calc_test"
 	@echo "... clean_test_results_navfn"
+	@echo "... list_install_components"
+	@echo "... install/strip"
 	@echo "... run_tests_navfn_gtest"
 	@echo "... install/local"
 	@echo "... __/src/read_pgm_costmap.o"

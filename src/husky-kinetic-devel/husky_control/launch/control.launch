@@ -34,7 +34,7 @@
         args="husky_joint_publisher husky_velocity_controller --shutdown-timeout 3"/>
 
   <!-- Start EKF for localization -->
-  <node pkg="robot_localization" type="ekf_localization_node" name="ekf_localization">
+  <node pkg="robot_localization_cust" type="ekf_localization_node" name="ekf_localization">
     <rosparam command="load" file="$(find husky_control)/config/localization.yaml" />
   </node>
 

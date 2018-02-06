@@ -89,6 +89,17 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: install/strip
+
+.PHONY : install/strip/fast
+
 # Special rule for the target test
 test:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
@@ -958,6 +969,7 @@ help:
 	@echo "... list_install_components"
 	@echo "... install"
 	@echo "... edit_cache"
+	@echo "... install/strip"
 	@echo "... gazebo_msgs_genlisp"
 	@echo "... test"
 	@echo "... trajectory_msgs_generate_messages_cpp"

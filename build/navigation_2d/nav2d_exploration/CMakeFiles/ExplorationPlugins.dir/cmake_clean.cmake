@@ -5,8 +5,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/ExplorationPlugins.dir/src/exploration_plugins.cpp.o"
   "/home/simoneforno/simon_ws/devel/lib/libExplorationPlugins.pdb"
   "/home/simoneforno/simon_ws/devel/lib/libExplorationPlugins.so"
-  "/home/simoneforno/simon_ws/devel/lib/libExplorationPlugins.pdb"
-  "CMakeFiles/CMakeRelink.dir/libExplorationPlugins.so"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -2,8 +2,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/carrot_planner.dir/src/carrot_planner.cpp.o"
   "/home/simoneforno/simon_ws/devel/lib/libcarrot_planner.pdb"
   "/home/simoneforno/simon_ws/devel/lib/libcarrot_planner.so"
-  "/home/simoneforno/simon_ws/devel/lib/libcarrot_planner.pdb"
-  "CMakeFiles/CMakeRelink.dir/libcarrot_planner.so"
 )
 
 # Per-language clean rules from dependency scanning.

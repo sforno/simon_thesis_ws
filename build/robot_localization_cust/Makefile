@@ -90,6 +90,17 @@ install/local/fast: install/local
 
 .PHONY : install/local/fast
 
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: install/strip
+
+.PHONY : install/strip/fast
+
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -874,11 +885,6 @@ ros_filter/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f robot_localization_cust/CMakeFiles/ros_filter.dir/build.make robot_localization_cust/CMakeFiles/ros_filter.dir/build
 .PHONY : ros_filter/fast
 
-# Manual pre-install relink rule for target.
-ros_filter/preinstall:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot_localization_cust/CMakeFiles/ros_filter.dir/preinstall
-.PHONY : ros_filter/preinstall
-
 # Convenience name for target.
 robot_localization_cust/CMakeFiles/ukf.dir/rule:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot_localization_cust/CMakeFiles/ukf.dir/rule
@@ -893,11 +899,6 @@ ukf: robot_localization_cust/CMakeFiles/ukf.dir/rule
 ukf/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f robot_localization_cust/CMakeFiles/ukf.dir/build.make robot_localization_cust/CMakeFiles/ukf.dir/build
 .PHONY : ukf/fast
-
-# Manual pre-install relink rule for target.
-ukf/preinstall:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot_localization_cust/CMakeFiles/ukf.dir/preinstall
-.PHONY : ukf/preinstall
 
 # Convenience name for target.
 robot_localization_cust/CMakeFiles/run_tests_robot_localization_cust_rostest_test_test_filter_base_diagnostics_timestamps.test.dir/rule:
@@ -1109,11 +1110,6 @@ robot_localization_listener_node/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f robot_localization_cust/CMakeFiles/robot_localization_listener_node.dir/build.make robot_localization_cust/CMakeFiles/robot_localization_listener_node.dir/build
 .PHONY : robot_localization_listener_node/fast
 
-# Manual pre-install relink rule for target.
-robot_localization_listener_node/preinstall:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot_localization_cust/CMakeFiles/robot_localization_listener_node.dir/preinstall
-.PHONY : robot_localization_listener_node/preinstall
-
 # Convenience name for target.
 robot_localization_cust/CMakeFiles/robot_localization_cust_generate_messages_py.dir/rule:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot_localization_cust/CMakeFiles/robot_localization_cust_generate_messages_py.dir/rule
@@ -1159,11 +1155,6 @@ filter_base/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f robot_localization_cust/CMakeFiles/filter_base.dir/build.make robot_localization_cust/CMakeFiles/filter_base.dir/build
 .PHONY : filter_base/fast
 
-# Manual pre-install relink rule for target.
-filter_base/preinstall:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot_localization_cust/CMakeFiles/filter_base.dir/preinstall
-.PHONY : filter_base/preinstall
-
 # Convenience name for target.
 robot_localization_cust/CMakeFiles/test_ukf_localization_node_bag3.dir/rule:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot_localization_cust/CMakeFiles/test_ukf_localization_node_bag3.dir/rule
@@ -1193,11 +1184,6 @@ ros_filter_utilities: robot_localization_cust/CMakeFiles/ros_filter_utilities.di
 ros_filter_utilities/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f robot_localization_cust/CMakeFiles/ros_filter_utilities.dir/build.make robot_localization_cust/CMakeFiles/ros_filter_utilities.dir/build
 .PHONY : ros_filter_utilities/fast
-
-# Manual pre-install relink rule for target.
-ros_filter_utilities/preinstall:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot_localization_cust/CMakeFiles/ros_filter_utilities.dir/preinstall
-.PHONY : ros_filter_utilities/preinstall
 
 # Convenience name for target.
 robot_localization_cust/CMakeFiles/test_ekf_localization_node_bag3.dir/rule:
@@ -1274,11 +1260,6 @@ filter_utilities/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f robot_localization_cust/CMakeFiles/filter_utilities.dir/build.make robot_localization_cust/CMakeFiles/filter_utilities.dir/build
 .PHONY : filter_utilities/fast
 
-# Manual pre-install relink rule for target.
-filter_utilities/preinstall:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot_localization_cust/CMakeFiles/filter_utilities.dir/preinstall
-.PHONY : filter_utilities/preinstall
-
 # Convenience name for target.
 robot_localization_cust/CMakeFiles/ukf_localization_node.dir/rule:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot_localization_cust/CMakeFiles/ukf_localization_node.dir/rule
@@ -1293,11 +1274,6 @@ ukf_localization_node: robot_localization_cust/CMakeFiles/ukf_localization_node.
 ukf_localization_node/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f robot_localization_cust/CMakeFiles/ukf_localization_node.dir/build.make robot_localization_cust/CMakeFiles/ukf_localization_node.dir/build
 .PHONY : ukf_localization_node/fast
-
-# Manual pre-install relink rule for target.
-ukf_localization_node/preinstall:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot_localization_cust/CMakeFiles/ukf_localization_node.dir/preinstall
-.PHONY : ukf_localization_node/preinstall
 
 # Convenience name for target.
 robot_localization_cust/CMakeFiles/robot_localization_cust_generate_messages.dir/rule:
@@ -1329,11 +1305,6 @@ ros_robot_localization_listener/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f robot_localization_cust/CMakeFiles/ros_robot_localization_listener.dir/build.make robot_localization_cust/CMakeFiles/ros_robot_localization_listener.dir/build
 .PHONY : ros_robot_localization_listener/fast
 
-# Manual pre-install relink rule for target.
-ros_robot_localization_listener/preinstall:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot_localization_cust/CMakeFiles/ros_robot_localization_listener.dir/preinstall
-.PHONY : ros_robot_localization_listener/preinstall
-
 # Convenience name for target.
 robot_localization_cust/CMakeFiles/robot_localization_estimator.dir/rule:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot_localization_cust/CMakeFiles/robot_localization_estimator.dir/rule
@@ -1348,11 +1319,6 @@ robot_localization_estimator: robot_localization_cust/CMakeFiles/robot_localizat
 robot_localization_estimator/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f robot_localization_cust/CMakeFiles/robot_localization_estimator.dir/build.make robot_localization_cust/CMakeFiles/robot_localization_estimator.dir/build
 .PHONY : robot_localization_estimator/fast
-
-# Manual pre-install relink rule for target.
-robot_localization_estimator/preinstall:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot_localization_cust/CMakeFiles/robot_localization_estimator.dir/preinstall
-.PHONY : robot_localization_estimator/preinstall
 
 # Convenience name for target.
 robot_localization_cust/CMakeFiles/navsat_transform.dir/rule:
@@ -1369,11 +1335,6 @@ navsat_transform/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f robot_localization_cust/CMakeFiles/navsat_transform.dir/build.make robot_localization_cust/CMakeFiles/navsat_transform.dir/build
 .PHONY : navsat_transform/fast
 
-# Manual pre-install relink rule for target.
-navsat_transform/preinstall:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot_localization_cust/CMakeFiles/navsat_transform.dir/preinstall
-.PHONY : navsat_transform/preinstall
-
 # Convenience name for target.
 robot_localization_cust/CMakeFiles/ekf.dir/rule:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot_localization_cust/CMakeFiles/ekf.dir/rule
@@ -1389,11 +1350,6 @@ ekf/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f robot_localization_cust/CMakeFiles/ekf.dir/build.make robot_localization_cust/CMakeFiles/ekf.dir/build
 .PHONY : ekf/fast
 
-# Manual pre-install relink rule for target.
-ekf/preinstall:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot_localization_cust/CMakeFiles/ekf.dir/preinstall
-.PHONY : ekf/preinstall
-
 # Convenience name for target.
 robot_localization_cust/CMakeFiles/ekf_localization_node.dir/rule:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot_localization_cust/CMakeFiles/ekf_localization_node.dir/rule
@@ -1408,11 +1364,6 @@ ekf_localization_node: robot_localization_cust/CMakeFiles/ekf_localization_node.
 ekf_localization_node/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f robot_localization_cust/CMakeFiles/ekf_localization_node.dir/build.make robot_localization_cust/CMakeFiles/ekf_localization_node.dir/build
 .PHONY : ekf_localization_node/fast
-
-# Manual pre-install relink rule for target.
-ekf_localization_node/preinstall:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot_localization_cust/CMakeFiles/ekf_localization_node.dir/preinstall
-.PHONY : ekf_localization_node/preinstall
 
 # Convenience name for target.
 robot_localization_cust/CMakeFiles/run_tests_robot_localization_cust_rostest_test_test_ukf.test.dir/rule:
@@ -1458,11 +1409,6 @@ navsat_transform_node: robot_localization_cust/CMakeFiles/navsat_transform_node.
 navsat_transform_node/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f robot_localization_cust/CMakeFiles/navsat_transform_node.dir/build.make robot_localization_cust/CMakeFiles/navsat_transform_node.dir/build
 .PHONY : navsat_transform_node/fast
-
-# Manual pre-install relink rule for target.
-navsat_transform_node/preinstall:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot_localization_cust/CMakeFiles/navsat_transform_node.dir/preinstall
-.PHONY : navsat_transform_node/preinstall
 
 # Convenience name for target.
 robot_localization_cust/CMakeFiles/test_ukf_localization_node_bag2.dir/rule:
@@ -2184,6 +2130,7 @@ help:
 	@echo "... install"
 	@echo "... edit_cache"
 	@echo "... install/local"
+	@echo "... install/strip"
 	@echo "... _run_tests_robot_localization_cust_rostest_test_test_ros_robot_localization_listener.test"
 	@echo "... test_ros_robot_localization_listener_publisher"
 	@echo "... run_tests_robot_localization_cust_rostest_test_test_robot_localization_estimator.test"

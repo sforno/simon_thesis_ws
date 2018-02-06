@@ -90,6 +90,17 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: install/strip
+
+.PHONY : install/strip/fast
+
 # Special rule for the target list_install_components
 list_install_components:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
@@ -244,11 +255,6 @@ findMarkerBundles/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f ar_track_alvar_cust/ar_track_alvar/CMakeFiles/findMarkerBundles.dir/build.make ar_track_alvar_cust/ar_track_alvar/CMakeFiles/findMarkerBundles.dir/build
 .PHONY : findMarkerBundles/fast
 
-# Manual pre-install relink rule for target.
-findMarkerBundles/preinstall:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ar_track_alvar_cust/ar_track_alvar/CMakeFiles/findMarkerBundles.dir/preinstall
-.PHONY : findMarkerBundles/preinstall
-
 # Convenience name for target.
 ar_track_alvar_cust/ar_track_alvar/CMakeFiles/_run_tests_ar_track_alvar_roslaunch-check.dir/rule:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ar_track_alvar_cust/ar_track_alvar/CMakeFiles/_run_tests_ar_track_alvar_roslaunch-check.dir/rule
@@ -279,11 +285,6 @@ ar_track_alvar/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f ar_track_alvar_cust/ar_track_alvar/CMakeFiles/ar_track_alvar.dir/build.make ar_track_alvar_cust/ar_track_alvar/CMakeFiles/ar_track_alvar.dir/build
 .PHONY : ar_track_alvar/fast
 
-# Manual pre-install relink rule for target.
-ar_track_alvar/preinstall:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ar_track_alvar_cust/ar_track_alvar/CMakeFiles/ar_track_alvar.dir/preinstall
-.PHONY : ar_track_alvar/preinstall
-
 # Convenience name for target.
 ar_track_alvar_cust/ar_track_alvar/CMakeFiles/individualMarkersNoKinect.dir/rule:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ar_track_alvar_cust/ar_track_alvar/CMakeFiles/individualMarkersNoKinect.dir/rule
@@ -298,11 +299,6 @@ individualMarkersNoKinect: ar_track_alvar_cust/ar_track_alvar/CMakeFiles/individ
 individualMarkersNoKinect/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f ar_track_alvar_cust/ar_track_alvar/CMakeFiles/individualMarkersNoKinect.dir/build.make ar_track_alvar_cust/ar_track_alvar/CMakeFiles/individualMarkersNoKinect.dir/build
 .PHONY : individualMarkersNoKinect/fast
-
-# Manual pre-install relink rule for target.
-individualMarkersNoKinect/preinstall:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ar_track_alvar_cust/ar_track_alvar/CMakeFiles/individualMarkersNoKinect.dir/preinstall
-.PHONY : individualMarkersNoKinect/preinstall
 
 # Convenience name for target.
 ar_track_alvar_cust/ar_track_alvar/CMakeFiles/run_tests_ar_track_alvar_roslaunch-check__home_simoneforno_simon_ws_src_ar_track_alvar_cust_ar_track_alvar_launch_pr2_bundle.launch.dir/rule:
@@ -408,11 +404,6 @@ kinect_filtering: ar_track_alvar_cust/ar_track_alvar/CMakeFiles/kinect_filtering
 kinect_filtering/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f ar_track_alvar_cust/ar_track_alvar/CMakeFiles/kinect_filtering.dir/build.make ar_track_alvar_cust/ar_track_alvar/CMakeFiles/kinect_filtering.dir/build
 .PHONY : kinect_filtering/fast
-
-# Manual pre-install relink rule for target.
-kinect_filtering/preinstall:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ar_track_alvar_cust/ar_track_alvar/CMakeFiles/kinect_filtering.dir/preinstall
-.PHONY : kinect_filtering/preinstall
 
 # Convenience name for target.
 ar_track_alvar_cust/ar_track_alvar/CMakeFiles/run_tests_ar_track_alvar_roslaunch-check.dir/rule:
@@ -594,11 +585,6 @@ findMarkerBundlesNoKinect/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f ar_track_alvar_cust/ar_track_alvar/CMakeFiles/findMarkerBundlesNoKinect.dir/build.make ar_track_alvar_cust/ar_track_alvar/CMakeFiles/findMarkerBundlesNoKinect.dir/build
 .PHONY : findMarkerBundlesNoKinect/fast
 
-# Manual pre-install relink rule for target.
-findMarkerBundlesNoKinect/preinstall:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ar_track_alvar_cust/ar_track_alvar/CMakeFiles/findMarkerBundlesNoKinect.dir/preinstall
-.PHONY : findMarkerBundlesNoKinect/preinstall
-
 # Convenience name for target.
 ar_track_alvar_cust/ar_track_alvar/CMakeFiles/pcl_msgs_generate_messages_cpp.dir/rule:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ar_track_alvar_cust/ar_track_alvar/CMakeFiles/pcl_msgs_generate_messages_cpp.dir/rule
@@ -749,11 +735,6 @@ individualMarkers/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f ar_track_alvar_cust/ar_track_alvar/CMakeFiles/individualMarkers.dir/build.make ar_track_alvar_cust/ar_track_alvar/CMakeFiles/individualMarkers.dir/build
 .PHONY : individualMarkers/fast
 
-# Manual pre-install relink rule for target.
-individualMarkers/preinstall:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ar_track_alvar_cust/ar_track_alvar/CMakeFiles/individualMarkers.dir/preinstall
-.PHONY : individualMarkers/preinstall
-
 # Convenience name for target.
 ar_track_alvar_cust/ar_track_alvar/CMakeFiles/medianFilter.dir/rule:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ar_track_alvar_cust/ar_track_alvar/CMakeFiles/medianFilter.dir/rule
@@ -768,11 +749,6 @@ medianFilter: ar_track_alvar_cust/ar_track_alvar/CMakeFiles/medianFilter.dir/rul
 medianFilter/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f ar_track_alvar_cust/ar_track_alvar/CMakeFiles/medianFilter.dir/build.make ar_track_alvar_cust/ar_track_alvar/CMakeFiles/medianFilter.dir/build
 .PHONY : medianFilter/fast
-
-# Manual pre-install relink rule for target.
-medianFilter/preinstall:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ar_track_alvar_cust/ar_track_alvar/CMakeFiles/medianFilter.dir/preinstall
-.PHONY : medianFilter/preinstall
 
 # Convenience name for target.
 ar_track_alvar_cust/ar_track_alvar/CMakeFiles/run_tests_ar_track_alvar_roslaunch-check__home_simoneforno_simon_ws_src_ar_track_alvar_cust_ar_track_alvar_test_marker_arg_config-basic.test.dir/rule:
@@ -834,11 +810,6 @@ createMarker/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f ar_track_alvar_cust/ar_track_alvar/CMakeFiles/createMarker.dir/build.make ar_track_alvar_cust/ar_track_alvar/CMakeFiles/createMarker.dir/build
 .PHONY : createMarker/fast
 
-# Manual pre-install relink rule for target.
-createMarker/preinstall:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ar_track_alvar_cust/ar_track_alvar/CMakeFiles/createMarker.dir/preinstall
-.PHONY : createMarker/preinstall
-
 # Convenience name for target.
 ar_track_alvar_cust/ar_track_alvar/CMakeFiles/run_tests_ar_track_alvar_roslaunch-check__home_simoneforno_simon_ws_src_ar_track_alvar_cust_ar_track_alvar_test_marker_arg_config-full.test.dir/rule:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ar_track_alvar_cust/ar_track_alvar/CMakeFiles/run_tests_ar_track_alvar_roslaunch-check__home_simoneforno_simon_ws_src_ar_track_alvar_cust_ar_track_alvar_test_marker_arg_config-full.test.dir/rule
@@ -883,11 +854,6 @@ trainMarkerBundle: ar_track_alvar_cust/ar_track_alvar/CMakeFiles/trainMarkerBund
 trainMarkerBundle/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f ar_track_alvar_cust/ar_track_alvar/CMakeFiles/trainMarkerBundle.dir/build.make ar_track_alvar_cust/ar_track_alvar/CMakeFiles/trainMarkerBundle.dir/build
 .PHONY : trainMarkerBundle/fast
-
-# Manual pre-install relink rule for target.
-trainMarkerBundle/preinstall:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ar_track_alvar_cust/ar_track_alvar/CMakeFiles/trainMarkerBundle.dir/preinstall
-.PHONY : trainMarkerBundle/preinstall
 
 # Convenience name for target.
 ar_track_alvar_cust/ar_track_alvar/CMakeFiles/_run_tests_ar_track_alvar_roslaunch-check__home_simoneforno_simon_ws_src_ar_track_alvar_cust_ar_track_alvar_test_marker_arg_config-full.test.dir/rule:
@@ -1960,6 +1926,7 @@ help:
 	@echo "... install"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... install/strip"
 	@echo "... _run_tests_ar_track_alvar_rostest_test_marker_param_config-full.test"
 	@echo "... run_tests_ar_track_alvar_rostest_test_marker_param_config-full.test"
 	@echo "... _run_tests_ar_track_alvar_rostest_test_marker_param_config-basic.test"

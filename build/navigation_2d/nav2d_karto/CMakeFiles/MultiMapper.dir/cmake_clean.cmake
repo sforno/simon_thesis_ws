@@ -2,8 +2,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/MultiMapper.dir/src/MultiMapper.cpp.o"
   "/home/simoneforno/simon_ws/devel/lib/libMultiMapper.pdb"
   "/home/simoneforno/simon_ws/devel/lib/libMultiMapper.so"
-  "/home/simoneforno/simon_ws/devel/lib/libMultiMapper.pdb"
-  "CMakeFiles/CMakeRelink.dir/libMultiMapper.so"
 )
 
 # Per-language clean rules from dependency scanning.

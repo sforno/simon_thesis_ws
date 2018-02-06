@@ -111,6 +111,17 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: install/strip
+
+.PHONY : install/strip/fast
+
 # Special rule for the target test
 test:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
@@ -454,11 +465,6 @@ trajectory_planner_ros/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f navigation/base_local_planner/CMakeFiles/trajectory_planner_ros.dir/build.make navigation/base_local_planner/CMakeFiles/trajectory_planner_ros.dir/build
 .PHONY : trajectory_planner_ros/fast
 
-# Manual pre-install relink rule for target.
-trajectory_planner_ros/preinstall:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/base_local_planner/CMakeFiles/trajectory_planner_ros.dir/preinstall
-.PHONY : trajectory_planner_ros/preinstall
-
 # Convenience name for target.
 navigation/base_local_planner/CMakeFiles/base_local_planner_generate_messages.dir/rule:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/base_local_planner/CMakeFiles/base_local_planner_generate_messages.dir/rule
@@ -488,11 +494,6 @@ base_local_planner: navigation/base_local_planner/CMakeFiles/base_local_planner.
 base_local_planner/fast:
 	cd /home/simoneforno/simon_ws/build && $(MAKE) -f navigation/base_local_planner/CMakeFiles/base_local_planner.dir/build.make navigation/base_local_planner/CMakeFiles/base_local_planner.dir/build
 .PHONY : base_local_planner/fast
-
-# Manual pre-install relink rule for target.
-base_local_planner/preinstall:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/base_local_planner/CMakeFiles/base_local_planner.dir/preinstall
-.PHONY : base_local_planner/preinstall
 
 # Convenience name for target.
 navigation/base_local_planner/CMakeFiles/base_local_planner_utest.dir/rule:
@@ -1353,6 +1354,7 @@ help:
 	@echo "... base_local_planner_generate_messages_cpp"
 	@echo "... base_local_planner_gencpp"
 	@echo "... base_local_planner_genpy"
+	@echo "... install/strip"
 	@echo "... base_local_planner_gencfg"
 	@echo "... test"
 	@echo "... _run_tests_base_local_planner_gtest"

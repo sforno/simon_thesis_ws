@@ -2,8 +2,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/robot_localization_estimator.dir/src/robot_localization_estimator.cpp.o"
   "/home/simoneforno/simon_ws/devel/lib/librobot_localization_estimator.pdb"
   "/home/simoneforno/simon_ws/devel/lib/librobot_localization_estimator.so"
-  "/home/simoneforno/simon_ws/devel/lib/librobot_localization_estimator.pdb"
-  "CMakeFiles/CMakeRelink.dir/librobot_localization_estimator.so"
 )
 
 # Per-language clean rules from dependency scanning.
