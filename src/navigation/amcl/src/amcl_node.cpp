@@ -509,7 +509,7 @@ void AmclNode::reconfigureCB(AMCLConfig &config, uint32_t level)
   else if(config.laser_model_type == "likelihood_field_prob")
     laser_model_type_ = LASER_MODEL_LIKELIHOOD_FIELD_PROB;
 
-  if(config.odom_model_type == "diff")
+  if(config.odom_model_type == "diff") // Husky odom model
     odom_model_type_ = ODOM_MODEL_DIFF;
   else if(config.odom_model_type == "omni")
     odom_model_type_ = ODOM_MODEL_OMNI;
@@ -697,6 +697,7 @@ void AmclNode::savePoseToServer()
   map_pose.getBasis().getEulerYPR(yaw, pitch, roll);
 
   ROS_DEBUG("Saving pose to server. x: %.3f, y: %.3f", map_pose.getOrigin().x(), map_pose.getOrigin().y() );
+  ROS_INFO("Map x: %f, map y: %f",map_pose.getOrigin().x(), map_pose.getOrigin().y());
 
   private_nh_.setParam("initial_pose_x", map_pose.getOrigin().x());
   private_nh_.setParam("initial_pose_y", map_pose.getOrigin().y());

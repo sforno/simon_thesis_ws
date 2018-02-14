@@ -93,7 +93,7 @@ namespace RobotLocalization
     // Now set up the relevant matrices
     Eigen::VectorXd stateSubset(updateSize);                              // x (in most literature)
     Eigen::VectorXd measurementSubset(updateSize);                        // z
-    Eigen::MatrixXd measurementCovarianceSubset(updateSize, updateSize);  // R
+    Eigen::MatrixXd measurementCovarianceSubset(updateSize, updateSize);  // Q //use Freiburg course convention, measurement noise
     Eigen::MatrixXd stateToMeasurementSubset(updateSize, state_.rows());  // H
     Eigen::MatrixXd kalmanGainSubset(state_.rows(), updateSize);          // K
     Eigen::VectorXd innovationSubset(updateSize);                         // z - Hx
@@ -155,7 +155,7 @@ namespace RobotLocalization
              "\nMeasurement covariance subset is:\n" << measurementCovarianceSubset <<
              "\nState-to-measurement subset is:\n" << stateToMeasurementSubset << "\n");
 
-    // (1) Compute the Kalman gain: K = (PH') / (HPH' + R)
+    // (1) Compute the Kalman gain: K = (PH') / (HPH' + Q)
     Eigen::MatrixXd pht = estimateErrorCovariance_ * stateToMeasurementSubset.transpose();
     Eigen::MatrixXd hphrInv  = (stateToMeasurementSubset * pht + measurementCovarianceSubset).inverse();
     kalmanGainSubset.noalias() = pht * hphrInv;
@@ -329,7 +329,7 @@ namespace RobotLocalization
                     (xCoeff * xAcc + yCoeff * yAcc + zCoeff * zAcc) * oneHalfATSquared;
     double dFY_dP = (xCoeff * rollVel + yCoeff * pitchVel + zCoeff * yawVel) * delta;
 
-    // Much of the transfer function Jacobian is identical to the transfer function
+    // Much of the transfer function Jacobian G is identical to the transfer function
     transferFunctionJacobian_ = transferFunction_;
     transferFunctionJacobian_(StateMemberX, StateMemberRoll) = dFx_dR;
     transferFunctionJacobian_(StateMemberX, StateMemberPitch) = dFx_dP;

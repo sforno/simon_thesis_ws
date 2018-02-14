@@ -1,7 +1,12 @@
 <?xml version="1.0"?>
 <launch>
   <node pkg="robot_localization_cust" type="ekf_localization_node" name="ekf_se" clear_params="true">
-    <rosparam command="load" file="$(find robot_localization_cust)/params/my_ekf_onlyodom.yaml" />
+    <rosparam command="load" file="$(find robot_localization_cust)/params/my_ekf_marker1.yaml" />
+
+    <param name="map_frame" value="map" /> <!-- set map to appear on the server-->
+    <param name="marker_frame" value="ar_marker_1" />
+    <param name="robot_frame" value="base_link" />		
+	
    <!--  Placeholder for output topic remapping -->
      <remap from="odometry/filtered" to="finalpose"/>
     <!--<remap from="accel/filtered" to=""/> -->

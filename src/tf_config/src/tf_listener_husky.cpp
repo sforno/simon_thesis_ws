@@ -23,7 +23,11 @@ int main(int argc, char** argv){
 
       // print to check
 
-      ROS_INFO("x: %f, y: %f", transform.getOrigin().x(),transform.getOrigin().x());
+      ROS_INFO("x: %f, y: %f", transform.getOrigin().x(),transform.getOrigin().y());
+
+      // use that tranform object to save the estimated robot pose wrt to the marker
+      // make a static tf from marker to map frame (say 0,0,0), and feed that to the Ekf filter
+      // THIS IS NOT THE WAY TO GO
 
     rate.sleep();
 

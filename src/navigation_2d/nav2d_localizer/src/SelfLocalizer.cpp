@@ -471,7 +471,7 @@ void SelfLocalizer::process(const sensor_msgs::LaserScan::ConstPtr& scan)
 		robot2map.stamp_ = scan->header.stamp;
 		robot2map.frame_id_ = mRobotFrame;
 
-		mTransformListener.transformPose(mOdometryFrame, robot2map, odom2map);
+		mTransformListener.transformPose(mOdometryFrame, robot2map, odom2map); //translating message arriving robot2map into the odom frame: result is odom2map
 		mMapToOdometry = odom2map.inverse();
 	}
 	catch(tf::TransformException)

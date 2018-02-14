@@ -13,8 +13,8 @@
   while(n.ok()){
     broadcaster.sendTransform(
       tf::StampedTransform(
-        tf::Transform(tf::Quaternion(0, 0, 0, 1), tf::Vector3(0, 0, 0)),
-        ros::Time::now(),"map", "odom"));
+        tf::Transform(tf::Quaternion(0, 0, 0, 1), tf::Vector3(2, -1, 0)),
+        ros::Time::now(),"map", "ar_marker_1"));
    /* broadcaster.sendTransform(
       tf::StampedTransform(
         tf::Transform(tf::Quaternion(0, 0, 0, 1), tf::Vector3(0, 0, 0)),

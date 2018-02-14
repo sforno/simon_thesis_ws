@@ -1,10 +1,5 @@
 /*
-
-Trying to use the estimated marker pose from the Kinect to get the estimated robot pose
-
 Author: Simone Forno
-
-
 */
 
 #include <ros/ros.h>
@@ -12,6 +7,9 @@ Author: Simone Forno
 #include <geometry_msgs/PoseWithCovarianceStamped.h>
 #include <tf/transform_listener.h>
 
+/*
+
+=== Trying to use the estimated marker pose from the Kinect to get the estimated robot pose ===
 
 void poseCallback(const geometry_msgs::PoseWithCovarianceStamped::ConstPtr & msg){
 
@@ -21,11 +19,10 @@ void poseCallback(const geometry_msgs::PoseWithCovarianceStamped::ConstPtr & msg
   tf::Quaternion q;
   q.setRPY(0, 0, msg->theta);
   transform.setRotation(q);
-  br.sendTransform(tf::StampedTransform(transform, ros::Time::now(), "map", turtle_name)); */
+  br.sendTransform(tf::StampedTransform(transform, ros::Time::now(), "map", turtle_name)); 
   
   static tf::TransformBroadcaster br;
   tf::TransformListener list;
-  tf::StampedTransform inverse;
   std::string markerFrame = "ar_marker_final";
 
 if(msg->header.frame_id == "ar_marker_1") {
@@ -55,7 +52,7 @@ if(msg->header.frame_id == "ar_marker_1") {
 
 }
 
-}
+} 
 
 int main(int argc, char** argv){
 
@@ -73,4 +70,10 @@ int main(int argc, char** argv){
     r.sleep();
   } 
   return 0;
-};
+}; */
+
+/* 
+
+Does not work with static transform the filter, implement a dynamic transform that is able to fix the marker estimate and compute the change in map frame
+
+*/

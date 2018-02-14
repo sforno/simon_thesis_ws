@@ -1,0 +1,146 @@
+frequency: 30
+
+sensor_timeout: 1
+
+two_d_mode: true
+
+#transform_time_offset: 0.0
+
+#print_diagnostics: true
+
+debug: false
+
+publish_tf: true
+
+#initial_state: [0,  0,  0,
+ #              0, 0, 0,
+  #             0, 0, 0,
+   #           0, 0, 0,
+    #           0, 0, 0] # don t know if needed
+
+publish_acceleration: false
+
+map_frame: map              # Defaults to "map" if unspecified
+odom_frame: odom            # Defaults to "odom" if unspecified
+base_link_frame: base_link  # Defaults to "base_link" if unspecified
+world_frame: map           # Defaults to the value of odom_frame if unspecified
+
+dynamic_process_noise_covariance: true
+
+#odom0: odometry/filtered
+#odom0_config: [true,  true,  true,
+#               true, true, true,
+#               false, false, false,
+#              false, false, false,
+#               false, false, false]      # See suggestion for Y_dot:http://docs.ros.org/lunar/api/robot_localization/html/configuring_robot_localization.html
+#odom0_differential: false
+#odom0_relative: false
+#odom0_queue_size: 40
+#odom0_nodelay: false
+
+pose0: marker1
+pose0_config: [true,  true,  true,
+               true, true, true,
+               false, false, false,
+              false, false, false,
+               false, false, false] # If two_d_mode is true -> Z, roll, pitch are not needed
+pose0_differential: false
+pose0_relative: false
+pose0_queue_size: 40
+pose0_nodelay: false
+
+process_noise_covariance: [0.0001, 0,    0,    0,    0,    0,    0,     0,     0,    0,    0,    0,    0,    0,    0,
+                           0,    0.0001, 0,    0,    0,    0,    0,     0,     0,    0,    0,    0,    0,    0,    0,
+                           0,    0,    0.0001, 0,    0,    0,    0,     0,     0,    0,    0,    0,    0,    0,    0,
+                           0,    0,    0,    0.0001, 0,    0,    0,     0,     0,    0,    0,    0,    0,    0,    0,
+                           0,    0,    0,    0,    0.0001, 0,    0,     0,     0,    0,    0,    0,    0,    0,    0,
+                           0,    0,    0,    0,    0,    0.0001, 0,     0,     0,    0,    0,    0,    0,    0,    0,
+                           0,    0,    0,    0,    0,    0,    0.0001, 0,     0,    0,    0,    0,    0,    0,    0,
+                           0,    0,    0,    0,    0,    0,    0,     0.0001, 0,    0,    0,    0,    0,    0,    0,
+                           0,    0,    0,    0,    0,    0,    0,     0,     0.0001, 0,    0,    0,    0,    0,    0,
+                           0,    0,    0,    0,    0,    0,    0,     0,     0,    0.0001, 0,    0,    0,    0,    0,
+                           0,    0,    0,    0,    0,    0,    0,     0,     0,    0,    0.0001, 0,    0,    0,    0,
+                           0,    0,    0,    0,    0,    0,    0,     0,     0,    0,    0,    0.0001, 0,    0,    0,
+                           0,    0,    0,    0,    0,    0,    0,     0,     0,    0,    0,    0,    0.0001, 0,    0,
+                           0,    0,    0,    0,    0,    0,    0,     0,     0,    0,    0,    0,    0,    0.0001, 0,
+                           0,    0,    0,    0,    0,    0,    0,     0,     0,    0,    0,    0,    0,    0,    0.0001]
+
+
+initial_estimate_covariance: [1e-2, 0,    0,    0,    0,    0,    0,    0,    0,    0,     0,     0,     0,    0,    0,
+                              0,    1e-2, 0,    0,    0,    0,    0,    0,    0,    0,     0,     0,     0,    0,    0,
+                              0,    0,    1e-2, 0,    0,    0,    0,    0,    0,    0,     0,     0,     0,    0,    0,
+                              0,    0,    0,    1e-2, 0,    0,    0,    0,    0,    0,     0,     0,     0,    0,    0,
+                              0,    0,    0,    0,    1e-2, 0,    0,    0,    0,    0,     0,     0,     0,    0,    0,
+                              0,    0,    0,    0,    0,    1e-2, 0,    0,    0,    0,     0,     0,     0,    0,    0,
+                              0,    0,    0,    0,    0,    0,    1e-9, 0,    0,    0,     0,     0,     0,    0,    0,
+                              0,    0,    0,    0,    0,    0,    0,    1e-9, 0,    0,     0,     0,     0,    0,    0,
+                              0,    0,    0,    0,    0,    0,    0,    0,    1e-9, 0,     0,     0,     0,    0,    0,
+                              0,    0,    0,    0,    0,    0,    0,    0,    0,    1e-9,  0,     0,     0,    0,    0,
+                              0,    0,    0,    0,    0,    0,    0,    0,    0,    0,     1e-9,  0,     0,    0,    0,
+                              0,    0,    0,    0,    0,    0,    0,    0,    0,    0,     0,     1e-9,  0,    0,    0,
+                              0,    0,    0,    0,    0,    0,    0,    0,    0,    0,     0,     0,     1e-9, 0,    0,
+                              0,    0,    0,    0,    0,    0,    0,    0,    0,    0,     0,     0,     0,    1e-9, 0,
+                              0,    0,    0,    0,    0,    0,    0,    0,    0,    0,     0,     0,     0,    0,    1e-9]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Default values
+
+#process_noise_covariance: [0.0001, 0,    0,    0,    0,    0,    0,     0,     0,    0,    0,    0,    0,    0,    0,
+ #                          0,    0.0001, 0,    0,    0,    0,    0,     0,     0,    0,    0,    0,    0,    0,    0,
+  #                         0,    0,    0.0001, 0,    0,    0,    0,     0,     0,    0,    0,    0,    0,    0,    0,
+   #                        0,    0,    0,    0.0001, 0,    0,    0,     0,     0,    0,    0,    0,    0,    0,    0,
+    #                       0,    0,    0,    0,    0.0001, 0,    0,     0,     0,    0,    0,    0,    0,    0,    0,
+     #                      0,    0,    0,    0,    0,    0.0001, 0,     0,     0,    0,    0,    0,    0,    0,    0,
+      #                     0,    0,    0,    0,    0,    0,    0.0001, 0,     0,    0,    0,    0,    0,    0,    0,
+       #                    0,    0,    0,    0,    0,    0,    0,     0.0001, 0,    0,    0,    0,    0,    0,    0,
+        #                   0,    0,    0,    0,    0,    0,    0,     0,     0.0001, 0,    0,    0,    0,    0,    0,
+         #                  0,    0,    0,    0,    0,    0,    0,     0,     0,    0.0001, 0,    0,    0,    0,    0,
+          #                 0,    0,    0,    0,    0,    0,    0,     0,     0,    0,    0.0001, 0,    0,    0,    0,
+           #                0,    0,    0,    0,    0,    0,    0,     0,     0,    0,    0,    0.0001, 0,    0,    0,
+            #               0,    0,    0,    0,    0,    0,    0,     0,     0,    0,    0,    0,    0.0001, 0,    0,
+             #              0,    0,    0,    0,    0,    0,    0,     0,     0,    0,    0,    0,    0,    0.0001, 0,
+              #             0,    0,    0,    0,    0,    0,    0,     0,     0,    0,    0,    0,    0,    0,    0.0001]
+
+
+#initial_estimate_covariance: [1e-2, 0,    0,    0,    0,    0,    0,    0,    0,    0,     0,     0,     0,    0,    0,
+ #                             0,    1e-2, 0,    0,    0,    0,    0,    0,    0,    0,     0,     0,     0,    0,    0,
+  #                            0,    0,    1e-2, 0,    0,    0,    0,    0,    0,    0,     0,     0,     0,    0,    0,
+   #                           0,    0,    0,    1e-2, 0,    0,    0,    0,    0,    0,     0,     0,     0,    0,    0,
+    #                          0,    0,    0,    0,    1e-2, 0,    0,    0,    0,    0,     0,     0,     0,    0,    0,
+     #                         0,    0,    0,    0,    0,    1e-2, 0,    0,    0,    0,     0,     0,     0,    0,    0,
+      #                        0,    0,    0,    0,    0,    0,    1e-9, 0,    0,    0,     0,     0,     0,    0,    0,
+       #                       0,    0,    0,    0,    0,    0,    0,    1e-9, 0,    0,     0,     0,     0,    0,    0,
+        #                      0,    0,    0,    0,    0,    0,    0,    0,    1e-9, 0,     0,     0,     0,    0,    0,
+         #                     0,    0,    0,    0,    0,    0,    0,    0,    0,    1e-9,  0,     0,     0,    0,    0,
+          #                    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,     1e-9,  0,     0,    0,    0,
+           #                   0,    0,    0,    0,    0,    0,    0,    0,    0,    0,     0,     1e-9,  0,    0,    0,
+            #                  0,    0,    0,    0,    0,    0,    0,    0,    0,    0,     0,     0,     1e-9, 0,    0,
+             #                 0,    0,    0,    0,    0,    0,    0,    0,    0,    0,     0,     0,     0,    1e-9, 0,
+              #                0,    0,    0,    0,    0,    0,    0,    0,    0,    0,     0,     0,     0,    0,    1e-9]
+
+
+
+
+# Transforms: Broadcast of the odom->*base_link* transform. When the world_frame parameter is set to the value of the odom_frame parameter in the configuration file, robot_localization‘s state estimation nodes output both a position estimate in a nav_msgs/Odometry message and a transform from the frame specified by its odom_frame parameter to its base_link_frame parameter. However, some robot drivers also broadcast this transform along with their odometry message. If users want robot_localization to be responsible for this transform, then they need to disable the broadcast of that transform by their robot’s driver. This is often exposed as a parameter.
+
+
+
+
+
+

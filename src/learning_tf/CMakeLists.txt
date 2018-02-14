@@ -129,21 +129,25 @@ include_directories(
 # add_dependencies(learning_tf ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Declare a C++ executable
-#add_executable(tf_turtle_br src/tf_turtle_br.cpp)
-#add_executable(tf_turtle_list src/tf_turtle_list.cpp)
-
+add_executable(turtle_tf_broadcaster src/turtle_tf_broadcaster.cpp) #turtle1
+add_executable(turtle_tf_listener src/turtle_tf_listener.cpp)
+#add_executable(frame_tf_broadcaster src/frame_tf_broadcaster.cpp)
+#add_executable(dynamic_tf_broadcaster src/dynamic_tf_broadcaster.cpp)
 ## Add cmake target dependencies of the executable
 ## same as for the library above
 # add_dependencies(learning_tf_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
- #target_link_libraries(tf_turtle_br
-  # ${catkin_LIBRARIES}
- #)
-#target_link_libraries(tf_turtle_list
+ target_link_libraries(turtle_tf_broadcaster
+   ${catkin_LIBRARIES}
+ )
+target_link_libraries(turtle_tf_listener
+   ${catkin_LIBRARIES}
+ )
+#target_link_libraries(dynamic_tf_broadcaster
  #  ${catkin_LIBRARIES}
  #)
-
+#target_link_libraries(frame_tf_broadcaster ${catkin_LIBRARIES})
 #############
 ## Install ##
 #############
