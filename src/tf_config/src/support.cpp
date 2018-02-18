@@ -81,3 +81,94 @@ tf::Pose map_pose = latest_tf_.inverse() * latest_odom_pose_; // line 695
 
 latest_tf_ = tf::Transform(tf::Quaternion(odom_to_map.getRotation()),
 tf::Point(odom_to_map.getOrigin())); //line 1377
+
+
+
+// Dynamic tf - using Sriram approach
+
+/*
+void Dynamic_tf::robot_callback(const nav_msgs::Odometry::ConstPtr & msg)
+{
+  geometry_msgs::PoseWithCovarianceStamped  rob_pose; //goal: get a preliminary map2robot tf
+  tf::TransformListener listener;
+  tf::TransformBroadcaster broadcaster;
+  tf::Stamped<tf::Pose> map2robot; 
+
+// Copy the contents of the odometry message but publish it on the mapFrame istead --> goal is to somehow get a map tf
+//if(i==1){
+  rob_pose.header.frame_id = mMapFrame.c_str();
+  rob_pose.header.stamp = msg->header.stamp;
+  rob_pose.pose.pose.position.x = msg->pose.pose.position.x;
+  rob_pose.pose.pose.position.y = msg->pose.pose.position.y;
+  //rob_pose.pose.pose.position.z = msg->pose.pose.position.z;
+  rob_pose.pose.pose.orientation.x = msg->pose.pose.orientation.x;
+  rob_pose.pose.pose.orientation.y = msg->pose.pose.orientation.y;
+  rob_pose.pose.pose.orientation.z = msg->pose.pose.orientation.z;
+
+  rob_pose.pose.covariance = msg->pose.covariance;
+
+
+  map2robot.setOrigin(tf::Vector3(rob_pose.pose.pose.position.x, rob_pose.pose.pose.position.y, 0));
+  map2robot.setRotation(tf::Quaternion(rob_pose.pose.pose.orientation.x,rob_pose.pose.pose.orientation.y,rob_pose.pose.pose.orientation.z,1));
+  // Publish the message to check if map2robot is set correctly
+  rob_pub.publish(rob_pose); //message is published correctly!
+  
+  //br.sendTransform(tf::StampedTransform(map2robot,ros::Time::now(),"map","odom")); By doing so I get the map2odom progressively grow as robot2odom
+  ROS_INFO("map2robot_x: %f, map2robot_y: %f", map2robot.getOrigin().x(),map2robot.getOrigin().y()); //correct
+  i = i+1;
+  //now get the inverse and save the map coords
+  robot2map.setData(map2robot.inverse());
+  robot2map.frame_id_= mRobotFrame.c_str();
+  ROS_INFO("robot2map_x: %f, robot2map_y: %f", robot2map.getOrigin().x(),robot2map.getOrigin().y()); // I am expecting here 0,0 and but just getting reversed coords
+  //now=prev=0;
+//}
+ 
+  //else{
+    //now = setOrigin(mapframe)
+  //}
+  // Make a little print of map2robot coords
+  //ROS_INFO("x: %f, y: %f", map2robot.getOrigin().x(),map2robot.getOrigin().y()); //correct
+
+  // Now I have the map tf, I can proceed with vectors difference hint: marker2map = robot2map - robot2marker
+
+
+  //tf::Pose subtract = prev.inverseTimes(now);
+  //tf::poseTFToMsg(&subtract, &message_pose);
+  //tf::quaternionTFToMsg(subtract, message_quat);
+
+
+  
+      //tf::Transform transform;
+       //transform.setOrigin(tf::Vector3(message_pose->position.x+2,message_pose->position.y-1, 0.0));
+       //transform.setRotation(tf::Quaternion(subtract.orientation.x, subtract.orientation.y, subtract.orientation.z, subtract.orientation.w));
+      
+   
+       //br.sendTransform(transform, ros::Time::now(), "map", "ar_marker_1");
+
+       //prev= now;
+  //tf::Stamped<tf::Pose> map2robot;
+
+  try 
+  {
+    tf::Stamped<tf::Pose> robot2map;
+    robot2map.setData(map2robot.inverse());
+    //robot2map.stamp = msg->header.stamp;
+    //robot2map.frame_id = std::string("base_link");
+    ROS_INFO("x: %f, y: %f", robot2map.getOrigin().x(),robot2map.getOrigin().y()); //correct
+
+  // get marker2map
+  listener.transformPose("ar_marker_1",robot2map,marker2map);
+
+  // Create the map2marker tf
+  map2marker.setData(marker2map.inverse());
+  }
+
+  catch(tf::TransformException)
+  {
+    ROS_WARN("Failed to subtract robot to marker transform");
+  } 
+
+  // send the transform over the wire
+ // broadcaster.sendTransform(tf::StampedTransform(map2marker,ros::Time::now(),"map","ar_marker_1"));
+
+} */

@@ -697,7 +697,7 @@ void AmclNode::savePoseToServer()
   map_pose.getBasis().getEulerYPR(yaw, pitch, roll);
 
   ROS_DEBUG("Saving pose to server. x: %.3f, y: %.3f", map_pose.getOrigin().x(), map_pose.getOrigin().y() );
-  ROS_INFO("Map x: %f, map y: %f",map_pose.getOrigin().x(), map_pose.getOrigin().y());
+  ROS_INFO("6) Map_pose x: %f, y: %f",map_pose.getOrigin().x(), map_pose.getOrigin().y());
 
   private_nh_.setParam("initial_pose_x", map_pose.getOrigin().x());
   private_nh_.setParam("initial_pose_y", map_pose.getOrigin().y());
@@ -1368,6 +1368,9 @@ AmclNode::laserReceived(const sensor_msgs::LaserScanConstPtr& laser_scan)
         this->tf_->transformPose(odom_frame_id_,
                                  tmp_tf_stamped,
                                  odom_to_map);
+        ROS_INFO("1) map2robot x: %f, y: %f", tmp_tf.getOrigin().x(),tmp_tf.getOrigin().y());
+        ROS_INFO("2) robot2map_pose in robot frame_id x: %f, y: %f", tmp_tf_stamped.getOrigin().x(),tmp_tf_stamped.getOrigin().y());
+        ROS_INFO("3) odom2map pose x: %f, y: %f", odom_to_map.getOrigin().x(),odom_to_map.getOrigin().y());
       }
       catch(tf::TransformException)
       {
@@ -1377,6 +1380,8 @@ AmclNode::laserReceived(const sensor_msgs::LaserScanConstPtr& laser_scan)
 
       latest_tf_ = tf::Transform(tf::Quaternion(odom_to_map.getRotation()),
                                  tf::Point(odom_to_map.getOrigin()));
+
+        ROS_INFO("4) tf made with odom2map origin x: %f, y: %f", latest_tf_.getOrigin().x(),latest_tf_.getOrigin().y());                           
       latest_tf_valid_ = true;
 
       if (tf_broadcast_ == true)
@@ -1388,6 +1393,7 @@ AmclNode::laserReceived(const sensor_msgs::LaserScanConstPtr& laser_scan)
         tf::StampedTransform tmp_tf_stamped(latest_tf_.inverse(),
                                             transform_expiration,
                                             global_frame_id_, odom_frame_id_);
+        ROS_INFO("5) tf made with odom2map origin x: %f, y: %f", latest_tf_.getOrigin().x(),latest_tf_.getOrigin().y());
         this->tfb_->sendTransform(tmp_tf_stamped);
         sent_first_transform_ = true;
       }
