@@ -13,6 +13,10 @@
 #include <iostream>
 #include <fstream>
 
+#include <tf/transform_listener.h>
+#include <tf/transform_datatypes.h>
+#include <tf/time_cache.h>
+
 
 class Converter
 {
@@ -22,9 +26,9 @@ public:
     ros::Subscriber ar_pose_sub;
     // Write publishers for each of the 4 Markers
     ros::Publisher marker1_pub;
-    ros::Publisher marker2_pub;
-    ros::Publisher marker3_pub;
-    ros::Publisher marker4_pub;
+    //ros::Publisher marker2_pub;
+    //ros::Publisher marker3_pub;
+    //ros::Publisher marker4_pub;
     /* ros::Publisher marker5_pub;
     ros::Publisher marker6_pub;
     ros::Publisher marker7_pub;
@@ -35,6 +39,13 @@ public:
     ros::Publisher marker12_pub;
     ros::Publisher marker13_pub;
     ros::Publisher marker14_pub; */
+
+
+    // Tf objects
+    
+    tf::TransformListener listener;
+    tf::TransformBroadcaster br;
+
     int counter;
     float desired_freq_;
 void ar_pose_callback(const ar_track_alvar_msgs::AlvarMarkers::ConstPtr & msg);
@@ -48,10 +59,10 @@ void ar_pose_callback(const ar_track_alvar_msgs::AlvarMarkers::ConstPtr & msg);
 
         //Publishers 
         marker1_pub = nh_.advertise < geometry_msgs::PoseWithCovarianceStamped > ("/marker1", 1);
-        marker2_pub = nh_.advertise < geometry_msgs::PoseWithCovarianceStamped > ("/marker2", 1);
+       /* marker2_pub = nh_.advertise < geometry_msgs::PoseWithCovarianceStamped > ("/marker2", 1);
         marker3_pub = nh_.advertise < geometry_msgs::PoseWithCovarianceStamped > ("/marker3", 1);
         marker4_pub = nh_.advertise < geometry_msgs::PoseWithCovarianceStamped > ("/marker4", 1);
-       /* marker5_pub = nh_.advertise < geometry_msgs::PoseWithCovarianceStamped > ("/marker5", 1);
+        marker5_pub = nh_.advertise < geometry_msgs::PoseWithCovarianceStamped > ("/marker5", 1);
         marker6_pub = nh_.advertise < geometry_msgs::PoseWithCovarianceStamped > ("/marker6", 1);
         marker7_pub = nh_.advertise < geometry_msgs::PoseWithCovarianceStamped > ("/marker7", 1);
         marker8_pub = nh_.advertise < geometry_msgs::PoseWithCovarianceStamped > ("/marker8", 1);
@@ -76,8 +87,57 @@ void ar_pose_callback(const ar_track_alvar_msgs::AlvarMarkers::ConstPtr & msg);
     {
     if (msg->markers[i].id == 1)
     {
+    
+    // Create tf1 : map2marker -- marker into the map frame
+    //Listen to the available tf to save the map origin
+    tf::StampedTransform tf1;
+    tf::StampedTransform tf2;
+    try{
+        listener.waitForTransform("/map", "/odom", ros::Time(0), ros::Duration(10.0));
+        listener.lookupTransform("/map", "/odom", ros::Time(0), tf1);
+        //ROS_INFO("Map x: %f, y: %f", transform.getOrigin().x(),transform.getOrigin().y()); //gives me map origin 0,0,0, correct at Ekf start
+      }
+  
+      catch (tf::TransformException &ex) {
+        ROS_ERROR("%s",ex.what());
+        ros::Duration(1.0).sleep();
+      }
+    
+    //Make map2mark
+    tf::Quaternion rotation (tf1.getRotation().x(),tf1.getRotation().y(),tf1.getRotation().z(),tf1.getRotation().w());
+    tf::Vector3 translation (tf1.getOrigin().x()+4,tf1.getOrigin().y()-1,tf1.getOrigin().z());
+    tf::Transform m2m(rotation,translation);
+    // Transform it into stamp
+    tf::StampedTransform map2marker (m2m,ros::Time::now(),"map","ar_marker_1");
+
+    //Get tf2: camera2marker, then inverse it
+    try{
+        listener.waitForTransform("/camera_link", "/ar_marker_1", ros::Time(0), ros::Duration(10.0));
+        listener.lookupTransform("/camera_link", "/ar_marker_1", ros::Time(0), tf2);
+        //ROS_INFO("Map x: %f, y: %f", transform.getOrigin().x(),transform.getOrigin().y()); //gives me map origin 0,0,0, correct at Ekf start
+      }
+  
+      catch (tf::TransformException &ex) {
+        ROS_ERROR("%s",ex.what());
+        ros::Duration(1.0).sleep();
+      }
+    
+    //Multiply to get map2camera
+    tf::StampedTransform map2cam;
+    //map2cam = map2marker * tf2.inverse(); //should check this via rosrun tf tf_echo /map /camera_link
+    map2cam.tf::Transform::mult(map2marker.inverse(),tf2);
+    ROS_INFO("Camera pose wrt map x: %f, y: %f",map2cam.getOrigin().x(),map2cam.getOrigin().y());
+    ROS_INFO("Marker pose into map x: %f, y: %f",map2marker.getOrigin().x(),map2marker.getOrigin().y());
+    ROS_INFO("Camera pose into marker x: %f, y: %f",tf2.getOrigin().x(),tf2.getOrigin().y());
+
+    //Transform it as message
+
+    
+
+
+
     m1.header = msg->header;
-    m1.header.frame_id = "ar_marker_1";
+    m1.header.frame_id = "map";
     m1.pose.pose.position = msg->markers[i].pose.pose.position;
     m1.pose.pose.orientation = msg->markers[i].pose.pose.orientation;
     for(counter=0; counter < 36; counter ++)
@@ -94,19 +154,12 @@ void ar_pose_callback(const ar_track_alvar_msgs::AlvarMarkers::ConstPtr & msg);
     m1.pose.covariance[21] = 0.001;
     m1.pose.covariance[28] = 0.001;
     m1.pose.covariance[35] = 0.001;
+    
 
-
-    // Get quaternions and transform them into RPY
-    //tf::Quaternion q(msg->markers[i].pose.pose.orientation.x,msg->markers[i].pose.pose.orientation.y,msg->markers[i].pose.pose.orientation.z,msg->markers[i].pose.pose.orientation.w);
-    //tf::Matrix3x3 m(q);
-    //double roll, pitch, yaw;
-    //m.getRPY(roll, pitch, yaw);
-    //std::cout << "Roll: " << roll << ", Pitch: " << pitch << ", Yaw: " << yaw << std::endl;
-
-    marker1_pub.publish(m1);
+   // marker1_pub.publish(m1);
  //ROS_INFO("x: %f, y: %f, z: %f,rot_x: %f,rot_y: %f,rot_z: %f",m1.pose.pose.position.x, m1.pose.pose.position.y, m1.pose.pose.position.z, m1.pose.pose.orientation.x, m1.pose.pose.orientation.y,m1.pose.pose.orientation.z);
     }
-    if (msg->markers[i].id == 2)
+    /*if (msg->markers[i].id == 2)
     {
     m2.header = msg->header;
     m2.header.frame_id = "ar_marker_2";
@@ -428,7 +481,7 @@ marker14_pub.publish(m14);
 } //end of external foor loop
 
 // ROS_INFO("Size: %d",size);
-}
+} //end ar_pose_callback
 
 
 int main(int argc, char **argv)

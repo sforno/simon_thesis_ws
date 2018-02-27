@@ -1571,8 +1571,8 @@
 
     <!-- Adding markers into specific world points -->
 
-      <model name='Marker1'>
-        <pose frame=''>20 9.25 0 0 0 3.1415</pose> <!-- flip it to be detected by the Kinect ${M_PI}=3.1415, yaw component -->
+     <!-- <model name='Marker1'>
+        <pose frame=''>20 9.25 0 0 0 3.1415</pose> <!-- flip it to be detected by the Kinect ${M_PI}=3.1415, yaw component 
         <link name='marker1_link'>
           <pose frame=''>20 9.25 0 0 0 3.1415</pose>
         </link>
@@ -1595,7 +1595,7 @@
     </model>
 
     <model name='Marker2'>
-        <pose frame=''>20 7.25 0 0 0 3.1415</pose> <!-- flip it to be detected by the Kinect ${M_PI}=3.1415, yaw component -->
+        <pose frame=''>20 7.25 0 0 0 3.1415</pose> <!-- flip it to be detected by the Kinect ${M_PI}=3.1415, yaw component 
         <link name='marker2_link'>
           <pose frame=''>20 7.25 0 0 0 3.1415</pose>
         </link>
@@ -1618,7 +1618,7 @@
     </model>
 
     <model name='Marker3'>
-        <pose frame=''>18 7.25 0 0 0 3.1415</pose> <!-- flip it to be detected by the Kinect ${M_PI}=3.1415, yaw component -->
+        <pose frame=''>18 7.25 0 0 0 3.1415</pose> <!-- flip it to be detected by the Kinect ${M_PI}=3.1415, yaw component 
         <link name='marker3_link'>
           <pose frame=''>18 7.25 0 0 0 3.1415</pose>
         </link>
@@ -1685,10 +1685,10 @@
         <gravity>1</gravity>
       </link>
       <pose frame=''>18 8.75 0 0 0 3.1415</pose>
-    </model> -->
+    </model> 
 
     <model name='Marker6'>
-        <pose frame=''>14 10 0 0 0 1.5708</pose> <!-- flip it to be detected by the Kinect ${M_PI/2}=1.5708, yaw component -->
+        <pose frame=''>14 10 0 0 0 1.5708</pose> <!-- flip it to be detected by the Kinect ${M_PI/2}=1.5708, yaw component 
         <link name='marker6_link'>
           <pose frame=''>14 10 0 0 0 1.5708</pose>
         </link>
@@ -1712,7 +1712,7 @@
     </model>
 
     <model name='Marker7'>
-        <pose frame=''>16 12.5 0 0 0 1.5708</pose> <!-- flip it to be detected by the Kinect ${M_PI/2}=1.5708, yaw component -->
+        <pose frame=''>16 12.5 0 0 0 1.5708</pose> <!-- flip it to be detected by the Kinect ${M_PI/2}=1.5708, yaw component 
         <link name='marker7_link'>
           <pose frame=''>16 12.5 0 0 0 1.5708</pose>
         </link>
@@ -1736,7 +1736,7 @@
     </model>
 
     <model name='Marker8'>
-        <pose frame=''>14 12.5 0 0 0 1.5708</pose> <!-- flip it to be detected by the Kinect ${M_PI/2}=1.5708, yaw component -->
+        <pose frame=''>14 12.5 0 0 0 1.5708</pose> <!-- flip it to be detected by the Kinect ${M_PI/2}=1.5708, yaw component 
         <link name='marker8_link'>
           <pose frame=''>14 12.5 0 0 0 1.5708</pose>
         </link>
@@ -1757,7 +1757,7 @@
         <gravity>1</gravity>
       </link>
       <pose frame=''>14 12.5 0 0 0 1.5708</pose>
-    </model>
+    </model> -->
     
 
   </world>

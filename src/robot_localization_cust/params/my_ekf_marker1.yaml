@@ -1,4 +1,4 @@
-frequency: 30
+frequency: 40
 
 sensor_timeout: 1
 
@@ -22,39 +22,50 @@ world_frame: map           # Defaults to the value of odom_frame if unspecified
 dynamic_process_noise_covariance: true
 
 odom0: od
-odom0_config: [true,  true,  false,
+odom0_config: [true,  true,  true,
                false, false, true,
                false, false, false,
               false, false, false,
                false, false, false]      
-odom0_differential: false
+odom0_differential: true
 odom0_relative: false
 odom0_queue_size: 40
 odom0_nodelay: false
 
-process_noise_covariance: [0.0001, 0,    0,    0,    0,    0,    0,     0,     0,    0,    0,    0,    0,    0,    0,
-                           0,    0.0001, 0,    0,    0,    0,    0,     0,     0,    0,    0,    0,    0,    0,    0,
-                           0,    0,    0.0001, 0,    0,    0,    0,     0,     0,    0,    0,    0,    0,    0,    0,
+pose0: marker1
+pose0_config: [true,  true,  true,
+              false, false, true,
+               false, false, false,
+              false, false, false,
+               false, false, false] 
+pose0_differential: false
+pose0_relative: false
+pose0_queue_size: 40
+pose0_nodelay: false
+
+process_noise_covariance: [0.01, 0,    0,    0,    0,    0,    0,     0,     0,    0,    0,    0,    0,    0,    0,
+                           0,    0.01, 0,    0,    0,    0,    0,     0,     0,    0,    0,    0,    0,    0,    0,
+                           0,    0,    0.01, 0,    0,    0,    0,     0,     0,    0,    0,    0,    0,    0,    0,
                            0,    0,    0,    0.0001, 0,    0,    0,     0,     0,    0,    0,    0,    0,    0,    0,
                            0,    0,    0,    0,    0.0001, 0,    0,     0,     0,    0,    0,    0,    0,    0,    0,
-                           0,    0,    0,    0,    0,    0.0001, 0,     0,     0,    0,    0,    0,    0,    0,    0,
+                           0,    0,    0,    0,    0,    0.01, 0,     0,     0,    0,    0,    0,    0,    0,    0,
                            0,    0,    0,    0,    0,    0,    0.0001, 0,     0,    0,    0,    0,    0,    0,    0,
                            0,    0,    0,    0,    0,    0,    0,     0.0001, 0,    0,    0,    0,    0,    0,    0,
                            0,    0,    0,    0,    0,    0,    0,     0,     0.0001, 0,    0,    0,    0,    0,    0,
                            0,    0,    0,    0,    0,    0,    0,     0,     0,    0.0001, 0,    0,    0,    0,    0,
                            0,    0,    0,    0,    0,    0,    0,     0,     0,    0,    0.0001, 0,    0,    0,    0,
-                           0,    0,    0,    0,    0,    0,    0,     0,     0,    0,    0,    0.0001, 0,    0,    0,
+                           0,    0,    0,    0,    0,    0,    0,     0,     0,    0,    0,    0.01, 0,    0,    0,
                            0,    0,    0,    0,    0,    0,    0,     0,     0,    0,    0,    0,    0.0001, 0,    0,
                            0,    0,    0,    0,    0,    0,    0,     0,     0,    0,    0,    0,    0,    0.0001, 0,
                            0,    0,    0,    0,    0,    0,    0,     0,     0,    0,    0,    0,    0,    0,    0.0001]
 
 
-initial_estimate_covariance: [1e-2, 0,    0,    0,    0,    0,    0,    0,    0,    0,     0,     0,     0,    0,    0,
-                              0,    1e-2, 0,    0,    0,    0,    0,    0,    0,    0,     0,     0,     0,    0,    0,
-                              0,    0,    1e-2, 0,    0,    0,    0,    0,    0,    0,     0,     0,     0,    0,    0,
-                              0,    0,    0,    1e-2, 0,    0,    0,    0,    0,    0,     0,     0,     0,    0,    0,
-                              0,    0,    0,    0,    1e-2, 0,    0,    0,    0,    0,     0,     0,     0,    0,    0,
-                              0,    0,    0,    0,    0,    1e-2, 0,    0,    0,    0,     0,     0,     0,    0,    0,
+initial_estimate_covariance: [1, 0,    0,    0,    0,    0,    0,    0,    0,    0,     0,     0,     0,    0,    0,
+                              0,    1, 0,    0,    0,    0,    0,    0,    0,    0,     0,     0,     0,    0,    0,
+                              0,    0,    1, 0,    0,    0,    0,    0,    0,    0,     0,     0,     0,    0,    0,
+                              0,    0,    0,    1e-9, 0,    0,    0,    0,    0,    0,     0,     0,     0,    0,    0,
+                              0,    0,    0,    0,    1e-9, 0,    0,    0,    0,    0,     0,     0,     0,    0,    0,
+                              0,    0,    0,    0,    0,    1, 0,    0,    0,    0,     0,     0,     0,    0,    0,
                               0,    0,    0,    0,    0,    0,    1e-9, 0,    0,    0,     0,     0,     0,    0,    0,
                               0,    0,    0,    0,    0,    0,    0,    1e-9, 0,    0,     0,     0,     0,    0,    0,
                               0,    0,    0,    0,    0,    0,    0,    0,    1e-9, 0,     0,     0,     0,    0,    0,
@@ -85,54 +96,53 @@ initial_estimate_covariance: [1e-2, 0,    0,    0,    0,    0,    0,    0,    0,
 
 
 
+#I got the map frame with this config, fusing x_dot,y_dot,z_dot,yawn_dot
+#processs_noise_covariance larger the value = faster convergence
+#initial_estimate_covariance put large value to trust more incoming measurements of that variable
 
-
-
-
-
-
-# Default values
+#odom0: od
+#odom0_config: [false,  false,  false,
+#               false, false, false,
+#               true, true, true,
+#             false, false, true,
+#               false, false, false]      
+#odom0_differential: false
+#odom0_relative: true
+#odom0_queue_size: 40
+#odom0_nodelay: false
 
 #process_noise_covariance: [0.0001, 0,    0,    0,    0,    0,    0,     0,     0,    0,    0,    0,    0,    0,    0,
- #                          0,    0.0001, 0,    0,    0,    0,    0,     0,     0,    0,    0,    0,    0,    0,    0,
-  #                         0,    0,    0.0001, 0,    0,    0,    0,     0,     0,    0,    0,    0,    0,    0,    0,
-   #                        0,    0,    0,    0.0001, 0,    0,    0,     0,     0,    0,    0,    0,    0,    0,    0,
-    #                       0,    0,    0,    0,    0.0001, 0,    0,     0,     0,    0,    0,    0,    0,    0,    0,
-     #                      0,    0,    0,    0,    0,    0.0001, 0,     0,     0,    0,    0,    0,    0,    0,    0,
-      #                     0,    0,    0,    0,    0,    0,    0.0001, 0,     0,    0,    0,    0,    0,    0,    0,
-       #                    0,    0,    0,    0,    0,    0,    0,     0.0001, 0,    0,    0,    0,    0,    0,    0,
-        #                   0,    0,    0,    0,    0,    0,    0,     0,     0.0001, 0,    0,    0,    0,    0,    0,
-         #                  0,    0,    0,    0,    0,    0,    0,     0,     0,    0.0001, 0,    0,    0,    0,    0,
-          #                 0,    0,    0,    0,    0,    0,    0,     0,     0,    0,    0.0001, 0,    0,    0,    0,
-           #                0,    0,    0,    0,    0,    0,    0,     0,     0,    0,    0,    0.0001, 0,    0,    0,
-            #               0,    0,    0,    0,    0,    0,    0,     0,     0,    0,    0,    0,    0.0001, 0,    0,
-             #              0,    0,    0,    0,    0,    0,    0,     0,     0,    0,    0,    0,    0,    0.0001, 0,
-              #             0,    0,    0,    0,    0,    0,    0,     0,     0,    0,    0,    0,    0,    0,    0.0001]
+#                           0,    0.0001, 0,    0,    0,    0,    0,     0,     0,    0,    0,    0,    0,    0,    0,
+#                           0,    0,    0.0001, 0,    0,    0,    0,     0,     0,    0,    0,    0,    0,    0,    0,
+#                           0,    0,    0,    0.0001, 0,    0,    0,     0,     0,    0,    0,    0,    0,    0,    0,
+#                           0,    0,    0,    0,    0.0001, 0,    0,     0,     0,    0,    0,    0,    0,    0,    0,
+#                           0,    0,    0,    0,    0,    0.0001, 0,     0,     0,    0,    0,    0,    0,    0,    0,
+#                           0,    0,    0,    0,    0,    0,    0.01, 0,     0,    0,    0,    0,    0,    0,    0,
+#                           0,    0,    0,    0,    0,    0,    0,     0.01, 0,    0,    0,    0,    0,    0,    0,
+#                           0,    0,    0,    0,    0,    0,    0,     0,     0.01, 0,    0,    0,    0,    0,    0,
+#                           0,    0,    0,    0,    0,    0,    0,     0,     0,    0.0001, 0,    0,    0,    0,    0,
+#                           0,    0,    0,    0,    0,    0,    0,     0,     0,    0,    0.0001, 0,    0,    0,    0,
+#                           0,    0,    0,    0,    0,    0,    0,     0,     0,    0,    0,    0.01, 0,    0,    0,
+#                           0,    0,    0,    0,    0,    0,    0,     0,     0,    0,    0,    0,    0.0001, 0,    0,
+#                           0,    0,    0,    0,    0,    0,    0,     0,     0,    0,    0,    0,    0,    0.0001, 0,
+#                           0,    0,    0,    0,    0,    0,    0,     0,     0,    0,    0,    0,    0,    0,    0.0001]
 
 
-#initial_estimate_covariance: [1e-2, 0,    0,    0,    0,    0,    0,    0,    0,    0,     0,     0,     0,    0,    0,
- #                             0,    1e-2, 0,    0,    0,    0,    0,    0,    0,    0,     0,     0,     0,    0,    0,
-  #                            0,    0,    1e-2, 0,    0,    0,    0,    0,    0,    0,     0,     0,     0,    0,    0,
-   #                           0,    0,    0,    1e-2, 0,    0,    0,    0,    0,    0,     0,     0,     0,    0,    0,
-    #                          0,    0,    0,    0,    1e-2, 0,    0,    0,    0,    0,     0,     0,     0,    0,    0,
-     #                         0,    0,    0,    0,    0,    1e-2, 0,    0,    0,    0,     0,     0,     0,    0,    0,
-      #                        0,    0,    0,    0,    0,    0,    1e-9, 0,    0,    0,     0,     0,     0,    0,    0,
-       #                       0,    0,    0,    0,    0,    0,    0,    1e-9, 0,    0,     0,     0,     0,    0,    0,
-        #                      0,    0,    0,    0,    0,    0,    0,    0,    1e-9, 0,     0,     0,     0,    0,    0,
-         #                     0,    0,    0,    0,    0,    0,    0,    0,    0,    1e-9,  0,     0,     0,    0,    0,
-          #                    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,     1e-9,  0,     0,    0,    0,
-           #                   0,    0,    0,    0,    0,    0,    0,    0,    0,    0,     0,     1e-9,  0,    0,    0,
-            #                  0,    0,    0,    0,    0,    0,    0,    0,    0,    0,     0,     0,     1e-9, 0,    0,
-             #                 0,    0,    0,    0,    0,    0,    0,    0,    0,    0,     0,     0,     0,    1e-9, 0,
-              #                0,    0,    0,    0,    0,    0,    0,    0,    0,    0,     0,     0,     0,    0,    1e-9]
-
-
-
-
-# Transforms: Broadcast of the odom->*base_link* transform. When the world_frame parameter is set to the value of the odom_frame parameter in the configuration file, robot_localization‘s state estimation nodes output both a position estimate in a nav_msgs/Odometry message and a transform from the frame specified by its odom_frame parameter to its base_link_frame parameter. However, some robot drivers also broadcast this transform along with their odometry message. If users want robot_localization to be responsible for this transform, then they need to disable the broadcast of that transform by their robot’s driver. This is often exposed as a parameter.
-
-
-
+#initial_estimate_covariance: [1e-9, 0,    0,    0,    0,    0,    0,    0,    0,    0,     0,     0,     0,    0,    0,
+#                              0,    1e-9, 0,    0,    0,    0,    0,    0,    0,    0,     0,     0,     0,    0,    0,
+#                              0,    0,    1e-9, 0,    0,    0,    0,    0,    0,    0,     0,     0,     0,    0,    0,
+#                              0,    0,    0,    1e-9, 0,    0,    0,    0,    0,    0,     0,     0,     0,    0,    0,
+#                              0,    0,    0,    0,    1e-9, 0,    0,    0,    0,    0,     0,     0,     0,    0,    0,
+#                              0,    0,    0,    0,    0,    1e-9, 0,    0,    0,    0,     0,     0,     0,    0,    0,
+#                              0,    0,    0,    0,    0,    0,    1, 0,    0,    0,     0,     0,     0,    0,    0,
+#                              0,    0,    0,    0,    0,    0,    0,    1, 0,    0,     0,     0,     0,    0,    0,
+#                              0,    0,    0,    0,    0,    0,    0,    0,    1, 0,     0,     0,     0,    0,    0,
+#                              0,    0,    0,    0,    0,    0,    0,    0,    0,    1e-9,  0,     0,     0,    0,    0,
+#                              0,    0,    0,    0,    0,    0,    0,    0,    0,    0,     1e-9,  0,     0,    0,    0,
+#                              0,    0,    0,    0,    0,    0,    0,    0,    0,    0,     0,     1,  0,    0,    0,
+#                              0,    0,    0,    0,    0,    0,    0,    0,    0,    0,     0,     0,     1e-9, 0,    0,
+#                              0,    0,    0,    0,    0,    0,    0,    0,    0,    0,     0,     0,     0,    1e-9, 0,
+#                              0,    0,    0,    0,    0,    0,    0,    0,    0,    0,     0,     0,     0,    0,    1e-9]
 
 
 

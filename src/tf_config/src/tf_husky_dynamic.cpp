@@ -26,29 +26,23 @@ public:
   ros::NodeHandle globalNode;
   ros::Subscriber sub_;
   ros::Publisher m2r;
+  tf::TransformBroadcaster br;
 
   tf::Stamped<tf::Pose> marker2map; // tf::Stamped<tf::Pose> is a stamped Pose, while tf::Transform is vector relating poses
   tf::Stamped<tf::Pose> map2marker;
   tf::Stamped<tf::Pose> robot2map;
   tf::Transform map2robot;
-  //tf::TransformStamped map2robot
-  //tf::Stamped<tf::Pose> now;
   tf::Stamped<tf::Pose> prev;
-  tf::Stamped<tf::Pose> now;
+  tf::Stamped<tf::Pose> map_pose;
+  tf::Stamped<tf::Pose> subtract;
   geometry_msgs::Pose message_pose;
   geometry_msgs::Quaternion message_quat;
-
   geometry_msgs::PoseWithCovarianceStamped rob_pose; //goal: get a preliminary map2robot tf
   tf::TransformListener listener;
-  //tf::TransformBroadcaster broadcaster;
-  //tf::Stamped<tf::Pose> map2robot;
+  tf::StampedTransform transform;
 
-  tf::TransformBroadcaster br;
-  tf::StampedTransform t;
-  tf::Transform transform;
 
   int i = 1;
-
   std::string mMapFrame;
   std::string mRobotFrame;
 
@@ -56,54 +50,47 @@ public:
 
   Dynamic_tf()
   {
-    //sub_ = nh_.subscribe < ar_track_alvar_msgs::AlvarMarkers > ("/ar_pose_marker", 1, &Dynamic_tf::robot_callback, this);
-    //m2r = nh_.advertise < geometry_msgs::PoseWithCovarianceStamped > ("/map2robot", 1);
-    globalNode.param("map_frame", mMapFrame, std::string("map")); // get map from Parameter Server?
+    globalNode.param("map_frame", mMapFrame, std::string("map")); 
     globalNode.param("robot_frame", mRobotFrame, std::string("base_link"));
   };
 };
 
 void Dynamic_tf::robot_callback()
 {
-   if(i==1){
-    tf::Transform map_init (tf::Quaternion(0, 0, 0, 1), tf::Vector3(0, 0, 0));
-    tf::Stamped<tf::Pose> now (map_init,ros::Time::now(),mMapFrame);
-    prev = now;
-    i++;
-    transform.setOrigin(tf::Vector3(2, 1, 0));
-    transform.setRotation(tf::Quaternion(0, 0, 0, 1));
-    //ROS_INFO("Prev x: %f, y: %f", prev.getOrigin().x(),prev.getOrigin().y());
-    //ROS_INFO("Map pose x: %f, y: %f", now.getOrigin().x(),now.getOrigin().y()); //output is the same, assignment operator is allowed like this
-    br.sendTransform(tf::StampedTransform(transform, ros::Time::now(), "map", "ar_marker_1"));
-   }
-   else{
-     //read the actual map pose
-     // use the available transform marker->robot, save robot pose, use transformPose method to change the save the new map Pose
-     try{
-      listener.waitForTransform("/ar_marker_1", "/base_link", ros::Time(0), ros::Duration(10.0));
-      listener.lookupTransform("/base_link", "/map", ros::Time(0), t);
-
-      tf::Stamped<tf::Pose> now (t,ros::Time::now(), mMapFrame);
-
-      //listener.transformPose(mMapFrame,robot_pose,now);
-      ROS_INFO("Now x: %f, y: %f", now.getOrigin().x(),now.getOrigin().y());
+    try{
+      listener.waitForTransform("/map", "/odom", ros::Time(0), ros::Duration(10.0));
+      listener.lookupTransform("/map", "/odom", ros::Time(0), transform);
+      ROS_INFO("Map x: %f, y: %f", transform.getOrigin().x(),transform.getOrigin().y()); //gives me base_link origin 0,0,0, 
     }
 
     catch (tf::TransformException &ex) {
       ROS_ERROR("%s",ex.what());
       ros::Duration(1.0).sleep();
     }
-   }
+    //Save the map_pose
+    tf::Stamped<tf::Pose> map_pose (transform,ros::Time::now(),mMapFrame);
+    //ROS_INFO("Translation x: %f, y: %f", map_pose.getOrigin().x(),map_pose.getOrigin().y());
+    //ROS_INFO("Rotation x: %f, y: %f, z: %f, w: %f", map_pose.getRotation().x(),map_pose.getRotation().y(),map_pose.getRotation().z(),map_pose.getRotation().w());
+    
+    //Create the dynamic tf and broadcast the change
+    
+    tf::Quaternion rotation (map_pose.getRotation().x(),map_pose.getRotation().y(),map_pose.getRotation().z(),map_pose.getRotation().w());
+    tf::Vector3 translation (map_pose.getOrigin().x()+4,map_pose.getOrigin().y()-1,map_pose.getOrigin().z());
+    tf::Transform dynamic_tf (rotation,translation);
+    //ROS_INFO("Translation x: %f, y: %f", dynamic_tf.getOrigin().x(),dynamic_tf.getOrigin().y());
+    //ROS_INFO("Rotation x: %f, y: %f, z: %f, w: %f", dynamic_tf.getRotation().x(),dynamic_tf.getRotation().y(),dynamic_tf.getRotation().z(),dynamic_tf.getRotation().w()); ok this gives sitting on map and looking odom+2 && odom-1
+    // Send dynamic tf
+    br.sendTransform(tf::StampedTransform(dynamic_tf, ros::Time::now(), "world", "ar_marker_1"));
+    
 
   // calculate diff
 
-  //tf::Pose subtract = prev.inverseTimes(now);
+  //prev.inverseTimes(now); // To do's: store the value of the result into another Pose called diff, diff = prev.inverseTimes(now) does not work
   //tf::poseTFToMsg(&subtract, &message_pose);
   //tf::quaternionTFToMsg(subtract, message_quat);
 
    // send out the diff
-   
-       //tf::Transform transform;
+
        //transform.setOrigin(tf::Vector3(message_pose->position.x+2,message_pose->position.y-1, 0.0));
        //transform.setRotation(tf::Quaternion(subtract.orientation.x, subtract.orientation.y, subtract.orientation.z, subtract.orientation.w));
       
@@ -111,6 +98,7 @@ void Dynamic_tf::robot_callback()
        //br.sendTransform(transform, ros::Time::now(), "map", "ar_marker_1");
 
   //prev=now 
+  
 }
 
 
@@ -119,7 +107,7 @@ int main(int argc, char **argv)
   ros::init(argc, argv, "dynamic_tf");
   
   Dynamic_tf dynamic;
-  int desidered_freq = 15.0;
+  int desidered_freq = 100.0;
 
   ros::Rate r(desidered_freq);
 

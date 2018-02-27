@@ -16,7 +16,7 @@ void poseCallback(const turtlesim::PoseConstPtr& msg){
   tf::Transform transform;
   transform.setOrigin( tf::Vector3(msg->x, msg->y, 0.0) ); //transform.setOrigin( tf::Vector3(diff.x+5, diff.y+0, 0.0) );
   tf::Quaternion q;
-  q.setRPY(0, 0, msg->theta); //q.setRPY(0, 0, diff.theta);
+  //q.setRPY(0, 0, msg->theta); //q.setRPY(0, 0, diff.theta);
   transform.setRotation(q);
   br.sendTransform(tf::StampedTransform(transform, ros::Time::now(), "world", turtle_name)); //br.sendTransform(tf::StampedTransform(transform, ros::Time::now(), "map", "artrag"));
 
@@ -28,7 +28,7 @@ void poseCallback(const turtlesim::PoseConstPtr& msg){
   //ROS_INFO("Roll: %f, Pitch: %f, Yawn: %f",roll,pitch,yawn); // this works! Outputs are in radiants, angles are calucalate following the transform world -> turtle, hence sitting on world frame what should I see
 
   ROS_INFO("Normal x: %f, y: %f, theta: %f", transform.getOrigin().x(),transform.getOrigin().y(),tf::getYaw(transform.getRotation()));
-  ROS_INFO("Should look the same as above x: %f, y: %f, theta: %f", msg->x,msg->y, msg-> theta);
+  //ROS_INFO("Should look the same as above x: %f, y: %f, theta: %f", msg->x,msg->y, msg-> theta);
 
   // make an inverse transform to see the output
   tf::Pose inv = transform.inverse();

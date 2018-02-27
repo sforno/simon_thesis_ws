@@ -7,7 +7,6 @@
    <!--  Placeholder for output topic remapping -->
    <!-- <remap from="od" to="finalpose"/> 	-->
 <!-- <remap from="odometry/filtered" to="finalpose"/> 	-->
-<remap from="odometry/filtered" to="odometry/filtered"/>
     <!--<remap from="accel/filtered" to=""/> -->
 </node>
 

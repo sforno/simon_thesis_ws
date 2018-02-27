@@ -35,7 +35,7 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
   <arg name="yaw" default="0.0"/> below to change the coordinates -->
 
   <arg name="x" default="-2.5"/> <!-- start at 24,8 for Gmapping-->
-  <arg name="y" default="3.000"/>
+  <arg name="y" default="5.000"/>
   <arg name="yaw" default="4.7123"/> <!-- radiants, 270 deg -->
 
   <arg name="laser_enabled" default="$(optenv HUSKY_LMS1XX_ENABLED false)"/>
