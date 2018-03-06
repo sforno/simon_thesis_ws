@@ -111,6 +111,8 @@ geometry_msgs/PoseWithCovarianceStamped.h
 -
 nav_msgs/Odometry.h
 -
+nav_msgs/Odometry.h
+-
 std_msgs/String.h
 -
 std_msgs/Int32.h

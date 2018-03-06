@@ -16,7 +16,7 @@ void poseCallback(const turtlesim::PoseConstPtr& msg){
   tf::Transform transform;
   transform.setOrigin( tf::Vector3(msg->x, msg->y, 0.0) ); //transform.setOrigin( tf::Vector3(diff.x+5, diff.y+0, 0.0) );
   tf::Quaternion q;
-  //q.setRPY(0, 0, msg->theta); //q.setRPY(0, 0, diff.theta);
+  q.setRPY(3.1415, 0, 0); // q.setRPY()
   transform.setRotation(q);
   br.sendTransform(tf::StampedTransform(transform, ros::Time::now(), "world", turtle_name)); //br.sendTransform(tf::StampedTransform(transform, ros::Time::now(), "map", "artrag"));
 

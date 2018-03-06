@@ -100,17 +100,6 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-
-.PHONY : test/fast
-
 # Special rule for the target install/strip
 install/strip: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
@@ -132,6 +121,17 @@ install/local: preinstall
 install/local/fast: install/local
 
 .PHONY : install/local/fast
+
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -166,46 +166,46 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-tf_config/CMakeFiles/tf_husky_dynamic.dir/rule:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 tf_config/CMakeFiles/tf_husky_dynamic.dir/rule
-.PHONY : tf_config/CMakeFiles/tf_husky_dynamic.dir/rule
+tf_config/CMakeFiles/tf_broadcaster_world.dir/rule:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f CMakeFiles/Makefile2 tf_config/CMakeFiles/tf_broadcaster_world.dir/rule
+.PHONY : tf_config/CMakeFiles/tf_broadcaster_world.dir/rule
 
 # Convenience name for target.
-tf_husky_dynamic: tf_config/CMakeFiles/tf_husky_dynamic.dir/rule
+tf_broadcaster_world: tf_config/CMakeFiles/tf_broadcaster_world.dir/rule
 
-.PHONY : tf_husky_dynamic
+.PHONY : tf_broadcaster_world
 
 # fast build rule for target.
-tf_husky_dynamic/fast:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f tf_config/CMakeFiles/tf_husky_dynamic.dir/build.make tf_config/CMakeFiles/tf_husky_dynamic.dir/build
-.PHONY : tf_husky_dynamic/fast
+tf_broadcaster_world/fast:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f tf_config/CMakeFiles/tf_broadcaster_world.dir/build.make tf_config/CMakeFiles/tf_broadcaster_world.dir/build
+.PHONY : tf_broadcaster_world/fast
 
-src/tf_husky_dynamic.o: src/tf_husky_dynamic.cpp.o
+src/tf_broadcaster_world.o: src/tf_broadcaster_world.cpp.o
 
-.PHONY : src/tf_husky_dynamic.o
+.PHONY : src/tf_broadcaster_world.o
 
 # target to build an object file
-src/tf_husky_dynamic.cpp.o:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f tf_config/CMakeFiles/tf_husky_dynamic.dir/build.make tf_config/CMakeFiles/tf_husky_dynamic.dir/src/tf_husky_dynamic.cpp.o
-.PHONY : src/tf_husky_dynamic.cpp.o
+src/tf_broadcaster_world.cpp.o:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f tf_config/CMakeFiles/tf_broadcaster_world.dir/build.make tf_config/CMakeFiles/tf_broadcaster_world.dir/src/tf_broadcaster_world.cpp.o
+.PHONY : src/tf_broadcaster_world.cpp.o
 
-src/tf_husky_dynamic.i: src/tf_husky_dynamic.cpp.i
+src/tf_broadcaster_world.i: src/tf_broadcaster_world.cpp.i
 
-.PHONY : src/tf_husky_dynamic.i
+.PHONY : src/tf_broadcaster_world.i
 
 # target to preprocess a source file
-src/tf_husky_dynamic.cpp.i:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f tf_config/CMakeFiles/tf_husky_dynamic.dir/build.make tf_config/CMakeFiles/tf_husky_dynamic.dir/src/tf_husky_dynamic.cpp.i
-.PHONY : src/tf_husky_dynamic.cpp.i
+src/tf_broadcaster_world.cpp.i:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f tf_config/CMakeFiles/tf_broadcaster_world.dir/build.make tf_config/CMakeFiles/tf_broadcaster_world.dir/src/tf_broadcaster_world.cpp.i
+.PHONY : src/tf_broadcaster_world.cpp.i
 
-src/tf_husky_dynamic.s: src/tf_husky_dynamic.cpp.s
+src/tf_broadcaster_world.s: src/tf_broadcaster_world.cpp.s
 
-.PHONY : src/tf_husky_dynamic.s
+.PHONY : src/tf_broadcaster_world.s
 
 # target to generate assembly for a file
-src/tf_husky_dynamic.cpp.s:
-	cd /home/simoneforno/simon_ws/build && $(MAKE) -f tf_config/CMakeFiles/tf_husky_dynamic.dir/build.make tf_config/CMakeFiles/tf_husky_dynamic.dir/src/tf_husky_dynamic.cpp.s
-.PHONY : src/tf_husky_dynamic.cpp.s
+src/tf_broadcaster_world.cpp.s:
+	cd /home/simoneforno/simon_ws/build && $(MAKE) -f tf_config/CMakeFiles/tf_broadcaster_world.dir/build.make tf_config/CMakeFiles/tf_broadcaster_world.dir/src/tf_broadcaster_world.cpp.s
+.PHONY : src/tf_broadcaster_world.cpp.s
 
 # Help Target
 help:
@@ -217,13 +217,13 @@ help:
 	@echo "... install"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... tf_husky_dynamic"
-	@echo "... test"
+	@echo "... tf_broadcaster_world"
 	@echo "... install/strip"
 	@echo "... install/local"
-	@echo "... src/tf_husky_dynamic.o"
-	@echo "... src/tf_husky_dynamic.i"
-	@echo "... src/tf_husky_dynamic.s"
+	@echo "... test"
+	@echo "... src/tf_broadcaster_world.o"
+	@echo "... src/tf_broadcaster_world.i"
+	@echo "... src/tf_broadcaster_world.s"
 .PHONY : help
 
 

@@ -99,12 +99,12 @@ data_converter_EXTERNAL_OBJECTS =
 /home/simoneforno/simon_ws/devel/lib/data_converter/data_converter: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
 /home/simoneforno/simon_ws/devel/lib/data_converter/data_converter: /opt/ros/kinetic/lib/libxmlrpcpp.so
 /home/simoneforno/simon_ws/devel/lib/data_converter/data_converter: /home/simoneforno/simon_ws/devel/lib/libtf2.so
-/home/simoneforno/simon_ws/devel/lib/data_converter/data_converter: /opt/ros/kinetic/lib/libroscpp_serialization.so
 /home/simoneforno/simon_ws/devel/lib/data_converter/data_converter: /opt/ros/kinetic/lib/librosconsole.so
 /home/simoneforno/simon_ws/devel/lib/data_converter/data_converter: /opt/ros/kinetic/lib/librosconsole_log4cxx.so
 /home/simoneforno/simon_ws/devel/lib/data_converter/data_converter: /opt/ros/kinetic/lib/librosconsole_backend_interface.so
 /home/simoneforno/simon_ws/devel/lib/data_converter/data_converter: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
 /home/simoneforno/simon_ws/devel/lib/data_converter/data_converter: /usr/lib/x86_64-linux-gnu/libboost_regex.so
+/home/simoneforno/simon_ws/devel/lib/data_converter/data_converter: /opt/ros/kinetic/lib/libroscpp_serialization.so
 /home/simoneforno/simon_ws/devel/lib/data_converter/data_converter: /opt/ros/kinetic/lib/librostime.so
 /home/simoneforno/simon_ws/devel/lib/data_converter/data_converter: /opt/ros/kinetic/lib/libcpp_common.so
 /home/simoneforno/simon_ws/devel/lib/data_converter/data_converter: /usr/lib/x86_64-linux-gnu/libboost_system.so

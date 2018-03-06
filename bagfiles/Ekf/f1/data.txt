@@ -1,9 +1,0 @@
-# Data used
-
-Input to the Ekf: 4 markers
-
-Map frame: map
-
-process_noise_covariance: default
-
-initial_state_covariance: default

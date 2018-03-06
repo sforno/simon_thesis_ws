@@ -171,4 +171,77 @@ void Dynamic_tf::robot_callback(const nav_msgs::Odometry::ConstPtr & msg)
   // send the transform over the wire
  // broadcaster.sendTransform(tf::StampedTransform(map2marker,ros::Time::now(),"map","ar_marker_1"));
 
-} */
+} 
+
+
+
+==== TF's with AR tag markers ====
+
+// Create tf1 : map2marker -- marker into the map frame
+    //Listen to the available tf to save the map origin
+    //tf::StampedTransform tf1;
+    //tf::StampedTransform tf2;
+    //try{
+    //    listener.waitForTransform("/map", "/odom", ros::Time(0), ros::Duration(10.0));
+    //    listener.lookupTransform("/map", "/odom", ros::Time(0), tf1);
+        //ROS_INFO("Map x: %f, y: %f", transform.getOrigin().x(),transform.getOrigin().y()); //gives me map origin 0,0,0, correct at Ekf start
+    //  }
+  
+      //catch (tf::TransformException &ex) {
+       // ROS_ERROR("%s",ex.what());
+       // ros::Duration(1.0).sleep();
+     // }
+    
+    //Make map2mark
+    //tf::Quaternion rotation (tf1.getRotation().x(),tf1.getRotation().y(),tf1.getRotation().z(),tf1.getRotation().w());
+    //tf::Vector3 translation (tf1.getOrigin().x()+4,tf1.getOrigin().y()-1,tf1.getOrigin().z());
+    //tf::Transform m2m(rotation,translation);
+    // Transform it into stamp
+    //tf::StampedTransform map2marker (m2m,ros::Time::now(),"map","ar_marker_1");
+    //ROS_INFO("Marker pose into map x: %f, y: %f", map2marker.getOrigin().x(),map2marker.getOrigin().y()); //Marker pose into map. so this and lookup follow same convention
+    
+    //try{
+     //   listener.waitForTransform("/camera_link", "/ar_marker_1", ros::Time(0), ros::Duration(10.0));
+     //   listener.lookupTransform("/camera_link", "/ar_marker_1", ros::Time(0), tf2);
+        //ROS_INFO("Marker pose into camera frame x: %f, y: %f", tf2.getOrigin().x(),tf2.getOrigin().y()); //gives me marker pose into camera frame
+        //ROS_INFO("Camera pose into marker frame x: %f, y: %f", tf2.inverse().getOrigin().x(),tf2.inverse().getOrigin().y()); // camera pose into marker frame
+      //}
+  
+     // catch (tf::TransformException &ex) {
+      //  ROS_ERROR("%s",ex.what());
+       // ros::Duration(1.0).sleep();
+     // }
+
+    // Get the original tf2 rotations in RPY 
+    //double roll, pitch, yawn;
+    //tf2.getBasis().getEulerYPR(yawn,pitch,roll);
+    //ROS_INFO("Original yawn: %f, Pitch: %f, roll: %f",yawn,pitch,roll);
+
+    //Apply rotation to tf2
+    //tf::Quaternion q;
+    //q.setRPY(3.1415,4.71239,0); //180 in x counterclockwise and 270 y counterclockwise
+    //tf2.setRotation(q);
+    //double roll_m, pitch_m, yawn_m;
+    //tf2.getBasis().getRPY(roll_m,pitch_m,yawn_m);
+    //ROS_INFO("Rotated Roll: %f, Pitch: %f, Yawn: %f",roll_m,pitch_m,yawn_m);
+    
+    //Multiply to get map2camera
+    //tf::StampedTransform map2cam;
+    //tf::StampedTransform map2cam_fin;
+    //map2cam = map2marker * tf2.inverse(); //should check this via rosrun tf tf_echo /map /camera_link
+    //map2cam.tf::Transform::mult(map2marker.inverse(),tf2);
+    //ROS_INFO("map pose into camera x: %f, y: %f",map2cam.getOrigin().x(),map2cam.getOrigin().y()); //Is this correct?
+    //Make the inverse to visualize
+    
+    //tf::StampedTransform map2cam_fin (map2cam.inverse());
+    //ROS_INFO("camera pose into map x: %f, y: %f",map2cam.inverse().getOrigin().x(),map2cam.inverse().getOrigin().y());
+
+
+
+
+
+
+
+
+
+*/
