@@ -116,13 +116,13 @@ void ar_pose_callback(const ar_track_alvar_msgs::AlvarMarkers::ConstPtr & msg);
 
     for(counter=0; counter < 36; counter ++)
     {
-        if(counter != 7 && counter != 14 && counter != 21 && counter != 28 && counter != 35)
+        if(counter != 0 && counter != 7 && counter != 14 && counter != 21 && counter != 28 && counter != 35)
         {
             m1.pose.covariance[counter] = 0;
         }
     }
     // set diagonals
-
+    m1.pose.covariance[0] = 0.001;
     m1.pose.covariance[7] = 0.001;
     m1.pose.covariance[14] = 0.001;
     m1.pose.covariance[21] = 0.001;
@@ -134,7 +134,7 @@ void ar_pose_callback(const ar_track_alvar_msgs::AlvarMarkers::ConstPtr & msg);
  //ROS_INFO("x: %f, y: %f, z: %f,rot_x: %f,rot_y: %f,rot_z: %f",m1.pose.pose.position.x, m1.pose.pose.position.y, m1.pose.pose.position.z, m1.pose.pose.orientation.x, m1.pose.pose.orientation.y,m1.pose.pose.orientation.z);
     }
     if (msg->markers[index].id == 2)
-
+    {
     m2.header = msg->header;
     m2.header.frame_id = "map";
     
@@ -159,13 +159,14 @@ void ar_pose_callback(const ar_track_alvar_msgs::AlvarMarkers::ConstPtr & msg);
 
     for(counter=0; counter < 36; counter ++)
     {
-        if(counter != 7 && counter != 14 && counter != 21 && counter != 28 && counter != 35)
+        if(counter != 0 && counter != 7 && counter != 14 && counter != 21 && counter != 28 && counter != 35)
         {
             m2.pose.covariance[counter] = 0;
         }
     }
     // set diagonals
 
+    m2.pose.covariance[0] = 0.001;
     m2.pose.covariance[7] = 0.001;
     m2.pose.covariance[14] = 0.001;
     m2.pose.covariance[21] = 0.001;
@@ -202,13 +203,13 @@ void ar_pose_callback(const ar_track_alvar_msgs::AlvarMarkers::ConstPtr & msg);
     
     for(counter=0; counter < 36; counter ++)
     {
-        if(counter != 7 && counter != 14 && counter != 21 && counter != 28 && counter != 35)
+        if(counter != 0 && counter != 7 && counter != 14 && counter != 21 && counter != 28 && counter != 35)
         {
             m3.pose.covariance[counter] = 0;
         }
     }
     // set diagonals
-
+    m3.pose.covariance[0] = 0.001;
     m3.pose.covariance[7] = 0.001;
     m3.pose.covariance[14] = 0.001;
     m3.pose.covariance[21] = 0.001;
@@ -244,13 +245,13 @@ void ar_pose_callback(const ar_track_alvar_msgs::AlvarMarkers::ConstPtr & msg);
     
     for(counter=0; counter < 36; counter ++)
     {
-        if(counter != 7 && counter != 14 && counter != 21 && counter != 28 && counter != 35)
+        if(counter != 0 && counter != 7 && counter != 14 && counter != 21 && counter != 28 && counter != 35)
         {
             m4.pose.covariance[counter] = 0;
         }
     }
     // set diagonals
-
+    m4.pose.covariance[0] = 0.001;
     m4.pose.covariance[7] = 0.001;
     m4.pose.covariance[14] = 0.001;
     m4.pose.covariance[21] = 0.001;
@@ -510,7 +511,7 @@ marker14_pub.publish(m14);
 } //end of external foor loop
 
 // ROS_INFO("Size: %d",size);
- //end ar_pose_callback
+}//end ar_pose_callback
 
 
 int main(int argc, char **argv)
