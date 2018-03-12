@@ -10,4 +10,7 @@ set(nav2d_navigator_EXEC_DEPENDS "roscpp" "message_runtime" "tf" "pluginlib" "ac
 set(nav2d_navigator_RUN_DEPENDS "roscpp" "message_runtime" "tf" "pluginlib" "actionlib" "actionlib_msgs" "geometry_msgs" "std_srvs" "nav2d_msgs" "nav2d_operator")
 set(nav2d_navigator_TEST_DEPENDS )
 set(nav2d_navigator_DOC_DEPENDS )
+set(nav2d_navigator_URL_WEBSITE "http://wiki.ros.org/robot_operator")
+set(nav2d_navigator_URL_BUGTRACKER "")
+set(nav2d_navigator_URL_REPOSITORY "")
 set(nav2d_navigator_DEPRECATED "")

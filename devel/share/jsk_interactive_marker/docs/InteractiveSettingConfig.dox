@@ -1,0 +1,10 @@
+\subsubsection parameters ROS parameters
+
+Reads and maintains the following parameters on the ROS server
+
+- \b "~display_interactive_manipulator" : \b [bool] Display Interactive rotate and translate manipulator min: False, default: True, max: True
+- \b "~display_interactive_manipulator_only_selected" : \b [bool] Display interactive rotate and translate manipulator when selected. min: False, default: False, max: True
+- \b "~display_description_only_selected" : \b [bool] Display description when selected. min: False, default: False, max: True
+- \b "~interactive_manipulator_orientation" : \b [int] interactive_manipulator_orientation min: 0, default: 0, max: 2
+- \b "~interaction_mode" : \b [int] interaction_mode min: 0, default: 7, max: 9
+

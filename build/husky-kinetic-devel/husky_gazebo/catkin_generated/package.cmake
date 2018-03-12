@@ -10,4 +10,7 @@ set(husky_gazebo_EXEC_DEPENDS "controller_manager" "gazebo_plugins" "gazebo_ros"
 set(husky_gazebo_RUN_DEPENDS "controller_manager" "gazebo_plugins" "gazebo_ros" "gazebo_ros_control" "hector_gazebo_plugins" "husky_control" "husky_description" "multimaster_launch" "pointcloud_to_laserscan" "rostopic")
 set(husky_gazebo_TEST_DEPENDS )
 set(husky_gazebo_DOC_DEPENDS )
+set(husky_gazebo_URL_WEBSITE "http://ros.org/wiki/husky_gazebo")
+set(husky_gazebo_URL_BUGTRACKER "https://github.com/husky/husky_simulator/issues")
+set(husky_gazebo_URL_REPOSITORY "https://github.com/husly/husky_simulator")
 set(husky_gazebo_DEPRECATED "")

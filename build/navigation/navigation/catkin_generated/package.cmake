@@ -10,4 +10,7 @@ set(navigation_EXEC_DEPENDS "amcl" "carrot_planner" "dwa_local_planner" "move_ba
 set(navigation_RUN_DEPENDS "amcl" "carrot_planner" "dwa_local_planner" "move_base" "nav_core" "robot_pose_ekf" "base_local_planner" "clear_costmap_recovery" "fake_localization" "global_planner" "move_base_msgs" "navfn" "rotate_recovery" "costmap_2d" "map_server" "move_slow_and_clear" "voxel_grid")
 set(navigation_TEST_DEPENDS )
 set(navigation_DOC_DEPENDS )
+set(navigation_URL_WEBSITE "http://wiki.ros.org/navigation")
+set(navigation_URL_BUGTRACKER "")
+set(navigation_URL_REPOSITORY "")
 set(navigation_DEPRECATED "")

@@ -1,0 +1,18 @@
+\subsubsection parameters ROS parameters
+
+Reads and maintains the following parameters on the ROS server
+
+- \b "~width" : \b [double]  min: -1.0, default: 1200.0, max: 2024.0
+- \b "~height" : \b [double]  min: -1.0, default: 800.0, max: 2024.0
+- \b "~top" : \b [double]  min: 0.0, default: 10.0, max: 2024.0
+- \b "~left" : \b [double]  min: 0.0, default: 10.0, max: 2024.0
+- \b "~text_size" : \b [double]  min: 1.0, default: 12.0, max: 32.0
+- \b "~bg_red" : \b [double]  min: 0.0, default: 0.0, max: 1.0
+- \b "~bg_blue" : \b [double]  min: 0.0, default: 0.0, max: 1.0
+- \b "~bg_green" : \b [double]  min: 0.0, default: 0.0, max: 1.0
+- \b "~bg_alpha" : \b [double]  min: 0.0, default: 0.0, max: 1.0
+- \b "~fg_red" : \b [double]  min: 0.0, default: 0.0980392156863, max: 1.0
+- \b "~fg_blue" : \b [double]  min: 0.0, default: 1.0, max: 1.0
+- \b "~fg_green" : \b [double]  min: 0.0, default: 0.939334637965, max: 1.0
+- \b "~fg_alpha" : \b [double]  min: 0.0, default: 1.0, max: 1.0
+

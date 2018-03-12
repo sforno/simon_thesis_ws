@@ -10,4 +10,7 @@ set(dwa_local_planner_EXEC_DEPENDS "base_local_planner" "costmap_2d" "dynamic_re
 set(dwa_local_planner_RUN_DEPENDS "base_local_planner" "costmap_2d" "dynamic_reconfigure" "eigen" "nav_core" "nav_msgs" "pluginlib" "roscpp" "tf")
 set(dwa_local_planner_TEST_DEPENDS )
 set(dwa_local_planner_DOC_DEPENDS )
+set(dwa_local_planner_URL_WEBSITE "http://wiki.ros.org/dwa_local_planner")
+set(dwa_local_planner_URL_BUGTRACKER "")
+set(dwa_local_planner_URL_REPOSITORY "")
 set(dwa_local_planner_DEPRECATED "")

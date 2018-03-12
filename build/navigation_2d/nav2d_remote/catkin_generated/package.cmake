@@ -10,4 +10,7 @@ set(nav2d_remote_EXEC_DEPENDS "nav2d_navigator" "nav2d_operator" "roscpp" "senso
 set(nav2d_remote_RUN_DEPENDS "nav2d_navigator" "nav2d_operator" "roscpp" "sensor_msgs")
 set(nav2d_remote_TEST_DEPENDS )
 set(nav2d_remote_DOC_DEPENDS )
+set(nav2d_remote_URL_WEBSITE "http://wiki.ros.org/remote_controller")
+set(nav2d_remote_URL_BUGTRACKER "")
+set(nav2d_remote_URL_REPOSITORY "")
 set(nav2d_remote_DEPRECATED "")

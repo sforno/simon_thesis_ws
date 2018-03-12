@@ -32,6 +32,7 @@ costmap_converter/CMakeFiles/standalone_converter.dir/src/costmap_converter_node
 costmap_converter/CMakeFiles/standalone_converter.dir/src/costmap_converter_node.cpp.o: /opt/ros/kinetic/include/class_loader/class_loader_core.h
 costmap_converter/CMakeFiles/standalone_converter.dir/src/costmap_converter_node.cpp.o: /opt/ros/kinetic/include/class_loader/class_loader_exceptions.h
 costmap_converter/CMakeFiles/standalone_converter.dir/src/costmap_converter_node.cpp.o: /opt/ros/kinetic/include/class_loader/class_loader_register_macro.h
+costmap_converter/CMakeFiles/standalone_converter.dir/src/costmap_converter_node.cpp.o: /opt/ros/kinetic/include/class_loader/console_bridge_compatibility.h
 costmap_converter/CMakeFiles/standalone_converter.dir/src/costmap_converter_node.cpp.o: /opt/ros/kinetic/include/class_loader/meta_object.h
 costmap_converter/CMakeFiles/standalone_converter.dir/src/costmap_converter_node.cpp.o: /opt/ros/kinetic/include/class_loader/multi_library_class_loader.h
 costmap_converter/CMakeFiles/standalone_converter.dir/src/costmap_converter_node.cpp.o: /opt/ros/kinetic/include/dynamic_reconfigure/BoolParameter.h
@@ -117,6 +118,8 @@ costmap_converter/CMakeFiles/standalone_converter.dir/src/costmap_converter_node
 costmap_converter/CMakeFiles/standalone_converter.dir/src/costmap_converter_node.cpp.o: /opt/ros/kinetic/include/ros/single_subscriber_publisher.h
 costmap_converter/CMakeFiles/standalone_converter.dir/src/costmap_converter_node.cpp.o: /opt/ros/kinetic/include/ros/spinner.h
 costmap_converter/CMakeFiles/standalone_converter.dir/src/costmap_converter_node.cpp.o: /opt/ros/kinetic/include/ros/static_assert.h
+costmap_converter/CMakeFiles/standalone_converter.dir/src/costmap_converter_node.cpp.o: /opt/ros/kinetic/include/ros/steady_timer.h
+costmap_converter/CMakeFiles/standalone_converter.dir/src/costmap_converter_node.cpp.o: /opt/ros/kinetic/include/ros/steady_timer_options.h
 costmap_converter/CMakeFiles/standalone_converter.dir/src/costmap_converter_node.cpp.o: /opt/ros/kinetic/include/ros/subscribe_options.h
 costmap_converter/CMakeFiles/standalone_converter.dir/src/costmap_converter_node.cpp.o: /opt/ros/kinetic/include/ros/subscriber.h
 costmap_converter/CMakeFiles/standalone_converter.dir/src/costmap_converter_node.cpp.o: /opt/ros/kinetic/include/ros/subscription_callback_helper.h

@@ -11,4 +11,7 @@ set(tf2_sensor_msgs_EXEC_DEPENDS "python_orocos_kdl" "rospy" "sensor_msgs" "tf2"
 set(tf2_sensor_msgs_RUN_DEPENDS "python_orocos_kdl" "rospy" "sensor_msgs" "tf2" "tf2_ros" "eigen")
 set(tf2_sensor_msgs_TEST_DEPENDS "rostest" "geometry_msgs")
 set(tf2_sensor_msgs_DOC_DEPENDS )
+set(tf2_sensor_msgs_URL_WEBSITE "http://www.ros.org/wiki/tf2_ros")
+set(tf2_sensor_msgs_URL_BUGTRACKER "")
+set(tf2_sensor_msgs_URL_REPOSITORY "")
 set(tf2_sensor_msgs_DEPRECATED "")

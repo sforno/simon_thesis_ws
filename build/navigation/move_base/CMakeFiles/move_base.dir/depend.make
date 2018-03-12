@@ -53,6 +53,7 @@ navigation/move_base/CMakeFiles/move_base.dir/src/move_base.cpp.o: /opt/ros/kine
 navigation/move_base/CMakeFiles/move_base.dir/src/move_base.cpp.o: /opt/ros/kinetic/include/class_loader/class_loader_core.h
 navigation/move_base/CMakeFiles/move_base.dir/src/move_base.cpp.o: /opt/ros/kinetic/include/class_loader/class_loader_exceptions.h
 navigation/move_base/CMakeFiles/move_base.dir/src/move_base.cpp.o: /opt/ros/kinetic/include/class_loader/class_loader_register_macro.h
+navigation/move_base/CMakeFiles/move_base.dir/src/move_base.cpp.o: /opt/ros/kinetic/include/class_loader/console_bridge_compatibility.h
 navigation/move_base/CMakeFiles/move_base.dir/src/move_base.cpp.o: /opt/ros/kinetic/include/class_loader/meta_object.h
 navigation/move_base/CMakeFiles/move_base.dir/src/move_base.cpp.o: /opt/ros/kinetic/include/class_loader/multi_library_class_loader.h
 navigation/move_base/CMakeFiles/move_base.dir/src/move_base.cpp.o: /opt/ros/kinetic/include/dynamic_reconfigure/BoolParameter.h
@@ -148,6 +149,8 @@ navigation/move_base/CMakeFiles/move_base.dir/src/move_base.cpp.o: /opt/ros/kine
 navigation/move_base/CMakeFiles/move_base.dir/src/move_base.cpp.o: /opt/ros/kinetic/include/ros/single_subscriber_publisher.h
 navigation/move_base/CMakeFiles/move_base.dir/src/move_base.cpp.o: /opt/ros/kinetic/include/ros/spinner.h
 navigation/move_base/CMakeFiles/move_base.dir/src/move_base.cpp.o: /opt/ros/kinetic/include/ros/static_assert.h
+navigation/move_base/CMakeFiles/move_base.dir/src/move_base.cpp.o: /opt/ros/kinetic/include/ros/steady_timer.h
+navigation/move_base/CMakeFiles/move_base.dir/src/move_base.cpp.o: /opt/ros/kinetic/include/ros/steady_timer_options.h
 navigation/move_base/CMakeFiles/move_base.dir/src/move_base.cpp.o: /opt/ros/kinetic/include/ros/subscribe_options.h
 navigation/move_base/CMakeFiles/move_base.dir/src/move_base.cpp.o: /opt/ros/kinetic/include/ros/subscriber.h
 navigation/move_base/CMakeFiles/move_base.dir/src/move_base.cpp.o: /opt/ros/kinetic/include/ros/subscription_callback_helper.h

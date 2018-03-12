@@ -1,0 +1,9 @@
+\subsubsection usage Usage
+\verbatim
+<node name="jsk_interactive_marker" pkg="jsk_interactive_marker" type="jsk_interactive_marker">
+  <param name="width" type="double" value="640.0" />
+  <param name="height" type="double" value="480.0" />
+  <param name="f" type="double" value="525.0" />
+</node>
+\endverbatim
+

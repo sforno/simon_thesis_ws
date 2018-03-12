@@ -1,0 +1,8 @@
+\subsubsection usage Usage
+\verbatim
+<node name="jsk_interactive_marker" pkg="jsk_interactive_marker" type="jsk_interactive_marker">
+  <param name="point_size" type="double" value="0.002" />
+  <param name="display_interactive_manipulator" type="bool" value="True" />
+</node>
+\endverbatim
+

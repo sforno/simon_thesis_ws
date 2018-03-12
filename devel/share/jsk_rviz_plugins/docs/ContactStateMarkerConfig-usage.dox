@@ -1,0 +1,17 @@
+\subsubsection usage Usage
+\verbatim
+<node name="jsk_rviz_plugins" pkg="jsk_rviz_plugins" type="jsk_rviz_plugins">
+  <param name="use_parent_link" type="bool" value="False" />
+  <param name="marker_scale" type="double" value="1.02" />
+  <param name="on_red" type="double" value="1.0" />
+  <param name="on_green" type="double" value="0.0" />
+  <param name="on_blue" type="double" value="0.0" />
+  <param name="on_alpha" type="double" value="0.8" />
+  <param name="visualize_off" type="bool" value="False" />
+  <param name="off_red" type="double" value="0.0" />
+  <param name="off_green" type="double" value="0.0" />
+  <param name="off_blue" type="double" value="1.0" />
+  <param name="off_alpha" type="double" value="0.8" />
+</node>
+\endverbatim
+

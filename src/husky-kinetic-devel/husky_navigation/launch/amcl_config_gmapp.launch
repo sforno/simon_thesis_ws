@@ -42,8 +42,8 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
     <param name="kld_z" value="0.99"/>
     <param name="odom_alpha1" value="0.2"/>
     <param name="odom_alpha2" value="0.2"/>
-    <param name="odom_alpha3" value="0.1"/>
-    <param name="odom_alpha4" value="0.1"/>
+    <param name="odom_alpha3" value="0.2"/>
+    <param name="odom_alpha4" value="0.2"/>
     <!-- translation std dev, m -->
     <param name="laser_z_hit" value="0.5"/>
     <param name="laser_z_short" value="0.05"/>

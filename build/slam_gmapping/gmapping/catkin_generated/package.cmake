@@ -11,4 +11,7 @@ set(gmapping_EXEC_DEPENDS "nav_msgs" "openslam_gmapping" "roscpp" "tf" "nodelet"
 set(gmapping_RUN_DEPENDS "nav_msgs" "openslam_gmapping" "roscpp" "tf" "nodelet")
 set(gmapping_TEST_DEPENDS )
 set(gmapping_DOC_DEPENDS )
+set(gmapping_URL_WEBSITE "http://ros.org/wiki/gmapping")
+set(gmapping_URL_BUGTRACKER "")
+set(gmapping_URL_REPOSITORY "")
 set(gmapping_DEPRECATED "")

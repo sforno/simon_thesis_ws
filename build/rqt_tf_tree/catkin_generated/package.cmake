@@ -13,4 +13,7 @@ set(rqt_tf_tree_RUN_DEPENDS "geometry_msgs" "python_qt_binding" "python-rospkg" 
 set(rqt_tf_tree_RUN_DEPENDS_python_qt_binding_VERSION_GTE "0.2.19")
 set(rqt_tf_tree_TEST_DEPENDS "python-mock")
 set(rqt_tf_tree_DOC_DEPENDS )
+set(rqt_tf_tree_URL_WEBSITE "http://wiki.ros.org/rqt_tf_tree")
+set(rqt_tf_tree_URL_BUGTRACKER "https://github.com/ros-visualization/rqt_tf_tree/issues")
+set(rqt_tf_tree_URL_REPOSITORY "https://github.com/ros-visualization/rqt_tf_tree")
 set(rqt_tf_tree_DEPRECATED "")

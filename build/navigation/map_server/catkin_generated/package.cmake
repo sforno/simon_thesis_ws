@@ -11,4 +11,7 @@ set(map_server_EXEC_DEPENDS "bullet" "nav_msgs" "roscpp" "sdl" "sdl-image" "tf2"
 set(map_server_RUN_DEPENDS "bullet" "nav_msgs" "roscpp" "sdl" "sdl-image" "tf2" "yaml-cpp")
 set(map_server_TEST_DEPENDS "rospy" "rostest" "rosunit")
 set(map_server_DOC_DEPENDS )
+set(map_server_URL_WEBSITE "http://wiki.ros.org/map_server")
+set(map_server_URL_BUGTRACKER "")
+set(map_server_URL_REPOSITORY "")
 set(map_server_DEPRECATED "")

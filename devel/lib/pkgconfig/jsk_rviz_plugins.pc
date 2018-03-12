@@ -1,0 +1,8 @@
+prefix=/home/simoneforno/simon_ws/devel
+
+Name: jsk_rviz_plugins
+Description: Description of jsk_rviz_plugins
+Version: 2.1.3
+Cflags: -I/home/simoneforno/simon_ws/devel/include
+Libs: -L/home/simoneforno/simon_ws/devel/lib 
+Requires: jsk_hark_msgs jsk_footstep_msgs jsk_recognition_utils cv_bridge people_msgs image_geometry rviz

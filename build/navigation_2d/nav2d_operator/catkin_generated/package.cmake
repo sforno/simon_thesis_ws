@@ -10,4 +10,7 @@ set(nav2d_operator_EXEC_DEPENDS "roscpp" "message_runtime" "tf" "costmap_2d" "se
 set(nav2d_operator_RUN_DEPENDS "roscpp" "message_runtime" "tf" "costmap_2d" "sensor_msgs")
 set(nav2d_operator_TEST_DEPENDS )
 set(nav2d_operator_DOC_DEPENDS )
+set(nav2d_operator_URL_WEBSITE "http://wiki.ros.org/nav2d_operator")
+set(nav2d_operator_URL_BUGTRACKER "")
+set(nav2d_operator_URL_REPOSITORY "")
 set(nav2d_operator_DEPRECATED "")

@@ -10,4 +10,7 @@ set(data_converter_EXEC_DEPENDS "ar_track_alvar_msgs" "geometry_msgs" "roscpp" "
 set(data_converter_RUN_DEPENDS "ar_track_alvar_msgs" "geometry_msgs" "roscpp" "rospy" "std_msgs" "tf" "nav_msgs")
 set(data_converter_TEST_DEPENDS )
 set(data_converter_DOC_DEPENDS )
+set(data_converter_URL_WEBSITE "")
+set(data_converter_URL_BUGTRACKER "")
+set(data_converter_URL_REPOSITORY "")
 set(data_converter_DEPRECATED "")

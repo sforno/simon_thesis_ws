@@ -72,6 +72,8 @@ stage_ros/CMakeFiles/stageros.dir/src/stageros.cpp.o: /opt/ros/kinetic/include/r
 stage_ros/CMakeFiles/stageros.dir/src/stageros.cpp.o: /opt/ros/kinetic/include/ros/single_subscriber_publisher.h
 stage_ros/CMakeFiles/stageros.dir/src/stageros.cpp.o: /opt/ros/kinetic/include/ros/spinner.h
 stage_ros/CMakeFiles/stageros.dir/src/stageros.cpp.o: /opt/ros/kinetic/include/ros/static_assert.h
+stage_ros/CMakeFiles/stageros.dir/src/stageros.cpp.o: /opt/ros/kinetic/include/ros/steady_timer.h
+stage_ros/CMakeFiles/stageros.dir/src/stageros.cpp.o: /opt/ros/kinetic/include/ros/steady_timer_options.h
 stage_ros/CMakeFiles/stageros.dir/src/stageros.cpp.o: /opt/ros/kinetic/include/ros/subscribe_options.h
 stage_ros/CMakeFiles/stageros.dir/src/stageros.cpp.o: /opt/ros/kinetic/include/ros/subscriber.h
 stage_ros/CMakeFiles/stageros.dir/src/stageros.cpp.o: /opt/ros/kinetic/include/ros/subscription_callback_helper.h

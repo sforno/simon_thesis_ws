@@ -73,6 +73,8 @@ navigation_2d/nav2d_navigator/CMakeFiles/localize_client.dir/src/localize_client
 navigation_2d/nav2d_navigator/CMakeFiles/localize_client.dir/src/localize_client.cpp.o: /opt/ros/kinetic/include/ros/single_subscriber_publisher.h
 navigation_2d/nav2d_navigator/CMakeFiles/localize_client.dir/src/localize_client.cpp.o: /opt/ros/kinetic/include/ros/spinner.h
 navigation_2d/nav2d_navigator/CMakeFiles/localize_client.dir/src/localize_client.cpp.o: /opt/ros/kinetic/include/ros/static_assert.h
+navigation_2d/nav2d_navigator/CMakeFiles/localize_client.dir/src/localize_client.cpp.o: /opt/ros/kinetic/include/ros/steady_timer.h
+navigation_2d/nav2d_navigator/CMakeFiles/localize_client.dir/src/localize_client.cpp.o: /opt/ros/kinetic/include/ros/steady_timer_options.h
 navigation_2d/nav2d_navigator/CMakeFiles/localize_client.dir/src/localize_client.cpp.o: /opt/ros/kinetic/include/ros/subscribe_options.h
 navigation_2d/nav2d_navigator/CMakeFiles/localize_client.dir/src/localize_client.cpp.o: /opt/ros/kinetic/include/ros/subscriber.h
 navigation_2d/nav2d_navigator/CMakeFiles/localize_client.dir/src/localize_client.cpp.o: /opt/ros/kinetic/include/ros/subscription_callback_helper.h

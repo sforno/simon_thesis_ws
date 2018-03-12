@@ -5,7 +5,11 @@
 # it emulates the modifications of the setup script without recurring computations
 
 # new environment variables
+export ARCHDIR="Linux64"
+export EUSDIR="/opt/ros/kinetic/share/euslisp/jskeus/eus/"
 
 # modified environment variables
+export LD_LIBRARY_PATH="/opt/ros/kinetic/share/euslisp/jskeus/eus//Linux64/lib:$LD_LIBRARY_PATH"
+export PATH="/opt/ros/kinetic/share/euslisp/jskeus/eus//Linux64/bin:$PATH"
 export PWD="/home/simoneforno/simon_ws/build"
 export ROS_PACKAGE_PATH="/home/simoneforno/simon_ws/src:/opt/ros/kinetic/share"

@@ -1,0 +1,8 @@
+\subsubsection parameters ROS parameters
+
+Reads and maintains the following parameters on the ROS server
+
+- \b "~width" : \b [double] width of camera info min: 1.0, default: 640.0, max: 5000.0
+- \b "~height" : \b [double] height of camera info min: 1.0, default: 480.0, max: 5000.0
+- \b "~f" : \b [double] f of camera_info, used as fx and fy min: 1.0, default: 525.0, max: 5000.0
+

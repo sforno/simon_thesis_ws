@@ -11,4 +11,7 @@ set(tf2_geometry_msgs_EXEC_DEPENDS "python_orocos_kdl" "geometry_msgs" "orocos_k
 set(tf2_geometry_msgs_RUN_DEPENDS "python_orocos_kdl" "geometry_msgs" "orocos_kdl" "tf2" "tf2_ros")
 set(tf2_geometry_msgs_TEST_DEPENDS "rostest")
 set(tf2_geometry_msgs_DOC_DEPENDS )
+set(tf2_geometry_msgs_URL_WEBSITE "http://www.ros.org/wiki/tf2_ros")
+set(tf2_geometry_msgs_URL_BUGTRACKER "")
+set(tf2_geometry_msgs_URL_REPOSITORY "")
 set(tf2_geometry_msgs_DEPRECATED "")

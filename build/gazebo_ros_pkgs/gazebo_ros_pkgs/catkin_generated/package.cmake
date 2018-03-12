@@ -10,4 +10,7 @@ set(gazebo_ros_pkgs_EXEC_DEPENDS "gazebo_dev" "gazebo_msgs" "gazebo_plugins" "ga
 set(gazebo_ros_pkgs_RUN_DEPENDS "gazebo_dev" "gazebo_msgs" "gazebo_plugins" "gazebo_ros")
 set(gazebo_ros_pkgs_TEST_DEPENDS )
 set(gazebo_ros_pkgs_DOC_DEPENDS )
+set(gazebo_ros_pkgs_URL_WEBSITE "http://gazebosim.org/tutorials?cat=connect_ros")
+set(gazebo_ros_pkgs_URL_BUGTRACKER "https://github.com/ros-simulation/gazebo_ros_pkgs/issues")
+set(gazebo_ros_pkgs_URL_REPOSITORY "https://github.com/ros-simulation/gazebo_ros_pkgs")
 set(gazebo_ros_pkgs_DEPRECATED "")

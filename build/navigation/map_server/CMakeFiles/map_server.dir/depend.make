@@ -52,6 +52,8 @@ navigation/map_server/CMakeFiles/map_server.dir/src/main.cpp.o: /opt/ros/kinetic
 navigation/map_server/CMakeFiles/map_server.dir/src/main.cpp.o: /opt/ros/kinetic/include/ros/single_subscriber_publisher.h
 navigation/map_server/CMakeFiles/map_server.dir/src/main.cpp.o: /opt/ros/kinetic/include/ros/spinner.h
 navigation/map_server/CMakeFiles/map_server.dir/src/main.cpp.o: /opt/ros/kinetic/include/ros/static_assert.h
+navigation/map_server/CMakeFiles/map_server.dir/src/main.cpp.o: /opt/ros/kinetic/include/ros/steady_timer.h
+navigation/map_server/CMakeFiles/map_server.dir/src/main.cpp.o: /opt/ros/kinetic/include/ros/steady_timer_options.h
 navigation/map_server/CMakeFiles/map_server.dir/src/main.cpp.o: /opt/ros/kinetic/include/ros/subscribe_options.h
 navigation/map_server/CMakeFiles/map_server.dir/src/main.cpp.o: /opt/ros/kinetic/include/ros/subscriber.h
 navigation/map_server/CMakeFiles/map_server.dir/src/main.cpp.o: /opt/ros/kinetic/include/ros/subscription_callback_helper.h

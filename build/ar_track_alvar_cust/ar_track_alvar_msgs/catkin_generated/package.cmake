@@ -10,4 +10,7 @@ set(ar_track_alvar_msgs_EXEC_DEPENDS "message_runtime" "geometry_msgs" "std_msgs
 set(ar_track_alvar_msgs_RUN_DEPENDS "message_runtime" "geometry_msgs" "std_msgs")
 set(ar_track_alvar_msgs_TEST_DEPENDS )
 set(ar_track_alvar_msgs_DOC_DEPENDS )
+set(ar_track_alvar_msgs_URL_WEBSITE "http://ros.org/wiki/ar_track_alvar")
+set(ar_track_alvar_msgs_URL_BUGTRACKER "")
+set(ar_track_alvar_msgs_URL_REPOSITORY "")
 set(ar_track_alvar_msgs_DEPRECATED "")

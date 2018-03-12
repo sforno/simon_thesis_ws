@@ -1,0 +1,14 @@
+\subsubsection parameters ROS parameters
+
+Reads and maintains the following parameters on the ROS server
+
+- \b "~text_color_red" : \b [double] text color min: 0.0, default: 0.0, max: 1.0
+- \b "~text_color_green" : \b [double] text color min: 0.0, default: 0.0, max: 1.0
+- \b "~text_color_blue" : \b [double] text color min: 0.0, default: 1.0, max: 1.0
+- \b "~text_color_alpha" : \b [double] text color min: 0.0, default: 1.0, max: 1.0
+- \b "~text_offset_x" : \b [double] offset position for text min: -0.5, default: 0.0, max: 0.5
+- \b "~text_offset_y" : \b [double] offset position for text min: -0.5, default: 0.0, max: 0.5
+- \b "~text_offset_z" : \b [double] offset position for text min: -0.5, default: 0.07, max: 0.5
+- \b "~text_size" : \b [double] text size min: 0.001, default: 0.05, max: 0.5
+- \b "~marker_lifetime" : \b [double] lifetime of marker min: 0.1, default: 5.0, max: 300.0
+

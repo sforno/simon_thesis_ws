@@ -10,4 +10,7 @@ set(rotate_recovery_EXEC_DEPENDS "roscpp" "tf" "costmap_2d" "nav_core" "pluginli
 set(rotate_recovery_RUN_DEPENDS "roscpp" "tf" "costmap_2d" "nav_core" "pluginlib" "eigen")
 set(rotate_recovery_TEST_DEPENDS )
 set(rotate_recovery_DOC_DEPENDS )
+set(rotate_recovery_URL_WEBSITE "http://wiki.ros.org/rotate_recovery")
+set(rotate_recovery_URL_BUGTRACKER "")
+set(rotate_recovery_URL_REPOSITORY "")
 set(rotate_recovery_DEPRECATED "")

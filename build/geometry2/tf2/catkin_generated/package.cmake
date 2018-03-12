@@ -11,4 +11,7 @@ set(tf2_EXEC_DEPENDS "libconsole-bridge-dev" "geometry_msgs" "rostime" "tf2_msgs
 set(tf2_RUN_DEPENDS "libconsole-bridge-dev" "geometry_msgs" "rostime" "tf2_msgs")
 set(tf2_TEST_DEPENDS )
 set(tf2_DOC_DEPENDS )
+set(tf2_URL_WEBSITE "http://www.ros.org/wiki/tf2")
+set(tf2_URL_BUGTRACKER "")
+set(tf2_URL_REPOSITORY "")
 set(tf2_DEPRECATED "")

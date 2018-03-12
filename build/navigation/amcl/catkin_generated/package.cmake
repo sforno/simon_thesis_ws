@@ -10,4 +10,7 @@ set(amcl_EXEC_DEPENDS "rosbag" "roscpp" "dynamic_reconfigure" "tf" "nav_msgs" "s
 set(amcl_RUN_DEPENDS "rosbag" "roscpp" "dynamic_reconfigure" "tf" "nav_msgs" "std_srvs")
 set(amcl_TEST_DEPENDS "rostest" "map_server")
 set(amcl_DOC_DEPENDS )
+set(amcl_URL_WEBSITE "http://wiki.ros.org/amcl")
+set(amcl_URL_BUGTRACKER "")
+set(amcl_URL_REPOSITORY "")
 set(amcl_DEPRECATED "")

@@ -10,4 +10,7 @@ set(nav2d_msgs_EXEC_DEPENDS "message_runtime" "std_msgs" "sensor_msgs" "geometry
 set(nav2d_msgs_RUN_DEPENDS "message_runtime" "std_msgs" "sensor_msgs" "geometry_msgs")
 set(nav2d_msgs_TEST_DEPENDS )
 set(nav2d_msgs_DOC_DEPENDS )
+set(nav2d_msgs_URL_WEBSITE "http://wiki.ros.org/nav2d_msgs")
+set(nav2d_msgs_URL_BUGTRACKER "")
+set(nav2d_msgs_URL_REPOSITORY "")
 set(nav2d_msgs_DEPRECATED "")

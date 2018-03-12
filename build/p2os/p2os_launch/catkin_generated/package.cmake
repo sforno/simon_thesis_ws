@@ -10,4 +10,7 @@ set(p2os_launch_EXEC_DEPENDS "p2os_driver" "p2os_msgs" "p2os_urdf" "p2os_teleop"
 set(p2os_launch_RUN_DEPENDS "p2os_driver" "p2os_msgs" "p2os_urdf" "p2os_teleop")
 set(p2os_launch_TEST_DEPENDS )
 set(p2os_launch_DOC_DEPENDS )
+set(p2os_launch_URL_WEBSITE "http://ros.org/wiki/p2os-purdue")
+set(p2os_launch_URL_BUGTRACKER "")
+set(p2os_launch_URL_REPOSITORY "")
 set(p2os_launch_DEPRECATED "")

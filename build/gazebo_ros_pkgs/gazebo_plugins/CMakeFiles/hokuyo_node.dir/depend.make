@@ -53,6 +53,8 @@ gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/hokuyo_node.dir/src/hokuyo_node.cpp.o:
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/hokuyo_node.dir/src/hokuyo_node.cpp.o: /opt/ros/kinetic/include/ros/service_traits.h
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/hokuyo_node.dir/src/hokuyo_node.cpp.o: /opt/ros/kinetic/include/ros/spinner.h
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/hokuyo_node.dir/src/hokuyo_node.cpp.o: /opt/ros/kinetic/include/ros/static_assert.h
+gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/hokuyo_node.dir/src/hokuyo_node.cpp.o: /opt/ros/kinetic/include/ros/steady_timer.h
+gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/hokuyo_node.dir/src/hokuyo_node.cpp.o: /opt/ros/kinetic/include/ros/steady_timer_options.h
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/hokuyo_node.dir/src/hokuyo_node.cpp.o: /opt/ros/kinetic/include/ros/subscribe_options.h
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/hokuyo_node.dir/src/hokuyo_node.cpp.o: /opt/ros/kinetic/include/ros/subscriber.h
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/hokuyo_node.dir/src/hokuyo_node.cpp.o: /opt/ros/kinetic/include/ros/subscription_callback_helper.h

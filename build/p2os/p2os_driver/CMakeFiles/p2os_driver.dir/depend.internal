@@ -103,6 +103,8 @@ p2os/p2os_driver/CMakeFiles/p2os_driver.dir/src/p2os.cc.o
  /opt/ros/kinetic/include/ros/spinner.h
  /opt/ros/kinetic/include/ros/static_assert.h
  /opt/ros/kinetic/include/ros/statistics.h
+ /opt/ros/kinetic/include/ros/steady_timer.h
+ /opt/ros/kinetic/include/ros/steady_timer_options.h
  /opt/ros/kinetic/include/ros/subscribe_options.h
  /opt/ros/kinetic/include/ros/subscriber.h
  /opt/ros/kinetic/include/ros/subscription.h
@@ -241,6 +243,8 @@ p2os/p2os_driver/CMakeFiles/p2os_driver.dir/src/p2os_ptz.cpp.o
  /opt/ros/kinetic/include/ros/spinner.h
  /opt/ros/kinetic/include/ros/static_assert.h
  /opt/ros/kinetic/include/ros/statistics.h
+ /opt/ros/kinetic/include/ros/steady_timer.h
+ /opt/ros/kinetic/include/ros/steady_timer_options.h
  /opt/ros/kinetic/include/ros/subscribe_options.h
  /opt/ros/kinetic/include/ros/subscriber.h
  /opt/ros/kinetic/include/ros/subscription.h
@@ -379,6 +383,8 @@ p2os/p2os_driver/CMakeFiles/p2os_driver.dir/src/p2osnode.cc.o
  /opt/ros/kinetic/include/ros/spinner.h
  /opt/ros/kinetic/include/ros/static_assert.h
  /opt/ros/kinetic/include/ros/statistics.h
+ /opt/ros/kinetic/include/ros/steady_timer.h
+ /opt/ros/kinetic/include/ros/steady_timer_options.h
  /opt/ros/kinetic/include/ros/subscribe_options.h
  /opt/ros/kinetic/include/ros/subscriber.h
  /opt/ros/kinetic/include/ros/subscription.h
@@ -461,6 +467,8 @@ p2os/p2os_driver/CMakeFiles/p2os_driver.dir/src/packet.cc.o
  /opt/ros/kinetic/include/ros/single_subscriber_publisher.h
  /opt/ros/kinetic/include/ros/spinner.h
  /opt/ros/kinetic/include/ros/static_assert.h
+ /opt/ros/kinetic/include/ros/steady_timer.h
+ /opt/ros/kinetic/include/ros/steady_timer_options.h
  /opt/ros/kinetic/include/ros/subscribe_options.h
  /opt/ros/kinetic/include/ros/subscriber.h
  /opt/ros/kinetic/include/ros/subscription_callback_helper.h
@@ -578,6 +586,8 @@ p2os/p2os_driver/CMakeFiles/p2os_driver.dir/src/sip.cc.o
  /opt/ros/kinetic/include/ros/spinner.h
  /opt/ros/kinetic/include/ros/static_assert.h
  /opt/ros/kinetic/include/ros/statistics.h
+ /opt/ros/kinetic/include/ros/steady_timer.h
+ /opt/ros/kinetic/include/ros/steady_timer_options.h
  /opt/ros/kinetic/include/ros/subscribe_options.h
  /opt/ros/kinetic/include/ros/subscriber.h
  /opt/ros/kinetic/include/ros/subscription.h

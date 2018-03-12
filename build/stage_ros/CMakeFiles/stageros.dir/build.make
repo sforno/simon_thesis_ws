@@ -95,8 +95,8 @@ stageros_EXTERNAL_OBJECTS =
 /home/simoneforno/simon_ws/devel/lib/stage_ros/stageros: /opt/ros/kinetic/lib/libactionlib.so
 /home/simoneforno/simon_ws/devel/lib/stage_ros/stageros: /opt/ros/kinetic/lib/libmessage_filters.so
 /home/simoneforno/simon_ws/devel/lib/stage_ros/stageros: /opt/ros/kinetic/lib/libroscpp.so
-/home/simoneforno/simon_ws/devel/lib/stage_ros/stageros: /usr/lib/x86_64-linux-gnu/libboost_signals.so
 /home/simoneforno/simon_ws/devel/lib/stage_ros/stageros: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
+/home/simoneforno/simon_ws/devel/lib/stage_ros/stageros: /usr/lib/x86_64-linux-gnu/libboost_signals.so
 /home/simoneforno/simon_ws/devel/lib/stage_ros/stageros: /opt/ros/kinetic/lib/libxmlrpcpp.so
 /home/simoneforno/simon_ws/devel/lib/stage_ros/stageros: /home/simoneforno/simon_ws/devel/lib/libtf2.so
 /home/simoneforno/simon_ws/devel/lib/stage_ros/stageros: /opt/ros/kinetic/lib/libroscpp_serialization.so

@@ -1,0 +1,7 @@
+\subsubsection parameters ROS parameters
+
+Reads and maintains the following parameters on the ROS server
+
+- \b "~point_size" : \b [double] size of interactive marker points min: 0.0, default: 0.002, max: 1.0
+- \b "~display_interactive_manipulator" : \b [bool] Display Interactive rotate and translate manipulator min: False, default: True, max: True
+

@@ -62,6 +62,8 @@ gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/vision_reconfigure.dir/src/vision_reco
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/vision_reconfigure.dir/src/vision_reconfigure.cpp.o: /opt/ros/kinetic/include/ros/single_subscriber_publisher.h
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/vision_reconfigure.dir/src/vision_reconfigure.cpp.o: /opt/ros/kinetic/include/ros/spinner.h
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/vision_reconfigure.dir/src/vision_reconfigure.cpp.o: /opt/ros/kinetic/include/ros/static_assert.h
+gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/vision_reconfigure.dir/src/vision_reconfigure.cpp.o: /opt/ros/kinetic/include/ros/steady_timer.h
+gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/vision_reconfigure.dir/src/vision_reconfigure.cpp.o: /opt/ros/kinetic/include/ros/steady_timer_options.h
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/vision_reconfigure.dir/src/vision_reconfigure.cpp.o: /opt/ros/kinetic/include/ros/subscribe_options.h
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/vision_reconfigure.dir/src/vision_reconfigure.cpp.o: /opt/ros/kinetic/include/ros/subscriber.h
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/vision_reconfigure.dir/src/vision_reconfigure.cpp.o: /opt/ros/kinetic/include/ros/subscription_callback_helper.h

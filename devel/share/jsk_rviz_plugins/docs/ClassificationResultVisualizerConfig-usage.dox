@@ -1,0 +1,15 @@
+\subsubsection usage Usage
+\verbatim
+<node name="jsk_rviz_plugins" pkg="jsk_rviz_plugins" type="jsk_rviz_plugins">
+  <param name="text_color_red" type="double" value="0.0" />
+  <param name="text_color_green" type="double" value="0.0" />
+  <param name="text_color_blue" type="double" value="1.0" />
+  <param name="text_color_alpha" type="double" value="1.0" />
+  <param name="text_offset_x" type="double" value="0.0" />
+  <param name="text_offset_y" type="double" value="0.0" />
+  <param name="text_offset_z" type="double" value="0.07" />
+  <param name="text_size" type="double" value="0.05" />
+  <param name="marker_lifetime" type="double" value="5.0" />
+</node>
+\endverbatim
+

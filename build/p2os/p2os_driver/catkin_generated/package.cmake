@@ -10,4 +10,7 @@ set(p2os_driver_EXEC_DEPENDS "message_runtime" "std_msgs" "p2os_msgs" "geometry_
 set(p2os_driver_RUN_DEPENDS "message_runtime" "std_msgs" "p2os_msgs" "geometry_msgs" "tf" "roscpp" "nav_msgs" "diagnostic_updater" "kdl_parser")
 set(p2os_driver_TEST_DEPENDS )
 set(p2os_driver_DOC_DEPENDS )
+set(p2os_driver_URL_WEBSITE "http://ros.org/wiki/p2os_driver")
+set(p2os_driver_URL_BUGTRACKER "https://github.com/allenh1/p2os/issues/")
+set(p2os_driver_URL_REPOSITORY "https://github.com/allenh1/p2os/")
 set(p2os_driver_DEPRECATED "")

@@ -10,4 +10,7 @@ set(costmap_2d_EXEC_DEPENDS "dynamic_reconfigure" "geometry_msgs" "laser_geometr
 set(costmap_2d_RUN_DEPENDS "dynamic_reconfigure" "geometry_msgs" "laser_geometry" "map_msgs" "message_filters" "message_runtime" "nav_msgs" "pcl_conversions" "pcl_ros" "pluginlib" "rosconsole" "roscpp" "sensor_msgs" "std_msgs" "tf" "visualization_msgs" "voxel_grid")
 set(costmap_2d_TEST_DEPENDS "map_server" "rosbag" "rostest" "rosunit")
 set(costmap_2d_DOC_DEPENDS )
+set(costmap_2d_URL_WEBSITE "http://wiki.ros.org/costmap_2d")
+set(costmap_2d_URL_BUGTRACKER "")
+set(costmap_2d_URL_REPOSITORY "")
 set(costmap_2d_DEPRECATED "")

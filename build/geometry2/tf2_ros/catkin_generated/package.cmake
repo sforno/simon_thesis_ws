@@ -12,4 +12,7 @@ set(tf2_ros_EXEC_DEPENDS "actionlib" "actionlib_msgs" "geometry_msgs" "message_f
 set(tf2_ros_RUN_DEPENDS "actionlib" "actionlib_msgs" "geometry_msgs" "message_filters" "roscpp" "rosgraph" "rospy" "std_msgs" "tf2" "tf2_msgs" "tf2_py" "xmlrpcpp")
 set(tf2_ros_TEST_DEPENDS "rostest")
 set(tf2_ros_DOC_DEPENDS )
+set(tf2_ros_URL_WEBSITE "http://www.ros.org/wiki/tf2_ros")
+set(tf2_ros_URL_BUGTRACKER "")
+set(tf2_ros_URL_REPOSITORY "")
 set(tf2_ros_DEPRECATED "")

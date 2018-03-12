@@ -10,4 +10,7 @@ set(p2os_urdf_EXEC_DEPENDS "p2os_msgs" "p2os_driver" "urdf" "std_msgs" "sensor_m
 set(p2os_urdf_RUN_DEPENDS "p2os_msgs" "p2os_driver" "urdf" "std_msgs" "sensor_msgs" "geometry_msgs" "tf" "kdl_parser")
 set(p2os_urdf_TEST_DEPENDS )
 set(p2os_urdf_DOC_DEPENDS )
+set(p2os_urdf_URL_WEBSITE "http://ros.org/wiki/p2os-purdue")
+set(p2os_urdf_URL_BUGTRACKER "https://github.com/allenh1/p2os/issues")
+set(p2os_urdf_URL_REPOSITORY "https://github.com/allenh1/p2os/")
 set(p2os_urdf_DEPRECATED "")

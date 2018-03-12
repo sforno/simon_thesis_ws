@@ -1,0 +1,8 @@
+prefix=/home/simoneforno/simon_ws/devel
+
+Name: jsk_interactive
+Description: Description of jsk_interactive
+Version: 2.1.3
+Cflags: 
+Libs: -L/home/simoneforno/simon_ws/devel/lib 
+Requires: jsk_interactive_marker

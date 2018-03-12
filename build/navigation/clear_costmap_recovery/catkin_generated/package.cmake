@@ -10,4 +10,7 @@ set(clear_costmap_recovery_EXEC_DEPENDS "roscpp" "tf" "costmap_2d" "nav_core" "p
 set(clear_costmap_recovery_RUN_DEPENDS "roscpp" "tf" "costmap_2d" "nav_core" "pluginlib" "eigen")
 set(clear_costmap_recovery_TEST_DEPENDS "rostest")
 set(clear_costmap_recovery_DOC_DEPENDS )
+set(clear_costmap_recovery_URL_WEBSITE "http://wiki.ros.org/clear_costmap_recovery")
+set(clear_costmap_recovery_URL_BUGTRACKER "")
+set(clear_costmap_recovery_URL_REPOSITORY "")
 set(clear_costmap_recovery_DEPRECATED "")

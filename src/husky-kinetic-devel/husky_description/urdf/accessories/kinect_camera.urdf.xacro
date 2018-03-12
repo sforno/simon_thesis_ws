@@ -68,13 +68,13 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
           </image>
           <clip>
             <near>0.05</near>
-            <far>4.0</far> <!-- default 8, gave segmentation error problem in the camera--> <!-- How far in meters would the camera see-->
+            <far>2.0</far> <!-- default 8, gave segmentation error problem in the camera--> <!-- How far in meters would the camera see-->
           </clip>
         </camera>
         <plugin name="kinect_${prefix}_controller" filename="libgazebo_ros_openni_kinect.so">
           <cameraName>${prefix}</cameraName>
           <alwaysOn>true</alwaysOn>
-          <updateRate>10</updateRate>
+          <updateRate>0</updateRate> <!-- suggested in http://gazebosim.org/tutorials?tut=ros_depth_camera&cat=connect_ros -->
           <imageTopicName>rgb/image_raw</imageTopicName>
           <depthImageTopicName>depth/image_raw</depthImageTopicName>
           <pointCloudTopicName>depth/points</pointCloudTopicName>

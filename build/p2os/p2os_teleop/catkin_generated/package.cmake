@@ -10,4 +10,7 @@ set(p2os_teleop_EXEC_DEPENDS "message_runtime" "sensor_msgs" "tf" "std_msgs" "ge
 set(p2os_teleop_RUN_DEPENDS "message_runtime" "sensor_msgs" "tf" "std_msgs" "geometry_msgs")
 set(p2os_teleop_TEST_DEPENDS )
 set(p2os_teleop_DOC_DEPENDS )
+set(p2os_teleop_URL_WEBSITE "http://ros.org/wiki/p2os-purdue")
+set(p2os_teleop_URL_BUGTRACKER "https://github.com/allenh1/p2os/issues")
+set(p2os_teleop_URL_REPOSITORY "https://github.com/allenh1/p2os/")
 set(p2os_teleop_DEPRECATED "")

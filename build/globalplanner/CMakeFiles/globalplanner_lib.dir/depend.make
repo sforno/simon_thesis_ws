@@ -36,6 +36,7 @@ globalplanner/CMakeFiles/globalplanner_lib.dir/src/globalplanner.cpp.o: /opt/ros
 globalplanner/CMakeFiles/globalplanner_lib.dir/src/globalplanner.cpp.o: /opt/ros/kinetic/include/class_loader/class_loader_core.h
 globalplanner/CMakeFiles/globalplanner_lib.dir/src/globalplanner.cpp.o: /opt/ros/kinetic/include/class_loader/class_loader_exceptions.h
 globalplanner/CMakeFiles/globalplanner_lib.dir/src/globalplanner.cpp.o: /opt/ros/kinetic/include/class_loader/class_loader_register_macro.h
+globalplanner/CMakeFiles/globalplanner_lib.dir/src/globalplanner.cpp.o: /opt/ros/kinetic/include/class_loader/console_bridge_compatibility.h
 globalplanner/CMakeFiles/globalplanner_lib.dir/src/globalplanner.cpp.o: /opt/ros/kinetic/include/class_loader/meta_object.h
 globalplanner/CMakeFiles/globalplanner_lib.dir/src/globalplanner.cpp.o: /opt/ros/kinetic/include/class_loader/multi_library_class_loader.h
 globalplanner/CMakeFiles/globalplanner_lib.dir/src/globalplanner.cpp.o: /opt/ros/kinetic/include/dynamic_reconfigure/BoolParameter.h
@@ -121,6 +122,8 @@ globalplanner/CMakeFiles/globalplanner_lib.dir/src/globalplanner.cpp.o: /opt/ros
 globalplanner/CMakeFiles/globalplanner_lib.dir/src/globalplanner.cpp.o: /opt/ros/kinetic/include/ros/single_subscriber_publisher.h
 globalplanner/CMakeFiles/globalplanner_lib.dir/src/globalplanner.cpp.o: /opt/ros/kinetic/include/ros/spinner.h
 globalplanner/CMakeFiles/globalplanner_lib.dir/src/globalplanner.cpp.o: /opt/ros/kinetic/include/ros/static_assert.h
+globalplanner/CMakeFiles/globalplanner_lib.dir/src/globalplanner.cpp.o: /opt/ros/kinetic/include/ros/steady_timer.h
+globalplanner/CMakeFiles/globalplanner_lib.dir/src/globalplanner.cpp.o: /opt/ros/kinetic/include/ros/steady_timer_options.h
 globalplanner/CMakeFiles/globalplanner_lib.dir/src/globalplanner.cpp.o: /opt/ros/kinetic/include/ros/subscribe_options.h
 globalplanner/CMakeFiles/globalplanner_lib.dir/src/globalplanner.cpp.o: /opt/ros/kinetic/include/ros/subscriber.h
 globalplanner/CMakeFiles/globalplanner_lib.dir/src/globalplanner.cpp.o: /opt/ros/kinetic/include/ros/subscription_callback_helper.h

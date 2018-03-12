@@ -1,0 +1,9 @@
+\subsubsection parameters ROS parameters
+
+Reads and maintains the following parameters on the ROS server
+
+- \b "~use_projection_service" : \b [bool]  min: False, default: False, max: True
+- \b "~use_projection_topic" : \b [bool]  min: False, default: False, max: True
+- \b "~use_plane_snap" : \b [bool]  min: False, default: False, max: True
+- \b "~use_2d" : \b [bool]  min: False, default: False, max: True
+

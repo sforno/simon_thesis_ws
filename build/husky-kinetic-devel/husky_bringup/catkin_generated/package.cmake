@@ -10,4 +10,7 @@ set(husky_bringup_EXEC_DEPENDS "husky_base" "husky_control" "husky_description" 
 set(husky_bringup_RUN_DEPENDS "husky_base" "husky_control" "husky_description" "imu_filter_madgwick" "imu_transformer" "lms1xx" "microstrain_3dmgx2_imu" "nmea_comms" "nmea_navsat_driver" "python-scipy" "robot_localization" "robot_upstart" "tf" "tf2_ros" "um6" "um7")
 set(husky_bringup_TEST_DEPENDS )
 set(husky_bringup_DOC_DEPENDS )
+set(husky_bringup_URL_WEBSITE "http://ros.org/wiki/husky_bringup")
+set(husky_bringup_URL_BUGTRACKER "https://github.com/husky/husky_robot/issues")
+set(husky_bringup_URL_REPOSITORY "https://github.com/husky/husky_robot")
 set(husky_bringup_DEPRECATED "")

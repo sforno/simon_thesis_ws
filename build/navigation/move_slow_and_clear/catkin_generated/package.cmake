@@ -10,4 +10,7 @@ set(move_slow_and_clear_EXEC_DEPENDS "roscpp" "nav_core" "costmap_2d" "geometry_
 set(move_slow_and_clear_RUN_DEPENDS "roscpp" "nav_core" "costmap_2d" "geometry_msgs" "pluginlib")
 set(move_slow_and_clear_TEST_DEPENDS )
 set(move_slow_and_clear_DOC_DEPENDS )
+set(move_slow_and_clear_URL_WEBSITE "http://wiki.ros.org/move_slow_and_clear")
+set(move_slow_and_clear_URL_BUGTRACKER "")
+set(move_slow_and_clear_URL_REPOSITORY "")
 set(move_slow_and_clear_DEPRECATED "")

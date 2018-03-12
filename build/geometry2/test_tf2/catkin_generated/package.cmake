@@ -11,4 +11,7 @@ set(test_tf2_EXEC_DEPENDS "rosconsole" "roscpp" "rostest" "tf" "tf2" "tf2_bullet
 set(test_tf2_RUN_DEPENDS "rosconsole" "roscpp" "rostest" "tf" "tf2" "tf2_bullet" "tf2_ros" "tf2_geometry_msgs" "tf2_kdl" "tf2_msgs")
 set(test_tf2_TEST_DEPENDS "rosunit" "rosbash")
 set(test_tf2_DOC_DEPENDS )
+set(test_tf2_URL_WEBSITE "http://www.ros.org/wiki/geometry_experimental")
+set(test_tf2_URL_BUGTRACKER "")
+set(test_tf2_URL_REPOSITORY "")
 set(test_tf2_DEPRECATED "")

@@ -10,4 +10,7 @@ set(nav2d_tutorials_EXEC_DEPENDS "nav2d_msgs" "nav2d_operator" "nav2d_navigator"
 set(nav2d_tutorials_RUN_DEPENDS "nav2d_msgs" "nav2d_operator" "nav2d_navigator" "nav2d_localizer" "nav2d_remote" "nav2d_karto" "nav2d_exploration")
 set(nav2d_tutorials_TEST_DEPENDS )
 set(nav2d_tutorials_DOC_DEPENDS )
+set(nav2d_tutorials_URL_WEBSITE "http://wiki.ros.org/nav2d_tutorials")
+set(nav2d_tutorials_URL_BUGTRACKER "")
+set(nav2d_tutorials_URL_REPOSITORY "")
 set(nav2d_tutorials_DEPRECATED "")

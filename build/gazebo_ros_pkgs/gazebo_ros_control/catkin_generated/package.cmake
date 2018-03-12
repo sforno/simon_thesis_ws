@@ -10,4 +10,7 @@ set(gazebo_ros_control_EXEC_DEPENDS "gazebo_ros" "roscpp" "std_msgs" "control_to
 set(gazebo_ros_control_RUN_DEPENDS "gazebo_ros" "roscpp" "std_msgs" "control_toolbox" "controller_manager" "pluginlib" "hardware_interface" "transmission_interface" "joint_limits_interface" "urdf" "angles")
 set(gazebo_ros_control_TEST_DEPENDS )
 set(gazebo_ros_control_DOC_DEPENDS )
+set(gazebo_ros_control_URL_WEBSITE "http://ros.org/wiki/gazebo_ros_control")
+set(gazebo_ros_control_URL_BUGTRACKER "https://github.com/ros-simulation/gazebo_ros_pkgs/issues")
+set(gazebo_ros_control_URL_REPOSITORY "https://github.com/ros-simulation/gazebo_ros_pkgs")
 set(gazebo_ros_control_DEPRECATED "")

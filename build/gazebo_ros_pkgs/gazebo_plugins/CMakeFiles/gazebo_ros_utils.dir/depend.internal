@@ -75,6 +75,8 @@ gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_utils.dir/src/gazebo_ros_ut
  /opt/ros/kinetic/include/ros/single_subscriber_publisher.h
  /opt/ros/kinetic/include/ros/spinner.h
  /opt/ros/kinetic/include/ros/static_assert.h
+ /opt/ros/kinetic/include/ros/steady_timer.h
+ /opt/ros/kinetic/include/ros/steady_timer_options.h
  /opt/ros/kinetic/include/ros/subscribe_options.h
  /opt/ros/kinetic/include/ros/subscriber.h
  /opt/ros/kinetic/include/ros/subscription_callback_helper.h

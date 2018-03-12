@@ -54,6 +54,7 @@ navigation/move_base/CMakeFiles/move_base_node.dir/src/move_base_node.cpp.o
  /opt/ros/kinetic/include/class_loader/class_loader_core.h
  /opt/ros/kinetic/include/class_loader/class_loader_exceptions.h
  /opt/ros/kinetic/include/class_loader/class_loader_register_macro.h
+ /opt/ros/kinetic/include/class_loader/console_bridge_compatibility.h
  /opt/ros/kinetic/include/class_loader/meta_object.h
  /opt/ros/kinetic/include/class_loader/multi_library_class_loader.h
  /opt/ros/kinetic/include/dynamic_reconfigure/BoolParameter.h
@@ -149,6 +150,8 @@ navigation/move_base/CMakeFiles/move_base_node.dir/src/move_base_node.cpp.o
  /opt/ros/kinetic/include/ros/single_subscriber_publisher.h
  /opt/ros/kinetic/include/ros/spinner.h
  /opt/ros/kinetic/include/ros/static_assert.h
+ /opt/ros/kinetic/include/ros/steady_timer.h
+ /opt/ros/kinetic/include/ros/steady_timer_options.h
  /opt/ros/kinetic/include/ros/subscribe_options.h
  /opt/ros/kinetic/include/ros/subscriber.h
  /opt/ros/kinetic/include/ros/subscription_callback_helper.h

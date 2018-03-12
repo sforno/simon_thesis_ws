@@ -10,4 +10,7 @@ set(costmap_converter_EXEC_DEPENDS "message_runtime" "geometry_msgs" "roscpp" "s
 set(costmap_converter_RUN_DEPENDS "message_runtime" "geometry_msgs" "roscpp" "std_msgs" "costmap_2d" "dynamic_reconfigure" "pluginlib" "cv_bridge")
 set(costmap_converter_TEST_DEPENDS )
 set(costmap_converter_DOC_DEPENDS )
+set(costmap_converter_URL_WEBSITE "http://wiki.ros.org/costmap_converter")
+set(costmap_converter_URL_BUGTRACKER "")
+set(costmap_converter_URL_REPOSITORY "")
 set(costmap_converter_DEPRECATED "")

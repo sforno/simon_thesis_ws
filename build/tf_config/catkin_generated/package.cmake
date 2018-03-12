@@ -10,4 +10,7 @@ set(tf_config_EXEC_DEPENDS "geometry_msgs" "nav_msgs" "roscpp" "rospy" "tf" "std
 set(tf_config_RUN_DEPENDS "geometry_msgs" "nav_msgs" "roscpp" "rospy" "tf" "std_msgs" "ar_track_alvar_msgs")
 set(tf_config_TEST_DEPENDS )
 set(tf_config_DOC_DEPENDS )
+set(tf_config_URL_WEBSITE "")
+set(tf_config_URL_BUGTRACKER "")
+set(tf_config_URL_REPOSITORY "")
 set(tf_config_DEPRECATED "")

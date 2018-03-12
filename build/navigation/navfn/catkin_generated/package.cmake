@@ -11,4 +11,7 @@ set(navfn_EXEC_DEPENDS "costmap_2d" "geometry_msgs" "message_runtime" "nav_core"
 set(navfn_RUN_DEPENDS "costmap_2d" "geometry_msgs" "message_runtime" "nav_core" "nav_msgs" "pcl_conversions" "pcl_ros" "pluginlib" "rosconsole" "roscpp" "tf" "visualization_msgs")
 set(navfn_TEST_DEPENDS "rosunit")
 set(navfn_DOC_DEPENDS )
+set(navfn_URL_WEBSITE "http://wiki.ros.org/navfn")
+set(navfn_URL_BUGTRACKER "")
+set(navfn_URL_REPOSITORY "")
 set(navfn_DEPRECATED "")

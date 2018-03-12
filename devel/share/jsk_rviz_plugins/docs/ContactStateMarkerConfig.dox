@@ -1,0 +1,16 @@
+\subsubsection parameters ROS parameters
+
+Reads and maintains the following parameters on the ROS server
+
+- \b "~use_parent_link" : \b [bool]  min: False, default: False, max: True
+- \b "~marker_scale" : \b [double]  min: 0.9, default: 1.02, max: 1.1
+- \b "~on_red" : \b [double]  min: 0.0, default: 1.0, max: 1.0
+- \b "~on_green" : \b [double]  min: 0.0, default: 0.0, max: 1.0
+- \b "~on_blue" : \b [double]  min: 0.0, default: 0.0, max: 1.0
+- \b "~on_alpha" : \b [double]  min: 0.0, default: 0.8, max: 1.0
+- \b "~visualize_off" : \b [bool]  min: False, default: False, max: True
+- \b "~off_red" : \b [double]  min: 0.0, default: 0.0, max: 1.0
+- \b "~off_green" : \b [double]  min: 0.0, default: 0.0, max: 1.0
+- \b "~off_blue" : \b [double]  min: 0.0, default: 1.0, max: 1.0
+- \b "~off_alpha" : \b [double]  min: 0.0, default: 0.8, max: 1.0
+

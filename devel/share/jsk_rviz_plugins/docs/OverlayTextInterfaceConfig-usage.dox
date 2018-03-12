@@ -1,0 +1,19 @@
+\subsubsection usage Usage
+\verbatim
+<node name="jsk_rviz_plugins" pkg="jsk_rviz_plugins" type="jsk_rviz_plugins">
+  <param name="width" type="double" value="1200.0" />
+  <param name="height" type="double" value="800.0" />
+  <param name="top" type="double" value="10.0" />
+  <param name="left" type="double" value="10.0" />
+  <param name="text_size" type="double" value="12.0" />
+  <param name="bg_red" type="double" value="0.0" />
+  <param name="bg_blue" type="double" value="0.0" />
+  <param name="bg_green" type="double" value="0.0" />
+  <param name="bg_alpha" type="double" value="0.0" />
+  <param name="fg_red" type="double" value="0.0980392156863" />
+  <param name="fg_blue" type="double" value="1.0" />
+  <param name="fg_green" type="double" value="0.939334637965" />
+  <param name="fg_alpha" type="double" value="1.0" />
+</node>
+\endverbatim
+

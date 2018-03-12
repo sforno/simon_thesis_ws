@@ -1,0 +1,208 @@
+; Auto-generated. Do not edit!
+
+
+(cl:in-package jsk_interactive_marker-msg)
+
+
+;//! \htmlinclude MarkerMenu.msg.html
+
+(cl:defclass <MarkerMenu> (roslisp-msg-protocol:ros-message)
+  ((menu
+    :reader menu
+    :initarg :menu
+    :type cl:fixnum
+    :initform 0)
+   (type
+    :reader type
+    :initarg :type
+    :type cl:fixnum
+    :initform 0)
+   (marker_name
+    :reader marker_name
+    :initarg :marker_name
+    :type cl:string
+    :initform ""))
+)
+
+(cl:defclass MarkerMenu (<MarkerMenu>)
+  ())
+
+(cl:defmethod cl:initialize-instance :after ((m <MarkerMenu>) cl:&rest args)
+  (cl:declare (cl:ignorable args))
+  (cl:unless (cl:typep m 'MarkerMenu)
+    (roslisp-msg-protocol:msg-deprecation-warning "using old message class name jsk_interactive_marker-msg:<MarkerMenu> is deprecated: use jsk_interactive_marker-msg:MarkerMenu instead.")))
+
+(cl:ensure-generic-function 'menu-val :lambda-list '(m))
+(cl:defmethod menu-val ((m <MarkerMenu>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader jsk_interactive_marker-msg:menu-val is deprecated.  Use jsk_interactive_marker-msg:menu instead.")
+  (menu m))
+
+(cl:ensure-generic-function 'type-val :lambda-list '(m))
+(cl:defmethod type-val ((m <MarkerMenu>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader jsk_interactive_marker-msg:type-val is deprecated.  Use jsk_interactive_marker-msg:type instead.")
+  (type m))
+
+(cl:ensure-generic-function 'marker_name-val :lambda-list '(m))
+(cl:defmethod marker_name-val ((m <MarkerMenu>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader jsk_interactive_marker-msg:marker_name-val is deprecated.  Use jsk_interactive_marker-msg:marker_name instead.")
+  (marker_name m))
+(cl:defmethod roslisp-msg-protocol:symbol-codes ((msg-type (cl:eql '<MarkerMenu>)))
+    "Constants for message type '<MarkerMenu>"
+  '((:MOVE . 0)
+    (:FORCE_MOVE . 1)
+    (:SET_ORIGIN . 2)
+    (:SET_ORIGIN_RHAND . 3)
+    (:SET_ORIGIN_LHAND . 4)
+    (:RESET_COORDS . 5)
+    (:DELETE_FORCE . 6)
+    (:PUBLISH_MARKER . 7)
+    (:JOINT_MOVE . 8)
+    (:RESET_JOINT . 9)
+    (:SET_MOVE_RARM . 10)
+    (:SET_MOVE_LARM . 11)
+    (:SET_MOVE_ARMS . 12)
+    (:MOVE_CONSTRAINT_T . 13)
+    (:MOVE_CONSTRAINT_NIL . 14)
+    (:IK_ROTATION_AXIS_T . 15)
+    (:IK_ROTATION_AXIS_NIL . 16)
+    (:USE_TORSO_T . 17)
+    (:USE_TORSO_NIL . 18)
+    (:USE_FULLBODY . 19)
+    (:START_GRASP . 20)
+    (:HARF_GRASP . 21)
+    (:STOP_GRASP . 22)
+    (:HEAD_TARGET_POINT . 30)
+    (:LOOK_AUTO . 31)
+    (:MANIP_MODE . 40)
+    (:PICK . 41)
+    (:TOUCHIT_EXEC . 42)
+    (:TOUCHIT_PREV . 43)
+    (:TOUCHIT_CANCEL . 44)
+    (:LOOK_RARM . 45)
+    (:LOOK_LARM . 46)
+    (:PLAN . 50)
+    (:EXECUTE . 51)
+    (:PLAN_EXECUTE . 52)
+    (:CANCEL_PLAN . 53)
+    (:GENERAL . 0)
+    (:HEAD_MARKER . 1)
+    (:RHAND_MARKER . 2)
+    (:LHAND_MARKER . 3)
+    (:RLEG_MARKER . 4)
+    (:LLEG_MARKER . 5)
+    (:BASE_MARKER . 6)
+    (:RFINGER_MARKER . 7)
+    (:LFINGER_MARKER . 8))
+)
+(cl:defmethod roslisp-msg-protocol:symbol-codes ((msg-type (cl:eql 'MarkerMenu)))
+    "Constants for message type 'MarkerMenu"
+  '((:MOVE . 0)
+    (:FORCE_MOVE . 1)
+    (:SET_ORIGIN . 2)
+    (:SET_ORIGIN_RHAND . 3)
+    (:SET_ORIGIN_LHAND . 4)
+    (:RESET_COORDS . 5)
+    (:DELETE_FORCE . 6)
+    (:PUBLISH_MARKER . 7)
+    (:JOINT_MOVE . 8)
+    (:RESET_JOINT . 9)
+    (:SET_MOVE_RARM . 10)
+    (:SET_MOVE_LARM . 11)
+    (:SET_MOVE_ARMS . 12)
+    (:MOVE_CONSTRAINT_T . 13)
+    (:MOVE_CONSTRAINT_NIL . 14)
+    (:IK_ROTATION_AXIS_T . 15)
+    (:IK_ROTATION_AXIS_NIL . 16)
+    (:USE_TORSO_T . 17)
+    (:USE_TORSO_NIL . 18)
+    (:USE_FULLBODY . 19)
+    (:START_GRASP . 20)
+    (:HARF_GRASP . 21)
+    (:STOP_GRASP . 22)
+    (:HEAD_TARGET_POINT . 30)
+    (:LOOK_AUTO . 31)
+    (:MANIP_MODE . 40)
+    (:PICK . 41)
+    (:TOUCHIT_EXEC . 42)
+    (:TOUCHIT_PREV . 43)
+    (:TOUCHIT_CANCEL . 44)
+    (:LOOK_RARM . 45)
+    (:LOOK_LARM . 46)
+    (:PLAN . 50)
+    (:EXECUTE . 51)
+    (:PLAN_EXECUTE . 52)
+    (:CANCEL_PLAN . 53)
+    (:GENERAL . 0)
+    (:HEAD_MARKER . 1)
+    (:RHAND_MARKER . 2)
+    (:LHAND_MARKER . 3)
+    (:RLEG_MARKER . 4)
+    (:LLEG_MARKER . 5)
+    (:BASE_MARKER . 6)
+    (:RFINGER_MARKER . 7)
+    (:LFINGER_MARKER . 8))
+)
+(cl:defmethod roslisp-msg-protocol:serialize ((msg <MarkerMenu>) ostream)
+  "Serializes a message object of type '<MarkerMenu>"
+  (cl:let* ((signed (cl:slot-value msg 'menu)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 256) signed)))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
+    )
+  (cl:let* ((signed (cl:slot-value msg 'type)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 256) signed)))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
+    )
+  (cl:let ((__ros_str_len (cl:length (cl:slot-value msg 'marker_name))))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) __ros_str_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) __ros_str_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) __ros_str_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) __ros_str_len) ostream))
+  (cl:map cl:nil #'(cl:lambda (c) (cl:write-byte (cl:char-code c) ostream)) (cl:slot-value msg 'marker_name))
+)
+(cl:defmethod roslisp-msg-protocol:deserialize ((msg <MarkerMenu>) istream)
+  "Deserializes a message object of type '<MarkerMenu>"
+    (cl:let ((unsigned 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:slot-value msg 'menu) (cl:if (cl:< unsigned 128) unsigned (cl:- unsigned 256))))
+    (cl:let ((unsigned 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:slot-value msg 'type) (cl:if (cl:< unsigned 128) unsigned (cl:- unsigned 256))))
+    (cl:let ((__ros_str_len 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) __ros_str_len) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) __ros_str_len) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) __ros_str_len) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) __ros_str_len) (cl:read-byte istream))
+      (cl:setf (cl:slot-value msg 'marker_name) (cl:make-string __ros_str_len))
+      (cl:dotimes (__ros_str_idx __ros_str_len msg)
+        (cl:setf (cl:char (cl:slot-value msg 'marker_name) __ros_str_idx) (cl:code-char (cl:read-byte istream)))))
+  msg
+)
+(cl:defmethod roslisp-msg-protocol:ros-datatype ((msg (cl:eql '<MarkerMenu>)))
+  "Returns string type for a message object of type '<MarkerMenu>"
+  "jsk_interactive_marker/MarkerMenu")
+(cl:defmethod roslisp-msg-protocol:ros-datatype ((msg (cl:eql 'MarkerMenu)))
+  "Returns string type for a message object of type 'MarkerMenu"
+  "jsk_interactive_marker/MarkerMenu")
+(cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql '<MarkerMenu>)))
+  "Returns md5sum for a message object of type '<MarkerMenu>"
+  "192d3b78eda584051c0d487463f7de74")
+(cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql 'MarkerMenu)))
+  "Returns md5sum for a message object of type 'MarkerMenu"
+  "192d3b78eda584051c0d487463f7de74")
+(cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<MarkerMenu>)))
+  "Returns full string definition for message of type '<MarkerMenu>"
+  (cl:format cl:nil "uint8 MOVE=0~%uint8 FORCE_MOVE=1~%uint8 SET_ORIGIN=2~%uint8 SET_ORIGIN_RHAND=3~%uint8 SET_ORIGIN_LHAND=4~%uint8 RESET_COORDS=5~%uint8 DELETE_FORCE=6~%uint8 PUBLISH_MARKER=7~%uint8 JOINT_MOVE=8~%uint8 RESET_JOINT=9~%~%uint8 SET_MOVE_RARM=10~%uint8 SET_MOVE_LARM=11~%uint8 SET_MOVE_ARMS=12~%uint8 MOVE_CONSTRAINT_T=13~%uint8 MOVE_CONSTRAINT_NIL=14~%uint8 IK_ROTATION_AXIS_T=15~%uint8 IK_ROTATION_AXIS_NIL=16~%uint8 USE_TORSO_T=17~%uint8 USE_TORSO_NIL=18~%int8 USE_FULLBODY=19~%~%~%uint8 START_GRASP=20~%uint8 HARF_GRASP=21~%uint8 STOP_GRASP=22~%~%uint8 HEAD_TARGET_POINT=30~%uint8 LOOK_AUTO=31~%~%uint8 MANIP_MODE=40~%uint8 PICK=41~%uint8 TOUCHIT_EXEC=42~%uint8 TOUCHIT_PREV=43~%uint8 TOUCHIT_CANCEL=44~%~%uint8 LOOK_RARM=45~%uint8 LOOK_LARM=46~%~%uint8 PLAN=50~%uint8 EXECUTE=51~%uint8 PLAN_EXECUTE=52~%uint8 CANCEL_PLAN=53~%~%uint8 GENERAL=0~%uint8 HEAD_MARKER=1~%uint8 RHAND_MARKER=2~%uint8 LHAND_MARKER=3~%uint8 RLEG_MARKER=4~%uint8 LLEG_MARKER=5~%uint8 BASE_MARKER=6~%uint8 RFINGER_MARKER=7~%uint8 LFINGER_MARKER=8~%~%int8 menu~%int8 type~%string marker_name~%~%"))
+(cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'MarkerMenu)))
+  "Returns full string definition for message of type 'MarkerMenu"
+  (cl:format cl:nil "uint8 MOVE=0~%uint8 FORCE_MOVE=1~%uint8 SET_ORIGIN=2~%uint8 SET_ORIGIN_RHAND=3~%uint8 SET_ORIGIN_LHAND=4~%uint8 RESET_COORDS=5~%uint8 DELETE_FORCE=6~%uint8 PUBLISH_MARKER=7~%uint8 JOINT_MOVE=8~%uint8 RESET_JOINT=9~%~%uint8 SET_MOVE_RARM=10~%uint8 SET_MOVE_LARM=11~%uint8 SET_MOVE_ARMS=12~%uint8 MOVE_CONSTRAINT_T=13~%uint8 MOVE_CONSTRAINT_NIL=14~%uint8 IK_ROTATION_AXIS_T=15~%uint8 IK_ROTATION_AXIS_NIL=16~%uint8 USE_TORSO_T=17~%uint8 USE_TORSO_NIL=18~%int8 USE_FULLBODY=19~%~%~%uint8 START_GRASP=20~%uint8 HARF_GRASP=21~%uint8 STOP_GRASP=22~%~%uint8 HEAD_TARGET_POINT=30~%uint8 LOOK_AUTO=31~%~%uint8 MANIP_MODE=40~%uint8 PICK=41~%uint8 TOUCHIT_EXEC=42~%uint8 TOUCHIT_PREV=43~%uint8 TOUCHIT_CANCEL=44~%~%uint8 LOOK_RARM=45~%uint8 LOOK_LARM=46~%~%uint8 PLAN=50~%uint8 EXECUTE=51~%uint8 PLAN_EXECUTE=52~%uint8 CANCEL_PLAN=53~%~%uint8 GENERAL=0~%uint8 HEAD_MARKER=1~%uint8 RHAND_MARKER=2~%uint8 LHAND_MARKER=3~%uint8 RLEG_MARKER=4~%uint8 LLEG_MARKER=5~%uint8 BASE_MARKER=6~%uint8 RFINGER_MARKER=7~%uint8 LFINGER_MARKER=8~%~%int8 menu~%int8 type~%string marker_name~%~%"))
+(cl:defmethod roslisp-msg-protocol:serialization-length ((msg <MarkerMenu>))
+  (cl:+ 0
+     1
+     1
+     4 (cl:length (cl:slot-value msg 'marker_name))
+))
+(cl:defmethod roslisp-msg-protocol:ros-message-to-list ((msg <MarkerMenu>))
+  "Converts a ROS message object to a list"
+  (cl:list 'MarkerMenu
+    (cl:cons ':menu (menu msg))
+    (cl:cons ':type (type msg))
+    (cl:cons ':marker_name (marker_name msg))
+))

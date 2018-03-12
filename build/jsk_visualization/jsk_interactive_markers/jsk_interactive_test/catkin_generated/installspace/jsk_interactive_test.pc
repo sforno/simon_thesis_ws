@@ -1,0 +1,8 @@
+prefix=/home/simoneforno/simon_ws/install
+
+Name: jsk_interactive_test
+Description: Description of jsk_interactive_test
+Version: 2.1.3
+Cflags: 
+Libs: -L/home/simoneforno/simon_ws/install/lib 
+Requires: visualization_msgs jsk_interactive jsk_interactive_marker

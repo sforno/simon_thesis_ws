@@ -10,4 +10,7 @@ set(husky_control_EXEC_DEPENDS "husky_description" "interactive_marker_twist_ser
 set(husky_control_RUN_DEPENDS "husky_description" "interactive_marker_twist_server" "diff_drive_controller" "joint_state_controller" "joint_trajectory_controller" "joy" "multimaster_launch" "robot_localization" "rostopic" "robot_state_publisher" "controller_manager" "teleop_twist_joy" "twist_mux")
 set(husky_control_TEST_DEPENDS )
 set(husky_control_DOC_DEPENDS )
+set(husky_control_URL_WEBSITE "http://ros.org/wiki/husky_control")
+set(husky_control_URL_BUGTRACKER "https://github.com/husky/husky/issues")
+set(husky_control_URL_REPOSITORY "https://github.com/husly/husky")
 set(husky_control_DEPRECATED "")

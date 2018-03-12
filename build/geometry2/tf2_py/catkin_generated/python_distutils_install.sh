@@ -16,7 +16,7 @@ echo_and_run() { echo "+ $@" ; "$@" ; }
 
 echo_and_run cd "/home/simoneforno/simon_ws/src/geometry2/tf2_py"
 
-# snsure that Python install destination exists
+# ensure that Python install destination exists
 echo_and_run mkdir -p "$DESTDIR/home/simoneforno/simon_ws/install/lib/python2.7/dist-packages"
 
 # Note that PYTHONPATH is pulled from the environment to support installing

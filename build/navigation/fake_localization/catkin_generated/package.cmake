@@ -10,4 +10,7 @@ set(fake_localization_EXEC_DEPENDS "roscpp" "rosconsole" "nav_msgs" "geometry_ms
 set(fake_localization_RUN_DEPENDS "roscpp" "rosconsole" "nav_msgs" "geometry_msgs" "tf" "message_filters" "rospy")
 set(fake_localization_TEST_DEPENDS )
 set(fake_localization_DOC_DEPENDS )
+set(fake_localization_URL_WEBSITE "http://wiki.ros.org/fake_localization")
+set(fake_localization_URL_BUGTRACKER "")
+set(fake_localization_URL_REPOSITORY "")
 set(fake_localization_DEPRECATED "")

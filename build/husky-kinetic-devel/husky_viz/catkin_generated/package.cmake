@@ -10,4 +10,7 @@ set(husky_viz_EXEC_DEPENDS "husky_description" "joint_state_publisher" "rviz" "r
 set(husky_viz_RUN_DEPENDS "husky_description" "joint_state_publisher" "rviz" "rviz_imu_plugin")
 set(husky_viz_TEST_DEPENDS )
 set(husky_viz_DOC_DEPENDS )
+set(husky_viz_URL_WEBSITE "http://ros.org/wiki/husky_viz")
+set(husky_viz_URL_BUGTRACKER "https://github.com/husky/husky_desktop/issues")
+set(husky_viz_URL_REPOSITORY "https://github.com/husly/husky_desktop")
 set(husky_viz_DEPRECATED "")

@@ -10,4 +10,7 @@ set(stage_ros_EXEC_DEPENDS "boost" "geometry_msgs" "nav_msgs" "roscpp" "sensor_m
 set(stage_ros_RUN_DEPENDS "boost" "geometry_msgs" "nav_msgs" "roscpp" "sensor_msgs" "stage" "std_msgs" "std_srvs" "tf")
 set(stage_ros_TEST_DEPENDS )
 set(stage_ros_DOC_DEPENDS )
+set(stage_ros_URL_WEBSITE "http://ros.org/wiki/stage_ros")
+set(stage_ros_URL_BUGTRACKER "https://github.com/ros-simulation/stage_ros/issues")
+set(stage_ros_URL_REPOSITORY "https://github.com/ros-simulation/stage_ros")
 set(stage_ros_DEPRECATED "")

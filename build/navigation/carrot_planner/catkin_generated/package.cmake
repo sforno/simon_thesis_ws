@@ -10,4 +10,7 @@ set(carrot_planner_EXEC_DEPENDS "roscpp" "costmap_2d" "pluginlib" "nav_core" "ba
 set(carrot_planner_RUN_DEPENDS "roscpp" "costmap_2d" "pluginlib" "nav_core" "base_local_planner" "tf" "eigen")
 set(carrot_planner_TEST_DEPENDS )
 set(carrot_planner_DOC_DEPENDS )
+set(carrot_planner_URL_WEBSITE "http://wiki.ros.org/carrot_planner")
+set(carrot_planner_URL_BUGTRACKER "")
+set(carrot_planner_URL_REPOSITORY "")
 set(carrot_planner_DEPRECATED "")
