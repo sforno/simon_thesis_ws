@@ -3,6 +3,9 @@
 
   <node pkg="robot_localization_cust" type="ekf_localization_node" name="ekf_global" clear_params="true">
     <rosparam command="load" file="$(find robot_localization_cust)/params/my_ekf_markers.yaml" />
+
+    <rosparam param="control_config">[true,  true, false,
+                                  false, false, true] </rosparam>
 	
    <!--  Placeholder for output topic remapping -->
    <!-- <remap from="od" to="finalpose"/> 	-->

@@ -14,6 +14,8 @@ publish_tf: true
 
 publish_acceleration: false
 
+use_control: true
+
 map_frame: map              # Defaults to "map" if unspecified
 odom_frame: odom            # Defaults to "odom" if unspecified
 base_link_frame: base_link  # Defaults to "base_link" if unspecified
@@ -30,7 +32,7 @@ odom0_config: [true,  true,  false,
 odom0_differential: true
 odom0_relative: false
 odom0_queue_size: 40
-odom0_nodelay: false44.247213
+odom0_nodelay: false
 
 pose0: marker1
 pose0_config: [true,  true,  false,
@@ -76,12 +78,111 @@ pose3_relative: false
 pose3_queue_size: 40
 pose3_nodelay: false
 
-process_noise_covariance: [0.05, 0,    0,    0,    0,    0,    0,     0,     0,    0,    0,    0,    0,    0,    0,
-                           0,    0.05, 0,    0,    0,    0,    0,     0,     0,    0,    0,    0,    0,    0,    0,
+pose4: marker5
+pose4_config: [true,  true,  false,
+              false, false, true,
+               false, false, false,
+              false, false, false,
+               false, false, false]
+pose4_differential: false
+pose4_relative: false
+pose4_queue_size: 40
+pose4_nodelay: false
+
+pose5: marker6
+pose5_config: [true,  true,  false,
+              false, false, true,
+               false, false, false,
+              false, false, false,
+               false, false, false]
+pose5_differential: false
+pose5_relative: false
+pose5_queue_size: 40
+pose5_nodelay: false
+
+pose6: marker7
+pose6_config: [true,  true,  false,
+              false, false, true,
+               false, false, false,
+              false, false, false,
+               false, false, false]
+pose6_differential: false
+pose6_relative: false
+pose6_queue_size: 40
+pose6_nodelay: false
+
+pose7: marker8
+pose7_config: [true,  true,  false,
+              false, false, true,
+               false, false, false,
+              false, false, false,
+               false, false, false]
+pose7_differential: false
+pose7_relative: false
+pose7_queue_size: 40
+pose7_nodelay: false
+
+pose8: marker9
+pose8_config: [true,  true,  false,
+              false, false, true,
+               false, false, false,
+              false, false, false,
+               false, false, false]
+pose8_differential: false
+pose8_relative: false
+pose8_queue_size: 40
+pose8_nodelay: false
+
+pose9: marker10
+pose9_config: [true,  true,  false,
+              false, false, true,
+               false, false, false,
+              false, false, false,
+               false, false, false]
+pose9_differential: false
+pose9_relative: false
+pose9_queue_size: 40
+pose9_nodelay: false
+
+pose10: marker11
+pose10_config: [true,  true,  false,
+              false, false, true,
+               false, false, false,
+              false, false, false,
+               false, false, false]
+pose10_differential: false
+pose10_relative: false
+pose10_queue_size: 40
+pose10_nodelay: false
+
+pose11: marker12
+pose11_config: [true,  true,  false,
+              false, false, true,
+               false, false, false,
+              false, false, false,
+               false, false, false]
+pose11_differential: false
+pose11_relative: false
+pose11_queue_size: 40
+pose1_nodelay: false
+
+pose12: marker13
+pose12_config: [true,  true,  false,
+              false, false, true,
+               false, false, false,
+              false, false, false,
+               false, false, false]
+pose12_differential: false
+pose12_relative: false
+pose12_queue_size: 40
+pose12_nodelay: false
+
+process_noise_covariance: [0.1, 0,    0,    0,    0,    0,    0,     0,     0,    0,    0,    0,    0,    0,    0,
+                           0,    0.1, 0,    0,    0,    0,    0,     0,     0,    0,    0,    0,    0,    0,    0,
                            0,    0,    0.06, 0,    0,    0,    0,     0,     0,    0,    0,    0,    0,    0,    0,
                            0,    0,    0,    0.03, 0,    0,    0,     0,     0,    0,    0,    0,    0,    0,    0,
                            0,    0,    0,    0,    0.03, 0,    0,     0,     0,    0,    0,    0,    0,    0,    0,
-                           0,    0,    0,    0,    0,    1, 0,     0,     0,    0,    0,    0,    0,    0,    0,
+                           0,    0,    0,    0,    0,    0.1, 0,     0,     0,    0,    0,    0,    0,    0,    0,
                            0,    0,    0,    0,    0,    0,    0.025, 0,     0,    0,    0,    0,    0,    0,    0,
                            0,    0,    0,    0,    0,    0,    0,     0.025, 0,    0,    0,    0,    0,    0,    0,
                            0,    0,    0,    0,    0,    0,    0,     0,     0.04, 0,    0,    0,    0,    0,    0,

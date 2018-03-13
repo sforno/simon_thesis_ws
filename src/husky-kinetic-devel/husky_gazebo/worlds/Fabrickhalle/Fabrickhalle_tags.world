@@ -1802,20 +1802,20 @@
         <kinematic>0</kinematic>
         <gravity>1</gravity>
       </link>
-      <pose frame=''>-10.5 5 0.5 0 0 0</pose>
+      <pose frame=''>-10.5 6.5 0.5 0 0 0</pose>
     </model>
 
     <model name='Marker12'>
-        <pose frame=''>-10.5 5 0.5 0 0 0</pose> <!-- flip it to be detected by the Kinect ${M_PI/2}=1.5708, yaw component -->
+        <pose frame=''>-10.5 6.5 0.5 0 0 0</pose> <!-- flip it to be detected by the Kinect ${M_PI/2}=1.5708, yaw component -->
         <link name='marker11_link'>
-          <pose frame=''>-10.5 5 0.5 0 0 0</pose>
+          <pose frame=''>-10.5 6.5 0.5 0 0 0</pose>
         </link>
       </model>
 
       <model name='Marker13'>
-        <pose frame=''>-7.5 5 0.5 0 0 0</pose> <!-- flip it to be detected by the Kinect ${M_PI/2}=1.5708, yaw component -->
+        <pose frame=''>-7.5 6.5 0.5 0 0 0</pose> <!-- flip it to be detected by the Kinect ${M_PI/2}=1.5708, yaw component -->
         <link name='marker11_link'>
-          <pose frame=''>-7.5 5 0.5 0 0 0</pose>
+          <pose frame=''>-7.5 6.5 0.5 0 0 0</pose>
         </link>
       </model>
 
@@ -1833,7 +1833,7 @@
         <kinematic>0</kinematic>
         <gravity>1</gravity>
       </link>
-      <pose frame=''>-7.5 5 0.5 0 0 0</pose>
+      <pose frame=''>-7.5 6.5 0.5 0 0 0</pose>
     </model>
 
     <!-- <model name='Marker14'>
