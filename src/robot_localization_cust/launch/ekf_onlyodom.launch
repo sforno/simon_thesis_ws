@@ -12,5 +12,7 @@
 
   <!-- <node pkg="robot_localization_cust" type="ekf.sh" name="ekfpose"/>
   <node pkg="robot_localization_cust" type="odom.sh" name="odompose"/> -->
+
+<node name="RVIZ" pkg="rviz" type="rviz" args=" -d $(find robot_localization_cust)/rviz/config.rviz" />
     
 </launch>

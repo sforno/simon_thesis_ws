@@ -12,7 +12,7 @@
         <!-- <size>100 100</size> actually ignored by Gazebo, trying to higher the grid size from 20x20 m default // to do -->
     </include>
     
-   <model name='Fabrickhalle'>
+  <!-- <model name='Fabrickhalle'>
     <pose frame=''>-0.163812 0.42455 0 0 -0 0</pose>
     <link name='Wall_100'>
       <collision name='Wall_100_Collision'>
@@ -38,7 +38,7 @@
           <ambient>1 1 1 1</ambient>
         </material>
       </visual>
-      <pose frame=''>3.010812 -4.57255 0 0 -0 0</pose> <!-- 2 m on the left -->
+      <pose frame=''>3.010812 -4.57255 0 0 -0 0</pose> <!-- 2 m on the left 
     </link>
     <link name='Wall_102'>
       <collision name='Wall_102_Collision'>
@@ -142,7 +142,7 @@
           <ambient>1 1 1 1</ambient>
         </material>
       </visual>
-      <pose frame=''>-7.83919 1.12745 0 0 -0 3.14159</pose> <!-- 2 m on the left , +2-->
+      <pose frame=''>-7.83919 1.12745 0 0 -0 3.14159</pose> <!-- 2 m on the left , +
     </link>
     <link name='Wall_107'>
       <collision name='Wall_107_Collision'>
@@ -168,7 +168,7 @@
           <ambient>1 1 1 1</ambient>
         </material>
       </visual>
-      <pose frame=''>-9.2642 0.20245 0 0 0 -1.5708</pose> <!-- 2 m on the left -->
+      <pose frame=''>-9.2642 0.20245 0 0 0 -1.5708</pose> <!-- 2 m on the left 
     </link>
     <link name='Wall_108'>
       <collision name='Wall_108_Collision'>
@@ -194,7 +194,7 @@
           <ambient>1 1 1 1</ambient>
         </material>
       </visual>
-      <pose frame=''>-7.83919 -0.72255 0 0 -0 0</pose> <!-- 2 m on the left -->
+      <pose frame=''>-7.83919 -0.72255 0 0 -0 0</pose> <!-- 2 m on the left 
     </link>
    <!-- <link name='Wall_11'>
       <pose frame=''>17.1834 11.0283 0 0 -0 0</pose>
@@ -1264,7 +1264,7 @@
       </visual>
       <pose frame=''>4.71381 4.24845 0 0 0 -1.5708</pose>
     </link> -->
-    <link name='Wall_78'>
+    <!--<link name='Wall_78'>
       <collision name='Wall_78_Collision'>
         <geometry>
           <box>
@@ -1288,7 +1288,7 @@
           <ambient>1 1 1 1</ambient>
         </material>
       </visual>
-      <pose frame=''>-6.41419 0.20245 0 0 -0 1.5708</pose> <!-- 2 m on the left -->
+      <pose frame=''>-6.41419 0.20245 0 0 -0 1.5708</pose> <!-- 2 m on the left 
     </link>
     <!-- <link name='Wall_8'>
       <collision name='Wall_8_Collision'>
@@ -1316,7 +1316,7 @@
       </visual>
       <pose frame=''>6.88343 14.0783 0 0 0 -1.5708</pose>
     </link> -->
-    <link name='Wall_80'>
+    <!--<link name='Wall_80'>
       <collision name='Wall_80_Collision'>
         <geometry>
           <box>
@@ -1393,7 +1393,7 @@
         </material>
       </visual>
       <pose frame=''>4.43581 -3.64755 0 0 0 -1.5708</pose> <!-- 2 m on the left -->
-    </link>
+    <!--</link>
     <link name='Wall_94'>
       <collision name='Wall_94_Collision'>
         <geometry>
@@ -1497,7 +1497,7 @@
         </material>
       </visual>
       <pose frame=''>3.010812 -2.72255 0 0 -0 3.14159</pose> <!-- 2 m on the left -->
-    </link>
+    <!--</link>
     <link name='Wall_99'>
       <collision name='Wall_99_Collision'>
         <geometry>
@@ -1522,7 +1522,7 @@
           <ambient>1 1 1 1</ambient>
         </material>
       </visual>
-      <pose frame=''>1.41419 -3.64755 0 0 0 -1.5708</pose> <!-- 2 m on the left -->
+      <pose frame=''>1.41419 -3.64755 0 0 0 -1.5708</pose> <!-- 2 m on the left 
     </link>
     <static>1</static>
     </model>
@@ -1552,10 +1552,10 @@
       <pose frame=''>0 -1 0.5 0 -0 4.7123</pose>
     </model> 
 
-     <model name='Marker2'>
-        <pose frame=''>0 -4 0.5 0 0 4.7123</pose> <!-- flip it to be detected by the Kinect ${M_PI}=3.1415, yaw component -->
+      <model name='Marker2'>
+        <pose frame=''>-7 -1 0.5 0 0 3.1415</pose> <!-- flip it to be detected by the Kinect ${M_PI}=3.1415, yaw component -->
         <link name='marker2_link'>
-          <pose frame=''>0 -4 0.5 0 0 4.7123</pose>
+          <pose frame=''>-7 -1 0.5 0 0 3.1415</pose>
         </link>
       </model>
       <model name='Marker2'>
@@ -1572,13 +1572,13 @@
         <kinematic>0</kinematic>
         <gravity>1</gravity>
       </link>
-      <pose frame=''>0 -4 0.5 0 0 4.7123</pose>
+      <pose frame=''>-7 -1 0.5 0 0 3.1415</pose>
     </model> 
 
      <model name='Marker3'>
-        <pose frame=''>0 -7 0.5 0 0 4.7123</pose> <!-- flip it to be detected by the Kinect ${M_PI}=3.1415, yaw component, original -3.5 -1 0.5 0 0 4.7123 -->
+        <pose frame=''>-7 5 0.5 0 0 1.5708</pose> <!-- flip it to be detected by the Kinect ${M_PI}=3.1415, yaw component, original -3.5 -1 0.5 0 0 4.7123 -->
         <link name='marker3_link'>
-          <pose frame=''>0 -7 0.5 0 0 4.7123</pose>
+          <pose frame=''>-7 5 0.5 0 0 1.5708</pose>
         </link>
       </model>
       <model name='Marker3'>
@@ -1595,13 +1595,36 @@
         <kinematic>0</kinematic>
         <gravity>1</gravity>
       </link>
-      <pose frame=''>0 -7 0.5 0 0 4.7123</pose>
-    </model>
+      <pose frame=''>-7 5 0.5 0 0 1.5708</pose>
+    </model> 
 
-    <model name='Marker4'>
-        <pose frame=''>-3 -8.5 0.5 0 0 3.1415</pose> <!-- flip it to be detected by the Kinect ${M_PI}=3.1415, yaw component -->
+   <!--  <model name='Marker14'> <!-- Inserted between m3 and m4 to enhance robust filter detection while turning 
+        <pose frame=''>-1.5 -8.5 0.5 0 0 4.7123</pose> <!-- flip it to be detected by the Kinect ${M_PI}=3.1415, yaw component, original -3.5 -1 0.5 0 0 4.7123 
+        <link name='marker14_link'>
+          <pose frame=''>-1.5 -8.5 0.5 0 0 4.7123</pose>
+        </link>
+      </model>
+      <model name='Marker14'>
+      <static>1</static>
+      <link name='marker14_link'>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://marker14/meshes/Marker14.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose frame=''>-1.5 -8.5 0.5 0 0 4.7123</pose>
+    </model> -->
+
+     <model name='Marker4'>
+        <pose frame=''>-3 5 0.5 0 0 0</pose> <!-- flip it to be detected by the Kinect ${M_PI}=3.1415, yaw component -->
         <link name='marker4_link'>
-          <pose frame=''>-3 -8.5 0.5 0 0 3.1415</pose>
+          <pose frame=''>-3 5 0.5 0 0 0</pose>
         </link>
       </model>
       <model name='Marker4'>
@@ -1618,11 +1641,11 @@
         <kinematic>0</kinematic>
         <gravity>1</gravity>
       </link>
-      <pose frame=''>-3 -8.5 0.5 0 0 3.1415</pose>
-    </model>
+      <pose frame=''>-3 5 0.5 0 0 0</pose>
+    </model> 
 
-     <model name='Marker5'>
-        <pose frame=''>-6 -8.5 0.5 0 0 3.1415</pose> <!-- flip it to be detected by the Kinect ${M_PI}=3.1415, yaw component, original -2.5 -8 0.5 0 0 4.7123 -->
+    <!-- <model name='Marker5'>
+        <pose frame=''>-6 -8.5 0.5 0 0 3.1415</pose> <!-- flip it to be detected by the Kinect ${M_PI}=3.1415, yaw component, original -2.5 -8 0.5 0 0 4.7123 
         <link name='marker5_link'>
           <pose frame=''>-6 -8.5 0.5 0 0 3.1415</pose>
         </link>
@@ -1645,7 +1668,7 @@
     </model>
 
       <model name='Marker6'>
-        <pose frame=''>-9 -8.5 0.5 0 0 3.1415</pose> <!-- flip it to be detected by the Kinect ${M_PI/2}=1.5708, yaw component -4 -7.75 0.5 0 0 3.9269 -->
+        <pose frame=''>-9 -8.5 0.5 0 0 3.1415</pose> <!-- flip it to be detected by the Kinect ${M_PI/2}=1.5708, yaw component -4 -7.75 0.5 0 0 3.9269 
         <link name='marker6_link'>
           <pose frame=''>-9 -8.5 0.5 0 0 3.1415</pose>
         </link>
@@ -1669,7 +1692,7 @@
     </model>
 
     <model name='Marker7'>
-        <pose frame=''>-12 -8.5 0.5 0 0 3.1415</pose> <!-- flip it to be detected by the Kinect ${M_PI/2}=1.5708, yaw component -->
+        <pose frame=''>-12 -8.5 0.5 0 0 3.1415</pose> <!-- flip it to be detected by the Kinect ${M_PI/2}=1.5708, yaw component 
         <link name='marker7_link'>
           <pose frame=''>-12 -8.5 0.5 0 0 3.1415</pose>
         </link>
@@ -1693,7 +1716,7 @@
     </model>
 
      <model name='Marker8'>
-        <pose frame=''>-13.5 -5.5 0.5 0 0 1.5708</pose> <!-- flip it to be detected by the Kinect ${M_PI/2}=1.5708, yaw component -->
+        <pose frame=''>-13.5 -5.5 0.5 0 0 1.5708</pose> <!-- flip it to be detected by the Kinect ${M_PI/2}=1.5708, yaw component 
         <link name='marker8_link'>
           <pose frame=''>-13.5 -5.5 0.5 0 0 1.5708</pose>
         </link>
@@ -1717,7 +1740,7 @@
     </model>
 
     <model name='Marker9'>
-        <pose frame=''>-13.5 -2.5 0.5 0 0 1.5708</pose> <!-- flip it to be detected by the Kinect ${M_PI/2}=1.5708, yaw component -->
+        <pose frame=''>-13.5 -2.5 0.5 0 0 1.5708</pose> <!-- flip it to be detected by the Kinect ${M_PI/2}=1.5708, yaw component 
         <link name='marker9_link'>
           <pose frame=''>-13.5 -2.5 0.5 0 0 1.5708</pose>
         </link>
@@ -1741,7 +1764,7 @@
     </model>
 
     <model name='Marker10'>
-        <pose frame=''>-13.5 0.5 0.5 0 0 1.5708</pose> <!-- flip it to be detected by the Kinect ${M_PI/2}=1.5708, yaw component -->
+        <pose frame=''>-13.5 0.5 0.5 0 0 1.5708</pose> <!-- flip it to be detected by the Kinect ${M_PI/2}=1.5708, yaw component 
         <link name='marker10_link'>
           <pose frame=''>-13.5 0.5 0.5 0 0 1.5708</pose>
         </link>
@@ -1765,7 +1788,7 @@
     </model>
 
     <model name='Marker11'>
-        <pose frame=''>-13.5 3.5 0.5 0 0 1.5708</pose> <!-- flip it to be detected by the Kinect ${M_PI/2}=1.5708, yaw component -->
+        <pose frame=''>-13.5 3.5 0.5 0 0 1.5708</pose> <!-- flip it to be detected by the Kinect ${M_PI/2}=1.5708, yaw component 
         <link name='marker11_link'>
           <pose frame=''>-13.5 3.5 0.5 0 0 1.5708</pose>
         </link>
@@ -1806,14 +1829,14 @@
     </model>
 
     <model name='Marker12'>
-        <pose frame=''>-10.5 6.5 0.5 0 0 0</pose> <!-- flip it to be detected by the Kinect ${M_PI/2}=1.5708, yaw component -->
+        <pose frame=''>-10.5 6.5 0.5 0 0 0</pose> <!-- flip it to be detected by the Kinect ${M_PI/2}=1.5708, yaw component 
         <link name='marker11_link'>
           <pose frame=''>-10.5 6.5 0.5 0 0 0</pose>
         </link>
       </model>
 
       <model name='Marker13'>
-        <pose frame=''>-7.5 6.5 0.5 0 0 0</pose> <!-- flip it to be detected by the Kinect ${M_PI/2}=1.5708, yaw component -->
+        <pose frame=''>-7.5 6.5 0.5 0 0 0</pose> <!-- flip it to be detected by the Kinect ${M_PI/2}=1.5708, yaw component 
         <link name='marker11_link'>
           <pose frame=''>-7.5 6.5 0.5 0 0 0</pose>
         </link>

@@ -151,6 +151,8 @@ ros/ros.h
 -
 tf/transform_broadcaster.h
 -
+tf/transform_datatypes.h
+-
 
 /opt/ros/kinetic/include/geometry_msgs/Point.h
 string

@@ -4,14 +4,16 @@
   <node pkg="robot_localization_cust" type="ekf_localization_node" name="ekf_global" clear_params="true">
     <rosparam command="load" file="$(find robot_localization_cust)/params/my_ekf_markers.yaml" />
 
-    <rosparam param="control_config">[true,  true, false,
-                                  false, false, true] </rosparam>
+    <!-- <rosparam param="control_config">[true,  true, false,
+                                  false, false, true] </rosparam> -->
 	
    <!--  Placeholder for output topic remapping -->
    <!-- <remap from="od" to="finalpose"/> 	-->
 <!-- <remap from="odometry/filtered" to="finalpose"/> 	-->
     <!--<remap from="accel/filtered" to=""/> -->
 </node>
+
+<node name="RVIZ" pkg="rviz" type="rviz" args=" -d $(find robot_localization_cust)/rviz/config.rviz" />
 
   <!-- <node pkg="robot_localization_cust" type="ekf.sh" name="ekfpose"/>
   <node pkg="robot_localization_cust" type="odom.sh" name="odompose"/> -->
