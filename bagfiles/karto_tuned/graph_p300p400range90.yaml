@@ -1,7 +1,0 @@
-image: graph_p300p400range90.pgm
-resolution: 0.050000
-origin: [-3.769750, -9.715134, -nan]
-negate: 0
-occupied_thresh: 0.65
-free_thresh: 0.196
-

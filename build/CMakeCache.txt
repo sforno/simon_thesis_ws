@@ -144,7 +144,7 @@ CATKIN_ENABLE_TESTING:BOOL=ON
 CATKIN_SKIP_TESTING:BOOL=OFF
 
 //List of ';' separated packages to build
-CATKIN_WHITELIST_PACKAGES:STRING=tf_config
+CATKIN_WHITELIST_PACKAGES:STRING=
 
 //Path to a program.
 CCACHE_FOUND:FILEPATH=CCACHE_FOUND-NOTFOUND
@@ -1779,7 +1779,7 @@ learning_tf_BINARY_DIR:STATIC=/home/simoneforno/simon_ws/build/learning_tf
 learning_tf_SOURCE_DIR:STATIC=/home/simoneforno/simon_ws/src/learning_tf
 
 //Path to a library.
-lib:FILEPATH=/home/simoneforno/simon_ws/devel/lib/libtf2.so
+lib:FILEPATH=/opt/ros/kinetic/lib/libtf.so
 
 //Value Computed by CMake
 map_groundtruth_BINARY_DIR:STATIC=/home/simoneforno/simon_ws/build/map_groundtruth
@@ -2526,7 +2526,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=3
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=87
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

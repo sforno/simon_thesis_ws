@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<launch>
+
+<node name="ground_pose_pos" pkg="robot_localization_cust" type="ground_pose_position.sh" />
+
+<node name="ground_pose_or" pkg="robot_localization_cust" type="ground_pose_orientation.sh" />
+
+<node name="myodom_pos" pkg="robot_localization_cust" type="try_position.sh" />
+
+<node name="myodom_rot" pkg="robot_localization_cust" type="try_rotation.sh" />
+
+<node name="estimate_pos" pkg="robot_localization_cust" type="pose_estimate_position.sh" />
+
+<node name="estimate_or" pkg="robot_localization_cust" type="pose_estimate_orientation.sh" />
+
+</launch>

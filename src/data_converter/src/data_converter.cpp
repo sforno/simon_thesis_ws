@@ -39,6 +39,8 @@ public:
     ros::Publisher marker12_pub;
     ros::Publisher marker13_pub;
     ros::Publisher marker14_pub;
+    ros::Publisher marker15_pub;
+    ros::Publisher marker16_pub;
 
 
     // Tf objects
@@ -58,6 +60,8 @@ public:
     tf::StampedTransform marker_twe2base;
     tf::StampedTransform marker_thirt2base;
     tf::StampedTransform marker_fourteen2base;
+    tf::StampedTransform marker_fifteen2base;
+    tf::StampedTransform marker_sixteen2base;
 
     int counter;
     int index;
@@ -85,7 +89,9 @@ void ar_pose_callback(const ar_track_alvar_msgs::AlvarMarkers::ConstPtr & msg);
         marker11_pub = nh_.advertise < geometry_msgs::PoseWithCovarianceStamped > ("/marker11", 10);
         marker12_pub = nh_.advertise < geometry_msgs::PoseWithCovarianceStamped > ("/marker12", 10);
         marker13_pub = nh_.advertise < geometry_msgs::PoseWithCovarianceStamped > ("/marker13", 10);
-        marker14_pub = nh_.advertise < geometry_msgs::PoseWithCovarianceStamped > ("/marker14", 1); 
+        marker14_pub = nh_.advertise < geometry_msgs::PoseWithCovarianceStamped > ("/marker14", 10);
+        marker15_pub = nh_.advertise < geometry_msgs::PoseWithCovarianceStamped > ("/marker15", 10); 
+        marker16_pub = nh_.advertise < geometry_msgs::PoseWithCovarianceStamped > ("/marker16", 10);
 
         ROS_INFO("Setup finished");
         
@@ -94,7 +100,7 @@ void ar_pose_callback(const ar_track_alvar_msgs::AlvarMarkers::ConstPtr & msg);
     
  void Converter::ar_pose_callback(const ar_track_alvar_msgs::AlvarMarkers::ConstPtr & msg)
 {
-    geometry_msgs::PoseWithCovarianceStamped  m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13, m14; // define a PosewithCovariance message
+    geometry_msgs::PoseWithCovarianceStamped  m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13, m14, m15, m16; // define a PosewithCovariance message
 
     int size = msg->markers.size();
     for(int index = 0; index< size; index ++)
@@ -107,8 +113,8 @@ void ar_pose_callback(const ar_track_alvar_msgs::AlvarMarkers::ConstPtr & msg);
     
     //feed the message with the translationa and rotation of the lookup tranform
     try{
-    listener.waitForTransform("/world_marker_1", "/base_link", msg->header.stamp, ros::Duration(10.0)); 
-    listener.lookupTransform("/world_marker_1","/base_link",msg->header.stamp,marker_one2base);
+    listener.waitForTransform("/world_marker_1", "/base_link", ros::Time(0), ros::Duration(10.0)); 
+    listener.lookupTransform("/world_marker_1","/base_link",ros::Time(0),marker_one2base);
     }
 
     catch (tf::TransformException &ex) {
@@ -150,8 +156,8 @@ void ar_pose_callback(const ar_track_alvar_msgs::AlvarMarkers::ConstPtr & msg);
     
     //feed the message with the translationa and rotation of the lookup tranform
     try{
-    listener.waitForTransform("/world_marker_2", "/base_link", msg->header.stamp, ros::Duration(10.0)); 
-    listener.lookupTransform("/world_marker_2","/base_link",msg->header.stamp,marker_two2base);
+    listener.waitForTransform("/world_marker_2", "/base_link", ros::Time(0), ros::Duration(10.0)); 
+    listener.lookupTransform("/world_marker_2","/base_link",ros::Time(0),marker_two2base);
     }
 
     catch (tf::TransformException &ex) {
@@ -194,8 +200,8 @@ void ar_pose_callback(const ar_track_alvar_msgs::AlvarMarkers::ConstPtr & msg);
         
         //feed the message with the translationa and rotation of the lookup tranform
         try{
-        listener.waitForTransform("/world_marker_3", "/base_link", msg->header.stamp, ros::Duration(10.0)); 
-        listener.lookupTransform("/world_marker_3","/base_link",msg->header.stamp,marker_three2base);
+        listener.waitForTransform("/world_marker_3", "/base_link", ros::Time(0), ros::Duration(10.0)); 
+        listener.lookupTransform("/world_marker_3","/base_link",ros::Time(0),marker_three2base);
         }
     
         catch (tf::TransformException &ex) {
@@ -236,8 +242,8 @@ void ar_pose_callback(const ar_track_alvar_msgs::AlvarMarkers::ConstPtr & msg);
         
         //feed the message with the translationa and rotation of the lookup tranform
         try{
-        listener.waitForTransform("/world_marker_4", "/base_link", msg->header.stamp, ros::Duration(10.0)); 
-        listener.lookupTransform("/world_marker_4","/base_link",msg->header.stamp,marker_four2base);
+        listener.waitForTransform("/world_marker_4", "/base_link", ros::Time(0), ros::Duration(10.0)); 
+        listener.lookupTransform("/world_marker_4","/base_link",ros::Time(0),marker_four2base);
         }
     
         catch (tf::TransformException &ex) {
@@ -279,8 +285,8 @@ void ar_pose_callback(const ar_track_alvar_msgs::AlvarMarkers::ConstPtr & msg);
         
         //feed the message with the translationa and rotation of the lookup tranform
         try{
-        listener.waitForTransform("/world_marker_5", "/base_link", msg->header.stamp, ros::Duration(10.0)); 
-        listener.lookupTransform("/world_marker_5","/base_link",msg->header.stamp,marker_five2base);
+        listener.waitForTransform("/world_marker_5", "/base_link", ros::Time(0), ros::Duration(10.0)); 
+        listener.lookupTransform("/world_marker_5","/base_link",ros::Time(0),marker_five2base);
         }
     
         catch (tf::TransformException &ex) {
@@ -321,8 +327,8 @@ void ar_pose_callback(const ar_track_alvar_msgs::AlvarMarkers::ConstPtr & msg);
         
         //feed the message with the translationa and rotation of the lookup tranform
         try{
-        listener.waitForTransform("/world_marker_6", "/base_link", msg->header.stamp, ros::Duration(10.0)); 
-        listener.lookupTransform("/world_marker_6","/base_link",msg->header.stamp,marker_six2base);
+        listener.waitForTransform("/world_marker_6", "/base_link", ros::Time(0), ros::Duration(10.0)); 
+        listener.lookupTransform("/world_marker_6","/base_link",ros::Time(0),marker_six2base);
         }
     
         catch (tf::TransformException &ex) {
@@ -363,8 +369,8 @@ void ar_pose_callback(const ar_track_alvar_msgs::AlvarMarkers::ConstPtr & msg);
         
         //feed the message with the translationa and rotation of the lookup tranform
         try{
-        listener.waitForTransform("/world_marker_7", "/base_link", msg->header.stamp, ros::Duration(10.0)); 
-        listener.lookupTransform("/world_marker_7","/base_link",msg->header.stamp,marker_seven2base);
+        listener.waitForTransform("/world_marker_7", "/base_link", ros::Time(0), ros::Duration(10.0)); 
+        listener.lookupTransform("/world_marker_7","/base_link",ros::Time(0),marker_seven2base);
         }
     
         catch (tf::TransformException &ex) {
@@ -404,8 +410,8 @@ if (msg->markers[index].id == 8)
         
         //feed the message with the translationa and rotation of the lookup tranform
         try{
-        listener.waitForTransform("/world_marker_8", "/base_link", msg->header.stamp, ros::Duration(10.0)); 
-        listener.lookupTransform("/world_marker_8","/base_link",msg->header.stamp,marker_eight2base);
+        listener.waitForTransform("/world_marker_8", "/base_link", ros::Time(0), ros::Duration(10.0)); 
+        listener.lookupTransform("/world_marker_8","/base_link",ros::Time(0),marker_eight2base);
         }
     
         catch (tf::TransformException &ex) {
@@ -447,8 +453,8 @@ if (msg->markers[index].id == 9)
         
         //feed the message with the translationa and rotation of the lookup tranform
         try{
-        listener.waitForTransform("/world_marker_9", "/base_link", msg->header.stamp, ros::Duration(10.0)); 
-        listener.lookupTransform("/world_marker_9","/base_link",msg->header.stamp,marker_nine2base);
+        listener.waitForTransform("/world_marker_9", "/base_link", ros::Time(0), ros::Duration(10.0)); 
+        listener.lookupTransform("/world_marker_9","/base_link",ros::Time(0),marker_nine2base);
         }
     
         catch (tf::TransformException &ex) {
@@ -490,8 +496,8 @@ if (msg->markers[index].id == 10)
         
         //feed the message with the translationa and rotation of the lookup tranform
         try{
-        listener.waitForTransform("/world_marker_10", "/base_link", msg->header.stamp, ros::Duration(10.0)); 
-        listener.lookupTransform("/world_marker_10","/base_link",msg->header.stamp,marker_ten2base);
+        listener.waitForTransform("/world_marker_10", "/base_link", ros::Time(0), ros::Duration(10.0)); 
+        listener.lookupTransform("/world_marker_10","/base_link",ros::Time(0),marker_ten2base);
         }
     
         catch (tf::TransformException &ex) {
@@ -533,8 +539,8 @@ if (msg->markers[index].id == 11)
         
         //feed the message with the translationa and rotation of the lookup tranform
         try{
-        listener.waitForTransform("/world_marker_11", "/base_link", msg->header.stamp, ros::Duration(10.0)); 
-        listener.lookupTransform("/world_marker_11","/base_link",msg->header.stamp,marker_elev2base);
+        listener.waitForTransform("/world_marker_11", "/base_link", ros::Time(0), ros::Duration(10.0)); 
+        listener.lookupTransform("/world_marker_11","/base_link",ros::Time(0),marker_elev2base);
         }
     
         catch (tf::TransformException &ex) {
@@ -576,8 +582,8 @@ if (msg->markers[index].id == 12)
         
         //feed the message with the translationa and rotation of the lookup tranform
         try{
-        listener.waitForTransform("/world_marker_12", "/base_link", msg->header.stamp, ros::Duration(10.0)); 
-        listener.lookupTransform("/world_marker_12","/base_link",msg->header.stamp,marker_twe2base);
+        listener.waitForTransform("/world_marker_12", "/base_link", ros::Time(0), ros::Duration(10.0)); 
+        listener.lookupTransform("/world_marker_12","/base_link",ros::Time(0),marker_twe2base);
         }
     
         catch (tf::TransformException &ex) {
@@ -619,8 +625,8 @@ if (msg->markers[index].id == 13)
         
         //feed the message with the translationa and rotation of the lookup tranform
         try{
-        listener.waitForTransform("/world_marker_13", "/base_link", msg->header.stamp, ros::Duration(10.0)); 
-        listener.lookupTransform("/world_marker_13","/base_link",msg->header.stamp,marker_thirt2base);
+        listener.waitForTransform("/world_marker_13", "/base_link", ros::Time(0), ros::Duration(10.0)); 
+        listener.lookupTransform("/world_marker_13","/base_link",ros::Time(0),marker_thirt2base);
         }
     
         catch (tf::TransformException &ex) {
@@ -663,8 +669,8 @@ if (msg->markers[index].id == 14)
         
         //feed the message with the translationa and rotation of the lookup tranform
         try{
-        listener.waitForTransform("/world_marker_14", "/base_link", msg->header.stamp, ros::Duration(10.0)); 
-        listener.lookupTransform("/world_marker_14","/base_link",msg->header.stamp,marker_fourteen2base);
+        listener.waitForTransform("/world_marker_14", "/base_link", ros::Time(0), ros::Duration(10.0)); 
+        listener.lookupTransform("/world_marker_14","/base_link",ros::Time(0),marker_fourteen2base);
         }
     
         catch (tf::TransformException &ex) {
@@ -696,6 +702,92 @@ if (msg->markers[index].id == 14)
     m14.pose.covariance[35] = 0.001;
 
 marker14_pub.publish(m14);
+//ROS_INFO("x: %f, y: %f, z: %f,rot_x: %f,rot_y: %f,rot_z: %f",m4.pose.pose.position.x, m4.pose.pose.position.y, m4.pose.pose.position.z, m4.pose.pose.orientation.x, m4.pose.pose.orientation.y,m4.pose.pose.orientation.z);
+}
+
+if (msg->markers[index].id == 15)
+{
+        m15.header = msg->header;
+        m15.header.frame_id = "map";
+        
+        //feed the message with the translationa and rotation of the lookup tranform
+        try{
+        listener.waitForTransform("/world_marker_15", "/base_link", ros::Time(0), ros::Duration(10.0)); 
+        listener.lookupTransform("/world_marker_15","/base_link",ros::Time(0),marker_fifteen2base);
+        }
+    
+        catch (tf::TransformException &ex) {
+              ROS_ERROR("%s",ex.what());
+              ros::Duration(1.0).sleep();
+            }
+    
+        m15.pose.pose.position.x = marker_fifteen2base.getOrigin().x();
+        m15.pose.pose.position.y = marker_fifteen2base.getOrigin().y();
+        m15.pose.pose.position.z = marker_fifteen2base.getOrigin().z();
+        m15.pose.pose.orientation.x = marker_fifteen2base.getRotation().x();
+        m15.pose.pose.orientation.y = marker_fifteen2base.getRotation().y();
+        m15.pose.pose.orientation.z = marker_fifteen2base.getRotation().z();
+        m15.pose.pose.orientation.w = marker_fifteen2base.getRotation().w();
+    
+    for(counter=0; counter < 36; counter ++)
+    {
+        if(counter != 0 && counter != 7 && counter != 14 && counter != 21 && counter != 28 && counter != 35)
+        {
+            m15.pose.covariance[counter] = 0;
+        }
+    }
+    // set diagonals
+    m15.pose.covariance[0] = 0.001;
+    m15.pose.covariance[7] = 0.001;
+    m15.pose.covariance[14] = 0.001;
+    m15.pose.covariance[21] = 0.001;
+    m15.pose.covariance[28] = 0.001;
+    m15.pose.covariance[35] = 0.001;
+
+marker15_pub.publish(m15);
+//ROS_INFO("x: %f, y: %f, z: %f,rot_x: %f,rot_y: %f,rot_z: %f",m4.pose.pose.position.x, m4.pose.pose.position.y, m4.pose.pose.position.z, m4.pose.pose.orientation.x, m4.pose.pose.orientation.y,m4.pose.pose.orientation.z);
+}
+
+if (msg->markers[index].id == 16)
+{
+        m16.header = msg->header;
+        m16.header.frame_id = "map";
+        
+        //feed the message with the translationa and rotation of the lookup tranform
+        try{
+        listener.waitForTransform("/world_marker_16", "/base_link", ros::Time(0), ros::Duration(10.0)); 
+        listener.lookupTransform("/world_marker_16","/base_link",ros::Time(0),marker_sixteen2base);
+        }
+    
+        catch (tf::TransformException &ex) {
+              ROS_ERROR("%s",ex.what());
+              ros::Duration(1.0).sleep();
+            }
+    
+        m16.pose.pose.position.x = marker_sixteen2base.getOrigin().x();
+        m16.pose.pose.position.y = marker_sixteen2base.getOrigin().y();
+        m16.pose.pose.position.z = marker_sixteen2base.getOrigin().z();
+        m16.pose.pose.orientation.x = marker_sixteen2base.getRotation().x();
+        m16.pose.pose.orientation.y = marker_sixteen2base.getRotation().y();
+        m16.pose.pose.orientation.z = marker_sixteen2base.getRotation().z();
+        m16.pose.pose.orientation.w = marker_sixteen2base.getRotation().w();
+    
+    for(counter=0; counter < 36; counter ++)
+    {
+        if(counter != 0 && counter != 7 && counter != 14 && counter != 21 && counter != 28 && counter != 35)
+        {
+            m16.pose.covariance[counter] = 0;
+        }
+    }
+    // set diagonals
+    m16.pose.covariance[0] = 0.001;
+    m16.pose.covariance[7] = 0.001;
+    m16.pose.covariance[14] = 0.001;
+    m16.pose.covariance[21] = 0.001;
+    m16.pose.covariance[28] = 0.001;
+    m16.pose.covariance[35] = 0.001;
+
+marker16_pub.publish(m16);
 //ROS_INFO("x: %f, y: %f, z: %f,rot_x: %f,rot_y: %f,rot_z: %f",m4.pose.pose.position.x, m4.pose.pose.position.y, m4.pose.pose.position.z, m4.pose.pose.orientation.x, m4.pose.pose.orientation.y,m4.pose.pose.orientation.z);
 }
 

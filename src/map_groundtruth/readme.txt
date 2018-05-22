@@ -1,1 +1,4 @@
-# The package is already set to work with CMake files, Stage library errors should be resolved
+== Notes ==
+
+This code should be made work for Gazebo, it is still not outputing a reference map
+Goal: Create a reference map to establish a mapping metric - align then gmapping and karto map + compute the distance

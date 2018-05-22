@@ -15,7 +15,7 @@
 	<node name="Operator" pkg="nav2d_operator" type="operator" >
 		<remap from="scan" to="scan"/>
 		<rosparam file="$(find nav2d_tutorials)/param/operator.yaml"/>
-		<rosparam file="$(find nav2d_tutorials)/param/costmap.yaml" ns="local_map" />
+	 	<rosparam file="$(find nav2d_tutorials)/param/costmap.yaml" ns="local_map" />
 	</node> -->
 
 	<!-- Load the environment map in the map_server -->

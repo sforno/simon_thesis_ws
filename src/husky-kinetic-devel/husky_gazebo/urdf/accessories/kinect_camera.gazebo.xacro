@@ -16,14 +16,14 @@
       <always_on>true</always_on>
       <update_rate>20.0</update_rate>
       <camera>
-        <horizontal_fov>${90.0*M_PI/180.0}</horizontal_fov>
+        <horizontal_fov>${120.0*M_PI/180.0}</horizontal_fov>
         <image>
           <format>R8G8B8</format>
           <width>640</width>
           <height>480</height>
         </image>
         <clip>
-          <near>0.05</near>
+          <near>0.02</near>
           <far>3.0</far> <!-- default 8, gave segmentation error problem in the camera--> <!-- How far in meters would the camera see-->
         </clip>
       </camera>

@@ -1,7 +1,0 @@
-image: graph_p250p350range90.pgm
-resolution: 0.050000
-origin: [-3.574527, -10.652403, -nan]
-negate: 0
-occupied_thresh: 0.65
-free_thresh: 0.196
-

@@ -23,16 +23,16 @@ world_frame: map          # Defaults to the value of odom_frame if unspecified
 
 dynamic_process_noise_covariance: true
 
-odom0: od
-odom0_config: [true,  true,  false,
-               false, false, true,
-               false, false, false,
-              false, false, false,
-               false, false, false]      
-odom0_differential: true
-odom0_relative: false
-odom0_queue_size: 40
-odom0_nodelay: false
+#odom0: od
+#odom0_config: [true,  true,  false,
+#               false, false, true,
+#               true, true, false,
+#              false, false, true,
+#               false, false, false]      
+#odom0_differential: true
+#odom0_relative: false
+#odom0_queue_size: 40
+#odom0_nodelay: false
 
 pose0: marker1
 pose0_config: [true,  true,  false,
@@ -188,21 +188,43 @@ pose13_relative: false
 pose13_queue_size: 40
 pose13_nodelay: false
 
-process_noise_covariance: [0.1, 0,    0,    0,    0,    0,    0,     0,     0,    0,    0,    0,    0,    0,    0,
-                           0,    0.1, 0,    0,    0,    0,    0,     0,     0,    0,    0,    0,    0,    0,    0,
-                           0,    0,    0.06, 0,    0,    0,    0,     0,     0,    0,    0,    0,    0,    0,    0,
-                           0,    0,    0,    0.03, 0,    0,    0,     0,     0,    0,    0,    0,    0,    0,    0,
-                           0,    0,    0,    0,    0.03, 0,    0,     0,     0,    0,    0,    0,    0,    0,    0,
-                           0,    0,    0,    0,    0,    0.1, 0,     0,     0,    0,    0,    0,    0,    0,    0,
-                           0,    0,    0,    0,    0,    0,    0.025, 0,     0,    0,    0,    0,    0,    0,    0,
-                           0,    0,    0,    0,    0,    0,    0,     0.025, 0,    0,    0,    0,    0,    0,    0,
-                           0,    0,    0,    0,    0,    0,    0,     0,     0.04, 0,    0,    0,    0,    0,    0,
+pose14: marker15
+pose14_config: [true,  true,  false,
+              false, false, true,
+               false, false, false,
+              false, false, false,
+               false, false, false]
+pose14_differential: false
+pose14_relative: false
+pose14_queue_size: 40
+pose14_nodelay: false
+
+pose15: marker16
+pose15_config: [true,  true,  false,
+              false, false, true,
+               false, false, false,
+              false, false, false,
+               false, false, false]
+pose15_differential: false
+pose15_relative: false
+pose15_queue_size: 40
+pose15_nodelay: false
+
+process_noise_covariance: [0.01, 0,    0,    0,    0,    0,    0,     0,     0,    0,    0,    0,    0,    0,    0,
+                           0,    0.01, 0,    0,    0,    0,    0,     0,     0,    0,    0,    0,    0,    0,    0,
+                           0,    0,    0.01, 0,    0,    0,    0,     0,     0,    0,    0,    0,    0,    0,    0,
+                           0,    0,    0,    0.01, 0,    0,    0,     0,     0,    0,    0,    0,    0,    0,    0,
+                           0,    0,    0,    0,    0.01, 0,    0,     0,     0,    0,    0,    0,    0,    0,    0,
+                           0,    0,    0,    0,    0,    0.01, 0,     0,     0,    0,    0,    0,    0,    0,    0,
+                           0,    0,    0,    0,    0,    0,    0.01, 0,     0,    0,    0,    0,    0,    0,    0,
+                           0,    0,    0,    0,    0,    0,    0,     0.01, 0,    0,    0,    0,    0,    0,    0,
+                           0,    0,    0,    0,    0,    0,    0,     0,     0.01, 0,    0,    0,    0,    0,    0,
                            0,    0,    0,    0,    0,    0,    0,     0,     0,    0.01, 0,    0,    0,    0,    0,
                            0,    0,    0,    0,    0,    0,    0,     0,     0,    0,    0.01, 0,    0,    0,    0,
-                           0,    0,    0,    0,    0,    0,    0,     0,     0,    0,    0,    0.02, 0,    0,    0,
+                           0,    0,    0,    0,    0,    0,    0,     0,     0,    0,    0,    0.01, 0,    0,    0,
                            0,    0,    0,    0,    0,    0,    0,     0,     0,    0,    0,    0,    0.01, 0,    0,
                            0,    0,    0,    0,    0,    0,    0,     0,     0,    0,    0,    0,    0,    0.01, 0,
-                           0,    0,    0,    0,    0,    0,    0,     0,     0,    0,    0,    0,    0,    0,    0.015]
+                           0,    0,    0,    0,    0,    0,    0,     0,     0,    0,    0,    0,    0,    0,    0.01]
 
 
 initial_estimate_covariance: [10, 0,    0,    0,    0,    0,    0,    0,    0,    0,     0,     0,     0,    0,    0,
@@ -211,12 +233,12 @@ initial_estimate_covariance: [10, 0,    0,    0,    0,    0,    0,    0,    0,  
                               0,    0,    0,    1e-9, 0,    0,    0,    0,    0,    0,     0,     0,     0,    0,    0,
                               0,    0,    0,    0,    1e-9, 0,    0,    0,    0,    0,     0,     0,     0,    0,    0,
                               0,    0,    0,    0,    0,    10, 0,    0,    0,    0,     0,     0,     0,    0,    0,
-                              0,    0,    0,    0,    0,    0,    1e-9, 0,    0,    0,     0,     0,     0,    0,    0,
-                              0,    0,    0,    0,    0,    0,    0,    1e-9, 0,    0,     0,     0,     0,    0,    0,
+                              0,    0,    0,    0,    0,    0,    10, 0,    0,    0,     0,     0,     0,    0,    0,
+                              0,    0,    0,    0,    0,    0,    0,    10, 0,    0,     0,     0,     0,    0,    0,
                               0,    0,    0,    0,    0,    0,    0,    0,    1e-9, 0,     0,     0,     0,    0,    0,
                               0,    0,    0,    0,    0,    0,    0,    0,    0,    1e-9,  0,     0,     0,    0,    0,
                               0,    0,    0,    0,    0,    0,    0,    0,    0,    0,     1e-9,  0,     0,    0,    0,
-                              0,    0,    0,    0,    0,    0,    0,    0,    0,    0,     0,     1e-9,  0,    0,    0,
+                              0,    0,    0,    0,    0,    0,    0,    0,    0,    0,     0,     10,  0,    0,    0,
                               0,    0,    0,    0,    0,    0,    0,    0,    0,    0,     0,     0,     1e-9, 0,    0,
                               0,    0,    0,    0,    0,    0,    0,    0,    0,    0,     0,     0,     0,    1e-9, 0,
                               0,    0,    0,    0,    0,    0,    0,    0,    0,    0,     0,     0,     0,    0,    1e-9]
