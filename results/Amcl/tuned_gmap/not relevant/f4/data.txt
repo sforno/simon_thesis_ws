@@ -1,0 +1,14 @@
+min p10 max12.000 (with 9000 get erroneous localization, filter converging wrongly)
+
+alfas1,2 = 0.3 alfas3,4= 0.3 (reducing error in translation due to the rotation and trans component)  
+
+update min a/d : translation 0.2 and 0.25 rotation
+
+Same params as for Amcl Gmapping
+
+
+
+
+QUI MI ASPETTO RISULTATO PEGGIORE! 
+
+RISPETTO A F2 ERRORE CRESCE! ok ! 

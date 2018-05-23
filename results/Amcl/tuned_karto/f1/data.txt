@@ -1,0 +1,9 @@
+min p10 max10.500
+
+alfas default = 0.2 
+
+translatio error= 0.10
+
+rotation error= 0.12
+
+Same params as for Amcl Gmapping

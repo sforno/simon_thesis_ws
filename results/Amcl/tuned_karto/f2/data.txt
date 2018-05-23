@@ -1,0 +1,18 @@
+min p10 max10.500
+
+
+
+
+alfas1,2 = 0.2
+
+alfa3,4 = 0.12
+
+
+
+translatio error= 0.10
+
+rotation error= 0.12
+
+
+
+Same params as for Amcl Gmapping
