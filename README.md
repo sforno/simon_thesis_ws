@@ -19,7 +19,7 @@ method with AR tags is implemented.
 
 == Creation of PEM production hall ==
 
-Run the following commmand to launch the Gazebo simulator and see the resulting world model: <roslaunch husky_gazebo husky_fabrichalle.launch>
+Run the following commmand to launch the Gazebo simulator and see the resulting world model: "roslaunch husky_gazebo husky_fabrichalle.launch"
 
 == Mapping ==
 
@@ -31,7 +31,7 @@ Karto: follow the instructions in the README.txt file under bagfiles/Mapping/Kar
 
 Amcl: follow the istructions under bagfiles/Localization/Amcl in the README.txt file
 
-Ekf: Open the Gazebo world model file containing the sparsed AR code tags by running the command <roslaunch husky_gazebo husky_tags.launch>. This is a lighter world file not containing walls of the production hall, to keep the simulation running light. You can insert walls simply by uncommenting walls in the .world file under the /husky_gazebo/world folder. Test the localization performance of EKF by roslaunching the file ekf_markers.launch under the /robot_localization_cust/launch folder; this fused detected markers with a Microsoft Kinect camera and relative encoder + IMU sensor data. Markers only localization is possible by removing the odometry from the params/my_ekf_markers.yaml.
+Ekf: Open the Gazebo world model file containing the sparsed AR code tags by running the command "roslaunch husky_gazebo husky_tags.launch". This is a lighter world file not containing walls of the production hall, to keep the simulation running light. You can insert walls simply by uncommenting walls in the .world file under the /husky_gazebo/world folder. Test the localization performance of EKF by roslaunching the file ekf_markers.launch under the /robot_localization_cust/launch folder; this fused detected markers with a Microsoft Kinect camera and relative encoder + IMU sensor data. Markers only localization is possible by removing the odometry from the params/my_ekf_markers.yaml.
 
 See Matlab plots and numerical data results under the simon_ws/results folder.
 
