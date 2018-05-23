@@ -14,6 +14,7 @@ are used to perform the preliminary mapping, consequentely AMCL is used to retri
 using Gazebo 7.0, and the filter performances are tested under same conditions using ROS bagfiles. Lastly, a feature based EKF localization
 method with AR tags is presented.
 
+I COMMITTED 
 # Getting started
 To see the simulation in action run the following commands:
 
