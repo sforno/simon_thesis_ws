@@ -9,29 +9,38 @@ Softwares: Gazebo 7.0
 Simulative Hardwares: Husky Clearpath robot, Sick Laser Range Finder, Microsoft Kinect camera
 
 # Description
-In this repository ROS SLAM filters are used to localize an autonomous robot into an unknown production site. GMapping and Karto-SLAM
-are used to perform the preliminary mapping, consequentely AMCL is used to retrieve the robot`s localization. The environment was created
-using Gazebo 7.0, and the filter performances are tested under same conditions using ROS bagfiles. Lastly, a feature based EKF localization
-method with AR tags is presented.
+In this repository ROS SLAM filters are used to localize an autonomous robot into a customized PEM production site. GMapping and Karto
+are used to create 2D occupancy grid maps, consequentely AMCL is run for pose retrieval and tracking. The environment is created with Gazebo 7.0, 
+and the filter performances are tested under the same conditions using ROS bagfiles. Lastly, a feature based EKF localization
+method with AR tags is implemented.
 
-I COMMITTED 
+
 # Getting started
-To see the simulation in action run the following commands:
 
-Gmapping: in the husky-kinetic-devel/husky_gazebo folder roslaunch the robot with your favourite environment, run the GMapping
-by roslaunch gmapping.launch in the husky_navigation folder and see the robot in action.
+== Creation of PEM production hall ==
 
-Karto-SLAM: in the husky-kinetic-devel/husky_gazebo folder roslaunch the robot with your favourite environment, i the navigation_2d pkg
-under nav2d_tutorials launch the graph_mapper.launch file
+Run the following commmand to launch the Gazebo simulator and see the resulting world model: roslaunch husky_gazebo husky_fabrichalle.launch 
 
-Amcl: Run amcl.launch and "rosbag play --clock <filename>" the bag files under the bagfiles folder
+== Mapping ==
 
-EKF with AR tags: see notes
+Gmapping: follow the istructions in the README.txt file under bagfiles/Mapping/Gmapping and test the gmapping performances on the gmapping.bag file. A detailed parameters description is also given in the same folder, with instructions on how to tune the filter for better map performances.
+
+Karto: follow the instructions in the README.txt file under bagfiles/Mapping/Karto and test the karto performances on the karto.bag file. Also here some tuning is presented.
+
+== Localization ==
+
+Amcl: follow the istructions under bagfiles/Localization/Amcl in the README.txt file
+
+Ekf: Open the Gazebo world model file containing the sparsed AR code tags by running the command roslaunch husky_gazebo husky_tags.launch. This is a lighter world file not containing walls of the production hall, to keep the simulation running light. You can insert walls simply by uncommenting walls in the .world file under the /husky_gazebo/world folder. Test the localization performance of EKF by roslaunching the file ekf_markers.launch under the /robot_localization_cust/launch folder; this fused detected markers with a Microsoft Kinect camera and relative encoder + IMU sensor data. Markers only localization is possible by removing the odometry from the params/my_ekf_markers.yaml.
+
+See Matlab plots and numerical data results under the simon_ws/results folder.
 
 # Prerequisites
-The following installations and packages are required
+The following installations and packages are required:
 
 - ROS (http://wiki.ros.org/kinetic/Installation/Ubuntu)
+
+- Husky robot (http://wiki.ros.org/husky_gazebo/Tutorials/Simulating%20Husky)
 
 - GMapping (http://wiki.ros.org/gmapping)
 
@@ -41,5 +50,4 @@ The following installations and packages are required
 
 - Tag detection (http://wiki.ros.org/ar_track_alvar) and EKF (http://wiki.ros.org/robot_localization)
 
-# Note
-This repository is still under development
+

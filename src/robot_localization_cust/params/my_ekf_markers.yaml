@@ -23,16 +23,16 @@ world_frame: map          # Defaults to the value of odom_frame if unspecified
 
 dynamic_process_noise_covariance: true
 
-#odom0: od
-#odom0_config: [true,  true,  false,
-#               false, false, true,
-#               true, true, false,
-#              false, false, true,
-#               false, false, false]      
-#odom0_differential: true
-#odom0_relative: false
-#odom0_queue_size: 40
-#odom0_nodelay: false
+odom0: od
+odom0_config: [true,  true,  false,
+               false, false, true,
+               true, true, false,
+              false, false, true,
+               false, false, false]      
+odom0_differential: true
+odom0_relative: false
+odom0_queue_size: 40
+odom0_nodelay: false
 
 pose0: marker1
 pose0_config: [true,  true,  false,
