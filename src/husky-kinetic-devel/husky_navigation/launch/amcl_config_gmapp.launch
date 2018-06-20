@@ -37,7 +37,7 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
     <param name="laser_max_beams" value="60"/>
     <param name="laser_max_range" value="30.0"/>
     <param name="min_particles" value="10"/> <!-- n. of particles you end up with, keep this to a low value -->
-    <param name="max_particles" value="9000"/>
+    <param name="max_particles" value="9000"/> <!-- 9000 -->
     <param name="kld_err" value="0.05"/>
     <param name="kld_z" value="0.99"/>
     <param name="odom_alpha1" value="0.2"/>

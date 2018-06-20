@@ -44,7 +44,7 @@
   </node> -->
 
 
-	<!-- RVIZ to view the visualization -->
-	<node name="RVIZ" pkg="rviz" type="rviz" args=" -d $(find nav2d_tutorials)/param/tutorial3.rviz" />
+	<!-- RVIZ to view the visualization
+	<node name="RVIZ" pkg="rviz" type="rviz" args=" -d $(find nav2d_tutorials)/param/tutorial3.rviz" /> -->
 
 </launch>
